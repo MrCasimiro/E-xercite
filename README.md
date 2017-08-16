@@ -1,6 +1,6 @@
 # README
 
-CodeClimate badge [![Coverage Status](https://coveralls.io/repos/github/MrCasimiro/engeneeringApp/badge.svg?branch=master)](https://coveralls.io/github/MrCasimiro/engeneeringApp?branch=master)
+CodeClimate badge [![Code Climate](https://codeclimate.com/github/codeclimate/codeclimate/badges/gpa.svg)](https://codeclimate.com/github/codeclimate/codeclimate)
 
 Travis CI badge [![Build Status](https://travis-ci.org/MrCasimiro/engeneeringApp.svg?branch=master)](https://travis-ci.org/MrCasimiro/engeneeringApp)
 
