@@ -13,6 +13,7 @@ gem 'sqlite3'
 gem 'pg'
 gem 'rspec'
 gem 'jasmine'
+gem 'coveralls', require: false
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
