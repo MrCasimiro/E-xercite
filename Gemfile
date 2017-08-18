@@ -17,9 +17,15 @@ group :production do
 end
 
 gem 'rspec'
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.6.1'
+  gem 'coveralls', require: false
+end
+
 gem 'jasmine'
 
-gem 'coveralls', require: false
+#gem 'coveralls', require: false
 
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
