@@ -15,6 +15,7 @@ end
 group :production do
   gem 'pg'
 end
+
 gem 'rspec'
 gem 'jasmine'
 gem 'coveralls', require: false
