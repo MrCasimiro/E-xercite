@@ -5,3 +5,17 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 134ms (Views: 5.2ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-08-19 18:52:04 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/amanda/.rvm/gems/ruby-2.4.1/gems/railties-5.1.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/amanda/.rvm/gems/ruby-2.4.1/gems/railties-5.1.3/lib/rails/templates/rails/welcome/index.html.erb (2.9ms)
+Completed 200 OK in 390ms (Views: 6.8ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2017-08-19 18:57:48 -0300
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 900ms (Views: 806.5ms)
+
+
