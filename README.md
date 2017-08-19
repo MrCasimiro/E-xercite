@@ -2,7 +2,7 @@
 
 CodeClimate badge [![Code Climate](https://codeclimate.com/github/rails/rails/badges/gpa.svg)](https://codeclimate.com/github/rails/rails)
 
-Travis CI badge [![Build Status](https://travis-ci.org/MrCasimiro/engineeringApp.svg?branch=master)](https://travis-ci.org/MrCasimiro/engineeringApp)
+Travis CI badge [![Build Status](https://travis-ci.org/MrCasimiro/E-xercite.svg?branch=master)](https://travis-ci.org/MrCasimiro/E-xercite)
 
 Heroku link: https://e-xercite.herokuapp.com/
 
@@ -31,30 +31,14 @@ O projeto E-xercite tem como objetivo ser uma plataforma de consultoria esportiv
 
 ## Integrantes do grupo
 
-* #### **_Amanda Maria Martins Funabashi 9037564_**
-* #### **_Fábio Quiochi Tanaka 9277072_**
-* #### **_Felipe Suetoshi Kusuki 9037501_**
-* #### **_Guilherme Ramos Casimiro 9277771_**
-* #### **_Julio César Motta Delgado 9277065_**
-* #### **_William Jun Yamada    9037564_**
+#### **_Amanda Maria Martins Funabashi 9037564_**
+#### **_Fábio Quiochi Tanaka 9277072_**
+#### **_Felipe Suetoshi Kusuki 9037501_**
+#### **_Guilherme Ramos Casimiro 9277771_**
+#### **_Julio César Motta Delgado 9277065_**
+#### **_William Jun Yamada    9037564_**
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
 
 * Ruby version: 2.4.1
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
