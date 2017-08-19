@@ -4,6 +4,8 @@ CodeClimate badge [![Code Climate](https://codeclimate.com/github/rails/rails/ba
 
 Travis CI badge [![Build Status](https://travis-ci.org/MrCasimiro/engineeringApp.svg?branch=master)](https://travis-ci.org/MrCasimiro/engineeringApp)
 
+Heroku link: https://e-xercite.herokuapp.com/
+
 ## Motivação:
 
 De acordo com os dados do Ministério da Saúde no dia dezessete de abril, um em cada cinco brasileiros são
@@ -56,5 +58,3 @@ Things you may want to cover:
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
-
-* 
