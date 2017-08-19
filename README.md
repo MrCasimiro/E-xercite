@@ -25,9 +25,9 @@ usuários, poupando para o usuário o custo de mensalidades de academia, por exe
 [1] http://www.brasil.gov.br/saude/2017/04/obesidade-cresce-60-em-dez-anos-no-brasil
 [2] http://repositorio.unicamp.br/bitstream/REPOSIP/84197/1/S1415-52732000000100003.pdf
 
-## O Projeto Healthier:
+## O Projeto E-xercite:
 
-O projeto healthier tem como objetivo ser uma plataforma de consultoria esportiva acessível e de baixo custo.
+O projeto E-xercite tem como objetivo ser uma plataforma de consultoria esportiva acessível e de baixo custo.
 
 ## Integrantes do grupo
 
