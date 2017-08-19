@@ -31,11 +31,11 @@ O projeto E-xercite tem como objetivo ser uma plataforma de consultoria esportiv
 
 ## Integrantes do grupo
 
-* #### **_Amanda Maria Martins Funabashi_**   **_9037564_**
-* #### **_Fábio Quiochi Tanaka    9277072_**
-* #### **_Felipe Suetoshi Kusuki    9037501_**
-* #### **_Guilherme Ramos Casimiro    9277771_**
-* #### **_Julio César Motta Delgado     9277065_**
+* #### **_Amanda Maria Martins Funabashi 9037564_**
+* #### **_Fábio Quiochi Tanaka 9277072_**
+* #### **_Felipe Suetoshi Kusuki 9037501_**
+* #### **_Guilherme Ramos Casimiro 9277771_**
+* #### **_Julio César Motta Delgado 9277065_**
 * #### **_William Jun Yamada    9037564_**
 
 This README would normally document whatever steps are necessary to get the
