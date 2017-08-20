@@ -31,7 +31,7 @@ O projeto E-xercite tem como objetivo ser uma plataforma de consultoria esportiv
 
 ## Integrantes do grupo
 
-#### **_Amanda Maria Martins Funabashi 9037564_**
+#### **_Amanda Maria Martins Funabashi 9004341_**
 #### **_Fábio Quiochi Tanaka 9277072_**
 #### **_Felipe Suetoshi Kusuki 9037501_**
 #### **_Guilherme Ramos Casimiro 9277771_**
