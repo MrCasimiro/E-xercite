@@ -1,84 +1,104 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/jobs/application_job.rb": [
-        0,
-        0
+      "/home/felipe/cloneTrabalho/app/helpers/application_helper.rb": [
+        1,
+        null
       ],
-      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/models/application_record.rb": [
-        0,
-        0,
-        0
+      "/home/felipe/cloneTrabalho/app/helpers/pages_helper.rb": [
+        1,
+        null
       ],
-      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/channels/application_cable/channel.rb": [
-        0,
-        0,
-        0,
-        0
+      "/home/felipe/cloneTrabalho/app/controllers/pages_controller.rb": [
+        1,
+        1,
+        null,
+        null
       ],
-      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/channels/application_cable/connection.rb": [
-        0,
-        0,
-        0,
-        0
+      "/home/felipe/cloneTrabalho/app/controllers/application_controller.rb": [
+        1,
+        1,
+        null
       ],
-      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/controllers/application_controller.rb": [
-        0,
-        0,
-        0
-      ],
-      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/mailers/application_mailer.rb": [
-        0,
+      "/home/felipe/cloneTrabalho/app/models/application_record.rb": [
         0,
         0,
         0
       ],
-      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/helpers/application_helper.rb": [
+      "/home/felipe/cloneTrabalho/app/mailers/application_mailer.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/home/felipe/cloneTrabalho/app/jobs/application_job.rb": [
+        0,
+        0
+      ],
+      "/home/felipe/cloneTrabalho/app/channels/application_cable/channel.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/home/felipe/cloneTrabalho/app/channels/application_cable/connection.rb": [
+        0,
+        0,
         0,
         0
       ]
     },
-    "timestamp": 1503168486
+    "timestamp": 1503785589
   },
   "Cucumber Features": {
     "coverage": {
-      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/jobs/application_job.rb": [
-        0,
-        0
-      ],
-      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/models/application_record.rb": [
+      "/home/felipe/cloneTrabalho/app/models/application_record.rb": [
         0,
         0,
         0
       ],
-      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/channels/application_cable/channel.rb": [
+      "/home/felipe/cloneTrabalho/app/mailers/application_mailer.rb": [
         0,
         0,
         0,
         0
       ],
-      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/channels/application_cable/connection.rb": [
+      "/home/felipe/cloneTrabalho/app/jobs/application_job.rb": [
+        0,
+        0
+      ],
+      "/home/felipe/cloneTrabalho/app/helpers/application_helper.rb": [
+        0,
+        0
+      ],
+      "/home/felipe/cloneTrabalho/app/helpers/pages_helper.rb": [
+        0,
+        0
+      ],
+      "/home/felipe/cloneTrabalho/app/controllers/pages_controller.rb": [
         0,
         0,
         0,
         0
       ],
-      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/controllers/application_controller.rb": [
+      "/home/felipe/cloneTrabalho/app/controllers/application_controller.rb": [
         0,
         0,
         0
       ],
-      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/mailers/application_mailer.rb": [
+      "/home/felipe/cloneTrabalho/app/channels/application_cable/channel.rb": [
         0,
         0,
         0,
         0
       ],
-      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/helpers/application_helper.rb": [
+      "/home/felipe/cloneTrabalho/app/channels/application_cable/connection.rb": [
+        0,
+        0,
         0,
         0
       ]
     },
-    "timestamp": 1503168557
+    "timestamp": 1503785634
   }
 }
