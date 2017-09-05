@@ -43,26 +43,6 @@ body, h1, h2, h3, h4, h5, h6 {
   font-size: 80%;
 }
 
-@media(max-width:767px) {
-  .intro-message {
-    padding-bottom: 15%;
-  }
-  .intro-message>h1 {
-    font-size: 3em;
-  }
-  ul.intro-social-buttons>li {
-    display: block;
-    margin-bottom: 20px;
-    padding: 0;
-  }
-  ul.intro-social-buttons>li:last-child {
-    margin-bottom: 0;
-  }
-  .intro-divider {
-    width: 100%;
-  }
-}
-
 .network-name {
   text-transform: uppercase;
   font-size: 14px;
