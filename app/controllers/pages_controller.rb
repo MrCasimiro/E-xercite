@@ -3,4 +3,6 @@ class PagesController < ApplicationController
 	end
 	def main_ui
 	end
+	def sobre
+	end
 end

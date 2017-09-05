@@ -5,10 +5,12 @@ Rails.application.routes.draw do
 
   get 'pages/home'
   get 'pages/main_ui'
-  get 'pages/sobre'
+
   ##
   resources "contacts", only: [:new, :create]
   get '/contact', to: 'contacts#new', as: 'contact'
+
+  get '/about', to: 'pages#sobre', as: 'about'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'pages#home'
 end
