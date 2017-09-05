@@ -1,84 +1,104 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/jobs/application_job.rb": [
+      "/home/tanaka/Desktop/engineeringApp/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/home/tanaka/Desktop/engineeringApp/app/helpers/pages_helper.rb": [
+        1,
+        null
+      ],
+      "/home/tanaka/Desktop/engineeringApp/app/controllers/pages_controller.rb": [
+        1,
+        1,
+        null,
+        null
+      ],
+      "/home/tanaka/Desktop/engineeringApp/app/controllers/application_controller.rb": [
+        1,
+        1,
+        null
+      ],
+      "/home/tanaka/Desktop/engineeringApp/app/jobs/application_job.rb": [
         0,
         0
       ],
-      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/models/application_record.rb": [
-        0,
-        0,
-        0
-      ],
-      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/channels/application_cable/channel.rb": [
-        0,
-        0,
-        0,
-        0
-      ],
-      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/channels/application_cable/connection.rb": [
-        0,
-        0,
-        0,
-        0
-      ],
-      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/controllers/application_controller.rb": [
-        0,
-        0,
-        0
-      ],
-      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/mailers/application_mailer.rb": [
+      "/home/tanaka/Desktop/engineeringApp/app/channels/application_cable/channel.rb": [
         0,
         0,
         0,
         0
       ],
-      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/helpers/application_helper.rb": [
+      "/home/tanaka/Desktop/engineeringApp/app/channels/application_cable/connection.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/home/tanaka/Desktop/engineeringApp/app/models/application_record.rb": [
+        0,
+        0,
+        0
+      ],
+      "/home/tanaka/Desktop/engineeringApp/app/mailers/application_mailer.rb": [
+        0,
+        0,
         0,
         0
       ]
     },
-    "timestamp": 1503168486
+    "timestamp": 1503264541
   },
   "Cucumber Features": {
     "coverage": {
-      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/jobs/application_job.rb": [
+      "/home/tanaka/Desktop/engineeringApp/app/jobs/application_job.rb": [
         0,
         0
       ],
-      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/models/application_record.rb": [
-        0,
-        0,
-        0
-      ],
-      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/channels/application_cable/channel.rb": [
+      "/home/tanaka/Desktop/engineeringApp/app/channels/application_cable/channel.rb": [
         0,
         0,
         0,
         0
       ],
-      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/channels/application_cable/connection.rb": [
+      "/home/tanaka/Desktop/engineeringApp/app/channels/application_cable/connection.rb": [
         0,
         0,
         0,
         0
       ],
-      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/controllers/application_controller.rb": [
+      "/home/tanaka/Desktop/engineeringApp/app/controllers/application_controller.rb": [
         0,
         0,
         0
       ],
-      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/mailers/application_mailer.rb": [
+      "/home/tanaka/Desktop/engineeringApp/app/controllers/pages_controller.rb": [
         0,
         0,
         0,
         0
       ],
-      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/helpers/application_helper.rb": [
+      "/home/tanaka/Desktop/engineeringApp/app/helpers/application_helper.rb": [
+        0,
+        0
+      ],
+      "/home/tanaka/Desktop/engineeringApp/app/helpers/pages_helper.rb": [
+        0,
+        0
+      ],
+      "/home/tanaka/Desktop/engineeringApp/app/models/application_record.rb": [
+        0,
+        0,
+        0
+      ],
+      "/home/tanaka/Desktop/engineeringApp/app/mailers/application_mailer.rb": [
+        0,
+        0,
         0,
         0
       ]
     },
-    "timestamp": 1503168557
+    "timestamp": 1503264592
   }
 }
