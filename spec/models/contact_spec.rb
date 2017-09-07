@@ -16,4 +16,8 @@ RSpec.describe Contact, type: :model do
   	subject.message = nil
   	expect(subject).to be_valid
   end
+  it "is valid without a nickname-invisible" do
+  	subject.message = nil
+  	expect(subject).to be_valid
+  end
 end
