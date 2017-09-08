@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get '/contact', to: 'contacts#new', as: 'contact'
 
   get '/about', to: 'pages#sobre', as: 'about'
+  get '/user_ui', to: 'uipages#user_ui', as: 'user_ui'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'pages#home'
 end

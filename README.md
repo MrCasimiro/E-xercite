@@ -6,6 +6,8 @@ Travis CI badge [![Build Status](https://travis-ci.org/MrCasimiro/E-xercite.svg?
 
 Heroku link: https://e-xercite.herokuapp.com/
 
+PivotalTracker link: https://www.pivotaltracker.com/n/projects/2107363
+
 ## Motivação:
 
 De acordo com os dados do Ministério da Saúde no dia dezessete de abril, um em cada cinco brasileiros são
