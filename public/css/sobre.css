@@ -13,7 +13,7 @@ body, h1, h2, h3, h4, h5, h6 {
   padding-bottom: 50px;
   text-align: center;
   color: #f8f8f8;
-  background: url("/images/sobre.jpg") no-repeat center center;
+  background: url("/images/Maratona.jpg") no-repeat center center;
   background-size: cover;
 }
 
@@ -41,6 +41,26 @@ body, h1, h2, h3, h4, h5, h6 {
 
 .intro-social-buttons i {
   font-size: 80%;
+}
+
+@media(max-width:767px) {
+  .intro-message {
+    padding-bottom: 15%;
+  }
+  .intro-message>h1 {
+    font-size: 3em;
+  }
+  ul.intro-social-buttons>li {
+    display: block;
+    margin-bottom: 20px;
+    padding: 0;
+  }
+  ul.intro-social-buttons>li:last-child {
+    margin-bottom: 0;
+  }
+  .intro-divider {
+    width: 100%;
+  }
 }
 
 .network-name {
@@ -71,9 +91,68 @@ body, h1, h2, h3, h4, h5, h6 {
   border-top: 3px solid #e7e7e7;
 }
 
-.descr {
-  margin-bottom: 30px;
+.banner {
+  padding: 100px 0;
+  color: #f8f8f8;
+  background: url(/images/starting.jpg) no-repeat center center;
+  background-size: 1200px 300px;
 }
+
+.banner h2 {
+  margin: 0;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
+  font-size: 3em;
+}
+
+.banner ul {
+  margin-bottom: 0;
+}
+
+.banner-social-buttons {
+  float: right;
+  margin-top: 0;
+}
+
+@media(max-width:1199px) {
+  ul.banner-social-buttons {
+    float: left;
+    margin-top: 15px;
+  }
+}
+
+@media(max-width:767px) {
+  .banner h2 {
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
+    font-size: 3em;
+  }
+  ul.banner-social-buttons>li {
+    display: block;
+    margin-bottom: 20px;
+    padding: 0;
+  }
+  ul.banner-social-buttons>li:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/*SOBRE.CSS*/
+.team-member {
+  margin-bottom: 50px;
+  text-align: center; }
+  .team-member img {
+    width: 225px;
+    height: 225px;
+    border-radius: 150px;
+    margin-right: 70px;
+    margin-left: 70px;
+    margin-top: 70px; }
+  .team-member h4 {
+    margin-top: 25px;
+    margin-bottom: 0;
+    text-transform: none; }
+  .team-member p {
+    margin-top: 0; }
 
 footer {
   padding: 50px 0;
