@@ -19,4 +19,7 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   get '/signup', to: 'users#new', as: 'signup'
+  post '/signup', to: 'users#create'
+  resources :users
+
 end

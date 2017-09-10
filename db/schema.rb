@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170908180803) do
+ActiveRecord::Schema.define(version: 20170909193141) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20170908180803) do
     t.text "lesionHistory"
     t.text "diseases"
     t.text "restrictions"
-    t.boolean "coach"
+    t.boolean "coach", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"

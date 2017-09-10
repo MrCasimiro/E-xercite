@@ -8,6 +8,8 @@ end
 # password
 gem 'bcrypt', '~> 3.1.11'
 
+gem 'rails-controller-testing'
+
 #Bootstrap
 gem 'bootstrap-sass'
 

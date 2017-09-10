@@ -1,4 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
 
-<% provide(:title, 'Sign up') %>
-<h1>Sign up</h1>
-<p>This will be a signup page for new users.</p>
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="/css/landing-page.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+        <div class="container topnav">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand topnav" href="/">E-xercite</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#">Inscreva-se</a>
+                    </li>
+                    <li>
+                        <a href="about">Sobre nós</a>
+                    </li>
+                    <li>
+                        <a href="contact">Contato</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+
+
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <% provide(:title, 'Sign up') %>
+        <h1><br><br>Inscreva-se<br></h1>
+        <%= form_for(@user, url: signup_path) do |f| %>
+            <%= render 'shared/error_messages' %>
+
+            <%= f.label :name, "Nome completo" %>
+            <br>
+                <%= f.text_field :name, size: "38x6", class: "form-control" %>
+            </br>
+
+            <%= f.label :email, "E-mail" %>
+            <br>
+                <%= f.email_field :email, size: "38x6", class: "form-control" %>
+            </br>
+
+            <%= f.label :age, "Idade" %>
+            <br>
+                <%= f.text_field :age, size: "38x6", class: "form-control" %>
+            </br>
+
+            <%= f.label :gender, "Sexo" %>
+            <br>
+                <%= f.label :gender_male, 'Masculino' %>
+                <%= f.radio_button :gender, 'male' %>
+                <%= f.label :gender_female, 'Feminino' %>
+                <%= f.radio_button :gender, 'female' %>
+                <%= f.label :gender_other, 'Outro' %>
+                <%= f.radio_button :gender, 'other', :checked => true %>
+            </br>
+
+            <%= f.label :phone, "Número do telefone" %>
+
+            <br>
+                <%= f.telephone_field :phone, class: "form-control" %>
+            </br>
+
+            <%= f.label :lesionHistory, "Histórico de lesão" %>
+            <br>
+                <%= f.text_area :lesionHistory, size: "38x6", class: "form-control" %>
+            </br>
+
+            <%= f.label :diseases, "Doenças" %>
+            <br>
+                <%= f.text_area :diseases, size: "38x6", class: "form-control" %>
+            </br>
+
+            <%= f.label :restrictions, "Restrições" %>
+            <br>
+                <%= f.text_area :restrictions, size: "38x6", class: "form-control" %>
+            </br>
+
+            <%= f.label :password, "Senha" %>
+            <br>
+                <%= f.password_field :password, class: "form-control" %>
+            </br>
+
+            <%= f.label :password_confirmation, "Confirmação da senha" %>
+            <br>
+                <%= f.password_field :password_confirmation, class: "form-control" %>
+            </br>
+            </br>
+          <%= f.submit "Criar minha conta!", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>'
+    
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <br><br><br><br>
+                    <ul class="list-inline">
+                        <li>
+                            <a href="#">Home</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="about">Sobre nós</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="contact">Contato</a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted small">Copyright &copy; E-xercite 2017. All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+  </body>
+
+</html>
