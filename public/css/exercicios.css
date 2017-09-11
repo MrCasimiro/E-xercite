@@ -80,7 +80,7 @@ footer {
   background-color: #f8f8f8;
 }
 
-p.copyright {
+.copyright {
   margin: 15px 0 0;
 }
 /* -------------------------------------- */
@@ -88,7 +88,7 @@ p.copyright {
   color: #000;
 }
 
-table#listaExercicios{
+#listaExercicios{
   margin-top: 15px;
   margin-bottom: 15px;
   margin-left: auto;
@@ -97,19 +97,19 @@ table#listaExercicios{
   box-shadow: 1px 1px 4px black;
 }
 
-table#listaExercicios caption{
+#listaExercicios caption{
   text-align: center;
   font-size: 20pt;
   color: #000000;
 }
 
-table#listaExercicios td{
+#listaExercicios td{
   border: 1px solid black;
   margin: 2px;
   padding: 10px;
 }
 
-table#listaExercicios h2{
+#listaExercicios h2{
   color: #a4a4a4;
   font-size: 16pt;
 }
