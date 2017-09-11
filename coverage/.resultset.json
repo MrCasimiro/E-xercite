@@ -1,23 +1,32 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/tanaka/Desktop/E-xercite/app/helpers/application_helper.rb": [
+      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/home/tanaka/Desktop/E-xercite/app/helpers/contacts_helper.rb": [
+      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/helpers/contacts_helper.rb": [
         1,
         null
       ],
-      "/home/tanaka/Desktop/E-xercite/app/helpers/pages_helper.rb": [
+      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/helpers/pages_helper.rb": [
         1,
         null
       ],
-      "/home/tanaka/Desktop/E-xercite/app/helpers/uipages_helper.rb": [
+      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/helpers/uipages_helper.rb": [
         1,
         null
       ],
-      "/home/tanaka/Desktop/E-xercite/app/controllers/contacts_controller.rb": [
+      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/helpers/users_helper.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/controllers/contacts_controller.rb": [
         1,
         1,
         0,
@@ -36,29 +45,64 @@
         null,
         null
       ],
-      "/home/tanaka/Desktop/E-xercite/app/controllers/application_controller.rb": [
+      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/controllers/application_controller.rb": [
         1,
         1,
         null
       ],
-      "/home/tanaka/Desktop/E-xercite/app/controllers/pages_controller.rb": [
+      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/controllers/pages_controller.rb": [
         1,
         1,
         null,
         1,
-        null,
-        null
-      ],
-      "/home/tanaka/Desktop/E-xercite/app/controllers/uipages_controller.rb": [
-        1,
-        1,
-        null,
         null,
         1,
         null,
         null
       ],
-      "/home/tanaka/Desktop/E-xercite/app/models/contact.rb": [
+      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/controllers/uipages_controller.rb": [
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/controllers/users_controller.rb": [
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        3,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null,
+        2,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/models/contact.rb": [
         1,
         1,
         1,
@@ -76,143 +120,100 @@
         null,
         null
       ],
-      "/home/tanaka/Desktop/E-xercite/app/jobs/application_job.rb": [
+      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/models/user.rb": [
+        1,
+        4,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ],
+      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/jobs/application_job.rb": [
         0,
         0
       ],
-      "/home/tanaka/Desktop/E-xercite/app/channels/application_cable/channel.rb": [
+      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/channels/application_cable/channel.rb": [
         0,
         0,
         0,
         0
       ],
-      "/home/tanaka/Desktop/E-xercite/app/channels/application_cable/connection.rb": [
+      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/channels/application_cable/connection.rb": [
         0,
         0,
         0,
         0
       ],
-      "/home/tanaka/Desktop/E-xercite/app/models/application_record.rb": [
-        0,
-        0,
-        0
-      ],
-      "/home/tanaka/Desktop/E-xercite/app/mailers/application_mailer.rb": [
+      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/mailers/application_mailer.rb": [
         0,
         0,
         0,
         0
       ]
     },
-    "timestamp": 1504817531
+    "timestamp": 1505032986
   },
   "Cucumber Features": {
     "coverage": {
-      "/home/amanda/Documentos/ESI/EP/E-xercite/app/channels/application_cable/connection.rb": [
+      "/home/tanaka/Desktop/engineeringApp/app/jobs/application_job.rb": [
+        0,
+        0
+      ],
+      "/home/tanaka/Desktop/engineeringApp/app/channels/application_cable/channel.rb": [
         0,
         0,
         0,
         0
       ],
-      "/home/amanda/Documentos/ESI/EP/E-xercite/app/channels/application_cable/channel.rb": [
+      "/home/tanaka/Desktop/engineeringApp/app/channels/application_cable/connection.rb": [
         0,
         0,
         0,
         0
       ],
-      "/home/amanda/Documentos/ESI/EP/E-xercite/app/helpers/contacts_helper.rb": [
+      "/home/tanaka/Desktop/engineeringApp/app/controllers/application_controller.rb": [
+        0,
         0,
         0
       ],
-      "/home/amanda/Documentos/ESI/EP/E-xercite/app/helpers/uipages_helper.rb": [
-        0,
-        0
-      ],
-      "/home/amanda/Documentos/ESI/EP/E-xercite/app/helpers/pages_helper.rb": [
-        0,
-        0
-      ],
-      "/home/amanda/Documentos/ESI/EP/E-xercite/app/helpers/application_helper.rb": [
-        0,
-        0
-      ],
-      "/home/amanda/Documentos/ESI/EP/E-xercite/app/controllers/contacts_controller.rb": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
+      "/home/tanaka/Desktop/engineeringApp/app/controllers/pages_controller.rb": [
         0,
         0,
         0,
         0
       ],
-      "/home/amanda/Documentos/ESI/EP/E-xercite/app/controllers/uipages_controller.rb": [
+      "/home/tanaka/Desktop/engineeringApp/app/helpers/application_helper.rb": [
         0,
+        0
+      ],
+      "/home/tanaka/Desktop/engineeringApp/app/helpers/pages_helper.rb": [
         0,
-        0,
-        0,
+        0
+      ],
+      "/home/tanaka/Desktop/engineeringApp/app/models/application_record.rb": [
         0,
         0,
         0
       ],
-      "/home/amanda/Documentos/ESI/EP/E-xercite/app/controllers/application_controller.rb": [
-        0,
-        0,
-        0
-      ],
-      "/home/amanda/Documentos/ESI/EP/E-xercite/app/controllers/pages_controller.rb": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "/home/amanda/Documentos/ESI/EP/E-xercite/app/jobs/application_job.rb": [
-        0,
-        0
-      ],
-      "/home/amanda/Documentos/ESI/EP/E-xercite/app/models/application_record.rb": [
-        0,
-        0,
-        0
-      ],
-      "/home/amanda/Documentos/ESI/EP/E-xercite/app/models/contact.rb": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "/home/amanda/Documentos/ESI/EP/E-xercite/app/mailers/application_mailer.rb": [
+      "/home/tanaka/Desktop/engineeringApp/app/mailers/application_mailer.rb": [
         0,
         0,
         0,
         0
       ]
     },
-    "timestamp": 1504788377
+    "timestamp": 1503264592
   }
 }

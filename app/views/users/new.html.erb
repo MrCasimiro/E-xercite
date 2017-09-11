@@ -47,19 +47,82 @@
     </nav>
 
 
-    <div class="container">
-        <div align="center">
-          <h3><br><br>Sua mensagem foi enviada!<br></h3>
-          <p>A equipe E-xercite agradece seu contato. Retornaremos o mais breve possível.</p>
-        </div>
-    </div>
+
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <% provide(:title, 'Sign up') %>
+        <h1><br><br>Inscreva-se<br></h1>
+        <%= form_for(@user, url: signup_path) do |f| %>
+            <%= render 'shared/error_messages' %>
+
+            <%= f.label :name, "Nome completo" %>
+            <br>
+                <%= f.text_field :name, size: "38x6", class: "form-control" %>
+            </br>
+
+            <%= f.label :email, "E-mail" %>
+            <br>
+                <%= f.email_field :email, size: "38x6", class: "form-control" %>
+            </br>
+
+            <%= f.label :age, "Idade" %>
+            <br>
+                <%= f.text_field :age, size: "38x6", class: "form-control" %>
+            </br>
+
+            <%= f.label :gender, "Sexo" %>
+            <br>
+                <%= f.label :gender_male, 'Masculino' %>
+                <%= f.radio_button :gender, 'male' %>
+                <%= f.label :gender_female, 'Feminino' %>
+                <%= f.radio_button :gender, 'female' %>
+                <%= f.label :gender_other, 'Outro' %>
+                <%= f.radio_button :gender, 'other', :checked => true %>
+            </br>
+
+            <%= f.label :phone, "Número do telefone" %>
+
+            <br>
+                <%= f.telephone_field :phone, class: "form-control" %>
+            </br>
+
+            <%= f.label :lesionHistory, "Histórico de lesão" %>
+            <br>
+                <%= f.text_area :lesionHistory, size: "38x6", class: "form-control" %>
+            </br>
+
+            <%= f.label :diseases, "Doenças" %>
+            <br>
+                <%= f.text_area :diseases, size: "38x6", class: "form-control" %>
+            </br>
+
+            <%= f.label :restrictions, "Restrições" %>
+            <br>
+                <%= f.text_area :restrictions, size: "38x6", class: "form-control" %>
+            </br>
+
+            <%= f.label :password, "Senha" %>
+            <br>
+                <%= f.password_field :password, class: "form-control" %>
+            </br>
+
+            <%= f.label :password_confirmation, "Confirmação da senha" %>
+            <br>
+                <%= f.password_field :password_confirmation, class: "form-control" %>
+            </br>
+            </br>
+          <%= f.submit "Criar minha conta!", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>'
+    
 
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-
+                    <br><br><br><br>
                     <ul class="list-inline">
                         <li>
                             <a href="#">Home</a>
