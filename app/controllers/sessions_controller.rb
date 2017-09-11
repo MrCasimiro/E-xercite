@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
     	redirect_to user
   	else
   		flash.now[:danger] = 'Combinação email/senha inválida!'
+      
   		render 'new'
   	end
   end
