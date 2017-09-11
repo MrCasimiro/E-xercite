@@ -84,11 +84,7 @@ p.copyright {
 }
 /* -------------------------------------- */
 
-.corpoExercicio {
-  
-  
 
-}
 
 .corpoExercicio h1{
   border: 5px solid #ff8000;
@@ -103,4 +99,5 @@ p.copyright {
 }
 
 .imagemExercicio{
+text-align: center;
 }
