@@ -3,10 +3,12 @@ body, html {
   height: 100%;
 }
 
+/*
 body, h1, h2, h3, h4, h5, h6 {
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 700;
 }
+
 
 .intro-header {
   padding-top: 50px;
@@ -74,13 +76,14 @@ body, h1, h2, h3, h4, h5, h6 {
 .descr {
   margin-bottom: 30px;
 }
+*/
 
 footer {
   padding: 50px 0;
   background-color: #f8f8f8;
 }
 
-p.copyright {
+.copyright {
   margin: 15px 0 0;
 }
 /* -------------------------------------- */
@@ -88,28 +91,31 @@ p.copyright {
   color: #000;
 }
 
-table#listaExercicios{
-  margin-top: 15px;
+#listaExercicios{
+  /*margin-top: 15px;
   margin-bottom: 15px;
   margin-left: auto;
-  margin-right: auto;
+  margin-right: auto;*/
+  margin: 15px 15px auto auto;
   border: 8px solid black;
   box-shadow: 1px 1px 4px black;
 }
 
-table#listaExercicios caption{
+#listaExercicios caption{
   text-align: center;
   font-size: 20pt;
   color: #000000;
 }
 
-table#listaExercicios td{
+#listaExercicios td{
   border: 1px solid black;
   margin: 2px;
   padding: 10px;
 }
 
-table#listaExercicios h2{
+#listaExercicios h2{
+	font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
   color: #a4a4a4;
   font-size: 16pt;
 }
