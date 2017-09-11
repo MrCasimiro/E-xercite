@@ -1,23 +1,27 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/helpers/application_helper.rb": [
+      "/home/grcasimiro/Guilherme/SI-Folder/ESI/E-xercite/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/helpers/contacts_helper.rb": [
+      "/home/grcasimiro/Guilherme/SI-Folder/ESI/E-xercite/app/helpers/contacts_helper.rb": [
         1,
         null
       ],
-      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/helpers/pages_helper.rb": [
+      "/home/grcasimiro/Guilherme/SI-Folder/ESI/E-xercite/app/helpers/pages_helper.rb": [
         1,
         null
       ],
-      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/helpers/uipages_helper.rb": [
+      "/home/grcasimiro/Guilherme/SI-Folder/ESI/E-xercite/app/helpers/sessions_helper.rb": [
         1,
         null
       ],
-      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/helpers/users_helper.rb": [
+      "/home/grcasimiro/Guilherme/SI-Folder/ESI/E-xercite/app/helpers/uipages_helper.rb": [
+        1,
+        null
+      ],
+      "/home/grcasimiro/Guilherme/SI-Folder/ESI/E-xercite/app/helpers/users_helper.rb": [
         1,
         1,
         1,
@@ -26,7 +30,7 @@
         null,
         null
       ],
-      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/controllers/contacts_controller.rb": [
+      "/home/grcasimiro/Guilherme/SI-Folder/ESI/E-xercite/app/controllers/contacts_controller.rb": [
         1,
         1,
         0,
@@ -45,31 +49,48 @@
         null,
         null
       ],
-      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/controllers/application_controller.rb": [
+      "/home/grcasimiro/Guilherme/SI-Folder/ESI/E-xercite/app/controllers/application_controller.rb": [
         1,
         1,
         null
       ],
-      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/controllers/pages_controller.rb": [
+      "/home/grcasimiro/Guilherme/SI-Folder/ESI/E-xercite/app/controllers/pages_controller.rb": [
         1,
         1,
-        null,
-        1,
-        null,
-        1,
-        null,
-        null
-      ],
-      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/controllers/uipages_controller.rb": [
-        1,
-        1,
-        null,
         null,
         1,
         null,
         null
       ],
-      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/controllers/users_controller.rb": [
+      "/home/grcasimiro/Guilherme/SI-Folder/ESI/E-xercite/app/controllers/sessions_controller.rb": [
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/home/grcasimiro/Guilherme/SI-Folder/ESI/E-xercite/app/controllers/uipages_controller.rb": [
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/home/grcasimiro/Guilherme/SI-Folder/ESI/E-xercite/app/controllers/users_controller.rb": [
         1,
         null,
         1,
@@ -102,7 +123,7 @@
         null,
         null
       ],
-      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/models/contact.rb": [
+      "/home/grcasimiro/Guilherme/SI-Folder/ESI/E-xercite/app/models/contact.rb": [
         1,
         1,
         1,
@@ -120,7 +141,7 @@
         null,
         null
       ],
-      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/models/user.rb": [
+      "/home/grcasimiro/Guilherme/SI-Folder/ESI/E-xercite/app/models/user.rb": [
         1,
         4,
         1,
@@ -135,35 +156,35 @@
         1,
         null
       ],
-      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/models/application_record.rb": [
+      "/home/grcasimiro/Guilherme/SI-Folder/ESI/E-xercite/app/models/application_record.rb": [
         1,
         1,
         null
       ],
-      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/jobs/application_job.rb": [
+      "/home/grcasimiro/Guilherme/SI-Folder/ESI/E-xercite/app/jobs/application_job.rb": [
         0,
         0
       ],
-      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/channels/application_cable/channel.rb": [
-        0,
-        0,
-        0,
-        0
-      ],
-      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/channels/application_cable/connection.rb": [
+      "/home/grcasimiro/Guilherme/SI-Folder/ESI/E-xercite/app/channels/application_cable/channel.rb": [
         0,
         0,
         0,
         0
       ],
-      "/home/grcasimiro/Guilherme/SI-Folder/ESI/engineeringApp/app/mailers/application_mailer.rb": [
+      "/home/grcasimiro/Guilherme/SI-Folder/ESI/E-xercite/app/channels/application_cable/connection.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/home/grcasimiro/Guilherme/SI-Folder/ESI/E-xercite/app/mailers/application_mailer.rb": [
         0,
         0,
         0,
         0
       ]
     },
-    "timestamp": 1505032986
+    "timestamp": 1505119496
   },
   "Cucumber Features": {
     "coverage": {

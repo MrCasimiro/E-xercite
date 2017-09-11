@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get 'uipages/user_ui'
 
   get 'uipages/employee_ui'
@@ -15,8 +16,11 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'pages#home'
 
-  get '/signup', to: 'users#new', as: 'signup'
-  post '/signup', to: 'users#create'
+  get   '/signup', to: 'users#new', as: 'signup'
+  post  '/signup', to: 'users#create'
   resources :users
 
+  get    '/login',   to: 'sessions#new', as: 'login'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
 end
