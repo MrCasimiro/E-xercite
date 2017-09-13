@@ -1,9 +1,10 @@
+<head>
+  <%= render 'layouts/header' %>
+</head>
 
 <body>
 
-<%= render 'layouts/header' %>
-
-    <div class="col-lg-4">
+  <div class="col-lg-4">
       <h3><br><br>Envie sua mensagem à equipe E-xercite.<br></h3>
 
       <%= simple_form_for @contact, :html => {:class => 'form-basic' } do |f| %>
@@ -18,10 +19,8 @@
           <%= f.button :submit, 'Enviar', :class=> "btn btn-primary" %>
         </div>
       <% end %>
-    </div>
+  </div>
 
-    <%= render 'layouts/footer' %>
+  <%= render 'layouts/footer' %>
 
-  </body>
-
-</html>
+</body>

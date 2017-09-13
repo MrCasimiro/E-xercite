@@ -3,6 +3,17 @@
     "coverage": {
       "/home/grcasimiro/Guilherme/SI-Folder/ESI/E-xercite/app/helpers/application_helper.rb": [
         1,
+        1,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
         null
       ],
       "/home/grcasimiro/Guilherme/SI-Folder/ESI/E-xercite/app/helpers/contacts_helper.rb": [
@@ -15,6 +26,19 @@
       ],
       "/home/grcasimiro/Guilherme/SI-Folder/ESI/E-xercite/app/helpers/sessions_helper.rb": [
         1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        null,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
         null
       ],
       "/home/grcasimiro/Guilherme/SI-Folder/ESI/E-xercite/app/helpers/uipages_helper.rb": [
@@ -52,6 +76,7 @@
       "/home/grcasimiro/Guilherme/SI-Folder/ESI/E-xercite/app/controllers/application_controller.rb": [
         1,
         1,
+        1,
         null
       ],
       "/home/grcasimiro/Guilherme/SI-Folder/ESI/E-xercite/app/controllers/pages_controller.rb": [
@@ -70,14 +95,17 @@
         1,
         1,
         1,
+        0,
+        0,
+        null,
+        1,
+        null,
+        1,
+        null,
         null,
         null,
         1,
-        1,
         null,
-        null,
-        null,
-        1,
         null,
         null
       ],
@@ -184,7 +212,7 @@
         0
       ]
     },
-    "timestamp": 1505119496
+    "timestamp": 1505279667
   },
   "Cucumber Features": {
     "coverage": {
