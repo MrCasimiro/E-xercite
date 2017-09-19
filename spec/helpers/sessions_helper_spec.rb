@@ -11,5 +11,10 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe SessionsHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+	describe "#current_user" do
+		it "current_user nil" do
+			assign(:current_user, nil)
+      		expect(helper.logged_in?).to eql(false)
+  		end
+	end	
 end
