@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
   get 'uipages/user_ui'
-
   get 'uipages/employee_ui'
 
   get 'pages/home'

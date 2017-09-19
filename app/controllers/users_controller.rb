@@ -14,6 +14,7 @@ class UsersController < ApplicationController
   	#debugger
 
   	if @user.save
+      log_in @user
   		flash[:success] = "Bem vindo ao aplicativo E-xercite!"
   		redirect_to @user
   	else
@@ -22,10 +23,10 @@ class UsersController < ApplicationController
   end
 
   private
-  	def user_params
-  		params.require(:user).permit(:name, :email, :age, :phone,
-  		:gender, :lesionHistory, :diseases, :restrictions,
-  		:password, :password_confirmation)
-  	end
+  def user_params
+    params.require(:user).permit(:name, :email, :age, :phone,
+      :gender, :lesionHistory, :diseases, :restrictions,
+      :password, :password_confirmation)
+  end
 
 end

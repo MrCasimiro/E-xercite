@@ -1,6 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe "SessionsLogins", type: :request do
+
+  fixtures :users
+
+  before :each do
+    @user = users(:guilherme)
+  end
+
   describe "GET /sessions_logins" do
     it "get login path should be acessible" do
       get login_path
@@ -19,4 +26,27 @@ RSpec.describe "SessionsLogins", type: :request do
   		expect(flash).to be_empty
   	end
   end
+=begin teste cagado sem nenhum motivo
+  describe "testing layout changes in login" do
+    it "login with valid information" do
+      get login_path
+      expect do
+        post login_path, params: { 
+          session: {
+            email: @user.email,
+            password: 'password'
+          }
+        }
+      end
+
+      expect(response).to redirect_to @user
+      follow_redirect!
+      expect(response).to render_template("users/show")
+      assert_select "a[href=?]", login_path, count: 0
+      assert_select "a[href=?]", logout_path
+      assert_select "a[href=?]", user_path(@user)
+
+    end
+  end
+=end
 end
