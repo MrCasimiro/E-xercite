@@ -1,16 +1,27 @@
 
 <h1>Listing users</h1>
  
-<table>
-  <tr>
-    <th>id</th>
-    <th>Nome</th>
-  </tr>
- 
-  <% @users.each do |user| %>
+<table class="table table-striped">
+  <thead>
     <tr>
-      <td><%= user.id %></td>
-      <td><%= user.name %></td>
+      <th>#</th>
+      <th>Nome</th>
+      <th>Idade</th>
+      <th> </th>
     </tr>
-  <% end %>
+  </thead>
+  <tbody>
+    <% i = 0 %>
+    <% @users.each do |user| %>
+    <% i = i + 1 %>
+      <tr>
+        <th scope="row"><%= i %></th>
+        <td><%= user.name %></td>
+        <td><%= user.age %></td>
+        <td>Botão</td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
+
+
