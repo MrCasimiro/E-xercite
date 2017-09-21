@@ -28,5 +28,4 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
 
-  get 'uipages/employee_ui/users(.:format)', to: 'uipages#index'
 end
