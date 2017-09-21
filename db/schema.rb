@@ -10,7 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170909193141) do
+ActiveRecord::Schema.define(version: 20170921025119) do
+
+  create_table "admins", force: :cascade do |t|
+    t.string "adm_password"
+    t.integer "person_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["person_id"], name: "index_admins_on_person_id", unique: true
+  end
+
+  create_table "coaches", force: :cascade do |t|
+    t.integer "person_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["person_id"], name: "index_coaches_on_person_id", unique: true
+  end
+
+  create_table "people", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "phone"
+    t.integer "age"
+    t.string "gender"
+    t.string "password"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "specialities", force: :cascade do |t|
+    t.integer "coach_id"
+    t.string "name_speciality"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["coach_id", "name_speciality"], name: "index_specialities_on_coach_id_and_name_speciality", unique: true
+    t.index ["coach_id"], name: "index_specialities_on_coach_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
