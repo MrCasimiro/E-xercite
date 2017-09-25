@@ -4,6 +4,8 @@ CodeClimate badge [![Code Climate](https://codeclimate.com/github/rails/rails/ba
 
 Travis CI badge [![Build Status](https://travis-ci.org/MrCasimiro/E-xercite.svg?branch=master)](https://travis-ci.org/MrCasimiro/E-xercite)
 
+Coveralls badge [![Coverage Status](https://coveralls.io/repos/github/MrCasimiro/E-xercite/badge.svg)](https://coveralls.io/github/MrCasimiro/E-xercite)
+
 Heroku link: https://e-xercite.herokuapp.com/
 
 PivotalTracker link: https://www.pivotaltracker.com/n/projects/2107363
