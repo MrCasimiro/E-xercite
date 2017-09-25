@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
   get 'uipages/user_ui'
-
   get 'uipages/employee_ui'
+  get 'uipages/admin_ui'
 
   get 'pages/home'
   get 'pages/main_ui'
@@ -27,4 +27,5 @@ Rails.application.routes.draw do
   get    '/login',   to: 'sessions#new', as: 'login'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
+
 end
