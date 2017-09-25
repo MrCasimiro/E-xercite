@@ -15,7 +15,7 @@ class UsersController < ApplicationController
 
   	if @user.save
       log_in @user
-  		flash[:success] = "Bem vindo ao aplicativo E-xercite!"
+  		# flash[:success] = "Bem vindo ao aplicativo E-xercite!" see this line later
   		redirect_to @user
   	else
   		render 'new'
