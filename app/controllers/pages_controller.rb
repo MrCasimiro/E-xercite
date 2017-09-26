@@ -3,4 +3,6 @@ class PagesController < ApplicationController
 	end
 	def sobre
 	end
+	def treino
+	end
 end
