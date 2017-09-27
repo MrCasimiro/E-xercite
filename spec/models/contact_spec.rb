@@ -20,4 +20,12 @@ RSpec.describe Contact, type: :model do
   	subject.message = nil
   	expect(subject).to be_valid
   end
+  it "email address validation should not accept invalid emails" do
+    invalid_address = %w[user@example,com user_at_foo.com user-a-test@ba+.com user_name@foo.com@baar.com]
+
+    invalid_address.each do |invalid_address| 
+      subject.email = invalid_address
+      expect(subject).to_not be_valid, "#{invalid_address} should not be accept"
+    end
+  end
 end
