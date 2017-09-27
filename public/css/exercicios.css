@@ -87,21 +87,22 @@ footer {
   margin: 15px 0 0;
 }
 /* -------------------------------------- */
-.listaExercicios a{
+
+
+#listaExercicios a{
   color: #000;
 }
 
 #listaExercicios{
-  /*margin-top: 15px;
-  margin-bottom: 15px;
+	
   margin-left: auto;
-  margin-right: auto;*/
-  margin: 15px 15px auto auto;
+  margin-right: auto;
   border: 8px solid black;
   box-shadow: 1px 1px 4px black;
 }
 
 #listaExercicios caption{
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-align: center;
   font-size: 20pt;
   color: #000000;
@@ -114,7 +115,7 @@ footer {
 }
 
 #listaExercicios h2{
-	font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 700;
   color: #a4a4a4;
   font-size: 16pt;
