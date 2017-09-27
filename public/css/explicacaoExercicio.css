@@ -86,7 +86,7 @@ footer {
 
 
 
-.corpoExercicio h1{
+.corpoExercicio{
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 700;
   border: 5px solid #ff8000;
@@ -95,7 +95,7 @@ footer {
    margin-right: 1000px;
 }
 
-.corpoExercicio h2{
+.corpoExercicio{
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 700;
   font-size: 12pt;
