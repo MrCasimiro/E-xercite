@@ -1,0 +1,39 @@
+<head>
+    <link href="/css/gamification.css" rel="stylesheet">
+    <%= render 'layouts/header' %>
+</head>
+
+<body>
+
+    <section id="imagem">
+       <figure class="imagemAvatar">
+            <img src = "/images/avatar.jpg" >
+       </figure> 
+    </section>   
+
+    <aside id="sobre">
+       <div id="sobreAvatar">
+            Disposição:</br>
+            <!-- barra de "vida" da diposicao -->
+            <div id="diposicao"> </div>
+
+            Dinheiro:
+            <div id="dinheiro">
+                <h1>R$ 1,00</h1>
+            </div>
+
+       </div>
+    </aside>   
+      
+    <section id="lista">
+       <div id="listaExercicios">
+
+       COLOCAR A LISTA DE EXERCICIOS FEITOS(OU NÃO) PELO USUARIO
+           
+       </div>
+    </section>
+
+<%= render 'layouts/footer' %>
+
+</body>
+
