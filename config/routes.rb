@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   get '/flexao', to: 'pages#flexao', as: 'flexao' 
   
   get '/treino', to: 'pages#ftreino', as: 'treino'
+  
+  get '/gami', to: 'pages#gamification', as: 'gami'
 
   get '/user_ui', to: 'uipages#user_ui', as: 'user_ui'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
