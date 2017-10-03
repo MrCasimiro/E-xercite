@@ -3,10 +3,10 @@ class SessionsController < ApplicationController
   end
 
   def create
-  	user = User.find_by(email: params[:session][:email].downcase)
-    if user && user.authenticate(params[:session][:password])
-    	log_in user
-    	redirect_to user
+  	person = Person.find_by(email: params[:session][:email].downcase)
+    if person && person.authenticate(params[:session][:password])
+    	log_in person
+    	redirect_to person
     else
       flash.now[:danger] = 'Combinação email/senha inválida!'
       render 'new'

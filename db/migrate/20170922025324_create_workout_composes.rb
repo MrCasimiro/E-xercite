@@ -1,4 +1,4 @@
-class CreateCreateWorkoutComposes < ActiveRecord::Migration[5.1]
+class CreateWorkoutComposes < ActiveRecord::Migration[5.1]
   def change
     create_table :workout_composes do |t|
       t.integer :set

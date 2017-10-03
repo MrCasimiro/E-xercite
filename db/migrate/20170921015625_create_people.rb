@@ -6,7 +6,7 @@ class CreatePeople < ActiveRecord::Migration[5.1]
       t.string :phone
       t.integer :age
       t.string :gender
-      t.string :password
+      t.string :password_digest
 
       t.timestamps
     end
