@@ -22,6 +22,7 @@ Rails.application.routes.draw do
 
   get   '/signup', to: 'people#new', as: 'signup'
   post  '/signup', to: 'people#create'
+  resources :people
   resources :users
 
   get    '/login',   to: 'sessions#new', as: 'login'

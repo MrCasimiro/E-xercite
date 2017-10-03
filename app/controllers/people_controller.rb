@@ -9,13 +9,14 @@ class PeopleController < ApplicationController
   end
 
   def create
-  	@person = Person.new(user_params)
+  	@person = Person.new(person_params)
   	#debugger
 
   	if @person.save
+      @user = add_user(@person)
   		log_in @person
   		flash[:success] = "Bem vindo ao aplicativo E-xercite!"
-  		redirect_to @person
+  		redirect_to @user
   	else
   		render 'new'
   	end
@@ -23,7 +24,13 @@ class PeopleController < ApplicationController
 
   private
   def person_params
-  	params.require(:user).permit(:name, :email, :age, :phone,
+  	params.require(:person).permit(:name, :email, :age, :phone,
   		:gender, :password, :password_confirmation)
+  end
+
+  def add_user(person)
+    user = User.new(:id => person.id, :level => 0, :points => 0)
+    user.save
+    user
   end
 end
