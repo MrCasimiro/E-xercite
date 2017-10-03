@@ -1,6 +1,6 @@
 class PeopleController < ApplicationController
   def show
-	@person = Person.find(params[:id])
+	  @person = Person.find(params[:id])
   	# debugger # opens a rails console in prompt to debug
   end
 
@@ -17,6 +17,7 @@ class PeopleController < ApplicationController
   		log_in @person
   		flash[:success] = "Bem vindo ao aplicativo E-xercite!"
   		redirect_to @user
+      
   	else
   		render 'new'
   	end
@@ -29,8 +30,8 @@ class PeopleController < ApplicationController
   end
 
   def add_user(person)
-    user = User.new(:id => person.id, :level => 0, :points => 0)
-    user.save
-    user
+    @user = person.build_user(:level => 0, :points => 0)
+    @user.save
+    @user
   end
 end
