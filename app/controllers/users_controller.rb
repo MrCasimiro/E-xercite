@@ -9,4 +9,5 @@ class UsersController < ApplicationController
 		@user = User.find(current_person.id)
 		redirect_to @user
 	end
+	
 end
