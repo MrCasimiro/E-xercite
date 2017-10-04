@@ -54,14 +54,11 @@
                           <tbody>
                             <% i = 0
                              @users.each do |user|
-                             if user.coach == true
-                                next
-                             end
                              i = i + 1 %>
                               <tr>
                                 <th scope="row"><%= i %></th>
-                                <td><%= user.name %></td>
-                                <td><%= user.age %></td>
+                                <td><%= user.person.name %></td>
+                                <td><%= user.person.age %></td>
                                 <td align='center'><a href="/exercises"><button class="button">Montar treino!</button></a></td>
                               </tr>
                             <% end %>
