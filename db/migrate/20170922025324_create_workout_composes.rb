@@ -4,8 +4,8 @@ class CreateWorkoutComposes < ActiveRecord::Migration[5.1]
       t.integer :set
       t.integer :repetition
       t.string :technique
-      t.belongs_to :exercise, unique: true, foreign_key:true
-      t.belongs_to :workout, unique: true, foreign_key:true
+      t.belongs_to :exercise, unique: true, foreign_key: true
+      t.belongs_to :workout, unique: true, foreign_key: true
 
       t.timestamps
     end
