@@ -10,6 +10,8 @@ gem 'bcrypt', '~> 3.1.11'
 
 gem 'rails-controller-testing'
 
+#font-awesome
+gem 'font-awesome-sass'
 #Bootstrap
 gem 'bootstrap-sass'
 

@@ -43,7 +43,7 @@ RSpec.describe "PeopleSignups", type: :request do
     	end.to change {Person.count}	
     	follow_redirect!
     	expect(response).to render_template("users/show")
-    	expect(flash).to_not be_empty
+    	# expect(flash).to_not be_empty when uncomment the flash in controller uncomment here
     end
   end
 end
