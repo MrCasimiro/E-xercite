@@ -15,13 +15,16 @@ Rails.application.routes.draw do
   get '/about', to: 'pages#sobre', as: 'about'
   get '/exercises', to: 'pages#exercicios', as: 'exercises' 
   get '/flexao', to: 'pages#flexao', as: 'flexao' 
+  
+  get '/treino', to: 'pages#ftreino', as: 'treino'
 
   get '/user_ui', to: 'uipages#user_ui', as: 'user_ui'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'pages#home'
 
-  get   '/signup', to: 'users#new', as: 'signup'
-  post  '/signup', to: 'users#create'
+  get   '/signup', to: 'people#new', as: 'signup'
+  post  '/signup', to: 'people#create'
+  resources :people
   resources :users
 
   get    '/login',   to: 'sessions#new', as: 'login'
