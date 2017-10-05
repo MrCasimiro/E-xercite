@@ -2,10 +2,10 @@ require 'rails_helper'
 
 RSpec.describe "SessionsLogins", type: :request do
 
-  fixtures :users
+  fixtures :people
 
   before :each do
-    @user = users(:guilherme)
+    @person = people(:guilherme)
   end
 
   describe "GET /sessions_logins" do

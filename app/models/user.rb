@@ -1,20 +1,12 @@
 class User < ApplicationRecord
-	before_save {email.downcase!} 
-	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
+	belongs_to :person
 
-	validates :age, :gender, :lesionHistory, :diseases,
-	:restrictions, presence: true
-	validates :name, presence: true, length: {maximum: 50}
-	validates :email, presence: true, length: {maximum: 255},
-	format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
+	has_many :user_restrictions
+	has_many :restrictions, through: :user_restrictions
 
-	has_secure_password
-	validates :password, presence: true, length: {minimum: 6}
+	has_many :user_do_workouts
+	has_many :workouts, through: :user_do_workouts
 
-	# Returns the hash digest of the given string.
-	def User.digest(string)
-		cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
-													  BCrypt::Engine.cost
-		BCrypt::Password.create(string, cost: cost)
-	end
+	has_many :user_diseases
+	has_many :diseases, through: :user_diseases
 end

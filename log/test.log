@@ -3193,4 +3193,397 @@ Processing by UsersController#show as HTML
   Rendered uipages/_user_ui.html.erb (2.4ms)
   Rendered users/show.html.erb within layouts/application (3.5ms)
 Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (33.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "admins"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (320.4ms)[0m  [1m[35mCREATE TABLE "admins" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "adm_password" varchar, "person_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (200.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admins_on_person_id" ON "admins" ("person_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "coaches"[0m
+  [1m[35m (143.1ms)[0m  [1m[35mCREATE TABLE "coaches" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "person_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (222.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_coaches_on_person_id" ON "coaches" ("person_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "diseases"[0m
+  [1m[35m (143.8ms)[0m  [1m[35mCREATE TABLE "diseases" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name_disease" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "diseases_users"[0m
+  [1m[35m (133.5ms)[0m  [1m[35mCREATE TABLE "diseases_users" ("user_id" integer NOT NULL, "disease_id" integer NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "exercises"[0m
+  [1m[35m (132.5ms)[0m  [1m[35mCREATE TABLE "exercises" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name_exercise" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "people"[0m
+  [1m[35m (110.1ms)[0m  [1m[35mCREATE TABLE "people" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "phone" varchar, "age" integer, "gender" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "restrictions"[0m
+  [1m[35m (413.2ms)[0m  [1m[35mCREATE TABLE "restrictions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name_restriction" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "specialities"[0m
+  [1m[35m (165.8ms)[0m  [1m[35mCREATE TABLE "specialities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "coach_id" integer, "name_speciality" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (133.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_specialities_on_coach_id_and_name_speciality" ON "specialities" ("coach_id", "name_speciality")[0m
+  [1m[35m (0.3ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_specialities_on_coach_id_and_name_speciality' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_specialities_on_coach_id_and_name_speciality' AND type='index'
+[0m
+  [1m[35m (120.9ms)[0m  [1m[35mCREATE  INDEX "index_specialities_on_coach_id" ON "specialities" ("coach_id")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "user_diseases"[0m
+  [1m[35m (121.0ms)[0m  [1m[35mCREATE TABLE "user_diseases" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "disease_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (132.5ms)[0m  [1m[35mCREATE  INDEX "index_user_diseases_on_disease_id" ON "user_diseases" ("disease_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_diseases_on_disease_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_diseases_on_disease_id' AND type='index'
+[0m
+  [1m[35m (130.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_user_diseases_on_user_id_and_disease_id" ON "user_diseases" ("user_id", "disease_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_diseases_on_user_id_and_disease_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_diseases_on_user_id_and_disease_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_diseases_on_disease_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_diseases_on_disease_id' AND type='index'
+[0m
+  [1m[35m (143.3ms)[0m  [1m[35mCREATE  INDEX "index_user_diseases_on_user_id" ON "user_diseases" ("user_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "user_do_workouts"[0m
+  [1m[35m (143.2ms)[0m  [1m[35mCREATE TABLE "user_do_workouts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "workout_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (141.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_user_do_workouts_on_user_id_and_workout_id" ON "user_do_workouts" ("user_id", "workout_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_do_workouts_on_user_id_and_workout_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_do_workouts_on_user_id_and_workout_id' AND type='index'
+[0m
+  [1m[35m (121.1ms)[0m  [1m[35mCREATE  INDEX "index_user_do_workouts_on_user_id" ON "user_do_workouts" ("user_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_do_workouts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_do_workouts_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_do_workouts_on_user_id_and_workout_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_do_workouts_on_user_id_and_workout_id' AND type='index'
+[0m
+  [1m[35m (129.0ms)[0m  [1m[35mCREATE  INDEX "index_user_do_workouts_on_workout_id" ON "user_do_workouts" ("workout_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "user_restrictions"[0m
+  [1m[35m (134.2ms)[0m  [1m[35mCREATE TABLE "user_restrictions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "restriction_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (133.6ms)[0m  [1m[35mCREATE  INDEX "index_user_restrictions_on_restriction_id" ON "user_restrictions" ("restriction_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_restrictions_on_restriction_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_restrictions_on_restriction_id' AND type='index'
+[0m
+  [1m[35m (130.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_user_restrictions_on_user_id_and_restriction_id" ON "user_restrictions" ("user_id", "restriction_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_restrictions_on_user_id_and_restriction_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_restrictions_on_user_id_and_restriction_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_restrictions_on_restriction_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_restrictions_on_restriction_id' AND type='index'
+[0m
+  [1m[35m (131.9ms)[0m  [1m[35mCREATE  INDEX "index_user_restrictions_on_user_id" ON "user_restrictions" ("user_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (121.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "person_id" integer, "level" integer, "points" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (133.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_person_id" ON "users" ("person_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "workout_composes"[0m
+  [1m[35m (132.3ms)[0m  [1m[35mCREATE TABLE "workout_composes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "set" integer, "repetition" integer, "technique" varchar, "exercise_id" integer, "workout_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (132.9ms)[0m  [1m[35mCREATE  INDEX "index_workout_composes_on_exercise_id" ON "workout_composes" ("exercise_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_workout_composes_on_exercise_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_workout_composes_on_exercise_id' AND type='index'
+[0m
+  [1m[35m (132.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_workout_composes_on_workout_id_and_exercise_id" ON "workout_composes" ("workout_id", "exercise_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_workout_composes_on_workout_id_and_exercise_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_workout_composes_on_workout_id_and_exercise_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_workout_composes_on_exercise_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_workout_composes_on_exercise_id' AND type='index'
+[0m
+  [1m[35m (132.5ms)[0m  [1m[35mCREATE  INDEX "index_workout_composes_on_workout_id" ON "workout_composes" ("workout_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "workouts"[0m
+  [1m[35m (122.1ms)[0m  [1m[35mCREATE TABLE "workouts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "coach_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (144.7ms)[0m  [1m[35mCREATE  INDEX "index_workouts_on_coach_id" ON "workouts" ("coach_id")[0m
+  [1m[35m (161.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (109.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20171004164151)[0m
+  [1m[35m (99.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20170922031317),
+(20170922025139),
+(20170922024252),
+(20170921015625),
+(20170922031351),
+(20170922025324),
+(20170921024153),
+(20170922031343),
+(20170922031001),
+(20170922031252),
+(20170921025119),
+(20170921021253),
+(20170922030309);
+
+[0m
+  [1m[35m (129.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2017-10-04 23:09:02.669326"], ["updated_at", "2017-10-04 23:09:02.669326"]]
+  [1m[35m (150.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered contacts/new.html.erb within layouts/application (0.6ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.0ms)
   [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 70ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered users/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "guircasimiro@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "guircasimiro@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "     "], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "guircasimiro@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "guircasimiro@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "guircasimiro@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "guircasimiro@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "guircasimiro@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mPerson Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "USER@foo.COM"], ["LIMIT", 1]]
+  [1m[36mPerson Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "A_US-ER@foo.bar.org"], ["LIMIT", 1]]
+  [1m[36mPerson Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "first.last@foo.jp"], ["LIMIT", 1]]
+  [1m[36mPerson Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "alice+bob@baz.cn"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "user@example,com"], ["LIMIT", 1]]
+  [1m[36mPerson Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "user_at_foo.com"], ["LIMIT", 1]]
+  [1m[36mPerson Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "user-a-test@ba+.com"], ["LIMIT", 1]]
+  [1m[36mPerson Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "user_name@foo.com@baar.com"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "guircasimiro@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "people" ("name", "email", "age", "gender", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Guilherme Casimiro"], ["email", "guircasimiro@gmail.com"], ["age", 21], ["gender", "Male"], ["password_digest", "$2a$04$fpIqe7H.fT8JSUM56ljFLeoA4rcQyA5nptfDdBDGWo.yWWe68L.ku"], ["created_at", "2017-10-04 23:09:03.824376"], ["updated_at", "2017-10-04 23:09:03.824376"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "GUIRCASIMIRO@GMAIL.COM"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "gUIrCaSimiro@Gmail.CoM"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "people" ("name", "email", "age", "gender", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Guilherme Casimiro"], ["email", "guircasimiro@gmail.com"], ["age", 21], ["gender", "Male"], ["password_digest", "$2a$04$.kmYEMy8iKsyiAWTPFhkEOuSODocTcqX4g8djTsviDQDbIjX6M60K"], ["created_at", "2017-10-04 23:09:03.839384"], ["updated_at", "2017-10-04 23:09:03.839384"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (5.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/contact" for 127.0.0.1 at 2017-10-04 20:09:04 -0300
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (3.2ms)
+  Rendered layouts/_footer.html.erb (1.3ms)
+  Rendered contacts/new.html.erb within layouts/application (156.9ms)
+Completed 200 OK in 7842ms (Views: 7833.5ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/signup" for 127.0.0.1 at 2017-10-04 20:09:12 -0300
+Processing by PeopleController#new as HTML
+  Rendering people/new.html.erb within layouts/application
+  [1m[36mPerson Load (0.5ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (4.6ms)
+  Rendered shared/_error_messages.html.erb (1.6ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+  Rendered people/new.html.erb within layouts/application (42.9ms)
+Completed 200 OK in 66ms (Views: 46.6ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "people"[0m
+Started POST "/signup" for 127.0.0.1 at 2017-10-04 20:09:12 -0300
+Processing by PeopleController#create as HTML
+  Parameters: {"person"=>{"name"=>"", "email"=>"user@invalid", "age"=>"1234", "phone"=>"", "gender"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "user@invalid"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering people/new.html.erb within layouts/application
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered shared/_error_messages.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+  Rendered people/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 11ms (Views: 5.7ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "people"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/signup" for 127.0.0.1 at 2017-10-04 20:09:12 -0300
+Processing by PeopleController#new as HTML
+  Rendering people/new.html.erb within layouts/application
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.6ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+  Rendered people/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "people"[0m
+Started POST "/signup" for 127.0.0.1 at 2017-10-04 20:09:13 -0300
+Processing by PeopleController#create as HTML
+  Parameters: {"person"=>{"name"=>"Exemplo", "email"=>"exemplo@exemplo.com", "age"=>"12", "phone"=>"1111111", "gender"=>"other", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "exemplo@exemplo.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "people" ("name", "email", "phone", "age", "gender", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Exemplo"], ["email", "exemplo@exemplo.com"], ["phone", "1111111"], ["age", 12], ["gender", "other"], ["password_digest", "$2a$04$11ZuJ5OohzdxdGPLTR72he/4.cWYK04E1s1NPAYcuV9Gt753Nwi9e"], ["created_at", "2017-10-04 23:09:13.007179"], ["updated_at", "2017-10-04 23:09:13.007179"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."person_id" = ? LIMIT ?[0m  [["person_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("person_id", "level", "points", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["person_id", 1], ["level", 0], ["points", 0], ["created_at", "2017-10-04 23:09:13.080014"], ["updated_at", "2017-10-04 23:09:13.080014"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/users/1
+Completed 302 Found in 80ms (ActiveRecord: 3.3ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "people"[0m
+Started GET "/users/1" for 127.0.0.1 at 2017-10-04 20:09:13 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered layouts/_ui_sidebar.html.erb (0.5ms)
+  Rendered layouts/_ui_header.html.erb (0.7ms)
+  Rendered uipages/_user_ui.html.erb (12.7ms)
+  Rendered users/show.html.erb within layouts/application (22.7ms)
+Completed 200 OK in 36ms (Views: 25.0ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "people"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "people" ("name", "email", "age", "phone", "gender", "password_digest", "created_at", "updated_at", "id") VALUES ('Guilherme Exemplo', 'guilherme@example.com', 21, '111111111', 'Male', '$2a$04$vi1DON1gjf8GSrNbiyw5oe5w0Y2cEmCOz44nkcPLD4sXjGxTPgoc.', '2017-10-04 23:09:13.152086', '2017-10-04 23:09:13.152086', 82290335)[0m
+  [1m[35m (97.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 82290335], ["LIMIT", 1]]
+Started GET "/login" for 127.0.0.1 at 2017-10-04 20:09:13 -0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.1ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+  Rendered sessions/new.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 13ms (Views: 11.4ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 82290335], ["LIMIT", 1]]
+Started GET "/login" for 127.0.0.1 at 2017-10-04 20:09:13 -0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+  Rendered sessions/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.2ms)
+Started POST "/login" for 127.0.0.1 at 2017-10-04 20:09:13 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.3ms)
+Started GET "/" for 127.0.0.1 at 2017-10-04 20:09:13 -0300
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+  Rendered pages/home.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m

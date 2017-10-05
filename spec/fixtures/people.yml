@@ -1,0 +1,7 @@
+guilherme:
+  name: Guilherme Exemplo
+  email: guilherme@example.com
+  age: 21
+  phone: 111111111
+  gender: Male
+  password_digest: <%= Person.digest('password') %>
