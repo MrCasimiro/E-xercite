@@ -12,7 +12,12 @@ footer {
   margin: 15px 0 0;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+/* -------------------------------------- */
+/* COMECO DA PARTE PERSONALIZADA DA PAGINA*/
+>>>>>>> code_climate
 
 .listaExercicios a{
 =======
@@ -45,13 +50,9 @@ footer {
   padding: 10px;
 }
 
-<<<<<<< HEAD
-#listaExercicios{
-	font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-=======
 #listaExercicios h2{
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
->>>>>>> c08adcde8a75b446a18a656067e190f7bfa1cf8e
+>>>>>>> code_climate
   font-weight: 700;
   color: #a4a4a4;
   font-size: 16pt;
