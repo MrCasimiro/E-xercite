@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Person, type: :model do
-  before :each do
+  	before :each do
 		@person = Person.new(name: "Guilherme Casimiro", email: "guircasimiro@gmail.com",
 		 password: "123456", password_confirmation: "123456", age: 21,
 		 gender: "Male")

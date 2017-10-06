@@ -329,57 +329,338 @@
         0
       ]
     },
-    "timestamp": 1507158553
+    "timestamp": 1507207174
   },
   "Cucumber Features": {
     "coverage": {
-      "/home/tanaka/Desktop/engineeringApp/app/jobs/application_job.rb": [
-        0,
-        0
-      ],
-      "/home/tanaka/Desktop/engineeringApp/app/channels/application_cable/channel.rb": [
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/pages_controller.rb": [
         0,
         0,
         0,
-        0
-      ],
-      "/home/tanaka/Desktop/engineeringApp/app/channels/application_cable/connection.rb": [
+        0,
         0,
         0,
         0,
         0
       ],
-      "/home/tanaka/Desktop/engineeringApp/app/controllers/application_controller.rb": [
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/contacts_controller.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         0,
         0,
         0
       ],
-      "/home/tanaka/Desktop/engineeringApp/app/controllers/pages_controller.rb": [
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/users_controller.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         0,
         0,
         0,
         0
       ],
-      "/home/tanaka/Desktop/engineeringApp/app/helpers/application_helper.rb": [
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/people_controller.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         0,
         0
       ],
-      "/home/tanaka/Desktop/engineeringApp/app/helpers/pages_helper.rb": [
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/sessions_controller.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         0,
         0
       ],
-      "/home/tanaka/Desktop/engineeringApp/app/models/application_record.rb": [
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/application_controller.rb": [
+        0,
         0,
         0,
         0
       ],
-      "/home/tanaka/Desktop/engineeringApp/app/mailers/application_mailer.rb": [
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/uipages_controller.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/jobs/application_job.rb": [
+        0,
+        0
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/speciality.rb": [
+        0,
+        0,
+        0
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/contact.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/admin.rb": [
+        0,
+        0,
+        0
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/user_restriction.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/user_disease.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/disease.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/application_record.rb": [
+        0,
+        0,
+        0
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/coach.rb": [
+        0,
+        0,
+        0
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/restriction.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/exercise.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/workout.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/user_do_workout.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/person.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/workout_compose.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/user.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/uipages_helper.rb": [
+        0,
+        0
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/sessions_helper.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/people_helper.rb": [
+        0,
+        0
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/application_helper.rb": [
+        0,
+        0
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/contacts_helper.rb": [
+        0,
+        0
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/users_helper.rb": [
+        0,
+        0
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/pages_helper.rb": [
+        0,
+        0
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/mailers/application_mailer.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/channels/application_cable/connection.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/channels/application_cable/channel.rb": [
         0,
         0,
         0,
         0
       ]
     },
-    "timestamp": 1503264592
+    "timestamp": 1507207177
   }
 }

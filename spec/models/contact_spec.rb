@@ -28,4 +28,13 @@ RSpec.describe Contact, type: :model do
       expect(subject).to_not be_valid, "#{invalid_address} should not be accept"
     end
   end
+
+  it "test id nil" do
+    expect(Contact.new.id).to be_nil
+  end
+
+  it "test new record" do
+    expect(Contact.new.new_record?).equal? true
+  end
+
 end
