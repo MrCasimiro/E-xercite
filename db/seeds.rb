@@ -38,4 +38,3 @@ WorkoutCompose.create(set: 3, repetition: 15, technique: "Some technique",
 	exercise_id: exercise.id, workout_id: workout.id)
 
 UserDoWorkout.create(user_id: user.id, workout_id: workout.id)
-
