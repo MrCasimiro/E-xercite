@@ -23,13 +23,10 @@ body, h1, h2, h3, h4, h5, h6 {
   background-size: cover;
 }
 
-.intro-message {
+.intro-message{
   position: relative;
   padding-top: 20%;
   padding-bottom: 20%;
-}
-
-.intro-message>h1 {
   margin: 0;
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
   font-size: 5em;
@@ -39,10 +36,6 @@ body, h1, h2, h3, h4, h5, h6 {
   width: 400px;
   border-top: 1px solid #f8f8f8;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-}
-
-.intro-message>h3 {
-  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
 }
 
 .intro-social-buttons i {
@@ -147,6 +140,6 @@ footer {
   background-color: #f8f8f8;
 }
 
-p.copyright {
+copyright {
   margin: 15px 0 0;
 }
