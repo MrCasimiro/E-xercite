@@ -98,3 +98,6 @@ group :test, :development do
   # database_cleaner is not required, but highly recommended
   gem 'database_cleaner'
 end
+
+# gem to upload profile photos
+gem 'carrierwave', '~> 1.0'

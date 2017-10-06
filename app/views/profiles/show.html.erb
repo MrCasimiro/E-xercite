@@ -1,0 +1,35 @@
+<link href="public/css/profile.css", rel="stylesheet">
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
+    	 <div class="well profile">
+            
+                
+                	<div class="profile-header-container">
+	                	<div class="profile-header-img">
+	                		<%= image_tag(@user.avatar_url, class: "img-circle") %> 
+	                	</div>
+	                </div>
+                    <h2><%= Person.find(@user.person_id).name %></h2>
+                    <p><strong>Doenças </strong> <%= find_diseases(@user) %> </p>
+                    <p><strong>Restrições </strong> <%= find_restrictions(@user) %> </p>
+                </div>             
+                
+                    
+            <div class="col-xs-12 divider text-center">
+                <div class="col-xs-12 col-sm-6 emphasis">
+                    <h2><strong> <%= @user.level %> </strong></h2>                    
+                    <p><small>Level</small></p>
+                    
+                </div>
+                <div class="col-xs-12 col-sm-6 emphasis">
+                    <h2><strong><%= @user.points %></strong></h2>                    
+                    <p><small>Points</small></p>
+                 
+                </div>
+            </div>
+    	 </div>                 
+		</div>
+	</div>
+</div>

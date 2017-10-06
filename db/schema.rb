@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170922031351) do
+ActiveRecord::Schema.define(version: 20171006121956) do
 
   create_table "admins", force: :cascade do |t|
     t.string "adm_password"
@@ -101,6 +101,7 @@ ActiveRecord::Schema.define(version: 20170922031351) do
     t.integer "points"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "avatar"
     t.index ["person_id"], name: "index_users_on_person_id", unique: true
   end
 
