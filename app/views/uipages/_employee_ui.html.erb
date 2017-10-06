@@ -3,7 +3,7 @@
 
 <head>
 
-    <%= render 'layouts/ui_sidebar' %>
+    <%= render 'layouts/ui_sidebar_coach' %>
     <%= render 'layouts/ui_header' %>
 
     <link href="/css/morris.css" rel="stylesheet">
@@ -46,9 +46,8 @@
                           <thead>
                             <tr>
                               <th>#</th>
-                              <th>Nome</th>
-                              <th>Idade</th>
-                              <th> </th>
+                              <th class='text-center'>Nome</th>
+                              <th class='text-center'>Idade</th>
                             </tr>
                           </thead>
                           <tbody>
@@ -56,10 +55,11 @@
                              @users.each do |user|
                              i = i + 1 %>
                               <tr>
-                                <th scope="row"><%= i %></th>
-                                <td><%= user.person.name %></td>
-                                <td><%= user.person.age %></td>
-                                <td align='center'><a href="/exercises"><button class="button">Montar treino!</button></a></td>
+                                <th scope="row" style="vertical-align:middle"><%= i %></th>
+                                <td align='center' style="vertical-align:middle"><%= user.person.name %></td>
+                                <td align='center' style="vertical-align:middle"><%= user.person.age %></td>
+                                <td align='right'><a href="/exercises"><button class="button">Montar treino!</button></a></td>
+                                <td align='left'><a href=""><button class="button">Ver dados do usuário</button></a></td>
                               </tr>
                             <% end %>
                           </tbody>

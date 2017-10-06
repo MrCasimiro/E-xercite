@@ -10,7 +10,4 @@ class UsersController < ApplicationController
 		redirect_to @user
 	end
 
-	def list_trainings
-
-	end
 end
