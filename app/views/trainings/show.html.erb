@@ -54,12 +54,38 @@
 
                             </div>
                             <div class="panel-body">
-                                <% coach = Coach.find(Workout.find(UserDoWorkout.find(@user.id).workout_id).coach_id)%>
-                                <h4>Treinador: <%=  Person.find(coach.person_id).name%></h4>
+                                <% 
+                                    workout = UserDoWorkout.find(@user.id)
+                                    coach = Coach.find(Workout.find(workout.workout_id).coach_id)
+                                %>
+                                <h4>Treinador: <%= Person.find(coach.person_id).name%></h4>
                                 <div class="list-group">
-                                    <a href="#" class="list-group-item">
-                                        Calendar updated
-                                    </a>
+                                    <table class="table table-striped">
+                                      <thead>
+                                        <tr>
+                                          <th class='text-center'>Exercício</th>
+                                          <th class='text-center'>Sequências</th>
+                                          <th class='text-center'>Repetições</th>
+                                          <th class='text-center'>Técnica</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        <% 
+                                         @composition = WorkoutCompose.all
+                                         @composition.each do |wo|
+                                            if wo.workout_id != workout.workout_id
+                                                next
+                                            end 
+                                        %>
+                                         <tr>
+                                            <td align='center' style="vertical-align:middle"><%= Exercise.find(wo.exercise_id).name_exercise %></td>
+                                            <td align='center' style="vertical-align:middle"><%= wo.set%></td>
+                                            <td align='center' style="vertical-align:middle"><%= wo.repetition %></td>
+                                            <td align='center' style="vertical-align:middle"><%= wo.technique %></td>
+                                         </tr>
+                                        <% end %>
+                                      </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
