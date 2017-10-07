@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get '/about', to: 'pages#sobre', as: 'about'
   get '/exercises', to: 'pages#exercicios', as: 'exercises' 
   get '/flexao', to: 'pages#flexao', as: 'flexao' 
+   get '/squat', to: 'pages#squat', as: 'squat' 
   
   get '/treino', to: 'pages#ftreino', as: 'treino'
   
