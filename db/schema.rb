@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170922031351) do
+ActiveRecord::Schema.define(version: 20171007194218) do
 
   create_table "admins", force: :cascade do |t|
     t.string "adm_password"
@@ -27,6 +27,27 @@ ActiveRecord::Schema.define(version: 20170922031351) do
     t.index ["person_id"], name: "index_coaches_on_person_id", unique: true
   end
 
+  create_table "diet_composes", force: :cascade do |t|
+    t.integer "quantity"
+    t.time "hour"
+    t.date "day"
+    t.integer "food_id"
+    t.integer "diet_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["diet_id", "food_id"], name: "index_diet_composes_on_diet_id_and_food_id", unique: true
+    t.index ["diet_id"], name: "index_diet_composes_on_diet_id"
+    t.index ["food_id"], name: "index_diet_composes_on_food_id"
+  end
+
+  create_table "diets", force: :cascade do |t|
+    t.text "name"
+    t.integer "coach_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["coach_id"], name: "index_diets_on_coach_id"
+  end
+
   create_table "diseases", force: :cascade do |t|
     t.string "name_disease"
     t.datetime "created_at", null: false
@@ -35,6 +56,12 @@ ActiveRecord::Schema.define(version: 20170922031351) do
 
   create_table "exercises", force: :cascade do |t|
     t.string "name_exercise"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "foods", force: :cascade do |t|
+    t.string "name_food"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -83,6 +110,16 @@ ActiveRecord::Schema.define(version: 20170922031351) do
     t.index ["user_id", "workout_id"], name: "index_user_do_workouts_on_user_id_and_workout_id", unique: true
     t.index ["user_id"], name: "index_user_do_workouts_on_user_id"
     t.index ["workout_id"], name: "index_user_do_workouts_on_workout_id"
+  end
+
+  create_table "user_eat_diets", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "diet_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["diet_id"], name: "index_user_eat_diets_on_diet_id"
+    t.index ["user_id", "diet_id"], name: "index_user_eat_diets_on_user_id_and_diet_id", unique: true
+    t.index ["user_id"], name: "index_user_eat_diets_on_user_id"
   end
 
   create_table "user_restrictions", force: :cascade do |t|
