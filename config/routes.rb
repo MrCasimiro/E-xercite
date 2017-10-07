@@ -17,6 +17,10 @@ Rails.application.routes.draw do
   get '/flexao', to: 'pages#flexao', as: 'flexao' 
   
   get '/treino', to: 'pages#ftreino', as: 'treino'
+  
+  get   '/fexercise', to: 'exercises#new', as: 'fexercise'
+  post  '/fexercise', to: 'exercises#create'
+  resources :exercises
 
   get '/user_ui', to: 'uipages#user_ui', as: 'user_ui'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
