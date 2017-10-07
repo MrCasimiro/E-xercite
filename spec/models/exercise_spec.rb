@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Exercise, type: :model do
   
   before :each do
-		@exercise = Exercise.new(name_exercise: Burpee)
+		@exercise = Exercise.new(name_exercise: "Burpee")
   end
   
   it "should be valid" do
