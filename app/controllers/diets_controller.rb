@@ -9,12 +9,12 @@ class DietsController < ApplicationController
 		if @diet.save
 			flash[:success] = "success"
 		end
-  	end
+	end
 
 
-  	def diet_params
-  		# add attributes of nested association to whitelist
-  		params.require(:diet).permit(:name, :coach_id, :diet_composes_attributes => [:quantity, :hour, :day, :food_id, :diet_id])    
-  	end
+	def diet_params
+		# add attributes of nested association to whitelist
+		params.require(:diet).permit(:name, :coach_id, :diet_composes_attributes => [:quantity, :hour, :day, :food_id, :diet_id])    
+	end
 
 end

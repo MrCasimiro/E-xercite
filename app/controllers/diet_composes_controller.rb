@@ -8,9 +8,9 @@ class DietComposesController < ApplicationController
 		if @diet_compose.save
 			flash[:success] = "Comida adiconada com sucesso"
 		end
-  	end
+	end
 
-  	def diet_compose_params
-  		params.require(:diet_compose).permit(:quantity, :hour, :day, :food_id, :diet_id)
-    end
+	def diet_compose_params
+		params.require(:diet_compose).permit(:quantity, :hour, :day, :food_id, :diet_id)
+	end
 end

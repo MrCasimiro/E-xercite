@@ -9,10 +9,10 @@ class FoodsController < ApplicationController
 		if @food.save
 			flash[:success] = "Comida adiconada com sucesso"
 		end
-  	end
+		end
 
 
 	def food_params
-    	params.require(:food).permit(:name_food)
-    end
+		params.require(:food).permit(:name_food)
+	end
 end
