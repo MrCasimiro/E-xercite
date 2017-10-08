@@ -9,7 +9,7 @@ class FoodsController < ApplicationController
 		if @food.save
 			flash[:success] = "Comida adiconada com sucesso"
 		end
-		end
+	end
 
 
 	def food_params
