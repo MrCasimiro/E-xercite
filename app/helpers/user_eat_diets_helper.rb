@@ -1,0 +1,2 @@
+module UserEatDietsHelper
+end

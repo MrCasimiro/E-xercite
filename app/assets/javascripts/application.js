@@ -17,3 +17,4 @@
 //= require popper
 //= require raphael
 //= require morris
+//= require nested_form_fields
