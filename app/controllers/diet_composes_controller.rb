@@ -1,10 +1,10 @@
 class DietComposesController < ApplicationController
 	def new
-		@diet_compose = Diet_compose.new
+		@diet_compose = DietCompose.new
 	end
 
 	def create
-		@diet_compose = Diet_compose.new(diet_compose_params)
+		@diet_compose = DietCompose.new(diet_compose_params)
 		if @diet_compose.save
 			flash[:success] = "Comida adiconada com sucesso"
 		end

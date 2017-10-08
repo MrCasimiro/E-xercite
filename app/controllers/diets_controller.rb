@@ -7,13 +7,13 @@ class DietsController < ApplicationController
 	def create
 		@diet = Diet.new(diet_params)
 		if @diet.save
-			flash[:success] = "Comida adiconada com sucesso"
+			flash[:success] = "success"
 		end
   	end
 
 
   	def diet_params
-      params.require(:diet).permit(:name, :coach_id)
-    end
+		# add attributes of nested association to whitelist
+      	params.require(:diet).permit(:name, :coach_id, :diet_composes_attributes => [:hour, :day, :food_id, :diet_id])    end
 
 end
