@@ -12,7 +12,7 @@ class FoodsController < ApplicationController
   	end
 
 
-  	def food_params
-      params.require(:food).permit(:name_food)
+	def food_params
+    	params.require(:food).permit(:name_food)
     end
 end

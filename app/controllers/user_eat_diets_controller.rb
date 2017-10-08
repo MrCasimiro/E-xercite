@@ -11,7 +11,7 @@ class UserEatDietsController < ApplicationController
   	end
 
   	def user_eat_diet_params
-      params.require(:diet_compose).permit(:quantity, :hour, :day, :food_id, :diet_id)
+    	params.require(:diet_compose).permit(:quantity, :hour, :day, :food_id, :diet_id)
     end
 end
 
