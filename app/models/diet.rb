@@ -7,4 +7,7 @@ class Diet < ApplicationRecord
 	has_many :diet_composes
 	has_many :foods, through: :diet_composes
 	accepts_nested_attributes_for :diet_composes
+
+	validates :coach_id, presence: true
+	validates :name, presence: true, length: {maximum: 50}
 end

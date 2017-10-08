@@ -2,13 +2,6 @@
     <link href="/css/training.css" rel="stylesheet">
     <%= render 'layouts/header' %>
 </head>
-t.integer "quantity"
-    t.time "hour"
-    t.date "day"
-    t.integer "food_id"
-    t.integer "diet_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
 <body>
 	<br><br><br>
 	<div class="row">
@@ -20,17 +13,22 @@ t.integer "quantity"
 	        <%= f.input :coach_id %>
 	        <%= f.nested_fields_for :diet_composes do |ff| %>
 	        		<%= ff.remove_nested_fields_link %>
+	        		<br>
 	        		<%= ff.input :hour %>
 	        		<%= ff.input :day %>
 	        		<%= ff.input :food_id %>
+	        		<%= ff.input :quantity, label: 'Quantity in g/ml' %>
 	        		<%= ff.input :diet_id %>
 	     	    <% end %>
 	     	<%= f.add_nested_fields_link :diet_composes %>
+	     	<br><br>
 	     	<%= f.button :submit %>
 	    <% end %>
 	    <br><br>
 	    </div>
     </div>
+    
+<%= render 'layouts/footer' %>
 
 
 </body>
