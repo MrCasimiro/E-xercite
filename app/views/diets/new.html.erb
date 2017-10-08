@@ -1,0 +1,37 @@
+<head>
+    <link href="/css/training.css" rel="stylesheet">
+    <%= render 'layouts/header' %>
+</head>
+t.integer "quantity"
+    t.time "hour"
+    t.date "day"
+    t.integer "food_id"
+    t.integer "diet_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+<body>
+	<br><br><br>
+	<div class="row">
+		<div class="col-sm-2"></div>
+		<div class="col-lg-8">
+		<h3>Insira os dados da dieta</h3>
+	    <%= simple_form_for @diet, :html => {:class => 'form-basic' }  do |f| %>
+	        <%= f.input :name %>
+	        <%= f.input :coach_id %>
+	        <%= f.nested_fields_for :diet_composes do |ff| %>
+	        		<%= ff.remove_nested_fields_link %>
+	        		<%= ff.input :hour %>
+	        		<%= ff.input :day %>
+	        		<%= ff.input :food_id %>
+	        		<%= ff.input :diet_id %>
+	     	    <% end %>
+	     	<%= f.add_nested_fields_link :diet_composes %>
+	     	<%= f.button :submit %>
+	    <% end %>
+	    <br><br>
+	    </div>
+    </div>
+
+
+</body>
+
