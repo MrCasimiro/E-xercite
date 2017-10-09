@@ -49,3 +49,4 @@ diet3 = Diet.create(name: "Selíaca 1", coach_id: coach.id)
 
 DietCompose.create(quantity:'100' , hour:'10:00' , day: '20171019' ,food_id: food1.id, diet_id: diet1.id)
 DietCompose.create(quantity:'150' , hour:'15:00' , day: '20171029' ,food_id: food2.id, diet_id: diet2.id)
+

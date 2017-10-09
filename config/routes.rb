@@ -31,7 +31,7 @@ Rails.application.routes.draw do
   post  '/fexercise', to: 'exercises#create'
   resources :exercises
 
-  get '/user_ui', to: 'uipages#user_ui', as: 'user_ui'
+  #get '/user_ui', to: 'uipages#user_ui', as: 'user_ui'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'pages#home'
 
@@ -39,9 +39,15 @@ Rails.application.routes.draw do
   post  '/signup', to: 'people#create'
   resources :people
   resources :users
+  resources :coaches
 
   get    '/login',   to: 'sessions#new', as: 'login'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
+
+  resources :trainings, only: [:show]
+
+  get 'coaches/show'
+  get 'trainings/show'
 
 end
