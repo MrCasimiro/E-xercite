@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'profiles/show'
+
+  get 'profile/show'
+
   get 'uipages/user_ui'
   get 'uipages/employee_ui'
   get 'uipages/admin_ui'
@@ -37,6 +41,7 @@ Rails.application.routes.draw do
 
   get   '/signup', to: 'people#new', as: 'signup'
   post  '/signup', to: 'people#create'
+
   resources :people
   resources :users
   resources :coaches
@@ -45,6 +50,7 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
 
+  resources :profiles
   resources :trainings, only: [:show]
 
   get 'coaches/show'

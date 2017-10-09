@@ -1,9 +1,9 @@
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="author" content="">
-
+<header>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
@@ -37,27 +37,27 @@
                     <a <%= link_to "Contato", contact_path %></a>
                 </li>
 
-                <% if logged_in? %>
+                    <% if logged_in? %>
                     <li>
                         <a <%= link_to "Usuário", current_user %></a>
                     </li>
                     <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                      Conta <b class="caret"></b>
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><%= link_to "Perfil", current_user %></li>
-                      <li><%= link_to "Configurações", '#' %></li>
-                      <li class="divider"></li>
-                      <li>
-                        <%= link_to "Sair", logout_path, method: :delete %>
-                      </li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                          Conta <b class="caret"></b>
+                      </a>
+                      <ul class="dropdown-menu">
+                          <li><%= link_to "Perfil", current_user %></li>
+                          <li><%= link_to "Configurações", '#' %></li>
+                          <li class="divider"></li>
+                          <li>
+                            <%= link_to "Sair", logout_path, method: :delete %>
+                        </li>
                     </ul>
-                  </li>
+                </li>
                 <% else %>
-                    <li>
-                        <a <%= link_to "Entrar", login_path %></a>
-                    </li>
+                <li>
+                    <a <%= link_to "Entrar", login_path %></a>
+                </li>
                 <% end %>
 
             </ul>
@@ -69,3 +69,4 @@
 
 
 
+</header>
