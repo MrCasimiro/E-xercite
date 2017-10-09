@@ -34,5 +34,7 @@ Rails.application.routes.draw do
 
   resources :trainings, only: [:show]
 
+  get 'coaches/show'
+  get 'trainings/show'
 
 end
