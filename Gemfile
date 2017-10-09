@@ -101,3 +101,8 @@ end
 
 # gem to upload profile photos
 gem 'carrierwave', '~> 1.0'
+
+#factory of tests
+group :development, :test do
+  gem 'factory_girl_rails'
+end
