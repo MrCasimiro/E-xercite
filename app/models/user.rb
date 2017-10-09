@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+	VALID_AVATAR_REGEX = /\.(png|jpg|gif)\z/i
 	belongs_to :person
 
 	has_many :user_restrictions
@@ -11,4 +12,5 @@ class User < ApplicationRecord
 	has_many :diseases, through: :user_diseases
 
 	mount_uploader :avatar, AvatarUploader
+	validates :avatar, format: {with: VALID_AVATAR_REGEX}
 end

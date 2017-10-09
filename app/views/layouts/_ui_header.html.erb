@@ -1,4 +1,5 @@
 <header>
+    <link href="/css/sb-admin.css" rel="stylesheet">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -111,7 +112,7 @@
                         <a link_to "", '#'><i class="fa fa-fw fa-envelope"></i> Inbox</a>
                     </li>
                     <li>
-                        <a link_to "", '#''><i class="fa fa-fw fa-gear"></i> Settings</a>
+                        <a <%=link_to "Configurações", edit_user_path(current_user), :class => "fa fa-fw fa-gear"%></a>
                     </li>
                     <li class="divider"></li>
                     <li>
