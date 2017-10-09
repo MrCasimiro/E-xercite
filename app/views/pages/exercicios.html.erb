@@ -13,6 +13,9 @@
 
         <!--COMECO DA CRIACAO DA TABELA-->
         
+        <!-- <% exercices = Exercise.first(3) %> -->
+        <!-- <%= exercices[0] %> -->
+        
         <table id="listaExercicios">
               <caption>LISTA DE EXERCICIOS</caption>
               <tr>
@@ -20,9 +23,9 @@
                     <h2>DIA 1 :</h2>
                 </td>
                 <td>
-                    <a href="flexao">FLEXÃO</a></br>
-                    <a href="squat">SQUAT</a></br>
-                    <a href="burpee">BURPEE</a></br>
+                    <a href="flexao"><%= Exercise.find_by name_exercise: 'flexao' %></a></br>
+                    <a href="squat"><%= Exercise.find_by name_exercise: 'squat' %></a></br>
+                    <a href="burpee"><%= Exercise.find_by name_exercise: 'burpee' %></a></br>
                 </td>
             </tr>   
             <tr>
