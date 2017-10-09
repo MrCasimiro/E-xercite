@@ -400,7 +400,7 @@
         0
       ]
     },
-    "timestamp": 1507522838
+    "timestamp": 1507523795
   },
   "Cucumber Features": {
     "coverage": {
@@ -521,6 +521,13 @@
         0,
         0,
         0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/profiles_controller.rb": [
         0,
         0,
         0,
@@ -661,6 +668,8 @@
         0,
         0,
         0,
+        0,
+        0,
         0
       ],
       "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/uipages_helper.rb": [
@@ -709,6 +718,17 @@
         0,
         0
       ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/profiles_helper.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
       "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/pages_helper.rb": [
         0,
         0
@@ -730,8 +750,59 @@
         0,
         0,
         0
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/uploaders/avatar_uploader.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
       ]
     },
-    "timestamp": 1507207177
+    "timestamp": 1507523797
   }
 }
