@@ -38,3 +38,15 @@ WorkoutCompose.create(set: 3, repetition: 15, technique: "Some technique",
 	exercise_id: exercise.id, workout_id: workout.id)
 
 UserDoWorkout.create(user_id: user.id, workout_id: workout.id)
+
+food1 = Food.create(name_food: "Carne")
+food2 = Food.create(name_food: "Frango")
+food3 = Food.create(name_food: "Batata Doce")
+
+diet1 = Diet.create(name: "Perda de peso 1", coach_id: coach.id)
+diet2 = Diet.create(name: "Ganho de massa 1", coach_id: coach.id)
+diet3 = Diet.create(name: "Selíaca 1", coach_id: coach.id)
+
+DietCompose.create(quantity:'100' , hour:'10:00' , day: '20171019' ,food_id: food1.id, diet_id: diet1.id)
+DietCompose.create(quantity:'150' , hour:'15:00' , day: '20171029' ,food_id: food2.id, diet_id: diet2.id)
+
