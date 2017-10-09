@@ -19,6 +19,7 @@ footer {
 /* COMECO DA PARTE PERSONALIZADA DA PAGINA*/
 >>>>>>> code_climate
 
+<<<<<<< HEAD
 .listaExercicios a{
 =======
 /* -------------------------------------- */
@@ -26,6 +27,9 @@ footer {
 
 #listaExercicios a{
 >>>>>>> c08adcde8a75b446a18a656067e190f7bfa1cf8e
+=======
+#listaExercicios a{
+>>>>>>> 444f310473a8e7fbe9b350ae10149d4bd344a2ed
   color: #000;
 }
 
