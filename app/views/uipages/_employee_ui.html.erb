@@ -1,5 +1,4 @@
 
-
 <link href="/css/morris.css" rel="stylesheet">
 <link href="/css/sb-admin.css" rel="stylesheet">
 
@@ -25,52 +24,38 @@
     <div id="page-wrapper">
 
         <div class="container-fluid">
-
-            <!-- Page Heading -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">
-                        Treinador <small>E-xercite</small>
-                    </h1>                           
-                    <h4>Usuários Disponíveis</h4>
-                    <table class="table table-striped">
-                      <thead>
-                        <tr>
-                          <th>#</th>
-                          <th>Nome</th>
-                          <th>Idade</th>
-                          <th> </th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                    <% i = 0
-                    @users.each do |user|
-                       if user.coach == true
-                        next
-                    end
-                    i = i + 1 %>
-                    <tr>
-                        <th scope="row"><%= i %></th>
-                        <td><%= user.name %></td>
-                        <td><%= user.age %></td>
-                        <td align='center'><a href="/exercises"><button class="button">Montar treino!</button></a></td>
-                    </tr>
-                    <% end %>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <!-- /.row -->
-
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="alert alert-info alert-dismissable">
-                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                <i class="fa fa-info-circle"></i>  <strong>Like SB Admin?</strong> Try out <a href="http://startbootstrap.com/template-overviews/sb-admin-2" class="alert-link">SB Admin 2</a> for additional features!
-            </div>
-        </div>
-    </div>
-    <!-- /.row -->
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            Treinador <small>E-xercite</small>
+                        </h1>                           
+                        <h4>Usuários Disponíveis</h4>
+                        <table class="table table-striped">
+                          <thead>
+                            <tr>
+                              <th>#</th>
+                              <th class='text-center'>Nome</th>
+                              <th class='text-center'>Idade</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <% i = 0
+                             @users.each do |user|
+                             i = i + 1 %>
+                              <tr>
+                                <th scope="row" style="vertical-align:middle"><%= i %></th>
+                                <td align='center' style="vertical-align:middle"><%= user.person.name %></td>
+                                <td align='center' style="vertical-align:middle"><%= user.person.age %></td>
+                                <td align='right'><a href="/exercises"><button class="button">Montar treino!</button></a></td>
+                                <td align='left'><a href=""><button class="button">Ver dados do usuário</button></a></td>
+                              </tr>
+                            <% end %>
+                          </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- /.row -->
 
     <div class="row">
         <div class="col-lg-3 col-md-6">

@@ -19,10 +19,23 @@ Rails.application.routes.draw do
   get '/about', to: 'pages#sobre', as: 'about'
   get '/exercises', to: 'pages#exercicios', as: 'exercises' 
   get '/flexao', to: 'pages#flexao', as: 'flexao' 
-  
-  get '/treino', to: 'pages#ftreino', as: 'treino'
 
-  get '/user_ui', to: 'uipages#user_ui', as: 'user_ui'
+  get '/squat', to: 'pages#squat', as: 'squat' 
+  get '/burpee', to: 'pages#burpee', as: 'burpee' 
+
+  get '/treino', to: 'pages#ftreino', as: 'treino'
+  get '/fdiet', to: 'foods#new', as: 'diet'
+  resources :foods
+  get '/fdiets', to: 'diets#new', as: 'diets'
+  post '/fdiets', to: 'diets#create'
+  resources :diets
+
+
+  get   '/fexercise', to: 'exercises#new', as: 'fexercise'
+  post  '/fexercise', to: 'exercises#create'
+  resources :exercises
+
+  #get '/user_ui', to: 'uipages#user_ui', as: 'user_ui'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'pages#home'
 
@@ -31,11 +44,16 @@ Rails.application.routes.draw do
 
   resources :people
   resources :users
+  resources :coaches
 
   get    '/login',   to: 'sessions#new', as: 'login'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
 
   resources :profiles
+  resources :trainings, only: [:show]
+
+  get 'coaches/show'
+  get 'trainings/show'
 
 end

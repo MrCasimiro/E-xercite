@@ -1,51 +1,53 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/application_helper.rb": [
+      "/home/tanaka/Desktop/E-xercite/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/contacts_helper.rb": [
+      "/home/tanaka/Desktop/E-xercite/app/helpers/contacts_helper.rb": [
         1,
         null
       ],
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/pages_helper.rb": [
+      "/home/tanaka/Desktop/E-xercite/app/helpers/diet_composes_helper.rb": [
         1,
         null
       ],
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/people_helper.rb": [
+      "/home/tanaka/Desktop/E-xercite/app/helpers/diets_helper.rb": [
         1,
         null
       ],
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/profiles_helper.rb": [
+
+      "/home/tanaka/Desktop/E-xercite/app/helpers/foods_helper.rb": [
         1,
+        null
+      ],
+      "/home/tanaka/Desktop/E-xercite/app/helpers/pages_helper.rb": [
+        1,
+        null
+      ],
+      "/home/tanaka/Desktop/E-xercite/app/helpers/people_helper.rb": [
+        1,
+        null
+      ],
+      "/home/tanaka/Desktop/E-xercite/app/helpers/sessions_helper.rb": [
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        10,
+        null,
+        null,
         1,
         0,
         null,
         null,
         1,
-        0,
-        null,
-        null
-      ],
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/sessions_helper.rb": [
-        1,
-        null,
-        1,
-        1,
-        null,
-        null,
-        1,
-        null,
-        18,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null,
-        1,
-        18,
+        10,
         null,
         null,
         1,
@@ -54,15 +56,19 @@
         null,
         null
       ],
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/uipages_helper.rb": [
+      "/home/tanaka/Desktop/E-xercite/app/helpers/uipages_helper.rb": [
         1,
         null
       ],
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/users_helper.rb": [
+      "/home/tanaka/Desktop/E-xercite/app/helpers/user_eat_diets_helper.rb": [
         1,
         null
       ],
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/contacts_controller.rb": [
+      "/home/tanaka/Desktop/E-xercite/app/helpers/users_helper.rb": [
+        1,
+        null
+      ],
+      "/home/tanaka/Desktop/E-xercite/app/controllers/contacts_controller.rb": [
         1,
         1,
         2,
@@ -80,13 +86,89 @@
         null,
         null
       ],
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/application_controller.rb": [
+      "/home/tanaka/Desktop/E-xercite/app/controllers/application_controller.rb": [
         1,
         1,
         1,
         null
       ],
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/pages_controller.rb": [
+      "/home/tanaka/Desktop/E-xercite/app/controllers/diet_composes_controller.rb": [
+        1,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/home/tanaka/Desktop/E-xercite/app/controllers/diets_controller.rb": [
+        1,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        0,
+        null,
+        null
+      ],
+      "/home/tanaka/Desktop/E-xercite/app/controllers/exercises_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null,
+        1,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/home/tanaka/Desktop/E-xercite/app/controllers/foods_controller.rb": [
+        1,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/home/tanaka/Desktop/E-xercite/app/controllers/pages_controller.rb": [
         1,
         1,
         null,
@@ -96,7 +178,7 @@
         null,
         null
       ],
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/people_controller.rb": [
+      "/home/tanaka/Desktop/E-xercite/app/controllers/people_controller.rb": [
         1,
         1,
         0,
@@ -135,14 +217,7 @@
         null,
         null
       ],
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/profiles_controller.rb": [
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/sessions_controller.rb": [
+      "/home/tanaka/Desktop/E-xercite/app/controllers/sessions_controller.rb": [
         1,
         1,
         null,
@@ -165,7 +240,7 @@
         null,
         null
       ],
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/uipages_controller.rb": [
+      "/home/tanaka/Desktop/E-xercite/app/controllers/uipages_controller.rb": [
         1,
         1,
         null,
@@ -177,7 +252,26 @@
         null,
         null
       ],
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/users_controller.rb": [
+      "/home/tanaka/Desktop/E-xercite/app/controllers/user_eat_diets_controller.rb": [
+        1,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/home/tanaka/Desktop/E-xercite/app/controllers/users_controller.rb": [
         1,
         null,
         1,
@@ -192,22 +286,22 @@
         null,
         null
       ],
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/admin.rb": [
+      "/home/tanaka/Desktop/E-xercite/app/models/admin.rb": [
         1,
         1,
         null
       ],
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/application_record.rb": [
+      "/home/tanaka/Desktop/E-xercite/app/models/application_record.rb": [
         1,
         1,
         null
       ],
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/coach.rb": [
+      "/home/tanaka/Desktop/E-xercite/app/models/coach.rb": [
         1,
         1,
         null
       ],
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/contact.rb": [
+      "/home/tanaka/Desktop/E-xercite/app/models/contact.rb": [
         1,
         1,
         1,
@@ -225,75 +319,115 @@
         null,
         null
       ],
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/disease.rb": [
+      "/home/tanaka/Desktop/E-xercite/app/models/diet_compose.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/home/tanaka/Desktop/E-xercite/app/models/diet.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/home/tanaka/Desktop/E-xercite/app/models/disease.rb": [
         1,
         1,
         1,
         null
       ],
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/exercise.rb": [
+      "/home/tanaka/Desktop/E-xercite/app/models/exercise.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        null
+      ],
+      "/home/tanaka/Desktop/E-xercite/app/models/food.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        null
+      ],
+      "/home/tanaka/Desktop/E-xercite/app/models/person.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        13,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/home/tanaka/Desktop/E-xercite/app/models/restriction.rb": [
         1,
         1,
         1,
         null
       ],
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/person.rb": [
-        1,
-        null,
+      "/home/tanaka/Desktop/E-xercite/app/models/speciality.rb": [
         1,
         1,
-        1,
-        null,
-        5,
-        1,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        null,
-        1,
-        null,
-        null,
         null
       ],
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/restriction.rb": [
+      "/home/tanaka/Desktop/E-xercite/app/models/user_disease.rb": [
         1,
         1,
         1,
         null
       ],
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/speciality.rb": [
-        1,
-        1,
-        null
-      ],
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/user_disease.rb": [
+      "/home/tanaka/Desktop/E-xercite/app/models/user_do_workout.rb": [
         1,
         1,
         1,
         null
       ],
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/user_do_workout.rb": [
+      "/home/tanaka/Desktop/E-xercite/app/models/user_eat_diet.rb": [
         1,
         1,
         1,
         null
       ],
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/user_restriction.rb": [
+      "/home/tanaka/Desktop/E-xercite/app/models/user_restriction.rb": [
         1,
         1,
         1,
         null
       ],
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/user.rb": [
+      "/home/tanaka/Desktop/E-xercite/app/models/user.rb": [
         1,
         1,
         null,
@@ -360,13 +494,13 @@
         null,
         null
       ],
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/workout_compose.rb": [
+      "/home/tanaka/Desktop/E-xercite/app/models/workout_compose.rb": [
         1,
         1,
         1,
         null
       ],
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/workout.rb": [
+      "/home/tanaka/Desktop/E-xercite/app/models/workout.rb": [
         1,
         1,
         null,
@@ -377,30 +511,38 @@
         1,
         null
       ],
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/jobs/application_job.rb": [
+      "/home/tanaka/Desktop/E-xercite/app/jobs/application_job.rb": [
         0,
         0
       ],
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/mailers/application_mailer.rb": [
-        0,
-        0,
-        0,
-        0
-      ],
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/channels/application_cable/connection.rb": [
+      "/home/tanaka/Desktop/E-xercite/app/channels/application_cable/channel.rb": [
         0,
         0,
         0,
         0
       ],
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/channels/application_cable/channel.rb": [
+      "/home/tanaka/Desktop/E-xercite/app/channels/application_cable/connection.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/home/tanaka/Desktop/E-xercite/app/controllers/_ui_header_controller.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/home/tanaka/Desktop/E-xercite/app/mailers/application_mailer.rb": [
         0,
         0,
         0,
         0
       ]
     },
-    "timestamp": 1507523795
+    "timestamp": 1507499532
   },
   "Cucumber Features": {
     "coverage": {
