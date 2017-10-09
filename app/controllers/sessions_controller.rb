@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     	log_in person
       @user = User.find_by(person_id: person.id)
       @coach = Coach.find_by(person_id: person.id)
-    	unless @user.blank?
+      unless @user.blank?
         redirect_to @user
       else
         redirect_to @coach
