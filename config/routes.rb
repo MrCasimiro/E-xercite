@@ -24,6 +24,12 @@ Rails.application.routes.draw do
   get '/burpee', to: 'pages#burpee', as: 'burpee' 
 
   get '/treino', to: 'pages#ftreino', as: 'treino'
+  
+  #formulário de criação de treino
+  get '/fworkouts', to: 'workouts#new', as: 'workouts'
+  post '/fworkouts', to: 'workouts#create'
+  resources :workouts
+  
   get '/fdiet', to: 'foods#new', as: 'diet'
   resources :foods
   get '/fdiets', to: 'diets#new', as: 'diets'
