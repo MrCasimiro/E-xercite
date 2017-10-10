@@ -30,6 +30,8 @@ Rails.application.routes.draw do
   post '/fdiets', to: 'diets#create'
   resources :diets
 
+  get '/gami', to: 'pages#gamification', as: 'gami'
+
 
   get   '/fexercise', to: 'exercises#new', as: 'fexercise'
   post  '/fexercise', to: 'exercises#create'
