@@ -5,4 +5,7 @@ class PagesController < ApplicationController
 	end
 	def treino
 	end
+	def gami
+	end
 end
+
