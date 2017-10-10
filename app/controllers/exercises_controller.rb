@@ -5,6 +5,9 @@ class ExercisesController < ApplicationController
 
 	def create
 		@exercise = Exercise.new(exercise_params)
+		if @exercise.save
+			flash[:success] = "Exercício criado com sucesso"
+		end
 
 	end
 
