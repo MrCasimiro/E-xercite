@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe WorkoutCompose, type: :model do
   before :each do
-		food1 = Exercise.create(name_exercise: "Flexão")
+		exercise1 = Exercise.create(name_exercise: "Flexão")
 		person3 = Person.create!(name: "coach", email: "coach@coach.com",
  	phone: "1111111", age: 21, gender: "other", password: "123456", password_confirmation: "123456")
 
