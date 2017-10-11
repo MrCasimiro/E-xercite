@@ -16,7 +16,7 @@ RSpec.describe WorkoutCompose, type: :model do
   end
 
   it "set should be > 0" do
-  		@workout_compose.quantity = -1
+  		@workout_compose.set = -1
 		expect(@workout_compose).to_not be_valid
   end
   
@@ -26,7 +26,7 @@ RSpec.describe WorkoutCompose, type: :model do
   end
 
   it "technique should be present" do
-		@workout_compose.day= "     "
+		@workout_compose.technique= "     "
 		expect(@workout_compose).to_not be_valid
   end
 
