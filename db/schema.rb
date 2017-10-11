@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171009154759) do
+ActiveRecord::Schema.define(version: 20171011112437) do
 
   create_table "admins", force: :cascade do |t|
     t.string "adm_password"
@@ -159,6 +159,7 @@ ActiveRecord::Schema.define(version: 20171009154759) do
     t.integer "coach_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "name"
     t.index ["coach_id"], name: "index_workouts_on_coach_id"
   end
 
