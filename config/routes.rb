@@ -22,8 +22,6 @@ Rails.application.routes.draw do
 
   get '/squat', to: 'pages#squat', as: 'squat' 
   get '/burpee', to: 'pages#burpee', as: 'burpee' 
-
-  get '/treino', to: 'pages#ftreino', as: 'treino'
   
   #formulário de criação de treino
   get '/fworkouts', to: 'workouts#new', as: 'workouts'
