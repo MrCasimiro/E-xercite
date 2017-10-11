@@ -3,8 +3,9 @@ require 'rails_helper'
 RSpec.describe WorkoutCompose, type: :model do
   before :each do
 		exercise1 = Exercise.create(name_exercise: "Flexao")
-
-		coach = Coach.create!(person_id: person3.id)
+		personx = Person.create(name: "coach", email: "coach@coach.com",
+ 		phone: "1111111", age: 21, gender: "other", password: "123456", password_confirmation: "123456")
+		coach = Coach.create(person_id: personx.id)
 		workout1 = Workout.create(coach_id: coach.id)
 		@workout_compose = WorkoutCompose.new(set: 3, repetition: 10 , technique: "drop-set" ,exercise_id: exercise1.id, workout_id: workout1.id)
   
