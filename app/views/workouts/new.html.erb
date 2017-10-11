@@ -5,6 +5,7 @@
 		<div class="col-lg-8">
 		<h3>Insira os dados do treino</h3>
 	    <%= simple_form_for @workout, :html => {:class => 'form-basic' }  do |f| %>
+		<%= f.input :name %>
 	        <%= f.input :coach_id %>
 	        <%= f.nested_fields_for :workout_composes do |ff| %>
 	        		<%= ff.remove_nested_fields_link %>
