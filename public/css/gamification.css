@@ -1,0 +1,130 @@
+body, html {
+  width: 100%;
+  height: 100%;
+}
+
+footer {
+  padding: 50px 0;
+  background-color: #f8f8f8;
+}
+
+.copyright {
+  margin: 15px 0 0;
+}
+/* -------------------------------------- */
+/* COMECO DA PARTE PERSONALIZADA DA PAGINA*/
+
+#imagem{
+  display: block;
+  width: 300px;
+  float: left;
+  margin-left: 150px;
+  margin-top: 120px;
+}
+
+#sobre{
+  display: block;
+  width: 350px;
+  float: right;
+  margin-right: 400px;
+  margin-top: 50px;
+}
+
+#sobreAvatar{
+  margin-top: 50px;
+  border: 5px solid #ff8000;
+  box-shadow: 1px 1px 4px black;
+
+}
+
+.imagemAvatar{
+  border: 5px solid white;
+  box-shadow: 1px 1px 4px black;
+  border-radius: 500px;
+}
+
+.imagemAvatar img{
+  width: 100%;
+  height: 100%;
+  border-radius: 500px;
+}
+
+#disposicao{
+  display: block;
+  float: right;
+  margin: 25px 50px 0 0;
+  width: 100px;
+  height: 30px;
+  border: 1px solid black;
+}
+
+#disposicaoNome{
+  clear: both;
+  display: block;
+  float: left;
+}
+
+#disposicaoValor{
+  width: 73px;
+  height: 28px;
+  background-color: blue;
+}
+
+#cansaco{
+  display: block;
+  float: right;
+  margin: 25px 50px 0 0;
+  width: 100px;
+  height: 30px;
+  border: 1px solid black;
+}
+
+#cansacoNome{
+  clear: both;
+  display: block;
+  float: left;
+}
+
+#cansacoValor{
+  width: 50px;
+  height: 28px;
+  background-color: red;
+}
+
+#pontos{
+  display: block;
+  float: right;
+  margin: 10px 50px 0 0;
+}
+
+#pontosNome{
+  clear: both;
+  display: block;
+  float: left;
+}
+
+#outros{
+  clear: both;
+  text-align: center;
+}
+
+
+h1{
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 25pt;
+  color: #000;
+
+}
+
+h2{
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 20pt;
+  color: #808080;
+
+}
+
+#lista{
+  clear: both;
+  text-align: center;
+}
+

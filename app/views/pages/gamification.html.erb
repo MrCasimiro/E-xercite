@@ -1,0 +1,55 @@
+<head>
+    <link href="/css/gamification.css" rel="stylesheet">
+    <%= render 'layouts/header' %>
+</head>
+
+<body>
+
+    <section id="imagem">
+       <figure class="imagemAvatar">
+            <img src = "/images/avatar.jpg" >
+       </figure> 
+    </section>   
+
+    <aside id="sobre">
+       <div id="sobreAvatar">
+
+            <section id="disposicaoNome"> <h1>Disposição:</h1> </section>
+            <!-- barra de "vida" da diposicao -->
+            <section id="disposicao">
+            	<div id="disposicaoValor"></div>
+             </section>
+
+             <section id="cansacoNome"> <h1>Cansaço:</h1> </section>
+            <!-- barra de "vida" da cansaço -->
+            <section id="cansaco">
+              <div id="cansacoValor"></div>
+             </section>
+
+            <section id="pontosNome"> <h1>Pontos:</h1> </section>
+            <!-- barra de "vida" da cansaço -->
+            <section id="pontos">
+             <h2> 100 </h2>
+             </section>
+                
+            
+             <section id="outros">
+            </br><h1>Outros campos</h1>
+              </section>
+            
+
+       </div>
+    </aside>   
+      
+    <section id="lista">
+       <div id="listaExercicios">
+
+      <br><br><br> <h2>COLOCAR A LISTA DE EXERCICIOS FEITOS(OU NÃO) PELO USUARIO</h2>
+           
+       </div>
+    </section>
+
+<%= render 'layouts/footer' %>
+
+</body>
+

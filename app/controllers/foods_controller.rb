@@ -7,7 +7,7 @@ class FoodsController < ApplicationController
 	def create
 		@food = Food.new(food_params)
 		if @food.save
-			flash[:success] = "Comida adiconada com sucesso"
+			flash[:success] = "Comida adicionada com sucesso"
 		end
 	end
 
