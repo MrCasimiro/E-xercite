@@ -47,7 +47,7 @@
                                 <th scope="row" style="vertical-align:middle"><%= i %></th>
                                 <td align='center' style="vertical-align:middle"><%= user.person.name %></td>
                                 <td align='center' style="vertical-align:middle"><%= user.person.age %></td>
-                                <td align='right'><a href="/exercises"><button class="button">Montar treino!</button></a></td>
+                                <td align='right'><%= link_to workout_creation_path do %><button class="button">Montar Treinos</button><% end %></td>
                                 <td align='left'><a href=""><button class="button">Ver dados do usuário</button></a></td>
                               </tr>
                             <% end %>
