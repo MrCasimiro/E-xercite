@@ -17,12 +17,17 @@ class UsersController < ApplicationController
   def update
 		@user = User.find(params[:id])
  		if @user.update_attributes(user_params)
-	      	# Handle a successful update.
+	      	redirect_to profile_person_user_path
   	else
 	 		render 'edit'
 	  end
 	end
 
+  def profile
+    @user = User.find(params[:id])
+  end
+
+  private
 	def user_params
       params.require(:user).permit(:avatar)
   end

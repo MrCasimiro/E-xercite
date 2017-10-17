@@ -14,8 +14,8 @@
             </ul>
           </div>
         <% end %>
-        <%= image_tag(@user.avatar_url, class: "img-circle") %>
-        <%= form_for(@user) do |u| %>
+        <%= image_tag(@user.avatar_url, class: "img-circle", size: 100) %>
+        <%= form_for @user, url: person_user_path  do |u| %>
         <%= u.file_field :avatar %>
         <%= u.fields_for(@user.person) do |f| %>
           <% if false %>
