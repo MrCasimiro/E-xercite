@@ -7601,3 +7601,986 @@ Processing by PagesController#home as HTML
 Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.2ms)
   [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
 
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "admins"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (99.2ms)[0m  [1m[35mCREATE TABLE "admins" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "adm_password" varchar, "person_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (111.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admins_on_person_id" ON "admins" ("person_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "coaches"[0m
+  [1m[35m (111.0ms)[0m  [1m[35mCREATE TABLE "coaches" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "person_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (120.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_coaches_on_person_id" ON "coaches" ("person_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "diet_composes"[0m
+  [1m[35m (122.4ms)[0m  [1m[35mCREATE TABLE "diet_composes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "quantity" integer, "hour" time, "day" date, "food_id" integer, "diet_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (122.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_diet_composes_on_diet_id_and_food_id" ON "diet_composes" ("diet_id", "food_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_diet_composes_on_diet_id_and_food_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_diet_composes_on_diet_id_and_food_id' AND type='index'
+[0m
+  [1m[35m (109.7ms)[0m  [1m[35mCREATE  INDEX "index_diet_composes_on_diet_id" ON "diet_composes" ("diet_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_diet_composes_on_diet_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_diet_composes_on_diet_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_diet_composes_on_diet_id_and_food_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_diet_composes_on_diet_id_and_food_id' AND type='index'
+[0m
+  [1m[35m (132.4ms)[0m  [1m[35mCREATE  INDEX "index_diet_composes_on_food_id" ON "diet_composes" ("food_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "diets"[0m
+  [1m[35m (122.0ms)[0m  [1m[35mCREATE TABLE "diets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" text, "coach_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (132.2ms)[0m  [1m[35mCREATE  INDEX "index_diets_on_coach_id" ON "diets" ("coach_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "diseases"[0m
+  [1m[35m (132.6ms)[0m  [1m[35mCREATE TABLE "diseases" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name_disease" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "exercises"[0m
+  [1m[35m (112.3ms)[0m  [1m[35mCREATE TABLE "exercises" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name_exercise" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "foods"[0m
+  [1m[35m (121.3ms)[0m  [1m[35mCREATE TABLE "foods" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name_food" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "people"[0m
+  [1m[35m (133.5ms)[0m  [1m[35mCREATE TABLE "people" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "phone" varchar, "age" integer, "gender" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "restrictions"[0m
+  [1m[35m (132.1ms)[0m  [1m[35mCREATE TABLE "restrictions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name_restriction" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "specialities"[0m
+  [1m[35m (132.7ms)[0m  [1m[35mCREATE TABLE "specialities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "coach_id" integer, "name_speciality" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (132.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_specialities_on_coach_id_and_name_speciality" ON "specialities" ("coach_id", "name_speciality")[0m
+  [1m[35m (0.3ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_specialities_on_coach_id_and_name_speciality' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_specialities_on_coach_id_and_name_speciality' AND type='index'
+[0m
+  [1m[35m (142.9ms)[0m  [1m[35mCREATE  INDEX "index_specialities_on_coach_id" ON "specialities" ("coach_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "user_diseases"[0m
+  [1m[35m (344.1ms)[0m  [1m[35mCREATE TABLE "user_diseases" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "disease_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (132.0ms)[0m  [1m[35mCREATE  INDEX "index_user_diseases_on_disease_id" ON "user_diseases" ("disease_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_diseases_on_disease_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_diseases_on_disease_id' AND type='index'
+[0m
+  [1m[35m (132.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_user_diseases_on_user_id_and_disease_id" ON "user_diseases" ("user_id", "disease_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_diseases_on_user_id_and_disease_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_diseases_on_user_id_and_disease_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_diseases_on_disease_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_diseases_on_disease_id' AND type='index'
+[0m
+  [1m[35m (142.9ms)[0m  [1m[35mCREATE  INDEX "index_user_diseases_on_user_id" ON "user_diseases" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "user_do_workouts"[0m
+  [1m[35m (144.1ms)[0m  [1m[35mCREATE TABLE "user_do_workouts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "workout_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (132.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_user_do_workouts_on_user_id_and_workout_id" ON "user_do_workouts" ("user_id", "workout_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_do_workouts_on_user_id_and_workout_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_do_workouts_on_user_id_and_workout_id' AND type='index'
+[0m
+  [1m[35m (134.3ms)[0m  [1m[35mCREATE  INDEX "index_user_do_workouts_on_user_id" ON "user_do_workouts" ("user_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_do_workouts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_do_workouts_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_do_workouts_on_user_id_and_workout_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_do_workouts_on_user_id_and_workout_id' AND type='index'
+[0m
+  [1m[35m (130.6ms)[0m  [1m[35mCREATE  INDEX "index_user_do_workouts_on_workout_id" ON "user_do_workouts" ("workout_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "user_eat_diets"[0m
+  [1m[35m (144.3ms)[0m  [1m[35mCREATE TABLE "user_eat_diets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "diet_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (131.9ms)[0m  [1m[35mCREATE  INDEX "index_user_eat_diets_on_diet_id" ON "user_eat_diets" ("diet_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_eat_diets_on_diet_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_eat_diets_on_diet_id' AND type='index'
+[0m
+  [1m[35m (144.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_user_eat_diets_on_user_id_and_diet_id" ON "user_eat_diets" ("user_id", "diet_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_eat_diets_on_user_id_and_diet_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_eat_diets_on_user_id_and_diet_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_eat_diets_on_diet_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_eat_diets_on_diet_id' AND type='index'
+[0m
+  [1m[35m (141.8ms)[0m  [1m[35mCREATE  INDEX "index_user_eat_diets_on_user_id" ON "user_eat_diets" ("user_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "user_restrictions"[0m
+  [1m[35m (132.1ms)[0m  [1m[35mCREATE TABLE "user_restrictions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "restriction_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (133.1ms)[0m  [1m[35mCREATE  INDEX "index_user_restrictions_on_restriction_id" ON "user_restrictions" ("restriction_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_restrictions_on_restriction_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_restrictions_on_restriction_id' AND type='index'
+[0m
+  [1m[35m (132.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_user_restrictions_on_user_id_and_restriction_id" ON "user_restrictions" ("user_id", "restriction_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_restrictions_on_user_id_and_restriction_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_restrictions_on_user_id_and_restriction_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_restrictions_on_restriction_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_restrictions_on_restriction_id' AND type='index'
+[0m
+  [1m[35m (131.3ms)[0m  [1m[35mCREATE  INDEX "index_user_restrictions_on_user_id" ON "user_restrictions" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (131.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "person_id" integer, "level" integer, "points" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "avatar" varchar DEFAULT 'default.png')[0m
+  [1m[35m (199.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_person_id" ON "users" ("person_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "workout_composes"[0m
+  [1m[35m (166.0ms)[0m  [1m[35mCREATE TABLE "workout_composes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "set" integer, "repetition" integer, "technique" varchar, "exercise_id" integer, "workout_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (168.1ms)[0m  [1m[35mCREATE  INDEX "index_workout_composes_on_exercise_id" ON "workout_composes" ("exercise_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_workout_composes_on_exercise_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_workout_composes_on_exercise_id' AND type='index'
+[0m
+  [1m[35m (177.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_workout_composes_on_workout_id_and_exercise_id" ON "workout_composes" ("workout_id", "exercise_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_workout_composes_on_workout_id_and_exercise_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_workout_composes_on_workout_id_and_exercise_id' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_workout_composes_on_exercise_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_workout_composes_on_exercise_id' AND type='index'
+[0m
+  [1m[35m (141.6ms)[0m  [1m[35mCREATE  INDEX "index_workout_composes_on_workout_id" ON "workout_composes" ("workout_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "workouts"[0m
+  [1m[35m (233.0ms)[0m  [1m[35mCREATE TABLE "workouts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "coach_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "name" text)[0m
+  [1m[35m (154.7ms)[0m  [1m[35mCREATE  INDEX "index_workouts_on_coach_id" ON "workouts" ("coach_id")[0m
+  [1m[35m (132.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (97.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20171011120410)[0m
+  [1m[35m (110.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20171009154759),
+(20170922031317),
+(20170922025139),
+(20170922024252),
+(20170921015625),
+(20170922031351),
+(20171007193349),
+(20170922025324),
+(20171007193735),
+(20170921024153),
+(20171006121956),
+(20170922031343),
+(20171007194218),
+(20170922031001),
+(20170922031252),
+(20170921025119),
+(20171007193806),
+(20170921021253),
+(20170922030309);
+
+[0m
+  [1m[35m (157.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2017-10-17 11:08:50.757662"], ["updated_at", "2017-10-17 11:08:50.757662"]]
+  [1m[35m (94.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "admin2@admin.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "people" ("name", "email", "phone", "age", "gender", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "admin"], ["email", "admin2@admin.com"], ["phone", "1111111"], ["age", 21], ["gender", "other"], ["password_digest", "$2a$04$YCR94.tfL24/6UWQJFZDJuB/D.acq51e8cgIYxmyxosyvUnyMoD22"], ["created_at", "2017-10-17 11:08:51.421488"], ["updated_at", "2017-10-17 11:08:51.421488"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "coaches" ("person_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["person_id", 1], ["created_at", "2017-10-17 11:08:51.441711"], ["updated_at", "2017-10-17 11:08:51.441711"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by CoachesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCoach Load (0.1ms)[0m  [1m[34mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering coaches/show.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered coaches/show.html.erb within layouts/application (0.8ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 22ms (Views: 6.3ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered contacts/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Processing by ExercisesController#new as HTML
+  Rendering exercises/new.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered exercises/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 8ms (Views: 1.8ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 14ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "admin2@admin.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "people" ("name", "email", "phone", "age", "gender", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "admin"], ["email", "admin2@admin.com"], ["phone", "1111111"], ["age", 21], ["gender", "other"], ["password_digest", "$2a$04$La9WlNX15qvyDKFLzjHooOIePvTOMZGytwWNYziR3EFaLxkTDtkt."], ["created_at", "2017-10-17 11:08:51.753372"], ["updated_at", "2017-10-17 11:08:51.753372"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("person_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["person_id", 1], ["created_at", "2017-10-17 11:08:51.777216"], ["updated_at", "2017-10-17 11:08:51.777216"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by TrainingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering trainings/show.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered trainings/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.2ms)
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "foods" ("name_food", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name_food", "Carne"], ["created_at", "2017-10-17 11:08:51.848176"], ["updated_at", "2017-10-17 11:08:51.848176"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "coach@coach.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "people" ("name", "email", "phone", "age", "gender", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "coach"], ["email", "coach@coach.com"], ["phone", "1111111"], ["age", 21], ["gender", "other"], ["password_digest", "$2a$04$V0xTSaDPetIBjns6fF/BIeqzs/T1KmbLNWoouUH3BGof6k8QyLxWy"], ["created_at", "2017-10-17 11:08:51.853163"], ["updated_at", "2017-10-17 11:08:51.853163"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "coaches" ("person_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["person_id", 1], ["created_at", "2017-10-17 11:08:51.856371"], ["updated_at", "2017-10-17 11:08:51.856371"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCoach Load (0.1ms)[0m  [1m[34mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "diets" ("name", "coach_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Perda de peso 1"], ["coach_id", 1], ["created_at", "2017-10-17 11:08:51.865651"], ["updated_at", "2017-10-17 11:08:51.865651"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mDiet Load (0.2ms)[0m  [1m[34mSELECT  "diets".* FROM "diets" WHERE "diets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFood Load (0.2ms)[0m  [1m[34mSELECT  "foods".* FROM "foods" WHERE "foods"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "foods" ("name_food", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name_food", "Carne"], ["created_at", "2017-10-17 11:08:51.885927"], ["updated_at", "2017-10-17 11:08:51.885927"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "coach@coach.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "people" ("name", "email", "phone", "age", "gender", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "coach"], ["email", "coach@coach.com"], ["phone", "1111111"], ["age", 21], ["gender", "other"], ["password_digest", "$2a$04$GMkwzk4kVy2S0jarG/cIiOr0Y.C9NR/HyppUwTxPK2gcJHjTtu9R2"], ["created_at", "2017-10-17 11:08:51.890665"], ["updated_at", "2017-10-17 11:08:51.890665"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "coaches" ("person_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["person_id", 1], ["created_at", "2017-10-17 11:08:51.893699"], ["updated_at", "2017-10-17 11:08:51.893699"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCoach Load (0.1ms)[0m  [1m[34mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "diets" ("name", "coach_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Perda de peso 1"], ["coach_id", 1], ["created_at", "2017-10-17 11:08:51.897045"], ["updated_at", "2017-10-17 11:08:51.897045"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mDiet Load (0.1ms)[0m  [1m[34mSELECT  "diets".* FROM "diets" WHERE "diets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFood Load (0.1ms)[0m  [1m[34mSELECT  "foods".* FROM "foods" WHERE "foods"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "foods" ("name_food", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name_food", "Carne"], ["created_at", "2017-10-17 11:08:51.904084"], ["updated_at", "2017-10-17 11:08:51.904084"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "coach@coach.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "people" ("name", "email", "phone", "age", "gender", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "coach"], ["email", "coach@coach.com"], ["phone", "1111111"], ["age", 21], ["gender", "other"], ["password_digest", "$2a$04$dl9hVT7/591sjryD7Yp1eOret/9TSnIxSg/zNNmpM7difgiZNFvsS"], ["created_at", "2017-10-17 11:08:51.909813"], ["updated_at", "2017-10-17 11:08:51.909813"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "coaches" ("person_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["person_id", 1], ["created_at", "2017-10-17 11:08:51.913919"], ["updated_at", "2017-10-17 11:08:51.913919"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCoach Load (0.1ms)[0m  [1m[34mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "diets" ("name", "coach_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Perda de peso 1"], ["coach_id", 1], ["created_at", "2017-10-17 11:08:51.919141"], ["updated_at", "2017-10-17 11:08:51.919141"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mDiet Load (0.1ms)[0m  [1m[34mSELECT  "diets".* FROM "diets" WHERE "diets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFood Load (0.1ms)[0m  [1m[34mSELECT  "foods".* FROM "foods" WHERE "foods"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "foods" ("name_food", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name_food", "Carne"], ["created_at", "2017-10-17 11:08:51.925511"], ["updated_at", "2017-10-17 11:08:51.925511"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "coach@coach.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "people" ("name", "email", "phone", "age", "gender", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "coach"], ["email", "coach@coach.com"], ["phone", "1111111"], ["age", 21], ["gender", "other"], ["password_digest", "$2a$04$ifOPsHswT37ZAV1Z26BjZOugD23JBrZJtAYD0HLGwCNUXbkmoioNK"], ["created_at", "2017-10-17 11:08:51.930073"], ["updated_at", "2017-10-17 11:08:51.930073"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "coaches" ("person_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["person_id", 1], ["created_at", "2017-10-17 11:08:51.933600"], ["updated_at", "2017-10-17 11:08:51.933600"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCoach Load (0.1ms)[0m  [1m[34mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "diets" ("name", "coach_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Perda de peso 1"], ["coach_id", 1], ["created_at", "2017-10-17 11:08:51.937173"], ["updated_at", "2017-10-17 11:08:51.937173"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mDiet Load (0.1ms)[0m  [1m[34mSELECT  "diets".* FROM "diets" WHERE "diets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFood Load (0.1ms)[0m  [1m[34mSELECT  "foods".* FROM "foods" WHERE "foods"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "foods" ("name_food", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name_food", "Carne"], ["created_at", "2017-10-17 11:08:51.944754"], ["updated_at", "2017-10-17 11:08:51.944754"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "coach@coach.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "people" ("name", "email", "phone", "age", "gender", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "coach"], ["email", "coach@coach.com"], ["phone", "1111111"], ["age", 21], ["gender", "other"], ["password_digest", "$2a$04$hQHg9tILAh6fUfS2F60h/.EsQpyBZvCkwCngAvL8EgQthrtSaRLdW"], ["created_at", "2017-10-17 11:08:51.953154"], ["updated_at", "2017-10-17 11:08:51.953154"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "coaches" ("person_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["person_id", 1], ["created_at", "2017-10-17 11:08:51.957317"], ["updated_at", "2017-10-17 11:08:51.957317"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCoach Load (0.1ms)[0m  [1m[34mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "diets" ("name", "coach_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Perda de peso 1"], ["coach_id", 1], ["created_at", "2017-10-17 11:08:51.960811"], ["updated_at", "2017-10-17 11:08:51.960811"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mDiet Load (0.1ms)[0m  [1m[34mSELECT  "diets".* FROM "diets" WHERE "diets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "foods" ("name_food", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name_food", "Carne"], ["created_at", "2017-10-17 11:08:51.966490"], ["updated_at", "2017-10-17 11:08:51.966490"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "coach@coach.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "people" ("name", "email", "phone", "age", "gender", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "coach"], ["email", "coach@coach.com"], ["phone", "1111111"], ["age", 21], ["gender", "other"], ["password_digest", "$2a$04$2RFB9DLGfojWu9TxEUbRQu1XZz/lGxwS3ltS9dI7z3Iu9AMGYqypG"], ["created_at", "2017-10-17 11:08:51.971042"], ["updated_at", "2017-10-17 11:08:51.971042"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "coaches" ("person_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["person_id", 1], ["created_at", "2017-10-17 11:08:51.974758"], ["updated_at", "2017-10-17 11:08:51.974758"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCoach Load (0.1ms)[0m  [1m[34mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "diets" ("name", "coach_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Perda de peso 1"], ["coach_id", 1], ["created_at", "2017-10-17 11:08:51.977498"], ["updated_at", "2017-10-17 11:08:51.977498"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mFood Load (0.1ms)[0m  [1m[34mSELECT  "foods".* FROM "foods" WHERE "foods"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "coach@coach.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "people" ("name", "email", "phone", "age", "gender", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "coach"], ["email", "coach@coach.com"], ["phone", "1111111"], ["age", 21], ["gender", "other"], ["password_digest", "$2a$04$Okx5lXRr9Wl0qFWBQxedsuRLlxWPdBNuRYNZm4ZpAW1dBjhldw.Ku"], ["created_at", "2017-10-17 11:08:51.987210"], ["updated_at", "2017-10-17 11:08:51.987210"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "coaches" ("person_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["person_id", 1], ["created_at", "2017-10-17 11:08:51.993443"], ["updated_at", "2017-10-17 11:08:51.993443"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCoach Load (0.1ms)[0m  [1m[34mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "coach@coach.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "people" ("name", "email", "phone", "age", "gender", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "coach"], ["email", "coach@coach.com"], ["phone", "1111111"], ["age", 21], ["gender", "other"], ["password_digest", "$2a$04$/xbRqw2E0tZFBU4VEo75Ve08cEOkmJHqt0bTgLj2hcKNet46PlXtW"], ["created_at", "2017-10-17 11:08:52.001261"], ["updated_at", "2017-10-17 11:08:52.001261"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "coaches" ("person_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["person_id", 1], ["created_at", "2017-10-17 11:08:52.005402"], ["updated_at", "2017-10-17 11:08:52.005402"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "coach@coach.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "people" ("name", "email", "phone", "age", "gender", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "coach"], ["email", "coach@coach.com"], ["phone", "1111111"], ["age", 21], ["gender", "other"], ["password_digest", "$2a$04$Im8RAssCN.vQjgusa1cwDugkpqAzKPYjz6FEaB01eaI1X3.G0sOMW"], ["created_at", "2017-10-17 11:08:52.012555"], ["updated_at", "2017-10-17 11:08:52.012555"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "coaches" ("person_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["person_id", 1], ["created_at", "2017-10-17 11:08:52.018079"], ["updated_at", "2017-10-17 11:08:52.018079"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCoach Load (0.1ms)[0m  [1m[34mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "guircasimiro@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "guircasimiro@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "     "], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "guircasimiro@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "guircasimiro@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "guircasimiro@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "guircasimiro@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "guircasimiro@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mPerson Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "USER@foo.COM"], ["LIMIT", 1]]
+  [1m[36mPerson Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "A_US-ER@foo.bar.org"], ["LIMIT", 1]]
+  [1m[36mPerson Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "first.last@foo.jp"], ["LIMIT", 1]]
+  [1m[36mPerson Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "alice+bob@baz.cn"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "user@example,com"], ["LIMIT", 1]]
+  [1m[36mPerson Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "user_at_foo.com"], ["LIMIT", 1]]
+  [1m[36mPerson Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "user-a-test@ba+.com"], ["LIMIT", 1]]
+  [1m[36mPerson Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "user_name@foo.com@baar.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "guircasimiro@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "people" ("name", "email", "age", "gender", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Guilherme Casimiro"], ["email", "guircasimiro@gmail.com"], ["age", 21], ["gender", "Male"], ["password_digest", "$2a$04$nWE9SZKtvmI6QDctKWOVCO2PXnKIZINAMqVZTyiz5tyyLzJfeGNWy"], ["created_at", "2017-10-17 11:08:52.103470"], ["updated_at", "2017-10-17 11:08:52.103470"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "GUIRCASIMIRO@GMAIL.COM"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "gUIrCaSimiro@Gmail.CoM"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "people" ("name", "email", "age", "gender", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Guilherme Casimiro"], ["email", "guircasimiro@gmail.com"], ["age", 21], ["gender", "Male"], ["password_digest", "$2a$04$XHbMSuyOqbvE/iRTZhumz.sOKjPB08cu/oOwl//pSa9hFSO0IoaeC"], ["created_at", "2017-10-17 11:08:52.116548"], ["updated_at", "2017-10-17 11:08:52.116548"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "exercises" ("name_exercise", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name_exercise", "Flexão"], ["created_at", "2017-10-17 11:08:52.125121"], ["updated_at", "2017-10-17 11:08:52.125121"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "coach@coach.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "people" ("name", "email", "phone", "age", "gender", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "coach"], ["email", "coach@coach.com"], ["phone", "1111111"], ["age", 21], ["gender", "other"], ["password_digest", "$2a$04$wSytfx6TiZvZgg3LwKoIN.tBSoNFJrwT2WNs/WTSKxzHPTXImMDUm"], ["created_at", "2017-10-17 11:08:52.129661"], ["updated_at", "2017-10-17 11:08:52.129661"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "coaches" ("person_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["person_id", 1], ["created_at", "2017-10-17 11:08:52.133032"], ["updated_at", "2017-10-17 11:08:52.133032"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCoach Load (0.1ms)[0m  [1m[34mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "workouts" ("coach_id", "created_at", "updated_at", "name") VALUES (?, ?, ?, ?)[0m  [["coach_id", 1], ["created_at", "2017-10-17 11:08:52.143259"], ["updated_at", "2017-10-17 11:08:52.143259"], ["name", "Treino A"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mWorkout Load (0.3ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT  "exercises".* FROM "exercises" WHERE "exercises"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "exercises" ("name_exercise", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name_exercise", "Flexão"], ["created_at", "2017-10-17 11:08:52.163212"], ["updated_at", "2017-10-17 11:08:52.163212"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "coach@coach.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "people" ("name", "email", "phone", "age", "gender", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "coach"], ["email", "coach@coach.com"], ["phone", "1111111"], ["age", 21], ["gender", "other"], ["password_digest", "$2a$04$XBdfS2aCGKNpXXSXBCCy/e.R5c5kGYInVr07k6RDwvfwOoWiL6pDK"], ["created_at", "2017-10-17 11:08:52.167682"], ["updated_at", "2017-10-17 11:08:52.167682"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "coaches" ("person_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["person_id", 1], ["created_at", "2017-10-17 11:08:52.171065"], ["updated_at", "2017-10-17 11:08:52.171065"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCoach Load (0.1ms)[0m  [1m[34mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "workouts" ("coach_id", "created_at", "updated_at", "name") VALUES (?, ?, ?, ?)[0m  [["coach_id", 1], ["created_at", "2017-10-17 11:08:52.174208"], ["updated_at", "2017-10-17 11:08:52.174208"], ["name", "Treino A"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mWorkout Load (0.1ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT  "exercises".* FROM "exercises" WHERE "exercises"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "exercises" ("name_exercise", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name_exercise", "Flexão"], ["created_at", "2017-10-17 11:08:52.180579"], ["updated_at", "2017-10-17 11:08:52.180579"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "coach@coach.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "people" ("name", "email", "phone", "age", "gender", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "coach"], ["email", "coach@coach.com"], ["phone", "1111111"], ["age", 21], ["gender", "other"], ["password_digest", "$2a$04$bS5xXmwnUpyZTa5lDbgcnONmKiqTQ0mk7Z5auKfShRIZqeCov5pA2"], ["created_at", "2017-10-17 11:08:52.184990"], ["updated_at", "2017-10-17 11:08:52.184990"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "coaches" ("person_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["person_id", 1], ["created_at", "2017-10-17 11:08:52.188997"], ["updated_at", "2017-10-17 11:08:52.188997"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCoach Load (0.2ms)[0m  [1m[34mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "workouts" ("coach_id", "created_at", "updated_at", "name") VALUES (?, ?, ?, ?)[0m  [["coach_id", 1], ["created_at", "2017-10-17 11:08:52.193489"], ["updated_at", "2017-10-17 11:08:52.193489"], ["name", "Treino A"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mWorkout Load (0.1ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT  "exercises".* FROM "exercises" WHERE "exercises"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "exercises" ("name_exercise", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name_exercise", "Flexão"], ["created_at", "2017-10-17 11:08:52.200398"], ["updated_at", "2017-10-17 11:08:52.200398"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "coach@coach.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "people" ("name", "email", "phone", "age", "gender", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "coach"], ["email", "coach@coach.com"], ["phone", "1111111"], ["age", 21], ["gender", "other"], ["password_digest", "$2a$04$etg2sAlBhBqi2b37H9ab7ebOoyzXg6SenfpEJ3vIczJPQXVsOUxgq"], ["created_at", "2017-10-17 11:08:52.205480"], ["updated_at", "2017-10-17 11:08:52.205480"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "coaches" ("person_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["person_id", 1], ["created_at", "2017-10-17 11:08:52.208334"], ["updated_at", "2017-10-17 11:08:52.208334"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCoach Load (0.1ms)[0m  [1m[34mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "workouts" ("coach_id", "created_at", "updated_at", "name") VALUES (?, ?, ?, ?)[0m  [["coach_id", 1], ["created_at", "2017-10-17 11:08:52.211465"], ["updated_at", "2017-10-17 11:08:52.211465"], ["name", "Treino A"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mWorkout Load (0.1ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT  "exercises".* FROM "exercises" WHERE "exercises"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "exercises" ("name_exercise", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name_exercise", "Flexão"], ["created_at", "2017-10-17 11:08:52.218245"], ["updated_at", "2017-10-17 11:08:52.218245"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "coach@coach.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "people" ("name", "email", "phone", "age", "gender", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "coach"], ["email", "coach@coach.com"], ["phone", "1111111"], ["age", 21], ["gender", "other"], ["password_digest", "$2a$04$QwD8oPe5zPNge7.X3Sr00e6P.nPrHIkazLFOhrnqIpxz6KgnSmGYe"], ["created_at", "2017-10-17 11:08:52.224017"], ["updated_at", "2017-10-17 11:08:52.224017"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "coaches" ("person_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["person_id", 1], ["created_at", "2017-10-17 11:08:52.227466"], ["updated_at", "2017-10-17 11:08:52.227466"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCoach Load (0.1ms)[0m  [1m[34mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "workouts" ("coach_id", "created_at", "updated_at", "name") VALUES (?, ?, ?, ?)[0m  [["coach_id", 1], ["created_at", "2017-10-17 11:08:52.230536"], ["updated_at", "2017-10-17 11:08:52.230536"], ["name", "Treino A"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mWorkout Load (0.1ms)[0m  [1m[34mSELECT  "workouts".* FROM "workouts" WHERE "workouts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "exercises" ("name_exercise", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name_exercise", "Flexão"], ["created_at", "2017-10-17 11:08:52.237838"], ["updated_at", "2017-10-17 11:08:52.237838"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "coach@coach.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "people" ("name", "email", "phone", "age", "gender", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "coach"], ["email", "coach@coach.com"], ["phone", "1111111"], ["age", 21], ["gender", "other"], ["password_digest", "$2a$04$2RnNRkx9h7n7ioJ64Gy8ue5Vati7YkTDSlGE730qCDFnT9gdZ3P0O"], ["created_at", "2017-10-17 11:08:52.244021"], ["updated_at", "2017-10-17 11:08:52.244021"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "coaches" ("person_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["person_id", 1], ["created_at", "2017-10-17 11:08:52.247090"], ["updated_at", "2017-10-17 11:08:52.247090"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCoach Load (0.1ms)[0m  [1m[34mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "workouts" ("coach_id", "created_at", "updated_at", "name") VALUES (?, ?, ?, ?)[0m  [["coach_id", 1], ["created_at", "2017-10-17 11:08:52.249822"], ["updated_at", "2017-10-17 11:08:52.249822"], ["name", "Treino A"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT  "exercises".* FROM "exercises" WHERE "exercises"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "coach@coach.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "people" ("name", "email", "phone", "age", "gender", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "coach"], ["email", "coach@coach.com"], ["phone", "1111111"], ["age", 21], ["gender", "other"], ["password_digest", "$2a$04$kVFm3wAfqZKU4vOHNz3MsO9AcDxiwd06KfntdKeDFf7/Pu6UtnwgG"], ["created_at", "2017-10-17 11:08:52.260174"], ["updated_at", "2017-10-17 11:08:52.260174"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "coaches" ("person_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["person_id", 1], ["created_at", "2017-10-17 11:08:52.263413"], ["updated_at", "2017-10-17 11:08:52.263413"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCoach Load (0.1ms)[0m  [1m[34mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "coach@coach.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "people" ("name", "email", "phone", "age", "gender", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "coach"], ["email", "coach@coach.com"], ["phone", "1111111"], ["age", 21], ["gender", "other"], ["password_digest", "$2a$04$pFjU2Z8DxIMZWCjkiejPNuXItdQzZRkzuH78yiBLuWbHALVtLPSVa"], ["created_at", "2017-10-17 11:08:52.271806"], ["updated_at", "2017-10-17 11:08:52.271806"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "coaches" ("person_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["person_id", 1], ["created_at", "2017-10-17 11:08:52.275859"], ["updated_at", "2017-10-17 11:08:52.275859"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "coach@coach.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "people" ("name", "email", "phone", "age", "gender", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "coach"], ["email", "coach@coach.com"], ["phone", "1111111"], ["age", 21], ["gender", "other"], ["password_digest", "$2a$04$D.wDgqfqH6tBMFE1Xb7NjOPiyHrm1xnbNwZfGSqU1FBM.O7dHACm6"], ["created_at", "2017-10-17 11:08:52.283858"], ["updated_at", "2017-10-17 11:08:52.283858"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "coaches" ("person_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["person_id", 1], ["created_at", "2017-10-17 11:08:52.287323"], ["updated_at", "2017-10-17 11:08:52.287323"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCoach Load (0.1ms)[0m  [1m[34mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/contact" for 127.0.0.1 at 2017-10-17 09:08:52 -0200
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (135.4ms)
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.0ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 7914ms (Views: 7906.3ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/signup" for 127.0.0.1 at 2017-10-17 09:09:00 -0200
+Processing by PeopleController#new as HTML
+  Rendering people/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (2.7ms)
+  Rendered people/new.html.erb within layouts/application (49.2ms)
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.3ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 58ms (Views: 56.4ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "people"[0m
+Started POST "/signup" for 127.0.0.1 at 2017-10-17 09:09:00 -0200
+Processing by PeopleController#create as HTML
+  Parameters: {"person"=>{"name"=>"", "email"=>"user@invalid", "age"=>"1234", "phone"=>"", "gender"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "user@invalid"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering people/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.9ms)
+  Rendered people/new.html.erb within layouts/application (3.0ms)
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 15ms (Views: 6.8ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "people"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/signup" for 127.0.0.1 at 2017-10-17 09:09:00 -0200
+Processing by PeopleController#new as HTML
+  Rendering people/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered people/new.html.erb within layouts/application (3.4ms)
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "people"[0m
+Started POST "/signup" for 127.0.0.1 at 2017-10-17 09:09:00 -0200
+Processing by PeopleController#create as HTML
+  Parameters: {"person"=>{"name"=>"Exemplo", "email"=>"exemplo@exemplo.com", "age"=>"12", "phone"=>"1111111", "gender"=>"other", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "exemplo@exemplo.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "people" ("name", "email", "phone", "age", "gender", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Exemplo"], ["email", "exemplo@exemplo.com"], ["phone", "1111111"], ["age", 12], ["gender", "other"], ["password_digest", "$2a$04$3BPDrzQqy4FzEUMciydKAOdJRxwCjbQ0mT35GTOm0DvcOv/QYTRzq"], ["created_at", "2017-10-17 11:09:00.433469"], ["updated_at", "2017-10-17 11:09:00.433469"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."person_id" = ? LIMIT ?[0m  [["person_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("person_id", "level", "points", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["person_id", 1], ["level", 0], ["points", 0], ["created_at", "2017-10-17 11:09:00.439113"], ["updated_at", "2017-10-17 11:09:00.439113"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to 
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 2.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "people"[0m
+  [1m[36mFixture Insert (0.9ms)[0m  [1m[32mINSERT INTO "people" ("name", "email", "age", "phone", "gender", "password_digest", "created_at", "updated_at", "id") VALUES ('Guilherme Exemplo', 'guilherme@example.com', 21, '111111111', 'Male', '$2a$04$rKFr3hVUcZawIjIIwGXH4uCH3sbNJKlY0yXE2wMwdYy/Ay36s8IkO', '2017-10-17 11:09:00.470367', '2017-10-17 11:09:00.470367', 82290335)[0m
+  [1m[35m (102.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 82290335], ["LIMIT", 1]]
+Started GET "/login" for 127.0.0.1 at 2017-10-17 09:09:00 -0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.5ms)
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 82290335], ["LIMIT", 1]]
+Started GET "/login" for 127.0.0.1 at 2017-10-17 09:09:00 -0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.2ms)
+Started POST "/login" for 127.0.0.1 at 2017-10-17 09:09:00 -0200
+Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.3ms)
+Started GET "/" for 127.0.0.1 at 2017-10-17 09:09:00 -0200
+Processing by PagesController#home as HTML
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE Person Load (0.0ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 9ms (Views: 5.7ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "person1@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "people" ("name", "email", "age", "gender", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Casimiro"], ["email", "person1@example.com"], ["age", 21], ["gender", "Male"], ["password_digest", "$2a$04$pvqeY.tRonh.bG8xDeu3xO0EGA8OznqfHAiml8ciOi3ZcdW0MCUFq"], ["created_at", "2017-10-17 11:56:26.288220"], ["updated_at", "2017-10-17 11:56:26.288220"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "person2@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "people" ("name", "email", "age", "gender", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Casimiro"], ["email", "person2@example.com"], ["age", 21], ["gender", "Male"], ["password_digest", "$2a$04$5uaxARroPeswaOu6Sy8ZOuoLjpC4zpqVzslyf76lSjpvuXxtHx1CS"], ["created_at", "2017-10-17 11:56:26.310419"], ["updated_at", "2017-10-17 11:56:26.310419"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("person_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["person_id", 82290337], ["created_at", "2017-10-17 11:56:26.318039"], ["updated_at", "2017-10-17 11:56:26.318039"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "person1@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "people" ("name", "email", "age", "gender", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Casimiro"], ["email", "person1@example.com"], ["age", 21], ["gender", "Male"], ["password_digest", "$2a$04$4zxNNqXhwCPNFZnFa1Tbr.5iuJR5u2d7321pwwdY1XJwV4TC2.iCy"], ["created_at", "2017-10-17 11:56:45.003400"], ["updated_at", "2017-10-17 11:56:45.003400"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "person2@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "people" ("name", "email", "age", "gender", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Casimiro"], ["email", "person2@example.com"], ["age", 21], ["gender", "Male"], ["password_digest", "$2a$04$fzLtSVJFUahjyC7FI0C6euon1kHYsAriBRSeaA0JF20cQVIsrV3X."], ["created_at", "2017-10-17 11:56:45.027253"], ["updated_at", "2017-10-17 11:56:45.027253"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("person_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["person_id", 82290337], ["created_at", "2017-10-17 11:56:45.035340"], ["updated_at", "2017-10-17 11:56:45.035340"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "person1@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "people" ("name", "email", "age", "gender", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Casimiro"], ["email", "person1@example.com"], ["age", 21], ["gender", "Male"], ["password_digest", "$2a$04$KvCkBMBT4wHAe08u77R23ekqCyCUvQ2DYdJMquul571QvLvHVbLPa"], ["created_at", "2017-10-17 11:57:37.611349"], ["updated_at", "2017-10-17 11:57:37.611349"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "person2@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "people" ("name", "email", "age", "gender", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Casimiro"], ["email", "person2@example.com"], ["age", 21], ["gender", "Male"], ["password_digest", "$2a$04$dHYuT0eMWZtvl.5TUEArTuDPLGOW8cvBokKiM1rnD7nXXIxWwvS7S"], ["created_at", "2017-10-17 11:57:37.633512"], ["updated_at", "2017-10-17 11:57:37.633512"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("person_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["person_id", 82290337], ["created_at", "2017-10-17 11:57:37.641257"], ["updated_at", "2017-10-17 11:57:37.641257"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "person1@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "people" ("name", "email", "age", "gender", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Casimiro"], ["email", "person1@example.com"], ["age", 21], ["gender", "Male"], ["password_digest", "$2a$04$uERkf8Nz8fKJMqp07pPAheyxj1uFxxoiD8Sqksy83Ye7LZ1xGJNUe"], ["created_at", "2017-10-17 11:58:14.383677"], ["updated_at", "2017-10-17 11:58:14.383677"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "person2@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "people" ("name", "email", "age", "gender", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Casimiro"], ["email", "person2@example.com"], ["age", 21], ["gender", "Male"], ["password_digest", "$2a$04$csCAybLz00LkqSZKAV5mZOVZCXlRgmc5W34.qcjtHlAeibJsn.2H."], ["created_at", "2017-10-17 11:58:14.407508"], ["updated_at", "2017-10-17 11:58:14.407508"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("person_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["person_id", 82290337], ["created_at", "2017-10-17 11:58:14.416878"], ["updated_at", "2017-10-17 11:58:14.416878"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "person1@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "people" ("name", "email", "age", "gender", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Casimiro"], ["email", "person1@example.com"], ["age", 21], ["gender", "Male"], ["password_digest", "$2a$04$SsLjnsJJBjjSdMFOA3JQTuUVdDIvL38ZsnVJlBzqTRIeNXZvxcNNO"], ["created_at", "2017-10-17 11:59:45.038091"], ["updated_at", "2017-10-17 11:59:45.038091"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "person2@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "people" ("name", "email", "age", "gender", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Casimiro"], ["email", "person2@example.com"], ["age", 21], ["gender", "Male"], ["password_digest", "$2a$04$1i/WppN6XnU0n2rUmlxCiOjV3yBvDkvtxL3J4FAtI8e.J7MQ/KazG"], ["created_at", "2017-10-17 11:59:45.060353"], ["updated_at", "2017-10-17 11:59:45.060353"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("person_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["person_id", 82290337], ["created_at", "2017-10-17 11:59:45.068141"], ["updated_at", "2017-10-17 11:59:45.068141"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "person1@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "people" ("name", "email", "age", "gender", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Casimiro"], ["email", "person1@example.com"], ["age", 21], ["gender", "Male"], ["password_digest", "$2a$04$vccWzNvUEVUd9ngGU.SMb.3xeq.AeGF.u9zpjgtKYIc2KIakvoeYa"], ["created_at", "2017-10-17 12:00:15.952526"], ["updated_at", "2017-10-17 12:00:15.952526"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "person2@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "people" ("name", "email", "age", "gender", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Casimiro"], ["email", "person2@example.com"], ["age", 21], ["gender", "Male"], ["password_digest", "$2a$04$e8W4q.cK2cwX7Dy8yVgR9u8vcyt3mK9QIvQVdqkyV112SiQyC2pd6"], ["created_at", "2017-10-17 12:00:15.974523"], ["updated_at", "2017-10-17 12:00:15.974523"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("person_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["person_id", 82290337], ["created_at", "2017-10-17 12:00:15.982269"], ["updated_at", "2017-10-17 12:00:15.982269"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "person1@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "people" ("name", "email", "age", "gender", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Casimiro"], ["email", "person1@example.com"], ["age", 21], ["gender", "Male"], ["password_digest", "$2a$04$HkocbLaqZmEwsau5NBkfk.hFgGu7SiCGoHZqHdTsMg/EGBtpV2HeC"], ["created_at", "2017-10-17 12:01:34.828595"], ["updated_at", "2017-10-17 12:01:34.828595"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "person2@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "people" ("name", "email", "age", "gender", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Casimiro"], ["email", "person2@example.com"], ["age", 21], ["gender", "Male"], ["password_digest", "$2a$04$/zATwYnTrof2YaIAdeAHpu8cMzSAvl.lebmaCjq3JkzHKGZo07Hce"], ["created_at", "2017-10-17 12:01:34.851650"], ["updated_at", "2017-10-17 12:01:34.851650"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("person_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["person_id", 82290337], ["created_at", "2017-10-17 12:01:34.859563"], ["updated_at", "2017-10-17 12:01:34.859563"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "person1@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "people" ("name", "email", "age", "gender", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Casimiro"], ["email", "person1@example.com"], ["age", 21], ["gender", "Male"], ["password_digest", "$2a$04$x0z2UnwJcrUn4lS6feh39OiV6xKX2g6xtgj7rrSxxUz6ZlxfYgQpy"], ["created_at", "2017-10-17 12:02:05.603728"], ["updated_at", "2017-10-17 12:02:05.603728"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "person2@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "people" ("name", "email", "age", "gender", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Casimiro"], ["email", "person2@example.com"], ["age", 21], ["gender", "Male"], ["password_digest", "$2a$04$qoKHsMgiVo/kJpq65ph/0.908t1gVJcmJ62KXHLxhS/wLwEo7NCMu"], ["created_at", "2017-10-17 12:02:05.626610"], ["updated_at", "2017-10-17 12:02:05.626610"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("person_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["person_id", 82290337], ["created_at", "2017-10-17 12:02:05.634565"], ["updated_at", "2017-10-17 12:02:05.634565"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "person1@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO "people" ("name", "email", "age", "gender", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Casimiro"], ["email", "person1@example.com"], ["age", 21], ["gender", "Male"], ["password_digest", "$2a$04$3knNjKPBnXtU4j9ooe1X0ewxoOy4Yd7i8nyzB8YyUvm6PYBh4WkWS"], ["created_at", "2017-10-17 12:03:04.499671"], ["updated_at", "2017-10-17 12:03:04.499671"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "person2@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "people" ("name", "email", "age", "gender", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Casimiro"], ["email", "person2@example.com"], ["age", 21], ["gender", "Male"], ["password_digest", "$2a$04$GDazY.04SCQxqRQfj12efOaGW8ER08YyK68vJ7K.nswx3ISctfP.."], ["created_at", "2017-10-17 12:03:04.528102"], ["updated_at", "2017-10-17 12:03:04.528102"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("person_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["person_id", 82290337], ["created_at", "2017-10-17 12:03:04.537198"], ["updated_at", "2017-10-17 12:03:04.537198"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "person1@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "people" ("name", "email", "age", "gender", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Casimiro"], ["email", "person1@example.com"], ["age", 21], ["gender", "Male"], ["password_digest", "$2a$04$YCPCd7cV2oWvigYEzSms3e40lW2IGpNNjyZbzsrhyGeXZNqhUlig."], ["created_at", "2017-10-17 12:03:48.109507"], ["updated_at", "2017-10-17 12:03:48.109507"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "person2@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "people" ("name", "email", "age", "gender", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Casimiro"], ["email", "person2@example.com"], ["age", 21], ["gender", "Male"], ["password_digest", "$2a$04$StTgW5jUcp0eNPH3jHptbe4l2KDyStUlqTJfhY7XjI8hOhqtk9mLe"], ["created_at", "2017-10-17 12:03:48.147864"], ["updated_at", "2017-10-17 12:03:48.147864"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("person_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["person_id", 82290337], ["created_at", "2017-10-17 12:03:48.161353"], ["updated_at", "2017-10-17 12:03:48.161353"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "person1@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "people" ("name", "email", "age", "gender", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Casimiro"], ["email", "person1@example.com"], ["age", 21], ["gender", "Male"], ["password_digest", "$2a$04$bhFlEkAXo23xkXAAQU/SpubNwSEeBE5MEEfosg.pYO1.2P8KBjNY2"], ["created_at", "2017-10-17 12:06:09.973821"], ["updated_at", "2017-10-17 12:06:09.973821"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "person2@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "people" ("name", "email", "age", "gender", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Casimiro"], ["email", "person2@example.com"], ["age", 21], ["gender", "Male"], ["password_digest", "$2a$04$IlJsJXHDz3SRiK0QfXDl8eEL6qTmC/4kkYBhx42M4wz/kuUzG0xnW"], ["created_at", "2017-10-17 12:06:09.996830"], ["updated_at", "2017-10-17 12:06:09.996830"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("person_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["person_id", 82290337], ["created_at", "2017-10-17 12:06:10.004934"], ["updated_at", "2017-10-17 12:06:10.004934"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "person1@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "people" ("name", "email", "age", "gender", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Casimiro"], ["email", "person1@example.com"], ["age", 21], ["gender", "Male"], ["password_digest", "$2a$04$am16kno7YygGwLBPkatrN.4uoQcoydXpol0vAWgx0/UT9fCxLmodK"], ["created_at", "2017-10-17 12:06:47.292038"], ["updated_at", "2017-10-17 12:06:47.292038"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."email") = LOWER(?) LIMIT ?[0m  [["email", "person2@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "people" ("name", "email", "age", "gender", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Casimiro"], ["email", "person2@example.com"], ["age", 21], ["gender", "Male"], ["password_digest", "$2a$04$0Rybulx94LlpwXTuDyMYfu9WuF0B4QE30N5zLTa2vVtoj1KXva7DO"], ["created_at", "2017-10-17 12:06:47.315842"], ["updated_at", "2017-10-17 12:06:47.315842"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("person_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["person_id", 82290337], ["created_at", "2017-10-17 12:06:47.323618"], ["updated_at", "2017-10-17 12:06:47.323618"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m

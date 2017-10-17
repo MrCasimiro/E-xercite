@@ -23,6 +23,19 @@ class PeopleController < ApplicationController
   	end
   end
 
+  def edit
+  end
+
+  def update
+    @person = Person.find(params[:id])
+    @user = User.find_by(person_id: @person.id)
+    if @person.update_attributes(person_params)
+        redirect_to profile_person_user_path(id: @user.id, person_id: @person.id)
+    else
+      redirect_to setting_person_user_path(id: @user.id, person_id: @person.id)
+    end
+  end
+
   private
   def person_params
   	params.require(:person).permit(:name, :email, :age, :phone,

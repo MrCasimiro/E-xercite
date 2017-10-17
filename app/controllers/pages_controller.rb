@@ -7,7 +7,11 @@ class PagesController < ApplicationController
   	def require_login
     	if logged_in?
       		#flash[:error] = "You must be logged in to access this section"
-      		redirect_to [current_person, current_user] # halts request cycle
+      		if !current_user.nil?
+      			redirect_to [current_person, current_user] # halts request cycle
+      		elsif !current_coach.nil?
+      			redirect_to [current_person, current_coach]
+      		end
     	end
   	end
 	def home

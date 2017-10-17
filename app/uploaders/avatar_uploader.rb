@@ -14,6 +14,14 @@ class AvatarUploader < CarrierWave::Uploader::Base
     "public/images/profile/"
   end
 
+  version :thumb do
+    process resize_to_fill: [100,100]
+  end
+
+  version :small_thumb, from_version: :thumb do
+    process resize_to_fill: [20, 20]
+  end
+
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
   #   # For Rails 3.1+ asset pipeline compatibility:
@@ -33,6 +41,10 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # For images you might use something like this:
   def extension_whitelist
     %w(jpg jpeg gif png)
+  end
+
+  def cache_dir
+    '/tmp/cache/avatars/'
   end
 
   # Override the filename of the uploaded files:
