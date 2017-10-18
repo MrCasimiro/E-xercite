@@ -9,7 +9,11 @@
         1,
         null
       ],
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/contacts_helper.rb": [
+      "/home/tanaka/Desktop/E-xercite/app/helpers/coaches_helper.rb": [
+        1,
+        null
+      ],
+      "/home/tanaka/Desktop/E-xercite/app/helpers/contacts_helper.rb": [
         1,
         null
       ],
@@ -21,7 +25,7 @@
         1,
         null
       ],
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/foods_helper.rb": [
+      "/home/tanaka/Desktop/E-xercite/app/helpers/foods_helper.rb": [
         1,
         null
       ],
@@ -33,18 +37,8 @@
         1,
         null
       ],
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/sessions_helper.rb": [
+      "/home/tanaka/Desktop/E-xercite/app/helpers/profiles_helper.rb": [
         1,
-        null,
-        1,
-        1,
-        null,
-        null,
-        1,
-        null,
-        19,
-        null,
-        null,
         1,
         0,
         null,
@@ -52,9 +46,26 @@
         1,
         0,
         null,
+        null
+      ],
+      "/home/tanaka/Desktop/E-xercite/app/helpers/sessions_helper.rb": [
+        1,
         null,
         1,
-        19,
+        1,
+        null,
+        null,
+        1,
+        null,
+        18,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        18,
         null,
         null,
         1,
@@ -63,7 +74,11 @@
         null,
         null
       ],
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/trainings_helper.rb": [
+      "/home/tanaka/Desktop/E-xercite/app/helpers/trainings_helper.rb": [
+        1,
+        null
+      ],
+      "/home/tanaka/Desktop/E-xercite/app/helpers/uipages_helper.rb": [
         1,
         null
       ],
@@ -75,7 +90,27 @@
         1,
         null
       ],
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/users_helper.rb": [
+      "/home/tanaka/Desktop/E-xercite/app/controllers/coaches_controller.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/home/tanaka/Desktop/E-xercite/app/controllers/application_controller.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/home/tanaka/Desktop/E-xercite/app/controllers/contacts_controller.rb": [
         1,
         1,
         0,
@@ -94,31 +129,7 @@
         null,
         null
       ],
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/application_controller.rb": [
-        1,
-        1,
-        1,
-        null
-      ],
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/contacts_controller.rb": [
-        1,
-        1,
-        2,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        0,
-        null,
-        1,
-        1,
-        null,
-        null,
-        null
-      ],
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/diet_composes_controller.rb": [
+      "/home/tanaka/Desktop/E-xercite/app/controllers/diet_composes_controller.rb": [
         1,
         1,
         0,
@@ -139,6 +150,7 @@
       "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/diets_controller.rb": [
         1,
         1,
+        0,
         0,
         0,
         null,
@@ -223,6 +235,8 @@
         null,
         1,
         null,
+        1,
+        null,
         null,
         null
       ],
@@ -277,7 +291,14 @@
         null,
         null
       ],
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/sessions_controller.rb": [
+      "/home/tanaka/Desktop/E-xercite/app/controllers/profiles_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/home/tanaka/Desktop/E-xercite/app/controllers/sessions_controller.rb": [
         1,
         1,
         null,
@@ -306,7 +327,7 @@
         null,
         null
       ],
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/trainings_controller.rb": [
+      "/home/tanaka/Desktop/E-xercite/app/controllers/trainings_controller.rb": [
         1,
         1,
         1,
@@ -314,7 +335,7 @@
         null,
         null
       ],
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/uipages_controller.rb": [
+      "/home/tanaka/Desktop/E-xercite/app/controllers/uipages_controller.rb": [
         1,
         1,
         null,
@@ -394,9 +415,62 @@
         0,
         null,
         null,
+        1,
+        0,
+        null,
         null,
         1,
         0,
+        0,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/home/tanaka/Desktop/E-xercite/app/controllers/workout_composes_controller.rb": [
+        1,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/home/tanaka/Desktop/E-xercite/app/controllers/workouts_controller.rb": [
+        1,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        0,
+        null,
         null,
         null
       ],
@@ -476,7 +550,7 @@
         1,
         null,
         1,
-        1,
+        null,
         null
       ],
       "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/disease.rb": [
@@ -508,7 +582,7 @@
         1,
         1,
         null,
-        34,
+        24,
         1,
         null,
         1,
@@ -568,6 +642,7 @@
         1,
         1,
         1,
+        1,
         null,
         1,
         1,
@@ -582,7 +657,7 @@
         1,
         null
       ],
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/uploaders/avatar_uploader.rb": [
+      "/home/tanaka/Desktop/E-xercite/app/uploaders/avatar_uploader.rb": [
         1,
         null,
         null,
@@ -596,8 +671,7 @@
         null,
         null,
         1,
-        27,
-        null,
+        3,
         null,
         1,
         1,
@@ -648,9 +722,17 @@
         1,
         1,
         1,
+        null,
+        1,
+        1,
+        1,
         null
       ],
       "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/workout.rb": [
+        1,
+        1,
+        null,
+        1,
         1,
         1,
         null,
@@ -670,7 +752,7 @@
         0,
         0
       ],
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/mailers/application_mailer.rb": [
+      "/home/tanaka/Desktop/E-xercite/app/mailers/application_mailer.rb": [
         0,
         0,
         0,
@@ -682,77 +764,20 @@
         0,
         0
       ],
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/channels/application_cable/channel.rb": [
+
+      "/home/tanaka/Desktop/E-xercite/app/channels/application_cable/channel.rb": [
         0,
         0,
         0,
         0
+
       ]
     },
-    "timestamp": 1508357956
+    "timestamp": 1508330123
   },
   "Cucumber Features": {
     "coverage": {
       "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/pages_controller.rb": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/workouts_controller.rb": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/user_eat_diets_controller.rb": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
         0,
         0,
         0,
