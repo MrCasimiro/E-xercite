@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'pages#home'
 
   get 'profiles/show'
 
@@ -41,22 +42,25 @@ Rails.application.routes.draw do
   post  '/fexercise', to: 'exercises#create'
   resources :exercises
 
-  #get '/user_ui', to: 'uipages#user_ui', as: 'user_ui'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'pages#home'
 
   get   '/signup', to: 'people#new', as: 'signup'
   post  '/signup', to: 'people#create'
 
-  resources :people
-  resources :users
-  resources :coaches
+  resources :people do
+
+    resources :users do 
+      member do 
+        get 'profile', 'setting'
+      end
+    end
+    resources :coaches
+    resources :profiles
+  end
 
   get    '/login',   to: 'sessions#new', as: 'login'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
 
-  resources :profiles
   resources :trainings, only: [:show]
 
   get 'coaches/show'
