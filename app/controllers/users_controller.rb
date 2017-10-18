@@ -5,11 +5,6 @@ class UsersController < ApplicationController
   		#debugger # opens a rails console in prompt to debug
   end
 
-  def index
-  	@user = User.find(current_person.id)
-  	redirect_to @user
-  end
-
   def edit
   	@user = User.find(params[:id])
   end
@@ -33,7 +28,7 @@ class UsersController < ApplicationController
 
   private
 	def user_params
-      params.require(:user).permit(:avatar, :character)
+    params.require(:user).permit(:avatar, :character)
   end
 	
 end

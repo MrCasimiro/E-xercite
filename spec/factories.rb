@@ -11,6 +11,10 @@ FactoryGirl.define do
 	end
 
 	factory :user do
+		character "character/teste2.png"
 		person
+		after :create do |b|
+			b.update_column(:avatar, "default.png")
+		end
 	end
 end

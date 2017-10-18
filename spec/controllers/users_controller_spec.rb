@@ -3,14 +3,43 @@ require 'rails_helper'
 RSpec.describe UsersController, type: :controller do
 
 	before :each do
-		@user = double('user1', id: 2)
-		@person = double('person1', id: 1)
+		@user = FactoryGirl.create(:user)
+		@person = FactoryGirl.create(:person)
+		@user_update_attributes = FactoryGirl.attributes_for(:user, character: "public/images/profile/teste4.png")
+		@user_update_attributes_failed = FactoryGirl.attributes_for(:user, avatar: "aa.jpg")
 	end
 
-	describe "GET #show" do
-		it "returns http success" do
-			User.should_receive(:find).with('2').and_return(@user)
+	describe "GET #action" do
+		it "returns http success show" do
+			User.should_receive(:find).with('1').and_return(@user)
 			get :show, params: {person_id: @person.id, id: @user.id}
+			expect(response).to have_http_status(:success)
+		end
+
+
+		it "returns http success profile" do
+			User.should_receive(:find).with('1').and_return(@user)
+			get :profile, params: {person_id: @person.id, id: @user.id}
+			expect(response).to have_http_status(:success)
+		end
+
+		it "returns http success settings" do
+			User.should_receive(:find).with('1').and_return(@user)
+			get :setting, params: {person_id: @person.id, id: @user.id}
+			expect(response).to have_http_status(:success)
+		end
+	end
+
+	describe "PUT #action" do
+
+		it "valid atribbutes, expect redirect profile" do
+			put :update, params: {person_id: @person.id, id: @user.id, user: @user_update_attributes}
+			expect(response).to redirect_to profile_person_user_path(person_id: @person.id)
+		end
+
+		it "invalid attributes, expect render edit" do
+			put :update, params: {person_id: @person.id, id: @user.id, user: @user_update_attributes_failed}
+			expect(response).to render_template('users/setting')
 		end
 	end
 
