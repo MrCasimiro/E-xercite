@@ -21,7 +21,7 @@ disease = Disease.create!(name_disease: "Osteoporosis") #ok
 
 UserDisease.create(user_id: user.id, disease_id: disease.id)
 
-workout = Workout.create!(coach_id: coach.id)
+workout = Workout.create!(coach_id: coach.id, name: "Aerobico")
 
 exercise = Exercise.create!(name_exercise: "Back") # ok
 
