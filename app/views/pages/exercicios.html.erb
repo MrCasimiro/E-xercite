@@ -23,9 +23,9 @@
                     <h2>DIA 1 :</h2>
                 </td>
                 <td>
-                    <a href="flexao"><%= Exercise.select(name_exercise).find_by name_exercise: 'Flexão' %></a></br>
-                    <a href="squat"><%= Exercise.select(name_exercise).find_by name_exercise: 'Squat' %></a></br>
-                    <a href="burpee"><%= Exercise.select(name_exercise).find_by name_exercise: 'Burpee' %></a></br>
+                    <a href="flexao"><%= Exercise.find_by(name_exercise: 'Flexão').name_exercise %></a></br>
+                    <a href="squat"><%= Exercise.find_by name_exercise: 'Squat' %></a></br>
+                    <a href="burpee"><%= Exercise.find_by name_exercise: 'Burpee' %></a></br>
                 </td>
             </tr>   
             <tr>
