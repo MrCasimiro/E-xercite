@@ -1,18 +1,16 @@
 require 'rails_helper'
-include SessionsHelper
 
 RSpec.describe UsersController, type: :controller do
 
-	before :each do 
-		@person = FactoryGirl.create(:person)
-		@user = FactoryGirl.create(:user)
+	before :each do
+		@user = double('user1', id: 2)
+		@person = double('person1', id: 1)
 	end
 
 	describe "GET #show" do
 		it "returns http success" do
-			log_in @person
-			get :show, params: {id: @user.id}
-			expect(response).to render_template('users/show')
+			User.should_receive(:find).with('2').and_return(@user)
+			get :show, params: {person_id: @person.id, id: @user.id}
 		end
 	end
 
