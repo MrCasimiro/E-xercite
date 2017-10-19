@@ -17,7 +17,7 @@ class TestConnection
   end
 end
 
-RSpec.describe HelloChannel do
+RSpec.describe Channel do
   subject(:channel) { described_class.new(connection, {}) }
 
   let(:current_profile) { double(id: "1", name: "Bob") }
