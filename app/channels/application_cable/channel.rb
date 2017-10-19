@@ -7,5 +7,4 @@ module ApplicationCable
     times_to_say_hello.times do
       ActionCable.server.broadcast(current_profile.id, hello)
     end
-  end
 end
