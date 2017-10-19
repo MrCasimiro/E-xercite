@@ -58,7 +58,8 @@ Rails.application.routes.draw do
 
   resources :profiles
   resources :trainings, only: [:show]
-  resources :workout_creations, only: [:show]
+  resources :workout_creations, only: [:show, :create_do_workout]
+  post  'workout_creations', to: 'workout_creations#create_do_workout'
 
   get 'coaches/show'
   get 'trainings/show'

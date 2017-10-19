@@ -42,13 +42,12 @@
                                    
                             </div>
                             <div class="panel-body">
-                                <% 
-                                    workout = Workout.find(@coach.id)
-                                %>
+                                
                                 <div class="list-group">
                                     <table class="table table-striped">
                                       <thead>
                                         <tr>
+                                          <th class='text-center'>Treino</th>
                                           <th class='text-center'>Exercício</th>
                                           <th class='text-center'>Sequências</th>
                                           <th class='text-center'>Repetições</th>
@@ -57,18 +56,27 @@
                                       </thead>
                                       <tbody>
                                         <% 
-                                         @composition = WorkoutCompose.all
-                                         @composition.each do |wo|
-                                            if wo.workout_id != workout.id
+                                         @workout = Workout.all
+                                         @workout.each do |wo_by_coach|
+                                            if wo_by_coach.id != @coach.id
                                                 next
-                                            end 
+                                            end
+                                             @composition = WorkoutCompose.all
+                                             @composition.each do |wo|
+                                                if wo.workout_id != wo_by_coach.id
+                                                    next
+                                                end
+
                                         %>
                                          <tr>
+                                            <td align='center' style="vertical-align:middle"><%= wo_by_coach.name%></td>
                                             <td align='center' style="vertical-align:middle"><%= Exercise.find(wo.exercise_id).name_exercise %></td>
                                             <td align='center' style="vertical-align:middle"><%= wo.set%></td>
                                             <td align='center' style="vertical-align:middle"><%= wo.repetition %></td>
                                             <td align='center' style="vertical-align:middle"><%= wo.technique %></td>
+                                            <td align='right'><%= link_to workout_creation_path(:id_workout => wo_by_coach.id), :action => 'create_do_workout' do%><button class="button">Enviar</button><% end %></td>
                                          </tr>
+                                        <% end %>
                                         <% end %>
                                       </tbody>
                                     </table>
