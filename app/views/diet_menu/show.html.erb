@@ -1,0 +1,131 @@
+    <link href="/css/morris.css" rel="stylesheet">
+    <link href="/css/sb-admin.css" rel="stylesheet">
+    <title>SB Admin - Bootstrap Admin Template</title>
+
+    <style>
+    .button {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+    </style>
+
+    <div id="wrapper">
+
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            Suas dietas <small>E-xercite</small>
+                        </h1>                           
+                        
+                    </div>
+                </div>
+        
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <% if @active_diet == nil then %>
+                                        <div>Nenhuma dieta ativa</div>
+                                    <% else %>
+                                        <h3 class="panel-title"> Dieta atual: <%= Diet.find(@active_diet.diet_id).name %></h3>
+                                    <%end%>
+
+                            </div>
+                            <div class="panel-body">
+                                    <% if @active_diet == nil then %>
+                                        <div>Peça sua dieta já!</div>
+                                    <% else %>
+                                        <div class="list-group">
+                                            <table class="table table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th class='text-center'>Nome da dieta</th>
+                                                         <th class='text-center'>Data de início</th>
+                                                        <th class='text-center'>Data de término</th>
+                                                        <th class='text-center'>Responsável</th>
+                                                    </tr>
+                                                </thead>
+                                            <tbody>
+                                        <% 
+                                         @food_list.each do |food|
+                                        %>
+                                         <tr>
+                                            <td align='center' style="vertical-align:middle"><%= Food.find(food.food_id).name_food %></td>
+                                         </tr>
+                                        <% end %>
+                                      </tbody>
+                                    </table>
+                                </div>
+                                    <%end%>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Dietas consumidas</h3>
+                            </div>
+                            <!-- Finished diets here-->
+                             <div class="panel-body">
+                                <% 
+                                    workout = UserDoWorkout.find(@user.id)
+                                    coach = Coach.find(Workout.find(workout.workout_id).coach_id)
+                                %>
+                                <div class="list-group">
+                                    <table class="table table-striped">
+                                      <thead>
+                                        <tr>
+                                          <th class='text-center'>Nome da dieta</th>
+                                          <th class='text-center'>Data de início</th>
+                                          <th class='text-center'>Data de término</th>
+                                          <th class='text-center'>Responsável</th>
+                                          <th class='text-center'>Status</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        <% 
+                                         @old_diets.each do |di|
+                                        %>
+                                         <tr>
+                                            <td align='center' style="vertical-align:middle"><%= Diet.find(di.diet_id).name %></td>
+                                            <td align='center' style="vertical-align:middle"><%= di.created_at %></td>
+                                            <td align='center' style="vertical-align:middle"><%= di.exp_date %></td>
+                                            <td align='center' style="vertical-align:middle"><%= Person.find(Coach.find(Diet.find(di.diet_id).coach_id).person_id).name %></td>
+                                            <td align='center' style="vertical-align:middle"><%= if di.finished==1 then
+                                            'Completa' else 'Incompleto' end%></td>
+                                         </tr>
+                                        <% end %>
+                                      </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- /.row -->
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>

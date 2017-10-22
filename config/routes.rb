@@ -62,4 +62,7 @@ Rails.application.routes.draw do
   get 'coaches/show'
   get 'trainings/show'
 
+  resources :diet_menu, only: [:show]
+  get 'diet_menu/show'
+
 end
