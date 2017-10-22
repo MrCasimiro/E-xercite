@@ -1,7 +1,9 @@
 class DietsController < ApplicationController
 	def new
+		@coach_id = Coach.find_by person_id: 3
 		@diet = Diet.new
 		@diet.diet_composes.build
+		@foods = Food.all
 	end
 
 	def create

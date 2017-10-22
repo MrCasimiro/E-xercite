@@ -6,7 +6,7 @@
 		<h3>Insira os dados da dieta</h3>
 	    <%= simple_form_for @diet, :html => {:class => 'form-basic' }  do |f| %>
 	        <%= f.input :name %>
-	        <%= f.input :coach_id %>
+	        <%= f.input :coach_id, :as => :hidden, :input_html => { :value => @coach_id.id } %>
 	        <%= f.nested_fields_for :diet_composes do |ff| %>
 	        		<%= ff.remove_nested_fields_link %>
 	        		<br>
@@ -14,7 +14,7 @@
 	        		<%= ff.input :day %>
 	        		<%= ff.input :food_id %>
 	        		<%= ff.input :quantity, label: 'Quantity in g/ml' %>
-	        		<%= ff.input :diet_id %>
+	        		<%= ff.input :diet_id, :as => :hidden %>
 	     	    <% end %>
 	     	<%= f.add_nested_fields_link :diet_composes %>
 	     	<br><br>

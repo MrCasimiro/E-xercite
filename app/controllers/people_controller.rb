@@ -16,11 +16,23 @@ class PeopleController < ApplicationController
       @user = add_user(@person)
   		log_in @person
   		flash[:success] = "Bem vindo ao aplicativo E-xercite!"
-  		redirect_to @user
-      
+  		redirect_to [@person, @user]
   	else
   		render 'new'
   	end
+  end
+
+  def edit
+  end
+
+  def update
+    @person = Person.find(params[:id])
+    @user = User.find_by(person_id: @person.id)
+    if @person.update_attributes(person_params)
+        redirect_to profile_person_user_path(person_id: @person.id)
+    else
+      redirect_to setting_person_user_path(id: @user.id, person_id: @person.id)
+    end
   end
 
   private
