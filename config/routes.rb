@@ -29,8 +29,9 @@ Rails.application.routes.draw do
   post '/fworkouts', to: 'workouts#create'
   resources :workouts
   
-  get '/fdiet', to: 'foods#new', as: 'diet'
+  get '/foods', to: 'foods#show'
   resources :foods
+
   get '/fdiets', to: 'diets#new', as: 'diets'
   post '/fdiets', to: 'diets#create'
   resources :diets
