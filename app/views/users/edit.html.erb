@@ -14,11 +14,12 @@
             </ul>
           </div>
         <% end %>
-        <%= image_tag(@user.avatar_url, class: "img-circle") %>
-        <%= form_for(@user) do |u| %>
-        <%= u.file_field :avatar %>
-        <%= u.fields_for(@user.person) do |f| %>
-          <% if false %>
+        <%= image_tag(@user.avatar_url, class: "img-circle", size: 100, align: "middle") %>
+        <%= form_for @user, url: person_user_path  do |u| %>
+          <%= u.file_field :avatar %>
+          <%= u.submit "Save changes", class: "btn btn-primary" %>
+        <% end %>
+        <%= form_for(@user.person) do |f| %>
             <%= f.label :name %>
             <%= f.text_field :name, class: 'form-control' %>
 
@@ -30,11 +31,8 @@
 
             <%= f.label :password_confirmation, "Confirmation" %>
             <%= f.password_field :password_confirmation, class: 'form-control' %>
-            <% end %>
-          <% end %>
-        <%= u.submit "Save changes", class: "btn btn-primary" %>
+            <%= f.submit "Save changes", class: "btn btn-primary" %>
         <% end %>
-
       </div>                 
     </div>
   </div>

@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+	attr_accessor :avatar
 	VALID_AVATAR_REGEX = /\.(png|jpg|gif)\z/i
 	belongs_to :person
 

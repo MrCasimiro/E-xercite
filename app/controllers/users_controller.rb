@@ -5,11 +5,6 @@ class UsersController < ApplicationController
   		#debugger # opens a rails console in prompt to debug
   end
 
-  def index
-  	@user = User.find(current_person.id)
-  	redirect_to @user
-  end
-
   def edit
   	@user = User.find(params[:id])
   end
@@ -17,14 +12,23 @@ class UsersController < ApplicationController
   def update
 		@user = User.find(params[:id])
  		if @user.update_attributes(user_params)
-	      	# Handle a successful update.
+      redirect_to profile_person_user_path
   	else
-	 		render 'edit'
+	 		render 'setting'
 	  end
 	end
 
+  def profile
+    @user = User.find(params[:id])
+  end
+
+  def setting
+    @user = User.find(params[:id])
+  end
+
+  private
 	def user_params
-      params.require(:user).permit(:avatar)
+    params.require(:user).permit(:avatar, :character)
   end
 	
 end
