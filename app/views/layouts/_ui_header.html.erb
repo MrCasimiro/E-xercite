@@ -17,11 +17,11 @@
                 <span class="icon-bar"></span>
             </button>
             <% if !@user.blank? %>
-                <a class="navbar-brand" <%= link_to "E-xercite", person_user_path %></a>
+                <a class="navbar-brand" <%= link_to "E-xercite", person_user_path(person_id: @user.person_id) %></a>
             <% elsif !@coach.blank? %>
                 <a class="navbar-brand" <%= link_to "E-xercite", person_coach_path %></a>
             <% else %>
-                <a class="navbar-brand" <%= link_to "E-xercite", person_admin_path %></a>
+                <a class="navbar-brand">Teste</a>
             <% end %>
 
         </div>
@@ -112,7 +112,7 @@
                 <ul class="dropdown-menu">
                     <% if !@user.nil? %>
                         <li>
-                            <a class="fa fa-fw fa-user"<i<%= link_to "Perfil", controller: "users", action: "profile", id: @user.id %></i></a>
+                            <a class="fa fa-fw fa-user"<i<%= link_to "Perfil", profile_person_user_path(person_id: @user.person_id) %></i></a>
                         </li>
                     <% end %>
                     <li>
@@ -120,7 +120,7 @@
                     </li>
                     <% if !@user.nil? %>
                         <li>
-                            <a class="fa fa-fw fa-gear" <%=link_to "Configurações", setting_person_user_path%></a>
+                            <a class="fa fa-fw fa-gear" <%=link_to "Configurações", setting_person_user_path(person_id: @user.person_id)%></a>
                         </li>
                     <% end %>
                     <li class="divider"></li>

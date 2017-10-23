@@ -113,6 +113,8 @@ ActiveRecord::Schema.define(version: 20171017125529) do
   end
 
   create_table "user_eat_diets", force: :cascade do |t|
+    t.date "exp_date"
+    t.integer "finished"
     t.integer "user_id"
     t.integer "diet_id"
     t.datetime "created_at", null: false

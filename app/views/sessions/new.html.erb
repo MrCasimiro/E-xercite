@@ -13,13 +13,13 @@
         <%= form_for(:session, url: login_path) do |f|%>
         <%= f.label :email, "E-mail" %>
     <br>
-        <%= f.email_field :email, class: 'form-control' %>
+        <%= f.email_field :email, class: 'form-control', id: 'email_field' %>
     </br>
         <%= f.label :password %>
     <br>
-        <%= f.password_field :password, class: 'form-control' %>
+        <%= f.password_field :password, class: 'form-control', id: 'pass_field' %>
     </br>
-        <%= f.submit "Log in", class: "btn btn-primary" %>
+        <%= f.submit "Log in", class: "btn btn-primary", id: 'submit_btn' %>
         <% end %>
     <br>	
         <p>Novo usuário? <%= link_to "Cadastre-se agora!", signup_path %></p>

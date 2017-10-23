@@ -28,12 +28,6 @@ Rails.application.routes.draw do
   get '/fworkouts', to: 'workouts#new', as: 'workouts'
   post '/fworkouts', to: 'workouts#create'
   resources :workouts
-  
-  get '/fdiet', to: 'foods#new', as: 'diet'
-  resources :foods
-  get '/fdiets', to: 'diets#new', as: 'diets'
-  post '/fdiets', to: 'diets#create'
-  resources :diets
 
   get '/gami', to: 'pages#gamification', as: 'gami'
 
@@ -65,5 +59,16 @@ Rails.application.routes.draw do
 
   get 'coaches/show'
   get 'trainings/show'
+
+  resources :diet_menu, only: [:show]
+  get 'diet_menu/show'
+
+  get '/foods', to: 'foods#show'
+  resources :foods
+
+  
+  get '/diets', to: 'diets#show'
+  post '/diets', to: 'diets#create'
+  resources :diets
 
 end
