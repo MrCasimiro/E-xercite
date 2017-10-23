@@ -10,33 +10,16 @@
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                     <li class="active">
-                        <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Acompanhamento</a>
-                    </li>
                     <li>
-                        <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Meus dados</a>
-                    </li>
                     <li>
-                        <%= link_to training_path do %>
-                            <i class="fa fa-fw fa-table"></i> Treinos
-                        <% end %>   
-                    </li>
-                    <li>
-                        <%= link_to diet_menu_path do %>
-                            <i class="fa fa-fw fa-table"></i> Dieta
-                        <% end %>   
+                        <%= link_to "Criar dieta", {:controller => "diets", :action => "show", :id   => params[:id]} %>
                     </li>
                     <li>
                         <%= link_to food_path do %>
-                            <i class="fa fa-fw fa-table"></i> Alimentos
-                        <% end %>   
+                            <i class="fa fa-fw fa-table"></i>Cadastrar Alimentos
+                        <% end %>
                     </li>
-                    <li>
-                        <a href="forms.html"><i class="fa fa-fw fa-trophy"></i> Conquistas</a>
-                    </li>
-                    <li>
-                        <a href="forms.html"><i class="fa fa-fw fa-user-o"></i> Meu perfil</a>
-                    </li>
+                    
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

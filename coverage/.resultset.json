@@ -154,6 +154,8 @@
       ],
       "/home/tanaka/Desktop/E-xercite/app/controllers/diets_controller.rb": [
         1,
+        null,
+        null,
         1,
         1,
         1,
@@ -198,12 +200,15 @@
       ],
       "/home/tanaka/Desktop/E-xercite/app/controllers/foods_controller.rb": [
         1,
+        null,
+        null,
         1,
         1,
         1,
         null,
         null,
         1,
+        0,
         0,
         0,
         0,
@@ -718,7 +723,7 @@
         0
       ]
     },
-    "timestamp": 1508702435
+    "timestamp": 1508725108
   },
   "Cucumber Features": {
     "coverage": {

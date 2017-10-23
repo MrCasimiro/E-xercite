@@ -1,6 +1,5 @@
     <link href="/css/morris.css" rel="stylesheet">
     <link href="/css/sb-admin.css" rel="stylesheet">
-    <title>SB Admin - Bootstrap Admin Template</title>
 
     <style>
     .button {
@@ -35,8 +34,7 @@
         		<div class="row">
 					<div class="col-sm-1"></div>
 						<div class="col-lg-8">
-								<% food = Food.new%>
-								<%= simple_form_for food, :html => {:class => 'form-basic' }  do |f| %>
+								<%= simple_form_for @food, :html => {:class => 'form-basic' }  do |f| %>
 										<%= f.input :name_food %>
 										<%= f.button :submit %>
 								<% end %>

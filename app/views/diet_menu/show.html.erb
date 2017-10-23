@@ -41,7 +41,7 @@
                                 <% if @active_diet == nil then %>
                                         <div>Nenhuma dieta ativa</div>
                                     <% else %>
-                                        <h3 class="panel-title"> Dieta atual: <%= Diet.find(@active_diet.diet_id).name %></h3>
+                                        <h3 class="panel-title", id = "diet_name"> Dieta atual: <%= Diet.find(@active_diet.diet_id).name %></h3>
                                     <%end%>
 
                             </div>
@@ -84,10 +84,6 @@
                             </div>
                             <!-- Finished diets here-->
                              <div class="panel-body">
-                                <% 
-                                    workout = UserDoWorkout.find(@user.id)
-                                    coach = Coach.find(Workout.find(workout.workout_id).coach_id)
-                                %>
                                 <div class="list-group">
                                     <table class="table table-striped">
                                       <thead>

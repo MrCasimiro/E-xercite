@@ -1,4 +1,6 @@
 class FoodsController < ApplicationController
+
+
 	def show
 		@food = Food.new
 		@allfood = Food.all
