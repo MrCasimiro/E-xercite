@@ -432,6 +432,26 @@
         null,
         1,
         0,
+        null,
+        null
+      ],
+      "/home/tanaka/Desktop/E-xercite/app/controllers/workouts_controller.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
         0,
         0,
         null,
@@ -1000,6 +1020,12 @@
         0,
         0,
         0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         0
       ],
       "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/application_controller.rb": [
@@ -1329,6 +1355,9 @@
         0,
         0,
         0,
+        0
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/coaches_helper.rb": [
         0,
         0
       ],
@@ -1420,3 +1449,4 @@
     "timestamp": 1508363186
   }
 }
+
