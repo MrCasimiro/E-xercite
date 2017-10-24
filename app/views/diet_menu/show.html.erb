@@ -53,10 +53,10 @@
                                             <table class="table table-striped">
                                                 <thead>
                                                     <tr>
-                                                        <th class='text-center'>Nome da dieta</th>
-                                                         <th class='text-center'>Data de início</th>
-                                                        <th class='text-center'>Data de término</th>
-                                                        <th class='text-center'>Responsável</th>
+                                                        <th class='text-center'>Nome do alimento</th>
+                                                         <th class='text-center'>Quantidade (g/ml)</th>
+                                                        <th class='text-center'>Dia</th>
+                                                        <th class='text-center'>Hora</th>
                                                     </tr>
                                                 </thead>
                                             <tbody>
@@ -64,7 +64,14 @@
                                          @food_list.each do |food|
                                         %>
                                          <tr>
-                                            <td align='center' style="vertical-align:middle"><%= Food.find(food.food_id).name_food %></td>
+                                            <td align='center' style="vertical-align:middle"><%= Food.find(food.food_id).name_food %>
+                                            </td>
+                                            <td align='center' style="vertical-align:middle"><%= food.quantity %>
+                                            </td>
+                                            <td align='center' style="vertical-align:middle"><%= food.day %>
+                                            </td>
+                                            <td align='center' style="vertical-align:middle"><%= food.hour.strftime('%H') +":"+food.hour.strftime('%M') %>
+                                            </td>
                                          </tr>
                                         <% end %>
                                       </tbody>
