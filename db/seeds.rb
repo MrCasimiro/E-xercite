@@ -1,19 +1,10 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
-
 person1 = Person.create!(name: "admin", email: "admin@admin.com",
  	phone: "1111111", age: 21, gender: "other", password: "123456", password_confirmation: "123456")
 Admin.create(adm_password: "123456", person_id: person1.id)
 
 person2 = Person.create!(name: "user", email: "user@user.com",
  	phone: "1111111", age: 21, gender: "other", password: "123456", password_confirmation: "123456")
-user = User.create(person_id: person2.id, level: 0, points: 0)
+user = User.create(person_id: person2.id, level: 0, points: 0, avatar: open("public/images/profile/teste.png"))
 
 person3 = Person.create!(name: "coach", email: "coach@coach.com",
  	phone: "1111111", age: 21, gender: "other", password: "123456", password_confirmation: "123456")
@@ -30,7 +21,7 @@ disease = Disease.create!(name_disease: "Osteoporosis") #ok
 
 UserDisease.create(user_id: user.id, disease_id: disease.id)
 
-workout = Workout.create!(coach_id: coach.id)
+workout = Workout.create!(coach_id: coach.id, name: "Aerobico")
 
 exercise = Exercise.create!(name_exercise: "Back") # ok
 
@@ -48,8 +39,11 @@ diet2 = Diet.create(name: "Ganho de massa 1", coach_id: coach.id)
 diet3 = Diet.create(name: "Selíaca 1", coach_id: coach.id)
 
 DietCompose.create(quantity:'100' , hour:'10:00' , day: '20171019' ,food_id: food1.id, diet_id: diet1.id)
+DietCompose.create(quantity:'100' , hour:'10:00' , day: '20171019' ,food_id: food3.id, diet_id: diet1.id)
 DietCompose.create(quantity:'150' , hour:'15:00' , day: '20171029' ,food_id: food2.id, diet_id: diet2.id)
 
 exercise2 = Exercise.create!(name_exercise: "Flexão")
 exercise3 = Exercise.create!(name_exercise: "Squat")
 exercise4 = Exercise.create!(name_exercise: "Burpee")
+UserEatDiet.create(user_id: user.id, diet_id: diet1.id, exp_date: '20181030', finished: 0)
+UserEatDiet.create(user_id: user.id, diet_id: diet2.id, exp_date: '20181010', finished: 1)

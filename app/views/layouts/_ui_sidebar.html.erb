@@ -11,16 +11,20 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li class="active">
-                        <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Acompanhanto</a>
+                        <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Acompanhamento</a>
                     </li>
                     <li>
                         <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Meus dados</a>
                     </li>
                     <li>
-                        <a href="tables.html"><i class="fa fa-fw fa-table"></i> Treinos</a>
+                        <%= link_to training_path do %>
+                            <i class="fa fa-fw fa-table"></i> Treinos
+                        <% end %>   
                     </li>
                     <li>
-                        <a href="forms.html"><i class="fa fa-fw fa-cutlery"></i> Dieta</a>
+                        <%= link_to diet_menu_path do %>
+                            <i class="fa fa-fw fa-table"></i> Dieta
+                        <% end %>   
                     </li>
                     <li>
                         <a href="forms.html"><i class="fa fa-fw fa-trophy"></i> Conquistas</a>

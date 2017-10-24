@@ -1,0 +1,50 @@
+    <link href="/css/morris.css" rel="stylesheet">
+    <link href="/css/sb-admin.css" rel="stylesheet">
+
+    <style>
+    .button {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+    </style>
+
+    <div id="wrapper">
+
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            Insira os dados da Comida <small>E-xercite</small>
+                        </h1>                           
+                        
+                    </div>
+                </div>
+        		<div class="row">
+					<div class="col-sm-1"></div>
+						<div class="col-lg-8">
+								<%= simple_form_for @food, :html => {:class => 'form-basic' }  do |f| %>
+										<%= f.input :name_food %>
+										<%= f.button :submit,:id => "submit_bt" %>
+								<% end %>
+						</div>
+				</div>
+				<br><br>
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>

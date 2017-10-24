@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/minimagick/minimagick.git
+  revision: 15e1cd1ccee5e6665d5e4dd81a435a9b389a2103
+  specs:
+    mini_magick (4.8.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -57,6 +63,10 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    carrierwave (1.0.0)
+      activemodel (>= 4.0.0)
+      activesupport (>= 4.0.0)
+      mime-types (>= 1.16)
     childprocess (0.7.1)
       ffi (~> 1.0, >= 1.0.11)
     coffee-rails (4.2.2)
@@ -95,6 +105,11 @@ GEM
     docile (1.1.5)
     erubi (1.6.1)
     execjs (2.7.0)
+    factory_girl (4.8.1)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.8.0)
+      factory_girl (~> 4.8.0)
+      railties (>= 3.0.0)
     ffi (1.9.18)
     font-awesome-sass (4.7.0)
       sass (>= 3.2)
@@ -275,16 +290,19 @@ DEPENDENCIES
   bootstrap-sass
   byebug
   capybara (~> 2.13)
+  carrierwave (~> 1.0)
   coffee-rails (~> 4.2)
   coveralls
   cucumber-rails
   database_cleaner
+  factory_girl_rails
   font-awesome-sass
   jasmine
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
   mail_form
+  mini_magick!
   morrisjs-rails
   nested_form_fields
   pg
