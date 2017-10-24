@@ -16,7 +16,7 @@ class DietMenuController < ApplicationController
 
 
 		@old_diets = UserEatDiet.where(
-			'user_id = :id and finished <> 0 and exp_date < :today',
+			'user_id = :id and (finished <> 0 or exp_date < :today)',
 			:id => @user.id,
 			:today => Time.now
 			)

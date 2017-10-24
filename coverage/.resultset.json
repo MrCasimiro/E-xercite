@@ -432,26 +432,6 @@
         null,
         1,
         0,
-        null,
-        null
-      ],
-      "/home/tanaka/Desktop/E-xercite/app/controllers/workouts_controller.rb": [
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        0,
-        0,
-        0,
-        null,
-        null,
-        null,
-        null,
-        1,
-        null,
         0,
         0,
         null,
@@ -724,7 +704,7 @@
         1,
         null
       ],
-      "/home/tanaka/Desktop/E-xercite/app/channels/application_cable/channel.rb": [
+      "/home/tanaka/Desktop/E-xercite/app/mailers/application_mailer.rb": [
         0,
         0,
         0,
@@ -736,14 +716,14 @@
         0,
         0
       ],
-      "/home/tanaka/Desktop/E-xercite/app/mailers/application_mailer.rb": [
+      "/home/tanaka/Desktop/E-xercite/app/channels/application_cable/channel.rb": [
         0,
         0,
         0,
         0
       ]
     },
-    "timestamp": 1508725108
+    "timestamp": 1508847123
   },
   "Cucumber Features": {
     "coverage": {
@@ -1361,10 +1341,6 @@
         0,
         0
       ],
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/coaches_helper.rb": [
-        0,
-        0
-      ],
       "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/pages_helper.rb": [
         0,
         0
@@ -1449,4 +1425,3 @@
     "timestamp": 1508363186
   }
 }
-
