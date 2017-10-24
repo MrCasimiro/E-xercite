@@ -42,5 +42,8 @@ DietCompose.create(quantity:'100' , hour:'10:00' , day: '20171019' ,food_id: foo
 DietCompose.create(quantity:'100' , hour:'10:00' , day: '20171019' ,food_id: food3.id, diet_id: diet1.id)
 DietCompose.create(quantity:'150' , hour:'15:00' , day: '20171029' ,food_id: food2.id, diet_id: diet2.id)
 
+exercise2 = Exercise.create!(name_exercise: "Flexão")
+exercise3 = Exercise.create!(name_exercise: "Squat")
+exercise4 = Exercise.create!(name_exercise: "Burpee")
 UserEatDiet.create(user_id: user.id, diet_id: diet1.id, exp_date: '20181030', finished: 0)
 UserEatDiet.create(user_id: user.id, diet_id: diet2.id, exp_date: '20181010', finished: 1)
