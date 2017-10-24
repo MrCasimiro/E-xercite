@@ -15,9 +15,7 @@
                         <%= link_to "Criar dieta", {:controller => "diets", :action => "show", :id   => params[:id]} %>
                     </li>
                     <li>
-                        <%= link_to food_path do %>
-                            <i class="fa fa-fw fa-table"></i>Cadastrar Alimentos
-                        <% end %>
+                        <%= link_to "Cadastrar alimento", {:controller => "foods", :action => "show", :id   => params[:id]} %>
                     </li>
                     
                 </ul>
