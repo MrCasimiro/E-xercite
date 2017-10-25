@@ -24,17 +24,17 @@ Rails.application.routes.draw do
   get '/squat', to: 'pages#squat', as: 'squat' 
   get '/burpee', to: 'pages#burpee', as: 'burpee' 
   
-  #formulário de criação de treino
-  get '/fworkouts', to: 'workouts#new', as: 'workouts'
-  post '/fworkouts', to: 'workouts#create'
-  resources :workouts
 
   get '/gami', to: 'pages#gamification', as: 'gami'
 
 
-  get   '/fexercise', to: 'exercises#new', as: 'fexercise'
-  post  '/fexercise', to: 'exercises#create'
+  get   '/fexercises', to: 'exercises#show'
   resources :exercises
+
+   #formulário de criação de treino
+  get '/workouts', to: 'workouts#show'
+  post '/workouts', to: 'workouts#create'
+  resources :workouts
 
 
   get   '/signup', to: 'people#new', as: 'signup'
