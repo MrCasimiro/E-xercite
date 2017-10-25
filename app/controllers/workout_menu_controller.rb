@@ -2,8 +2,7 @@ class WorkoutMenuController < ApplicationController
 	def show
 		@user = User.find(params[:id])
 		@active_workout_search = UserDoWorkout.where(
-			:id => @user.id,
-			:today => Time.now
+			:id => @user.id
 			)
 
 		@active_workout = @active_workout_search[0]
