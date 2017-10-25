@@ -42,6 +42,7 @@ body {
 
 .top-nav>li {
     display: inline-block;
+}
 
 .top-nav>li>a {
     padding-top: 15px;
@@ -63,11 +64,10 @@ body {
     float: left;
     position: absolute;
     margin-top: 0;
+    background-color: #fff;
     border: 1px solid rgba(0,0,0,.15);
     border-top-left-radius: 0;
     border-top-right-radius: 0;
-    background-color: #fff;
-    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
     box-shadow: 0 6px 12px rgba(0,0,0,.175);
 }
 
@@ -84,7 +84,6 @@ body {
 
 .message-preview {
     width: 275px;
-    border-bottom: 1px solid rgba(0,0,0,.15);
 }
 
 li.message-preview>a {
@@ -217,7 +216,6 @@ li.message-preview>a {
 }
 
 .morris-hover{position:absolute;z-index:1000}
-.morris-hover.morris-default-style{border-radius:10px;padding:6px;color:#666;background:rgba(255,255,255,0.8);border:solid 2px rgba(230,230,230,0.8);font-family:sans-serif;font-size:12px;text-align:center}
 .morris-hover.morris-default-style .morris-hover-row-label{font-weight:bold;margin:0.25em 0}
 .morris-hover.morris-default-style .morris-hover-point{white-space:nowrap;margin:0.1em 0}
 
