@@ -6,7 +6,7 @@ Given(/^that I'm a registered coach in system$/) do
 end
 
 When(/^I acess exercises page$/) do
-	visit ("/fexercises/"+@current_coach.id.to_s)
+	visit ("/fexercises/")
 end
 
 Then(/^I should be able to insert new exercises$/) do
