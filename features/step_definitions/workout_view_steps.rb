@@ -23,7 +23,7 @@ Given(/^I'm now signed in$/) do
 	click_button("submit_btn")
 end
 
-Given(/^I have one valid workout$/) do
+Given(/^I have a valid workout$/) do
 	person2 = Person.create(
 	name: "coach",
 	email: "coach@coach.com",
