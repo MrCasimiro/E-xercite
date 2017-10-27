@@ -1,4 +1,4 @@
-Given(/^that I'm a registered user$/) do
+Given(/^that I'm a user in System$/) do
 	@person = Person.create!(
 		name: "user",
 		email: "user@user.com",
@@ -15,7 +15,7 @@ Given(/^that I'm a registered user$/) do
 		avatar: open("public/images/profile/teste.png"))
 end
 
-Given(/^I'm signed in$/) do
+Given(/^I'm now signed in$/) do
 
 	visit ("/login")
 	fill_in("email_field", :with => @person.email)

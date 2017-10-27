@@ -1,4 +1,4 @@
-Given(/^that I'm a registered coach$/) do
+Given(/^that I'm a registered coach in system$/) do
 	@person = Person.create!(name: "coach", email: "coach@coach.com",
  	phone: "1111111", age: 21, gender: "other", password: "123456", password_confirmation: "123456")
 	@current_coach = Coach.create!(person_id: @person.id)
