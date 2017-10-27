@@ -47,7 +47,7 @@ end
 
 
 When(/^I acess my workout page$/) do
-  visit ("/workout_menu/"+@current_user.id.to_s)
+  visit ("/workout_menu/show/"+@current_user.id.to_s)
 end
 
 Then(/^I should be able to see only my workouts$/) do
