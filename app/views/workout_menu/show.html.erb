@@ -85,20 +85,6 @@
                                           <th class='text-center'>Status</th>
                                         </tr>
                                       </thead>
-                                      <tbody>
-                                        <% 
-                                         @old_workouts.each do |di|
-                                        %>
-                                         <tr>
-                                            <td align='center' style="vertical-align:middle"><%= Workout.find(di.workout_id).name %></td>
-                                            <td align='center' style="vertical-align:middle"><%= di.created_at %></td>
-                                            <td align='center' style="vertical-align:middle"><%= di.exp_date %></td>
-                                            <td align='center' style="vertical-align:middle"><%= Person.find(Coach.find(Workout.find(di.workout_id).coach_id).person_id).name %></td>
-                                            <td align='center' style="vertical-align:middle"><%= if di.finished==1 then
-                                            'Completa' else 'Incompleto' end%></td>
-                                         </tr>
-                                        <% end %>
-                                      </tbody>
                                     </table>
                                 </div>
                             </div>
