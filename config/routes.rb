@@ -37,7 +37,7 @@ Rails.application.routes.draw do
   resources :workouts
 
   resources :workout_menu, only: [:show]
-  get 'workout_menu/show'
+
 
 
   get   '/signup', to: 'people#new', as: 'signup'
