@@ -1,4 +1,4 @@
-Given(/^that I'm a registered user to wotkout$/) do
+Given(/^that I'm a registered user to workout$/) do
 	@person = Person.create!(
 		name: "user",
 		email: "user@user.com",

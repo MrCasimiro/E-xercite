@@ -5,6 +5,10 @@ Given(/^that I'm a registered coach in system$/) do
 
 end
 
+Given(/^that I'm signed in the system$/) do
+	pending # Write code here that turns the phrase above into concrete actions
+end
+
 When(/^I acess exercises page$/) do
 	visit ("/fexercises/")
 end
