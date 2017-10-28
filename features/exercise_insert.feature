@@ -4,7 +4,7 @@ Feature: Workout view
 	I want to be able insert new exercises on the database
 
 	Scenario: Insert exercise
-		Given that I'm a registered coach
+		Given that I'm a registered coach in system
 		And I'm signed in the system
 		When I acess exercises page
 		Then I should be able to insert new exercises

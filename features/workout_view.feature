@@ -4,7 +4,7 @@ Feature: Workout view
 	I want to be able to view my workouts
 
 	Scenario: Viewing a workout
-		Given that I'm a registered user
+		Given that I'm a registered user to workout
 		And I'm signed in the system
 		And I have one valid workout
 		When I acess my workout page
