@@ -1,36 +1,36 @@
-Feature: Testes de link das paginas
-Como desenvolvedor 
-Quero que os usuarios sejam direcionados para a pagina de correta
-Assim podem aproveitar melhor o site
+Feature: Tests links for each page
+As a developer
+I want that users go to correct page when they click at the links
+So they can have a better experience
 
-Scenario: Usuario direcionado para a pagina de flexao
-When Eu clicar no link da pagina
-Then Eu devo ser direcionado para a pagina sobre flexao
+Scenario: User go to page flexao
+When I click at the link for flexao
+Then I should go to the page about flexao
 
-Scenario: Usuario direcionado para a pagina de squat
-When Eu clicar no link da pagina squat
-Then Eu devo ser direcionado para a pagina sobre squat
+Scenario: User go to page squat
+When I click at the link for squat
+Then I should go to the page about squat
 
-Scenario: Usuario direcionado para a pagina de burpee
-When Eu clicar no link da pagina burpee
-Then Eu devo ser direcionado para a pagina sobre burpee
+Scenario: User go to page burpee
+When I click at the link for burpee
+Then I should go to the page about burpee
 
-Scenario: Usuario direcionado para a pagina do avatar
-When Eu clicar no link da pagina avatar
-Then Eu devo ser direcionado para a pagina sobre avatar
+Scenario: User go to page avatar
+When I click at the link for avatar
+Then I should go to the page about avatar
 
-Scenario: Usuario direcionado para a pagina sobre nos
-When Eu clicar no link da pagina sobre nos
-Then Eu devo ser direcionado para a pagina sobre nos
+Scenario: User go to page sobre nos
+When I click at the link for sobre nos
+Then I should go to the page about sobre nos
 
-Scenario: Usuario direcionado para a pagina contato
-When Eu clicar no link da pagina contato
-Then Eu devo ser direcionado para a pagina contato
+Scenario: User go to page contato
+When I click at the link for contato
+Then I should go to the page about contato
 
-Scenario: Usuario direcionado para a pagina entrar
-When Eu clicar no link da pagina entrar
-Then Eu devo ser direcionado para a pagina entrar
+Scenario: User go to page entrar
+When I click at the link for entrar
+Then I should go to the page about entrar
 
-Scenario: Usuario direcionado para a pagina signup
-When Eu clicar no link da pagina signup
-Then Eu devo ser direcionado para a pagina signup
+Scenario: User go to page signup
+When I click at the link for signup
+Then I should go to the page about signup
