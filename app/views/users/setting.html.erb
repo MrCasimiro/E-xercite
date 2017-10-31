@@ -1,0 +1,42 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
+      <div class="well profile">
+        <%= image_tag(@user.avatar_url, class: "img-circle", size: 100, align: "middle") %>
+        <%= form_for @user, url: person_user_path  do |u| %>
+          <%= u.file_field :avatar if @user.avatar?%>
+          <%= u.hidden_field :avatar_cache %>
+          <%-# f.select(:character, Model.all.map{|p| [p.name, p.id, :title => p.image_url(:thumb)]}) -%>
+          <br>
+            <%= u.submit "Save changes", class: "btn btn-primary" %>
+          </br>
+        <% end %>
+        <% @person = @user.person %>
+        <%= form_for(@person) do |f| %>
+            <%= render 'shared/error_messages' %>
+            <%= f.label :name %>
+            <%= f.text_field :name, class: 'form-control' %>
+
+            <%= f.label :email %>
+            <%= f.email_field :email, class: 'form-control' %>
+
+            <%= f.label :age %>
+            <%= f.number_field :age, in: 10..100, step:1, class: 'form-control' %>
+
+            <%= f.label :phone %>
+            <%= f.telephone_field :phone, class: 'form-control' %>
+
+            <%= f.label :password %>
+            <%= f.password_field :password, class: 'form-control' %>
+
+            <%= f.label :password_confirmation, "Confirmation" %>
+            <%= f.password_field :password_confirmation, class: 'form-control' %>
+            <br>
+              <%= f.submit "Save changes", class: "btn btn-primary" %>
+            </br>
+        <% end %>
+      </div>                 
+    </div>
+  </div>
+</div>

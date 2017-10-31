@@ -35,10 +35,7 @@ before :each do
 		@diet_compose.food_id = nil
 		expect(@diet_compose).to_not be_valid
   end
-  it "diet_id should be present" do
-		@diet_compose.diet_id = nil
-		expect(@diet_compose).to_not be_valid
-  end
+
 
 
 

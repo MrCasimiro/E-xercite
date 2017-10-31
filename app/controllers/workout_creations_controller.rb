@@ -1,5 +1,4 @@
 class WorkoutCreationsController < ApplicationController
-	@user_do_workout_id
 	def show
 		@coach = Coach.find(params[:id])
 		@user_workout = User.find(params[:id_user])
@@ -18,6 +17,5 @@ class WorkoutCreationsController < ApplicationController
   		render 'show'
   	end
 	end
-
 
 end

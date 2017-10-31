@@ -8,9 +8,13 @@
   </head>
 
   <body>
-
+    <link href="/css/landing-page.css" rel="stylesheet">
     <% if logged_in? %>
-      <%= render 'layouts/ui_sidebar' %>
+      <% if !@user.blank? %>
+        <%= render 'layouts/ui_sidebar' %>
+      <% else %>
+        <%= render 'layouts/ui_sidebar_coach' %>
+      <% end %>
       <%= yield %>
       <%= render 'layouts/ui_header' %>
     <% else %>

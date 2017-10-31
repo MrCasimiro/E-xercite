@@ -13,46 +13,46 @@
     <%= f.label :name, "Nome completo" %>
     <br>
     <%= f.text_field :name, size: "38x6", class: "form-control" %>
-</br>
+	</br>
 
-<%= f.label :email, "E-mail" %>
-<br>
-<%= f.email_field :email, size: "38x6", class: "form-control" %>
-</br>
+	<%= f.label :email, "E-mail" %>
+	<br>
+	<%= f.email_field :email, size: "38x6", class: "form-control" %>
+	</br>
 
-<%= f.label :age, "Idade" %>
-<br>
-<%= f.text_field :age, size: "38x6", class: "form-control" %>
-</br>
+	<%= f.label :age, "Idade" %>
+	<br>
+	<%= f.text_field :age, size: "38x6", class: "form-control" %>
+	</br>
 
-<%= f.label :gender, "Sexo" %>
-<br>
-<%= f.label :gender_male, 'Masculino' %>
-<%= f.radio_button :gender, 'male' %>
-<%= f.label :gender_female, 'Feminino' %>
-<%= f.radio_button :gender, 'female' %>
-<%= f.label :gender_other, 'Outro' %>
-<%= f.radio_button :gender, 'other', :checked => true %>
-</br>
+	<%= f.label :gender, "Sexo" %>
+	<br>
+	<%= f.label :gender_male, 'Masculino' %>
+	<%= f.radio_button :gender, 'male' %>
+	<%= f.label :gender_female, 'Feminino' %>
+	<%= f.radio_button :gender, 'female' %>
+	<%= f.label :gender_other, 'Outro' %>
+	<%= f.radio_button :gender, 'other', :checked => true %>
+	</br>
 
-<%= f.label :phone, "Número do telefone" %>
+	<%= f.label :phone, "Número do telefone" %>
 
-<br>
-<%= f.telephone_field :phone, class: "form-control" %>
-</br>
+	<br>
+	<%= f.telephone_field :phone, class: "form-control" %>
+	</br>
 
-<%= f.label :password, "Senha" %>
-<br>
-<%= f.password_field :password, class: "form-control" %>
-</br>
+	<%= f.label :password, "Senha" %>
+	<br>
+	<%= f.password_field :password, class: "form-control" %>
+	</br>
 
-<%= f.label :password_confirmation, "Confirmação da senha" %>
-<br>
-<%= f.password_field :password_confirmation, class: "form-control" %>
-</br>
-</br>
-<%= f.submit "Criar minha conta!", class: "btn btn-primary" %>
-<% end %>
+	<%= f.label :password_confirmation, "Confirmação da senha" %>
+	<br>
+	<%= f.password_field :password_confirmation, class: "form-control" %>
+	</br>
+	</br>
+	<%= f.submit "Criar minha conta!", class: "btn btn-primary" %>
+	<% end %>
 </div>
 </div>'
 

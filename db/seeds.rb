@@ -21,7 +21,7 @@ disease = Disease.create!(name_disease: "Osteoporosis") #ok
 
 UserDisease.create(user_id: user.id, disease_id: disease.id)
 
-workout = Workout.create!(coach_id: coach.id, name: "workout monstrao")
+workout = Workout.create!(coach_id: coach.id, name: "Aerobico")
 
 exercise = Exercise.create!(name_exercise: "Back") # ok
 
@@ -40,5 +40,11 @@ diet2 = Diet.create(name: "Ganho de massa 1", coach_id: coach.id)
 diet3 = Diet.create(name: "Selíaca 1", coach_id: coach.id)
 
 DietCompose.create(quantity:'100' , hour:'10:00' , day: '20171019' ,food_id: food1.id, diet_id: diet1.id)
+DietCompose.create(quantity:'100' , hour:'10:00' , day: '20171019' ,food_id: food3.id, diet_id: diet1.id)
 DietCompose.create(quantity:'150' , hour:'15:00' , day: '20171029' ,food_id: food2.id, diet_id: diet2.id)
 
+exercise2 = Exercise.create!(name_exercise: "Flexão")
+exercise3 = Exercise.create!(name_exercise: "Squat")
+exercise4 = Exercise.create!(name_exercise: "Burpee")
+UserEatDiet.create(user_id: user.id, diet_id: diet1.id, exp_date: '20181030', finished: 0)
+UserEatDiet.create(user_id: user.id, diet_id: diet2.id, exp_date: '20181010', finished: 1)

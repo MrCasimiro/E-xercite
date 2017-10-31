@@ -11,10 +11,25 @@ footer {
 .copyright {
   margin: 15px 0 0;
 }
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+=======
+/* -------------------------------------- */
+/* COMECO DA PARTE PERSONALIZADA DA PAGINA*/
+>>>>>>> code_climate
+
+<<<<<<< HEAD
+.listaExercicios a{
+=======
 /* -------------------------------------- */
 /* COMECO DA PARTE PERSONALIZADA DA PAGINA*/
 
 #listaExercicios a{
+>>>>>>> c08adcde8a75b446a18a656067e190f7bfa1cf8e
+=======
+#listaExercicios a{
+>>>>>>> 444f310473a8e7fbe9b350ae10149d4bd344a2ed
   color: #000;
 }
 
@@ -41,6 +56,7 @@ footer {
 
 #listaExercicios h2{
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+>>>>>>> code_climate
   font-weight: 700;
   color: #a4a4a4;
   font-size: 16pt;
