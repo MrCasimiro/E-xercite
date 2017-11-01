@@ -17,4 +17,8 @@ FactoryGirl.define do
 			b.update_column(:avatar, "default.png")
 		end
 	end
+
+	factory :coach do
+		person
+	end
 end
