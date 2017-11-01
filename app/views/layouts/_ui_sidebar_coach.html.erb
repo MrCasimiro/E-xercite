@@ -15,7 +15,7 @@
                         <%= link_to "Criar dieta", coach_diets_path(coach_id: @coach.id) %>
                     </li>
                     <li>
-                        <%= link_to "Cadastrar alimento", {:controller => "foods", :action => "show", :id   => params[:id]} %>
+                        <%= link_to "Cadastrar alimento", coach_foods_path(coach_id: @coach.id) %>
                     </li>
                     
                 </ul>

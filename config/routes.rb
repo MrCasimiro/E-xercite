@@ -53,27 +53,24 @@ Rails.application.routes.draw do
     resources :coaches
   end
 
+  resources :users do
+    resources :trainings, only: [:show]
+    resources :diet_menu, only: [:show]
+  end
+
   resources :coaches do
     resources :workout_creations, only: [:show, :create_do_workout]
     post  'workout_creations', to: 'workout_creations#create_do_workout'
+
     get 'diets', to: 'diets#show'
     post 'diets', to: 'diets#create'
     resources :diets
+
+    get '/foods', to: 'foods#show'
+    resources :foods
   end
 
   get    '/login',   to: 'sessions#new', as: 'login'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
-
-  resources :trainings, only: [:show]
-
-  get 'coaches/show'
-  get 'trainings/show'
-
-  resources :diet_menu, only: [:show]
-  get 'diet_menu/show'
-
-  get '/foods', to: 'foods#show'
-  resources :foods
-
 end
