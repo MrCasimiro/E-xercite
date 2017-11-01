@@ -15,7 +15,7 @@ Given(/^that I'm a registered user$/) do
 		avatar: open("public/images/profile/teste.png"))
 end
 
-Given(/^I'm signed in$/) do
+Given(/^I'm signed in the app$/) do
 
 	visit ("/login")
 	fill_in("email_field", :with => @person.email)
@@ -49,7 +49,7 @@ end
 
 
 When(/^I acess my diet page$/) do
-  visit ("/diet_menu/"+@current_user.id.to_s)
+  visit ("/users/#{@current_user.id}/diet_menu/"+@current_user.id.to_s)
 end
 
 Then(/^I should be able to see only my diets$/) do

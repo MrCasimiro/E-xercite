@@ -5,7 +5,7 @@ Feature: Diet view
 
 	Scenario: Insert food
 		Given that I'm a registered coach
-		And I'm signed in
+		And I'm signed in the app
 		When I acess foods page
 		Then I should be able to insert new foods
 		Then the number of foods should be increased by 1

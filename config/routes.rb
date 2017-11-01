@@ -27,10 +27,6 @@ Rails.application.routes.draw do
 
   get '/gami', to: 'pages#gamification', as: 'gami'
 
-
-  get   '/fexercises', to: 'exercises#show'
-  resources :exercises
-
    #formulário de criação de treino
   get '/workouts', to: 'workouts#show'
   post '/workouts', to: 'workouts#create'
@@ -66,8 +62,11 @@ Rails.application.routes.draw do
     post 'diets', to: 'diets#create'
     resources :diets
 
-    get '/foods', to: 'foods#show'
+    get 'foods', to: 'foods#show'
     resources :foods
+
+    get   'exercises', to: 'exercises#show'
+    resources :exercises
   end
 
   get    '/login',   to: 'sessions#new', as: 'login'

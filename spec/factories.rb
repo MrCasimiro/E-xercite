@@ -6,7 +6,6 @@ FactoryGirl.define do
 		age 21
 		password "123456"
 		password_confirmation "123456"
-
 		sequence(:email) { |n| "person#{n}@example.com" }
 	end
 

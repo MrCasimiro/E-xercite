@@ -19,7 +19,7 @@
       <div class="row">
         <div class="col-sm-1"></div>
           <div class="col-lg-8">
-            <%= simple_form_for @exercise, :html => {:class => 'form-basic' }  do |f| %>
+            <%= simple_form_for [@coach, @exercise], :html => {:class => 'form-basic' }  do |f| %>
               <%= f.input :name_exercise %>
               <%= f.button :submit,:id => "submit_bt" %>
             <% end %>
