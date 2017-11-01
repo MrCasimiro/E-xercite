@@ -51,7 +51,14 @@ Rails.application.routes.draw do
       end
     end
     resources :coaches
-    resources :profiles
+  end
+
+  resources :coaches do
+    resources :workout_creations, only: [:show, :create_do_workout]
+    post  'workout_creations', to: 'workout_creations#create_do_workout'
+    get 'diets', to: 'diets#show'
+    post 'diets', to: 'diets#create'
+    resources :diets
   end
 
   get    '/login',   to: 'sessions#new', as: 'login'
@@ -59,8 +66,6 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
 
   resources :trainings, only: [:show]
-  resources :workout_creations, only: [:show, :create_do_workout]
-  post  'workout_creations', to: 'workout_creations#create_do_workout'
 
   get 'coaches/show'
   get 'trainings/show'
@@ -70,10 +75,5 @@ Rails.application.routes.draw do
 
   get '/foods', to: 'foods#show'
   resources :foods
-
-  
-  get '/diets', to: 'diets#show'
-  post '/diets', to: 'diets#create'
-  resources :diets
 
 end

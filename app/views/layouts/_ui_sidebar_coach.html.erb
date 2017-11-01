@@ -12,7 +12,7 @@
                 <ul class="nav navbar-nav side-nav">
                     <li>
                     <li>
-                        <%= link_to "Criar dieta", {:controller => "diets", :action => "show", :id   => params[:id]} %>
+                        <%= link_to "Criar dieta", coach_diets_path(coach_id: @coach.id) %>
                     </li>
                     <li>
                         <%= link_to "Cadastrar alimento", {:controller => "foods", :action => "show", :id   => params[:id]} %>

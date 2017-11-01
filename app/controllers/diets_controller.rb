@@ -1,8 +1,7 @@
 class DietsController < ApplicationController
 	
-
 	def show
-		@coach_id = Coach.find_by person_id: 3
+		@coach = Coach.find(params[:coach_id])
 		@diet = Diet.new
 		@diet.diet_composes.build
 		@foods = Food.all
@@ -10,12 +9,13 @@ class DietsController < ApplicationController
 
 	def create
 		@diet = Diet.new(diet_params)
+		@coach = Coach.find(params[:coach_id])
 		if @diet.save
 			flash[:success] = "success"
 		end
 	end
 
-
+	private
 	def diet_params
 		# add attributes of nested association to whitelist
 		params.require(:diet).permit(:name, :coach_id, :diet_composes_attributes => [:quantity, :hour, :day, :food_id, :diet_id])    

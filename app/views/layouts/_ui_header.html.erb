@@ -19,7 +19,7 @@
             <% if !@user.blank? %>
                 <a class="navbar-brand" <%= link_to "E-xercite", person_user_path(person_id: @user.person_id) %></a>
             <% elsif !@coach.blank? %>
-                <a class="navbar-brand" <%= link_to "E-xercite", person_coach_path %></a>
+                <a class="navbar-brand" <%= link_to "E-xercite", person_coach_path(person_id: @coach.person_id, id: @coach.id) %></a>
             <% else %>
                 <a class="navbar-brand">Teste</a>
             <% end %>

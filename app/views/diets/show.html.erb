@@ -27,9 +27,9 @@
                     <div class="col-sm-2"></div>
                     <div class="col-lg-8">
                         <h3>Insira os dados da dieta</h3>
-                        <%= simple_form_for @diet, :html => {:class => 'form-basic' }  do |f| %>
+                        <%= simple_form_for [@coach, @diet], :html => {:class => 'form-basic' }  do |f| %>
                             <%= f.input :name %>
-                            <%= f.input :coach_id, :as => :hidden, :input_html => { :value => @coach_id.id } %>
+                            <%= f.input :coach_id, :as => :hidden, :input_html => { :value => @coach.id } %>
                             <%= f.nested_fields_for :diet_composes do |ff| %>
                                     <%= ff.remove_nested_fields_link %>
                                     <br>
