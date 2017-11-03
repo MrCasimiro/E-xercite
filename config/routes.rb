@@ -28,9 +28,6 @@ Rails.application.routes.draw do
   get '/gami', to: 'pages#gamification', as: 'gami'
 
    #formulário de criação de treino
-  get '/workouts', to: 'workouts#show'
-  post '/workouts', to: 'workouts#create'
-  resources :workouts
 
   resources :workout_menu, only: [:show]
 
@@ -39,7 +36,7 @@ Rails.application.routes.draw do
   get   '/signup', to: 'people#new', as: 'signup'
   post  '/signup', to: 'people#create'
 
-  resources :people do
+  resources :people, only: [:show, :new, :create, :edit, :update] do
 
     resources :users do 
       member do 
@@ -49,24 +46,28 @@ Rails.application.routes.draw do
     resources :coaches
   end
 
-  resources :users do
+  resources :users, only: [:show, :edit, :update] do
     resources :trainings, only: [:show]
     resources :diet_menu, only: [:show]
   end
 
   resources :coaches do
-    resources :workout_creations, only: [:show, :create_do_workout]
-    post  'workout_creations', to: 'workout_creations#create_do_workout'
+    #resources :workout_creations, only: [:show, :create_do_workout, :new]
+    #post  'workout_creations',      to: 'workout_creations#create_do_workout'
 
     get 'diets', to: 'diets#show'
     post 'diets', to: 'diets#create'
-    resources :diets
+    resources :diets, only: [:show, :create]
 
     get 'foods', to: 'foods#show'
-    resources :foods
+    resources :foods, only: [:show, :create]
 
     get   'exercises', to: 'exercises#show'
-    resources :exercises
+    resources :exercises, only: [:show, :create]
+
+    get 'workouts', to: 'workouts#new'
+    resources :workouts, only: [:show, :create_do_workout, :create]
+    post 'workout_creations', to: 'workouts#create_do_workout'
   end
 
   get    '/login',   to: 'sessions#new', as: 'login'

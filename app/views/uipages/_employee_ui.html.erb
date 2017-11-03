@@ -31,7 +31,7 @@
                                 <th scope="row" style="vertical-align:middle"><%= i %></th>
                                 <td align='center' style="vertical-align:middle"><%= user_workout.person.name %></td>
                                 <td align='center' style="vertical-align:middle"><%= user_workout.person.age %></td>
-                                <td align='right'><%= link_to coach_workout_creation_path(coach_id: @coach.id, id_user: user_workout.id) do %><button class="button">Montar Treinos</button><% end %></td>
+                                <td align='right'><%= link_to coach_workout_path(coach_id: @coach.id, id_user: user_workout.id) do %><button class="button">Montar Treinos</button><% end %></td>
                                 <td align='left'><a href=""><button class="button">Ver dados do usuário</button></a></td>
                               </tr>
                             <% end %>

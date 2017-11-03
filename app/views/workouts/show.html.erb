@@ -1,4 +1,7 @@
-<link href="/css/workout.css" rel="stylesheet">
+    <link href="/css/morris.css" rel="stylesheet">
+    <link href="/css/sb-admin.css" rel="stylesheet">
+    <link href="/css/workout_creations.css" rel="stylesheet">
+    <title>SB Admin - Bootstrap Admin Template</title>
 
     <div id="wrapper">
 
@@ -8,29 +11,69 @@
 
                 <!-- Page Heading -->
                 <div class="row">
-                    <div class="col-sm-2"></div>
-                    <div class="col-lg-8">
-                        <h3>Insira os dados do treino</h3>
-                        <%= simple_form_for @workout, :html => {:class => 'form-basic' }  do |f| %>
-                            <%= f.input :name %>
-                            <%= f.input :coach_id %>
-                            <%= f.nested_fields_for :workout_composes do |ff| %>
-                                    <%= ff.remove_nested_fields_link %>
-                                    <br>
-                                    <%= ff.input :set %>
-					        		<%= ff.input :repetition %>
-					        		<%= ff.input :exercise_id %>
-					        		<%= ff.input :technique %>
-					        		<%= ff.input :workout_id %>
-                                <% end %>
-                            <%= f.add_nested_fields_link :workout_composes %>
-                            <br><br>
-                            <%= f.button :submit %>
-                        <% end %>
-                        <br><br>
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            Criar treinos <small>E-xercite</small>
+                        </h1>                           
+                        
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Treinos criados</h3>
+                                   
+                            </div>
+                            <div class="panel-body">
+                                
+                                <div class="list-group">
+                                    <table class="table table-striped">
+                                      <thead>
+                                        <tr>
+                                          <th class='text-center'>Treino</th>
+                                          <th class='text-center'>Exercício</th>
+                                          <th class='text-center'>Sequências</th>
+                                          <th class='text-center'>Repetições</th>
+                                          <th class='text-center'>Técnica</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        <% find_workouts(@coach) %>
+                                        <% @workout_composes.each do |wo|  %>
+                                         <tr>
+                                            <td align='center' style="vertical-align:middle"><%= Workout.find(wo[0].workout_id).name%></td>
+                                            <td align='center' style="vertical-align:middle"><%= Exercise.find(wo[0].exercise_id).name_exercise %></td>
+                                            <td align='center' style="vertical-align:middle"><%= wo[0].set%></td>
+                                            <td align='center' style="vertical-align:middle"><%= wo[0].repetition %></td>
+                                            <td align='center' style="vertical-align:middle"><%= wo[0].technique %></td>
+                                            <td align='right'>
+                                                <% if user_do_workout?(@user_workout, wo[0]) %>
+                                                    <%= button_to "Enviar", {action: 'create_do_workout', workout_id: wo[0].workout_id, id_user: @user_workout.id}, {class: "button", data: {disable_with: "Enviando"}}%>
+                                                <% else %>
+                                                    <%= button_to "Enviado", {},  {class: "button-disabled", disabled: true}%>
+                                                <% end %>
+                                            </td>
+                                         </tr>
+                                        <% end %>
+                                      </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
+                <div class="row" align = "center">
+                    <div class="col-lg-12">
+                        <h4><%= button_to "Criar novo treino", {action: 'new'}, {class: "button", method: "get"}%></h4>
+                    </div>
+                </div>
+            
+                <!-- /.row -->
+
+            </div>
             <!-- /.container-fluid -->
 
         </div>

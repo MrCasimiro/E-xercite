@@ -20,4 +20,26 @@ FactoryGirl.define do
 	factory :coach do
 		person
 	end
+
+	factory :workout do
+		coach
+		name "workout test with factory girl"
+	end
+
+	factory :exercise do 
+		name_exercise "exercise test with factory girl"
+	end
+
+	factory :workout_compose do
+		workout
+		exercise
+		set 3
+		repetition 15
+		technique "technique test with factory girl"
+	end
+
+	factory :user_do_workout do
+		user
+		workout
+	end
 end
