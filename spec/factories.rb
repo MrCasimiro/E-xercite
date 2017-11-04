@@ -1,4 +1,7 @@
 FactoryGirl.define do
+  factory :user_request do
+    
+  end
 	factory :person do
 		name "Casimiro"
 		gender "Male"
