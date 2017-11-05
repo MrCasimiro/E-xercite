@@ -1,0 +1,2 @@
+module DietAssignHelper
+end

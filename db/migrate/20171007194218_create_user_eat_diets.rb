@@ -7,6 +7,6 @@ class CreateUserEatDiets < ActiveRecord::Migration[5.1]
       t.belongs_to :diet, unique: true, foreign_key:true
       t.timestamps
     end
-    add_index :user_eat_diets, [:user_id, :diet_id], unique: true
+    add_index :user_eat_diets, [:user_id, :diet_id, :exp_date], unique: true
   end
 end

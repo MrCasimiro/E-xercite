@@ -1,6 +1,5 @@
 class DietsController < ApplicationController
 	
-
 	def show
 		@coach_id = Coach.find_by person_id: 3
 		@diet = Diet.new
