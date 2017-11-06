@@ -75,4 +75,6 @@ Rails.application.routes.draw do
   post '/diets', to: 'diets#create'
   resources :diets
 
+  get '/chat', to: 'chatrooms#index', as: 'chat'
+
 end
