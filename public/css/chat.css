@@ -35,7 +35,6 @@ body, h1, h2, h3, h4, h5, h6 {
 .intro-divider {
   width: 400px;
   border-top: 1px solid #f8f8f8;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .intro-social-buttons i {
@@ -46,9 +45,7 @@ body, h1, h2, h3, h4, h5, h6 {
   .intro-message {
     padding-bottom: 15%;
   }
-  .intro-message>h1 {
-    font-size: 3em;
-  }
+  
   ul.intro-social-buttons>li {
     display: block;
     margin-bottom: 20px;
@@ -88,28 +85,6 @@ body, h1, h2, h3, h4, h5, h6 {
   float: left;
   width: 200px;
   border-top: 3px solid #e7e7e7;
-}
-
-.banner {
-  padding: 100px 0;
-  color: #f8f8f8;
-  background: url(/images/starting.jpg) no-repeat center center;
-  background-size: 1200px 300px;
-}
-
-.banner h2 {
-  margin: 0;
-  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
-  font-size: 3em;
-}
-
-.banner ul {
-  margin-bottom: 0;
-}
-
-.banner-social-buttons {
-  float: right;
-  margin-top: 0;
 }
 
 @media(max-width:1199px) {
