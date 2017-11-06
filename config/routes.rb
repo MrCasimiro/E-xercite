@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :chatrooms
+  devise_for :users
   root 'pages#home'
 
   get 'profiles/show'
@@ -52,6 +54,7 @@ Rails.application.routes.draw do
     end
     resources :coaches
     resources :profiles
+    devise_for :users
   end
 
   get    '/login',   to: 'sessions#new', as: 'login'
@@ -73,5 +76,8 @@ Rails.application.routes.draw do
   get '/diets', to: 'diets#show'
   post '/diets', to: 'diets#create'
   resources :diets
+
+  get '/channel', to: 'chatrooms#index'
+  resources :chatrooms
 
 end
