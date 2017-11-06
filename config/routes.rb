@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :chatrooms
   root 'pages#home'
 
   get 'profiles/show'
