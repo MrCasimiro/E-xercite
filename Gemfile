@@ -14,6 +14,8 @@ gem 'rails-controller-testing'
 gem 'font-awesome-sass'
 #Bootstrap
 gem 'bootstrap-sass'
+#devise
+gem 'devise'
 
 #Jquery
 gem 'jquery-rails'
