@@ -29,7 +29,6 @@ class ChatroomsController < ApplicationController
     respond_to do |format|
       if @chatroom.save
         format.html { redirect_to @chatroom, notice: 'Chatroom was successfully created.' }
-        format.json { render :show, status: :created, location: @chatroom }
       else
         format.html { render :new }
         format.json { render json: @chatroom.errors, status: :unprocessable_entity }
@@ -43,7 +42,6 @@ class ChatroomsController < ApplicationController
     respond_to do |format|
       if @chatroom.update(chatroom_params)
         format.html { redirect_to @chatroom, notice: 'Chatroom was successfully updated.' }
-        format.json { render :show, status: :ok, location: @chatroom }
       else
         format.html { render :edit }
         format.json { render json: @chatroom.errors, status: :unprocessable_entity }
