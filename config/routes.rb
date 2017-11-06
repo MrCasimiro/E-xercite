@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :chatrooms
   root 'pages#home'
 
   get 'profiles/show'
@@ -73,5 +74,9 @@ Rails.application.routes.draw do
   get '/diets', to: 'diets#show'
   post '/diets', to: 'diets#create'
   resources :diets
+
+  get '/chat', to: 'chatrooms#index', as: 'chat'
+  resources :chatrooms
+  devise_for :users
 
 end
