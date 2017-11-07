@@ -54,7 +54,22 @@ person19 = Person.create!(name: "Leticia Hepta", email: "leticia@email.com",
 person20 = Person.create!(name: "Adenor Bacchi", email: "adenor@email.com",
   phone: "11998574122", age: 56, gender: "male", password: "titefalamuito", password_confirmation: "titefalamuito")
 
-
+#Populando tabela Users
+user2 = User.create(person_id: person4.id, level: 0, points: 0)
+user3 = User.create(person_id: person5.id, level: 0, points: 0)
+user4 = User.create(person_id: person6.id, level: 0, points: 0)
+user5 = User.create(person_id: person7.id, level: 0, points: 0)
+user6 = User.create(person_id: person8.id, level: 0, points: 0)
+user7 = User.create(person_id: person9.id, level: 0, points: 0)
+user8 = User.create(person_id: person10.id, level: 0, points: 0)
+user9 = User.create(person_id: person11.id, level: 0, points: 0)
+user10 = User.create(person_id: person12.id, level: 0, points: 0)
+user11 = User.create(person_id: person13.id, level: 0, points: 0)
+user12 = User.create(person_id: person14.id, level: 0, points: 0)
+user14 = User.create(person_id: person15.id, level: 0, points: 0)
+user15 = User.create(person_id: person16.id, level: 0, points: 0)
+user16 = User.create(person_id: person17.id, level: 0, points: 0)
+user17 = User.create(person_id: person18.id, level: 0, points: 0)
 
 
 
