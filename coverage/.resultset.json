@@ -5,7 +5,15 @@
         1,
         null
       ],
+<<<<<<< HEAD
       "/home/tanaka/Desktop/E-xercite/app/helpers/choose_diet_helper.rb": [
+=======
+      "/home/juny/E-xercite/app/helpers/chatrooms_helper.rb": [
+        1,
+        null
+      ],
+      "/home/juny/E-xercite/app/helpers/coaches_helper.rb": [
+>>>>>>> master
         1,
         null
       ],
@@ -50,7 +58,7 @@
         null,
         1,
         null,
-        19,
+        21,
         null,
         null,
         1,
@@ -62,7 +70,7 @@
         null,
         null,
         1,
-        19,
+        21,
         null,
         null,
         1,
@@ -102,12 +110,83 @@
         1,
         null
       ],
+<<<<<<< HEAD
       "/home/tanaka/Desktop/E-xercite/app/controllers/choose_diet_controller.rb": [
         1,
         null,
+=======
+      "/home/juny/E-xercite/app/controllers/chatrooms_controller.rb": [
         1,
         1,
+        null,
+        null,
+        null,
         1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+>>>>>>> master
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
         null,
         null,
         1,
@@ -139,7 +218,11 @@
         1,
         null
       ],
+<<<<<<< HEAD
       "/home/tanaka/Desktop/E-xercite/app/controllers/coaches_controller.rb": [
+=======
+      "/home/juny/E-xercite/app/controllers/coaches_controller.rb": [
+>>>>>>> master
         1,
         1,
         1,
@@ -147,7 +230,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/home/tanaka/Desktop/E-xercite/app/controllers/contacts_controller.rb": [
+=======
+      "/home/juny/E-xercite/app/controllers/contacts_controller.rb": [
+>>>>>>> master
         1,
         1,
         2,
@@ -531,7 +618,24 @@
         1,
         null
       ],
+<<<<<<< HEAD
       "/home/tanaka/Desktop/E-xercite/app/models/coach.rb": [
+=======
+      "/home/juny/E-xercite/app/models/chatroom.rb": [
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/home/juny/E-xercite/app/models/chatroom_user.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/home/juny/E-xercite/app/models/coach.rb": [
+>>>>>>> master
         1,
         1,
         null
@@ -600,7 +704,17 @@
         1,
         null
       ],
+<<<<<<< HEAD
       "/home/tanaka/Desktop/E-xercite/app/models/person.rb": [
+=======
+      "/home/juny/E-xercite/app/models/message.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/home/juny/E-xercite/app/models/person.rb": [
+>>>>>>> master
         1,
         null,
         1,
@@ -696,6 +810,10 @@
         null,
         1,
         1,
+        1,
+        null,
+        1,
+        1,
         null
       ],
       "/home/tanaka/Desktop/E-xercite/app/uploaders/avatar_uploader.rb": [
@@ -780,7 +898,15 @@
         1,
         null
       ],
+<<<<<<< HEAD
       "/home/tanaka/Desktop/E-xercite/app/channels/application_cable/channel.rb": [
+=======
+      "/home/juny/E-xercite/app/mailers/user_mailer.rb": [
+        0,
+        0
+      ],
+      "/home/juny/E-xercite/app/mailers/application_mailer.rb": [
+>>>>>>> master
         0,
         0,
         0,
@@ -799,7 +925,11 @@
         0
       ]
     },
+<<<<<<< HEAD
     "timestamp": 1509920331
+=======
+    "timestamp": 1510011773
+>>>>>>> master
   },
   "Cucumber Features": {
     "coverage": {

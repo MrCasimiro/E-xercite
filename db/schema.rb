@@ -12,12 +12,28 @@
 
 ActiveRecord::Schema.define(version: 20171030105104) do
 
+
   create_table "admins", force: :cascade do |t|
     t.string "adm_password"
     t.integer "person_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["person_id"], name: "index_admins_on_person_id", unique: true
+  end
+
+  create_table "chatroom_users", force: :cascade do |t|
+    t.integer "chatroom_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chatroom_id"], name: "index_chatroom_users_on_chatroom_id"
+    t.index ["user_id"], name: "index_chatroom_users_on_user_id"
+  end
+
+  create_table "chatrooms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "coaches", force: :cascade do |t|
@@ -64,6 +80,16 @@ ActiveRecord::Schema.define(version: 20171030105104) do
     t.string "name_food"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.integer "chatroom_id"
+    t.integer "user_id"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "people", force: :cascade do |t|
