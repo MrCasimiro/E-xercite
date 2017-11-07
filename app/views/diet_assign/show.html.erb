@@ -59,14 +59,14 @@
                                          @usersRequestingDiets.each do |userRequest|
                                         %>
                                          <tr>
-                                            <td align='center' style="vertical-align:middle"><%= Person.find(User.find(userRequest.user_id).person_id).name %>
+                                            <td align='center' style="vertical-align:middle", id = "requester_name"><%= Person.find(User.find(userRequest.user_id).person_id).name %>
                                             </td>
                                             <td align='center' style="vertical-align:middle"><%= userRequest.date %>
                                             </td>
                                             <td></td>
                                             <td align='center' style="vertical-align:middle"><%= userRequest.date %>
                                             </td>
-                                            <td align='center' style="vertical-align:middle"> <%= link_to "Atribuir dieta", {:controller => "choose_diet", :action => "show", :id   => params[:id], :requester_id => userRequest.user_id}, :class => "btn btn-success" %>
+                                            <td align='center' style="vertical-align:middle"> <%= link_to "Atribuir dieta", {:controller => "choose_diet", :action => "show", :id   => params[:id], :requester_id => userRequest.user_id},:id => "atribuir_dieta", :class => "btn btn-success" %>
                                             </td>
 
 

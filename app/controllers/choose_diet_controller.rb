@@ -8,7 +8,6 @@ class ChooseDietController < ApplicationController
 	def create
 		@assign = UserEatDiet.new(assign_params)
 		if @assign.save
-			flash[:success] = "success"
 			update_request_status(assign_params)
 		end
 	end

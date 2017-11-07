@@ -5,6 +5,10 @@
         1,
         null
       ],
+      "/home/tanaka/Desktop/E-xercite/app/helpers/choose_diet_helper.rb": [
+        1,
+        null
+      ],
       "/home/tanaka/Desktop/E-xercite/app/helpers/coaches_helper.rb": [
         1,
         null
@@ -98,11 +102,34 @@
         1,
         null
       ],
-      "/home/tanaka/Desktop/E-xercite/app/controllers/coaches_controller.rb": [
+      "/home/tanaka/Desktop/E-xercite/app/controllers/choose_diet_controller.rb": [
+        1,
+        null,
         1,
         1,
         1,
+        null,
+        null,
         1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        1,
+        null,
+        0,
+        null,
+        null,
         null,
         null
       ],
@@ -110,6 +137,14 @@
         1,
         1,
         1,
+        null
+      ],
+      "/home/tanaka/Desktop/E-xercite/app/controllers/coaches_controller.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
         null
       ],
       "/home/tanaka/Desktop/E-xercite/app/controllers/contacts_controller.rb": [
@@ -132,6 +167,11 @@
       ],
       "/home/tanaka/Desktop/E-xercite/app/controllers/diet_assign_controller.rb": [
         1,
+        1,
+        1,
+        null,
+        null,
+        null,
         null
       ],
       "/home/tanaka/Desktop/E-xercite/app/controllers/diet_menu_controller.rb": [
@@ -162,7 +202,6 @@
       ],
       "/home/tanaka/Desktop/E-xercite/app/controllers/diets_controller.rb": [
         1,
-        null,
         null,
         1,
         1,
@@ -568,7 +607,7 @@
         1,
         1,
         null,
-        47,
+        54,
         1,
         null,
         1,
@@ -673,7 +712,7 @@
         null,
         null,
         1,
-        75,
+        117,
         null,
         null,
         1,
@@ -702,11 +741,11 @@
         null,
         null,
         1,
-        48,
+        90,
         null,
         null,
         1,
-        48,
+        90,
         null,
         null,
         null,
@@ -760,7 +799,7 @@
         0
       ]
     },
-    "timestamp": 1509826883
+    "timestamp": 1509920331
   },
   "Cucumber Features": {
     "coverage": {
