@@ -71,11 +71,10 @@ user15 = User.create(person_id: person16.id, level: 0, points: 0)
 user16 = User.create(person_id: person17.id, level: 0, points: 0)
 user17 = User.create(person_id: person18.id, level: 0, points: 0)
 
-
-
-
-
+#Populando tabela Coach
 coach = Coach.create!(person_id: person3.id)
+coach2 = Coach.create!(person_id: person19.id)
+coach3 = Coach.create!(person_id: person20.id)
 
 Speciality.create!(coach_id: coach.id, name_speciality: "elder")
 
