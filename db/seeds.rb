@@ -18,6 +18,29 @@ user = User.create(person_id: person2.id, level: 0, points: 0)
 person3 = Person.create!(name: "coach", email: "coach@coach.com",
  	phone: "1111111", age: 21, gender: "other", password: "123456", password_confirmation: "123456")
 
+#Populando tabela Person
+person4 = Person.create!(name: "Roberto Silva", email: "roberto@email.com",
+ 	phone: "11986455823", age: 35, gender: "male", password: "roberto.silva", password_confirmation: "roberto.silva")
+person5 = Person.create!(name: "Guilherme Ramos", email: "guilherme@email.com",
+  phone: "11945685823", age: 21, gender: "male", password: "guilherme", password_confirmation: "guilherme")
+person6 = Person.create!(name: "Amanda Funabashi", email: "amanda@email.com",
+  phone: "11965489123", age: 65, gender: "female", password: "amanda.fu", password_confirmation: "amanda.fu")
+person7 = Person.create!(name: "Barbara Bertho", email: "barbara@email.com",
+  phone: "11985201473", age: 18, gender: "female", password: "barbara.ra", password_confirmation: "barbara.ra")
+person8 = Person.create!(name: "Julio Delgado", email: "julio@email.com",
+  phone: "11957954620", age: 33, gender: "male", password: "julioj", password_confirmation: "julioj")
+person9 = Person.create!(name: "Felipe Smith", email: "smith@email.com",
+  phone: "11936987562", age: 50, gender: "male", password: "felipao", password_confirmation: "felipao")
+person10 = Person.create!(name: "William Boulos", email: "bigode@email.com",
+  phone: "11985461309", age: 41, gender: "male", password: "williaoo", password_confirmation: "williaoo")
+person11 = Person.create!(name: "Barbara Bertho", email: "barbara@email.com",
+    phone: "11985201473", age: 18, gender: "female", password: "barbara.ra", password_confirmation: "barbara.ra")
+
+
+
+
+
+
 coach = Coach.create!(person_id: person3.id)
 
 Speciality.create!(coach_id: coach.id, name_speciality: "elder")
@@ -39,6 +62,7 @@ WorkoutCompose.create(set: 3, repetition: 15, technique: "Some technique",
 
 UserDoWorkout.create(user_id: user.id, workout_id: workout.id)
 
+#Populando tabela Food
 food1 = Food.create(name_food: "Carne")
 food2 = Food.create(name_food: "Frango")
 food3 = Food.create(name_food: "Batata Doce")
