@@ -107,3 +107,6 @@ gem 'mini_magick', :git => 'git://github.com/minimagick/minimagick.git'
 group :development, :test do
   gem 'factory_girl_rails'
 end
+
+#gem to create graphics
+gem'chartkick'
