@@ -145,8 +145,18 @@ ActiveRecord::Schema.define(version: 20171106205402) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["diet_id"], name: "index_user_eat_diets_on_diet_id"
-    t.index ["user_id", "diet_id"], name: "index_user_eat_diets_on_user_id_and_diet_id", unique: true
+    t.index ["user_id", "diet_id", "exp_date"], name: "index_user_eat_diets_on_user_id_and_diet_id_and_exp_date", unique: true
     t.index ["user_id"], name: "index_user_eat_diets_on_user_id"
+  end
+
+  create_table "user_requests", force: :cascade do |t|
+    t.date "date"
+    t.integer "option"
+    t.integer "status"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_user_requests_on_user_id"
   end
 
   create_table "user_restrictions", force: :cascade do |t|

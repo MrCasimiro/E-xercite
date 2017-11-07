@@ -1,0 +1,2 @@
+module ChooseDietHelper
+end

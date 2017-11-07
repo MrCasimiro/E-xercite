@@ -6,6 +6,9 @@ person2 = Person.create!(name: "user", email: "user@user.com",
  	phone: "1111111", age: 21, gender: "other", password: "123456", password_confirmation: "123456")
 user = User.create(person_id: person2.id, level: 0, points: 0, avatar: open("public/images/profile/teste.png"))
 
+UserRequest.create(date: '20181030', option: 1, status: 0, user_id: user.id)
+UserRequest.create(date: '20181030', option: 2, status: 0, user_id: user.id)
+
 person3 = Person.create!(name: "coach", email: "coach@coach.com",
  	phone: "1111111", age: 21, gender: "other", password: "123456", password_confirmation: "123456")
 

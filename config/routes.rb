@@ -75,6 +75,15 @@ Rails.application.routes.draw do
   post '/diets', to: 'diets#create'
   resources :diets
 
+  get '/diet_assign', to: 'diet_assign#show'
+  
+  resources :diet_assign
+
+  get '/choose_diet', to: 'choose_diet#show'
+  post '/choose_diet', to: 'choose_diet#create'
+  post '/choose_diet/:id', to: 'choose_diet#create'
+  resources :choose_diet
+
   get '/chat', to: 'chatrooms#index', as: 'chat'
 
 end
