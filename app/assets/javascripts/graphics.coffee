@@ -1,6 +1,5 @@
 
-jQuery-> 
-Morris.Line
+jQuery -> Morris.Line
 element: 'graphic_1'
 data: [
 {y:'2012', a:100}
