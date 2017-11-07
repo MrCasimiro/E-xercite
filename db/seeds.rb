@@ -33,8 +33,27 @@ person9 = Person.create!(name: "Felipe Smith", email: "smith@email.com",
   phone: "11936987562", age: 50, gender: "male", password: "felipao", password_confirmation: "felipao")
 person10 = Person.create!(name: "William Boulos", email: "bigode@email.com",
   phone: "11985461309", age: 41, gender: "male", password: "williaoo", password_confirmation: "williaoo")
-person11 = Person.create!(name: "Barbara Bertho", email: "barbara@email.com",
-    phone: "11985201473", age: 18, gender: "female", password: "barbara.ra", password_confirmation: "barbara.ra")
+person11 = Person.create!(name: "Gabriel Kiaz", email: "gabriel@email.com",
+  phone: "11914708526", age: 26, gender: "male", password: "kiazad", password_confirmation: "kiazad")
+person12 = Person.create!(name: "Eliane Lada", email: "eliane@email.com",
+  phone: "11998511977", age: 20, gender: "female", password: "elianada", password_confirmation: "elianada")
+person13 = Person.create!(name: "Bianca Panda", email: "panda@email.com",
+  phone: "11936212789", age: 61, gender: "female", password: "pandinha", password_confirmation: "pandinha")
+person14 = Person.create!(name: "Raquel Estrela", email: "estrela@email.com",
+  phone: "11944342228", age: 36, gender: "female", password: "raquel", password_confirmation: "raquel")
+person15 = Person.create!(name: "Flavia Castro", email: "castrao@email.com",
+  phone: "11918879451", age: 22, gender: "female", password: "flavinha", password_confirmation: "flavinha")
+person16 = Person.create!(name: "Lucia Guedes", email: "lucia@email.com",
+  phone: "11954623578", age: 29, gender: "female", password: "luciag", password_confirmation: "luciag")
+person17 = Person.create!(name: "Marcio Paz", email: "paz@email.com",
+  phone: "11933554866", age: 48, gender: "male", password: "guerra", password_confirmation: "guerra")
+person18 = Person.create!(name: "Fabio Carille", email: "fabio@email.com",
+  phone: "11957954620", age: 52, gender: "male", password: "campao", password_confirmation: "campeao")
+person19 = Person.create!(name: "Leticia Hepta", email: "leticia@email.com",
+  phone: "11944875601", age: 19, gender: "female", password: "coringao", password_confirmation: "coringao")
+person20 = Person.create!(name: "Adenor Bacchi", email: "adenor@email.com",
+  phone: "11998574122", age: 56, gender: "male", password: "titefalamuito", password_confirmation: "titefalamuito")
+
 
 
 
