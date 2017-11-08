@@ -148,6 +148,15 @@ DietCompose.create(quantity:'230' , hour:'07:00' , day: '20171103' ,food_id: foo
 DietCompose.create(quantity:'400' , hour:'11:00' , day: '20171118' ,food_id: food9.id, diet_id: diet5.id)
 DietCompose.create(quantity:'55' , hour:'09:30' , day: '20171105' ,food_id: food23.id, diet_id: diet6.id)
 
+#Populando tabela Exercise
 exercise2 = Exercise.create!(name_exercise: "Flexão")
 exercise3 = Exercise.create!(name_exercise: "Squat")
 exercise4 = Exercise.create!(name_exercise: "Burpee")
+exercise5 = Exercise.create!(name_exercise: "Polichinelo")
+exercise6 = Exercise.create!(name_exercise: "Mule kicks")
+exercise7 = Exercise.create!(name_exercise: "Box jumps")
+exercise8 = Exercise.create!(name_exercise: "Remo invertido")
+exercise9 = Exercise.create!(name_exercise: "Afundo")
+exercise10 = Exercise.create!(name_exercise: "Agachamento")
+exercise11 = Exercise.create!(name_exercise: "Abdominal")
+exercise12 = Exercise.create!(name_exercise: "Prancha")
