@@ -105,11 +105,7 @@ workout = Workout.create!(coach_id: coach.id)
 workout2 = Workout.create!(coach_id: coach.id)
 workout3 = Workout.create!(coach_id: coach.id)
 workout4 = Workout.create!(coach_id: coach2.id)
-workout5 = Workout.create!(coach_id: coach2.id)
-workout6 = Workout.create!(coach_id: coach2.id)
 workout7 = Workout.create!(coach_id: coach3.id)
-workout8 = Workout.create!(coach_id: coach3.id)
-workout9 = Workout.create!(coach_id: coach3.id)
 
 exercise = Exercise.create!(name_exercise: "Back") # ok
 
@@ -193,5 +189,15 @@ WorkoutCompose.create(set: 4, repetition: 10, technique: "Utilizando uma caixa d
 	exercise_id: exercise7.id, workout_id: workout2.id)
 WorkoutCompose.create(set: 3, repetition: 20, technique: "Mestre Kame",
   exercise_id: exercise10.id, workout_id: workout2.id)
-WorkoutCompose.create(set: 3, repetition: 15, technique: "Some technique",
-	exercise_id: exercise.id, workout_id: workout.id)
+WorkoutCompose.create(set: 3, repetition: 15, technique: "Duplamente invertido",
+	exercise_id: exercise8.id, workout_id: workout3.id)
+WorkoutCompose.create(set: 3, repetition: 100, technique: "Em grupo",
+	exercise_id: exercise5.id, workout_id: workout3.id)
+WorkoutCompose.create(set: 4, repetition: 30, technique: "Usando um tapete de base",
+	exercise_id: exercise12.id, workout_id: workout3.id)
+WorkoutCompose.create(set: 3, repetition: 25, technique: "Com 2kg nas costas",
+	exercise_id: exercise2.id, workout_id: workout2.id)
+WorkoutCompose.create(set: 2, repetition: 10, technique: "Veloz e preciso",
+	exercise_id: exercise3.id, workout_id: workout2.id)
+WorkoutCompose.create(set: 3, repetition: 10, technique: "Sem apoio",
+  exercise_id: exercise6.id, workout_id: workout2.id)
