@@ -102,16 +102,14 @@ UserDisease.create(user_id: user2.id, disease_id: disease5.id)
 
 #Populando tabela Workout
 workout = Workout.create!(coach_id: coach.id)
-workout2 = Workout.create!(coach_id: coach.id)
-workout3 = Workout.create!(coach_id: coach.id)
-workout4 = Workout.create!(coach_id: coach2.id)
-workout7 = Workout.create!(coach_id: coach3.id)
+workout2 = Workout.create!(coach_id: coach2.id)
+workout3 = Workout.create!(coach_id: coach2.id)
+workout4 = Workout.create!(coach_id: coach3.id)
+workout5 = Workout.create!(coach_id: coach3.id)
 
 exercise = Exercise.create!(name_exercise: "Back") # ok
 
 #Populando tabela WorkoutCompose
-WorkoutCompose.create(set: 3, repetition: 15, technique: "Some technique",
-	exercise_id: exercise.id, workout_id: workout.id)
 WorkoutCompose.create(set: 3, repetition: 15, technique: "Some technique",
 	exercise_id: exercise.id, workout_id: workout.id)
 WorkoutCompose.create(set: 5, repetition: 20, technique: "Apoiando os pés",
@@ -127,20 +125,41 @@ WorkoutCompose.create(set: 3, repetition: 100, technique: "Em grupo",
 WorkoutCompose.create(set: 4, repetition: 30, technique: "Usando um tapete de base",
 	exercise_id: exercise12.id, workout_id: workout3.id)
 WorkoutCompose.create(set: 3, repetition: 25, technique: "Com 2kg nas costas",
-	exercise_id: exercise2.id, workout_id: workout2.id)
+	exercise_id: exercise2.id, workout_id: workout4.id)
 WorkoutCompose.create(set: 2, repetition: 10, technique: "Veloz e preciso",
-	exercise_id: exercise3.id, workout_id: workout2.id)
+	exercise_id: exercise3.id, workout_id: workout4.id)
 WorkoutCompose.create(set: 3, repetition: 10, technique: "Sem apoio",
-  exercise_id: exercise6.id, workout_id: workout2.id)
+  exercise_id: exercise6.id, workout_id: workout4.id)
 WorkoutCompose.create(set: 3, repetition: 15, technique: "Sem peso",
-	exercise_id: exercise2.id, workout_id: workout3.id)
+	exercise_id: exercise2.id, workout_id: workout5.id)
 WorkoutCompose.create(set: 5, repetition: 5, technique: "Em dupla",
-	exercise_id: exercise9.id, workout_id: workout3.id)
+	exercise_id: exercise9.id, workout_id: workout5.id)
 WorkoutCompose.create(set: 3, repetition: 30, technique: "Sem apoio nos pés",
-  exercise_id: exercise11.id, workout_id: workout3.id)
+  exercise_id: exercise11.id, workout_id: workout5.id)
 
-
+#Populando tabela UserDoWorkout
 UserDoWorkout.create(user_id: user.id, workout_id: workout.id)
+UserDoWorkout.create(user_id: user2.id, workout_id: workout2.id)
+UserDoWorkout.create(user_id: user3.id, workout_id: workout2.id)
+UserDoWorkout.create(user_id: user4.id, workout_id: workout2.id)
+UserDoWorkout.create(user_id: user5.id, workout_id: workout3.id)
+UserDoWorkout.create(user_id: user6.id, workout_id: workout2.id)
+UserDoWorkout.create(user_id: user7.id, workout_id: workout3.id)
+UserDoWorkout.create(user_id: user8.id, workout_id: workout2.id)
+UserDoWorkout.create(user_id: user9.id, workout_id: workout3.id)
+UserDoWorkout.create(user_id: user10.id, workout_id: workout2.id)
+UserDoWorkout.create(user_id: user5.id, workout_id: workout3.id)
+UserDoWorkout.create(user_id: user11.id, workout_id: workout2.id)
+UserDoWorkout.create(user_id: user10.id, workout_id: workout3.id)
+UserDoWorkout.create(user_id: user16.id, workout_id: workout2.id)
+UserDoWorkout.create(user_id: user15.id, workout_id: workout3.id)
+UserDoWorkout.create(user_id: user14.id, workout_id: workout2.id)
+UserDoWorkout.create(user_id: user13.id, workout_id: workout3.id)
+UserDoWorkout.create(user_id: user12.id, workout_id: workout2.id)
+UserDoWorkout.create(user_id: user11.id, workout_id: workout.id)
+UserDoWorkout.create(user_id: user10.id, workout_id: workout.id)
+UserDoWorkout.create(user_id: user9.id, workout_id: workout.id)
+UserDoWorkout.create(user_id: user8.id, workout_id: workout.id)
 
 
 #Populando tabela Food
