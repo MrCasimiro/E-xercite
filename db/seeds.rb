@@ -71,10 +71,12 @@ user15 = User.create(person_id: person16.id, level: 0, points: 0)
 user16 = User.create(person_id: person17.id, level: 0, points: 0)
 user17 = User.create(person_id: person18.id, level: 0, points: 0)
 
+
 #Populando tabela Coach
 coach = Coach.create!(person_id: person3.id)
 coach2 = Coach.create!(person_id: person19.id)
 coach3 = Coach.create!(person_id: person20.id)
+
 
 Speciality.create!(coach_id: coach.id, name_speciality: "elder")
 
@@ -127,10 +129,15 @@ food27 = Food.create(name_food: "Salada César")
 food28 = Food.create(name_food: "Arroz")
 food29 = Food.create(name_food: "Feijão")
 food30 = Food.create(name_food: "Macarrão integral")
+food31 = Food.create(name_food: "Ovo cozido")
 
 diet1 = Diet.create(name: "Perda de peso 1", coach_id: coach.id)
-diet2 = Diet.create(name: "Ganho de massa 1", coach_id: coach.id)
-diet3 = Diet.create(name: "Selíaca 1", coach_id: coach.id)
+diet2 = Diet.create(name: "Ganho de massa 1", coach_id: coach2.id)
+diet3 = Diet.create(name: "Selíaca 1", coach_id: coach2.id)
+diet4 = Diet.create(name: "Perda de peso 2", coach_id: coach3.id)
+diet5 = Diet.create(name: "Redução de colesterol", coach_id: coach3.id)
+diet6 = Diet.create(name: "Ganho de massa 2", coach_id: coach3.id)
+
 
 DietCompose.create(quantity:'100' , hour:'10:00' , day: '20171019' ,food_id: food1.id, diet_id: diet1.id)
 DietCompose.create(quantity:'150' , hour:'15:00' , day: '20171029' ,food_id: food2.id, diet_id: diet2.id)
