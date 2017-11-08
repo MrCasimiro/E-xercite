@@ -112,10 +112,36 @@ exercise = Exercise.create!(name_exercise: "Back") # ok
 #Populando tabela WorkoutCompose
 WorkoutCompose.create(set: 3, repetition: 15, technique: "Some technique",
 	exercise_id: exercise.id, workout_id: workout.id)
-
+WorkoutCompose.create(set: 3, repetition: 15, technique: "Some technique",
+	exercise_id: exercise.id, workout_id: workout.id)
+WorkoutCompose.create(set: 5, repetition: 20, technique: "Apoiando os pés",
+	exercise_id: exercise11.id, workout_id: workout2.id)
+WorkoutCompose.create(set: 4, repetition: 10, technique: "Utilizando uma caixa de base",
+	exercise_id: exercise7.id, workout_id: workout2.id)
+WorkoutCompose.create(set: 3, repetition: 20, technique: "Mestre Kame",
+  exercise_id: exercise10.id, workout_id: workout2.id)
+WorkoutCompose.create(set: 3, repetition: 15, technique: "Duplamente invertido",
+	exercise_id: exercise8.id, workout_id: workout3.id)
+WorkoutCompose.create(set: 3, repetition: 100, technique: "Em grupo",
+	exercise_id: exercise5.id, workout_id: workout3.id)
+WorkoutCompose.create(set: 4, repetition: 30, technique: "Usando um tapete de base",
+	exercise_id: exercise12.id, workout_id: workout3.id)
+WorkoutCompose.create(set: 3, repetition: 25, technique: "Com 2kg nas costas",
+	exercise_id: exercise2.id, workout_id: workout2.id)
+WorkoutCompose.create(set: 2, repetition: 10, technique: "Veloz e preciso",
+	exercise_id: exercise3.id, workout_id: workout2.id)
+WorkoutCompose.create(set: 3, repetition: 10, technique: "Sem apoio",
+  exercise_id: exercise6.id, workout_id: workout2.id)
+WorkoutCompose.create(set: 3, repetition: 15, technique: "Sem peso",
+	exercise_id: exercise2.id, workout_id: workout3.id)
+WorkoutCompose.create(set: 5, repetition: 5, technique: "Em dupla",
+	exercise_id: exercise9.id, workout_id: workout3.id)
+WorkoutCompose.create(set: 3, repetition: 30, technique: "Sem apoio nos pés",
+  exercise_id: exercise11.id, workout_id: workout3.id)
 
 
 UserDoWorkout.create(user_id: user.id, workout_id: workout.id)
+
 
 #Populando tabela Food
 food1 = Food.create(name_food: "Carne")
@@ -180,30 +206,3 @@ exercise9 = Exercise.create!(name_exercise: "Afundo")
 exercise10 = Exercise.create!(name_exercise: "Agachamento")
 exercise11 = Exercise.create!(name_exercise: "Abdominal")
 exercise12 = Exercise.create!(name_exercise: "Prancha")
-
-WorkoutCompose.create(set: 3, repetition: 15, technique: "Some technique",
-	exercise_id: exercise.id, workout_id: workout.id)
-WorkoutCompose.create(set: 5, repetition: 20, technique: "Apoiando os pés",
-	exercise_id: exercise11.id, workout_id: workout2.id)
-WorkoutCompose.create(set: 4, repetition: 10, technique: "Utilizando uma caixa de base",
-	exercise_id: exercise7.id, workout_id: workout2.id)
-WorkoutCompose.create(set: 3, repetition: 20, technique: "Mestre Kame",
-  exercise_id: exercise10.id, workout_id: workout2.id)
-WorkoutCompose.create(set: 3, repetition: 15, technique: "Duplamente invertido",
-	exercise_id: exercise8.id, workout_id: workout3.id)
-WorkoutCompose.create(set: 3, repetition: 100, technique: "Em grupo",
-	exercise_id: exercise5.id, workout_id: workout3.id)
-WorkoutCompose.create(set: 4, repetition: 30, technique: "Usando um tapete de base",
-	exercise_id: exercise12.id, workout_id: workout3.id)
-WorkoutCompose.create(set: 3, repetition: 25, technique: "Com 2kg nas costas",
-	exercise_id: exercise2.id, workout_id: workout2.id)
-WorkoutCompose.create(set: 2, repetition: 10, technique: "Veloz e preciso",
-	exercise_id: exercise3.id, workout_id: workout2.id)
-WorkoutCompose.create(set: 3, repetition: 10, technique: "Sem apoio",
-  exercise_id: exercise6.id, workout_id: workout2.id)
-WorkoutCompose.create(set: 3, repetition: 15, technique: "Sem peso",
-	exercise_id: exercise2.id, workout_id: workout3.id)
-WorkoutCompose.create(set: 5, repetition: 5, technique: "Em dupla",
-	exercise_id: exercise9.id, workout_id: workout3.id)
-WorkoutCompose.create(set: 3, repetition: 30, technique: "Sem apoio nos pés",
-  exercise_id: exercise11.id, workout_id: workout3.id)
