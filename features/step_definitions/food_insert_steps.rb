@@ -1,12 +1,18 @@
 Given(/^that I'm a registered coach$/) do
-	@person = Person.create!(name: "coach", email: "coach@coach.com",
- 	phone: "1111111", age: 21, gender: "other", password: "123456", password_confirmation: "123456")
-	@current_coach = Coach.create!(person_id: @person.id)
+	@person = FactoryGirl.create(:person)
+	@current_coach = Coach.create(person_id: @person.id)
+end
 
+Given(/^I'm signed in$/) do
+
+	visit ("/login")
+	fill_in("email_field", :with => @person.email)
+	fill_in("pass_field", :with => @person.password)
+	click_button("submit_btn")
 end
 
 When(/^I acess foods page$/) do
-	visit ("/foods/"+@current_coach.id.to_s)
+	visit ("/coaches/#{@current_coach.id}/foods/")
 end
 
 Then(/^I should be able to insert new foods$/) do

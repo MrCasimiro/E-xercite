@@ -66,7 +66,7 @@
                                             <td></td>
                                             <td align='center' style="vertical-align:middle"><%= userRequest.date %>
                                             </td>
-                                            <td align='center' style="vertical-align:middle"> <%= link_to "Atribuir dieta", {:controller => "choose_diet", :action => "show", :id   => params[:id], :requester_id => userRequest.user_id},:id => "atribuir_dieta", :class => "btn btn-success" %>
+                                            <td align='center' style="vertical-align:middle"> <%= link_to "Atribuir dieta", coach_choose_diet_path(requester_id: userRequest.user_id, coach_id: @coach.id), :id => "atribuir_dieta", :class => "btn btn-success" %>
                                             </td>
 
 

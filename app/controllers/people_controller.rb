@@ -1,6 +1,6 @@
 class PeopleController < ApplicationController
   def show
-	  @person = Person.find(params[:id])
+   @person = Person.find(params[:id])
   	# debugger # opens a rails console in prompt to debug
   end
 
@@ -14,12 +14,12 @@ class PeopleController < ApplicationController
 
   	if @person.save
       @user = add_user(@person)
-  		log_in @person
-  		flash[:success] = "Bem vindo ao aplicativo E-xercite!"
-  		redirect_to [@person, @user]
-  	else
-  		render 'new'
-  	end
+      log_in @person
+      flash[:success] = "Bem vindo ao aplicativo E-xercite!"
+      redirect_to [@person, @user]
+    else
+      render 'new'
+    end
   end
 
   def edit
@@ -29,7 +29,7 @@ class PeopleController < ApplicationController
     @person = Person.find(params[:id])
     @user = User.find_by(person_id: @person.id)
     if @person.update_attributes(person_params)
-        redirect_to profile_person_user_path(person_id: @person.id)
+      redirect_to profile_person_user_path(person_id: @person.id)
     else
       redirect_to setting_person_user_path(id: @user.id, person_id: @person.id)
     end
@@ -43,7 +43,7 @@ class PeopleController < ApplicationController
 
   def add_user(person)
     @user = person.build_user(:level => 0, :points => 0)
-    @user.save
+    @user.save  
     @user
   end
 end

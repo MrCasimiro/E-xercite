@@ -6,7 +6,7 @@ Given(/^I have one valid request$/) do
 end
 
 When(/^I acess my diet requests page$/) do
-  visit ("/diet_assign/"+@current_coach.id.to_s)
+  visit coach_diet_assign_path(coach_id: @current_coach.id)
 end
 
 Then(/^I should be able to see a request$/) do
@@ -14,7 +14,7 @@ Then(/^I should be able to see a request$/) do
 end
 
 When(/^I acess the assign diet page$/) do
-	visit ("/choose_diet/"+@current_coach.id.to_s+"?requester_id="+@current_request.user_id.to_s)
+	visit coach_choose_diet_path(requester_id: @current_request.user_id, coach_id: @current_coach.id)
 end
 
 Then(/^I can assign a diet to the request$/) do

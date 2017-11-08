@@ -42,7 +42,7 @@ person16 = Person.create!(name: "Lucia Guedes", email: "lucia@email.com",
 person17 = Person.create!(name: "Marcio Paz", email: "paz@email.com",
   phone: "11933554866", age: 48, gender: "male", password: "guerra", password_confirmation: "guerra")
 person18 = Person.create!(name: "Fabio Carille", email: "fabio@email.com",
-  phone: "11957954620", age: 52, gender: "male", password: "campao", password_confirmation: "campeao")
+  phone: "11957954620", age: 52, gender: "male", password: "campeao", password_confirmation: "campeao")
 person19 = Person.create!(name: "Leticia Hepta", email: "leticia@email.com",
   phone: "11944875601", age: 19, gender: "female", password: "coringao", password_confirmation: "coringao")
 person20 = Person.create!(name: "Adenor Bacchi", email: "adenor@email.com",
@@ -60,10 +60,10 @@ user9 = User.create(person_id: person11.id, level: 0, points: 0)
 user10 = User.create(person_id: person12.id, level: 0, points: 0)
 user11 = User.create(person_id: person13.id, level: 0, points: 0)
 user12 = User.create(person_id: person14.id, level: 0, points: 0)
-user14 = User.create(person_id: person15.id, level: 0, points: 0)
-user15 = User.create(person_id: person16.id, level: 0, points: 0)
-user16 = User.create(person_id: person17.id, level: 0, points: 0)
-user17 = User.create(person_id: person18.id, level: 0, points: 0)
+user13 = User.create(person_id: person15.id, level: 0, points: 0)
+user14 = User.create(person_id: person16.id, level: 0, points: 0)
+user15 = User.create(person_id: person17.id, level: 0, points: 0)
+user16 = User.create(person_id: person18.id, level: 0, points: 0)
 
 
 #Populando tabela Coach
@@ -80,11 +80,11 @@ UserRestriction.create(user_id: user.id, restriction_id: restriction.id)
 
 #Populando tabela Disease
 disease = Disease.create!(name_disease: "Osteoporosis") #ok
-diseade2 = Disease.create!(name_disease: "Pressão alta")
-diseade3 = Disease.create!(name_disease: "Pressão baixa")
-diseade4 = Disease.create!(name_disease: "Hipotireoidismo")
-diseade5 = Disease.create!(name_disease: "Labirintite")
-diseade6 = Disease.create!(name_disease: "Tendinite")
+disease2 = Disease.create!(name_disease: "Pressão alta")
+disease3 = Disease.create!(name_disease: "Pressão baixa")
+disease4 = Disease.create!(name_disease: "Hipotireoidismo")
+disease5 = Disease.create!(name_disease: "Labirintite")
+disease6 = Disease.create!(name_disease: "Tendinite")
 
 #Populando tabela UserDisease
 UserDisease.create(user_id: user.id, disease_id: disease.id)
@@ -95,13 +95,25 @@ UserDisease.create(user_id: user16.id, disease_id: disease2.id)
 UserDisease.create(user_id: user2.id, disease_id: disease5.id)
 
 #Populando tabela Workout
-workout = Workout.create!(coach_id: coach.id)
-workout2 = Workout.create!(coach_id: coach2.id)
-workout3 = Workout.create!(coach_id: coach2.id)
-workout4 = Workout.create!(coach_id: coach3.id)
-workout5 = Workout.create!(coach_id: coach3.id)
+workout = Workout.create!(coach_id: coach.id, name: "Treino 1")
+workout2 = Workout.create!(coach_id: coach2.id, name: "Treino 2")
+workout3 = Workout.create!(coach_id: coach2.id, name: "Treino 3")
+workout4 = Workout.create!(coach_id: coach3.id, name: "Treino 4")
+workout5 = Workout.create!(coach_id: coach3.id, name: "Treino 5")
 
 exercise = Exercise.create!(name_exercise: "Back") # ok
+#Populando tabela Exercise
+exercise2 = Exercise.create!(name_exercise: "Flexão")
+exercise3 = Exercise.create!(name_exercise: "Squat")
+exercise4 = Exercise.create!(name_exercise: "Burpee")
+exercise5 = Exercise.create!(name_exercise: "Polichinelo")
+exercise6 = Exercise.create!(name_exercise: "Mule kicks")
+exercise7 = Exercise.create!(name_exercise: "Box jumps")
+exercise8 = Exercise.create!(name_exercise: "Remo invertido")
+exercise9 = Exercise.create!(name_exercise: "Afundo")
+exercise10 = Exercise.create!(name_exercise: "Agachamento")
+exercise11 = Exercise.create!(name_exercise: "Abdominal")
+exercise12 = Exercise.create!(name_exercise: "Prancha")
 
 #Populando tabela WorkoutCompose
 WorkoutCompose.create(set: 3, repetition: 15, technique: "Some technique",
@@ -151,7 +163,6 @@ UserDoWorkout.create(user_id: user14.id, workout_id: workout2.id)
 UserDoWorkout.create(user_id: user13.id, workout_id: workout2.id)
 UserDoWorkout.create(user_id: user12.id, workout_id: workout4.id)
 UserDoWorkout.create(user_id: user11.id, workout_id: workout5.id)
-UserDoWorkout.create(user_id: user10.id, workout_id: workout3.id)
 UserDoWorkout.create(user_id: user9.id, workout_id: workout2.id)
 UserDoWorkout.create(user_id: user8.id, workout_id: workout5.id)
 
@@ -207,19 +218,6 @@ DietCompose.create(quantity:'89' , hour:'18:00' , day: '20171225' ,food_id: food
 DietCompose.create(quantity:'230' , hour:'07:00' , day: '20171103' ,food_id: food14.id, diet_id: diet4.id)
 DietCompose.create(quantity:'400' , hour:'11:00' , day: '20171118' ,food_id: food9.id, diet_id: diet5.id)
 DietCompose.create(quantity:'55' , hour:'09:30' , day: '20171105' ,food_id: food23.id, diet_id: diet6.id)
-
-#Populando tabela Exercise
-exercise2 = Exercise.create!(name_exercise: "Flexão")
-exercise3 = Exercise.create!(name_exercise: "Squat")
-exercise4 = Exercise.create!(name_exercise: "Burpee")
-exercise5 = Exercise.create!(name_exercise: "Polichinelo")
-exercise6 = Exercise.create!(name_exercise: "Mule kicks")
-exercise7 = Exercise.create!(name_exercise: "Box jumps")
-exercise8 = Exercise.create!(name_exercise: "Remo invertido")
-exercise9 = Exercise.create!(name_exercise: "Afundo")
-exercise10 = Exercise.create!(name_exercise: "Agachamento")
-exercise11 = Exercise.create!(name_exercise: "Abdominal")
-exercise12 = Exercise.create!(name_exercise: "Prancha")
 
 UserEatDiet.create(user_id: user.id, diet_id: diet1.id, exp_date: '20181030', finished: 0)
 UserEatDiet.create(user_id: user.id, diet_id: diet2.id, exp_date: '20181010', finished: 1)

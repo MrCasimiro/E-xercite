@@ -34,7 +34,7 @@
                 <div class="row">
                     <div class="col-sm-1"></div>
                         <div class="col-lg-8">
-                                <%= simple_form_for @assign, url: choose_diet_path do |f| %>
+                                <%= simple_form_for @assign, url: coach_choose_diet_path do |f| %>
                                         <%= f.input :user_id, :as => :hidden, input_html: {value: @requester_id} %>
                                         <%= f.input :diet_id %>
                                         <%= f.input :finished, :as => :hidden, input_html: {value: '0'}%>

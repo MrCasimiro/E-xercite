@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   def update
 		@user = User.find(params[:id])
  		if @user.update_attributes(user_params)
-      redirect_to profile_person_user_path
+      redirect_to profile_person_user_path(person_id: params[:person_id])
   	else
 	 		render 'setting'
 	  end

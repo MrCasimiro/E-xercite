@@ -1,23 +1,8 @@
 
 <link href="/css/morris.css" rel="stylesheet">
 <link href="/css/sb-admin.css" rel="stylesheet">
-
-
-<style>
-.button {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-}
-</style>
-
+<link href="/css/workout_creations.css" rel="stylesheet">
+<link href="/css/profile.css", rel="stylesheet">
 
 <div id="wrapper">
 
@@ -41,14 +26,15 @@
                           </thead>
                           <tbody>
                             <% i = 0
-                             @users.each do |user|
+                             @users.each do |user_workout|
                              i = i + 1 %>
                               <tr>
                                 <th scope="row" style="vertical-align:middle"><%= i %></th>
-                                <td align='center' style="vertical-align:middle"><%= user.person.name %></td>
-                                <td align='center' style="vertical-align:middle"><%= user.person.age %></td>
-                                <td align='right'><a href="/exercises"><button class="button">Montar treino!</button></a></td>
-                                <td align='left'><a href=""><button class="button">Ver dados do usuário</button></a></td>
+                                <td align='center' style="vertical-align:middle"><%= user_workout.person.name %></td>
+                                <td align='center' style="vertical-align:middle"><%= user_workout.person.age %></td>
+                                <td align='right'><%= link_to coach_workout_path(coach_id: @coach.id, id_user: user_workout.id) do %><button class="button", id="training">Montar Treinos</button><% end %></td>
+                                <td align='left'><%= link_to users_profile_person_coach_path(coach_id: @coach.id, id_user: user_workout.id) do %><button class="button", id="user_data">Ver dados do usuário</button><%end%>
+                                </td>
                               </tr>
                             <% end %>
                           </tbody>

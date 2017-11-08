@@ -1,0 +1,80 @@
+    <link href="/css/morris.css" rel="stylesheet">
+    <link href="/css/sb-admin.css" rel="stylesheet">
+    <link href="/css/workout_creations.css" rel="stylesheet">
+    <link href="/css/profile.css", rel="stylesheet">
+    <title>SB Admin - Bootstrap Admin Template</title>
+
+    <div id="wrapper">
+
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            Dados do usuário <small>E-xercite</small>
+                        </h1>                           
+                        
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Usuário <%= @user_profile.id %></h3>
+                                   
+                            </div>
+                            <div class="panel-body">
+                                
+                                <div class="list-group">
+                                    <table class="table table-striped">
+                                      <thead>
+                                        <tr>
+                                          <th class='text-center'>Nome</th>
+                                          <th class='text-center'>Idade</th>
+                                          <th class='text-center'>Sexo</th>
+                                          <th class='text-center'>Restrições</th>
+                                          <th class='text-center'>Doenças</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+
+                                         <tr>
+                                            <td align='center' style="vertical-align:middle"><%= @user_profile.person.name%></td>
+                                            <td align='center' style="vertical-align:middle"><%= @user_profile.person.age %></td>
+                                            <td align='center' style="vertical-align:middle"><%= @user_profile.person.gender %></td>
+                                            <td align='center' style="vertical-align:middle">
+                                            	<% @user_profile.restrictions.each do |res| %>
+                                            		<%= res.name_restriction + "\n" %>
+                                            	<% end %>
+                                            </td>
+                                            <td align='center' style="vertical-align:middle">
+                                            	<% @user_profile.diseases.each do |dis| %>
+                                            		<%= dis.name_disease + "\n" %>
+                                            	<% end %>
+                                            </td>
+                                            <td align='right'>
+                
+                                            </td>
+                                         </tr>
+                                      </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            
+                <!-- /.row -->
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>

@@ -1,6 +1,7 @@
 class ChooseDietController < ApplicationController
 
 	def show
+		@coach = Coach.find(params[:coach_id])
 		@requester_id = params[:requester_id]
 		@assign = UserEatDiet.new
 	end

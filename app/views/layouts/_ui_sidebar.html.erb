@@ -11,26 +11,26 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li class="active">
-                        <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Acompanhamento</a>
+                        <a href="#"><i class="fa fa-fw fa-dashboard"></i> Acompanhamento</a>
                     </li>
                     <li>
-                        <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Meus dados</a>
+                        <a href="#"><i class="fa fa-fw fa-bar-chart-o"></i> Meus dados</a>
                     </li>
                     <li>
-                        <%= link_to training_path do %>
+                        <%= link_to user_training_path(user_id: @user.id) do %>
                             <i class="fa fa-fw fa-table"></i> Treinos
                         <% end %>   
                     </li>
                     <li>
-                        <%= link_to diet_menu_path do %>
+                        <%= link_to user_diet_menu_path(user_id: @user.id) do %>
                             <i class="fa fa-fw fa-table"></i> Dieta
                         <% end %>   
                     </li>
                     <li>
-                        <a href="forms.html"><i class="fa fa-fw fa-trophy"></i> Conquistas</a>
+                        <a href="#"><i class="fa fa-fw fa-trophy"></i> Conquistas</a>
                     </li>
                     <li>
-                        <a href="forms.html"><i class="fa fa-fw fa-user-o"></i> Meu perfil</a>
+                        <a href="#"><i class="fa fa-fw fa-user-o"></i> Meu perfil</a>
                     </li>
                 </ul>
             </div>

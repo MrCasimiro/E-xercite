@@ -1,16 +1,19 @@
 Given(/^that I'm a registered coach in system$/) do
-	@person = Person.create!(name: "coach", email: "coach@coach.com",
- 	phone: "1111111", age: 21, gender: "other", password: "123456", password_confirmation: "123456")
-	@current_coach = Coach.create!(person_id: @person.id)
-
+	@person = FactoryGirl.create(:person)
+	@current_coach = Coach.create(person_id: @person.id)
 end
 
-Given(/^that I'm signed in the system$/) do
-	pending # Write code here that turns the phrase above into concrete actions
+Given(/^I'm signed in the application$/) do
+
+	visit ("/login")
+	fill_in("email_field", :with => @person.email)
+	fill_in("pass_field", :with => @person.password)
+	click_button("submit_btn")
 end
+
 
 When(/^I acess exercises page$/) do
-	visit ("/fexercises/")
+	visit ("/coaches/#{@current_coach.id}/exercises/")
 end
 
 Then(/^I should be able to insert new exercises$/) do

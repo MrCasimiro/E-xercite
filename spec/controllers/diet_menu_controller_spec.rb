@@ -1,12 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe DietMenuController, type: :controller do
+	before :each do
+		@user = FactoryGirl.create(:user)
+	end
+
 	describe "GET #show" do
-	    it "returns http success" do     	
-			person = Person.create!(name: "user", email: "user@user.com",
-			phone: "1111111", age: 21, gender: "other", password: "123456", password_confirmation: "123456")
-			get :show, params: {id: User.create(person_id: person.id, level: 0, points: 0, avatar: open("public/images/profile/teste.png"))}
+		it "returns http success" do     	
+			get :show, params: {user_id: @user.id, id: 1}
 			expect(response).to have_http_status(:success)
-	    end
+		end
 	end
 end
