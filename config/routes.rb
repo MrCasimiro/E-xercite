@@ -1,6 +1,17 @@
 Rails.application.routes.draw do
   root 'pages#home'
 
+  resources :conversations, only: [:create] do
+    member do
+      post :close
+    end
+
+    get '/chat', to: 'chat#index', as: 'chat'
+
+    resources :messages, only: [:create]
+  end
+
+
   devise_for :people, controllers: { sessions: 'sessions' }
   devise_scope :people do
     get    '/sign_in' => 'sessions#new'
@@ -86,6 +97,5 @@ Rails.application.routes.draw do
     resources :choose_diet
   end
 
-  get '/chat', to: 'chatrooms#index', as: 'chat'
 
 end
