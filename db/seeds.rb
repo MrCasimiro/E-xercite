@@ -113,8 +113,11 @@ workout9 = Workout.create!(coach_id: coach3.id)
 
 exercise = Exercise.create!(name_exercise: "Back") # ok
 
+#Populando tabela WorkoutCompose
 WorkoutCompose.create(set: 3, repetition: 15, technique: "Some technique",
 	exercise_id: exercise.id, workout_id: workout.id)
+
+
 
 UserDoWorkout.create(user_id: user.id, workout_id: workout.id)
 
@@ -181,3 +184,14 @@ exercise9 = Exercise.create!(name_exercise: "Afundo")
 exercise10 = Exercise.create!(name_exercise: "Agachamento")
 exercise11 = Exercise.create!(name_exercise: "Abdominal")
 exercise12 = Exercise.create!(name_exercise: "Prancha")
+
+WorkoutCompose.create(set: 3, repetition: 15, technique: "Some technique",
+	exercise_id: exercise.id, workout_id: workout.id)
+WorkoutCompose.create(set: 5, repetition: 20, technique: "Apoiando os pés",
+	exercise_id: exercise11.id, workout_id: workout2.id)
+WorkoutCompose.create(set: 4, repetition: 10, technique: "Utilizando uma caixa de base",
+	exercise_id: exercise7.id, workout_id: workout2.id)
+WorkoutCompose.create(set: 3, repetition: 20, technique: "Mestre Kame",
+  exercise_id: exercise10.id, workout_id: workout2.id)
+WorkoutCompose.create(set: 3, repetition: 15, technique: "Some technique",
+	exercise_id: exercise.id, workout_id: workout.id)
