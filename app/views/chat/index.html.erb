@@ -14,7 +14,7 @@
       </div>
       <div class="panel-body">
         <ul>
-          <% @person.each do |person| %>
+          <% @people.each do |person| %>
             <li><%= link_to person.email, conversations_path(person_id: person), remote: true, method: :post %></li>
           <% end %>
         </ul>
