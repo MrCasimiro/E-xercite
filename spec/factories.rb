@@ -22,8 +22,8 @@ FactoryGirl.define do
 	end
 
 	factory :workout do
-		coach
 		name "workout test with factory girl"
+		coach
 	end
 
 	factory :exercise do 

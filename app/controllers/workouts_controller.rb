@@ -28,7 +28,6 @@ class WorkoutsController < ApplicationController
 	def create
 		@workout = Workout.new(workout_params)
 		@coach = Coach.find(params[:coach_id])
-
 		if @workout.save
 			redirect_to coach_workouts_path
 		else

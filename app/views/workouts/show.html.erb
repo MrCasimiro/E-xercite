@@ -1,6 +1,7 @@
     <link href="/css/morris.css" rel="stylesheet">
     <link href="/css/sb-admin.css" rel="stylesheet">
     <link href="/css/workout_creations.css" rel="stylesheet">
+    <link href="/css/profile.css", rel="stylesheet">
     <title>SB Admin - Bootstrap Admin Template</title>
 
     <div id="wrapper">
@@ -50,9 +51,12 @@
                                             <td align='center' style="vertical-align:middle"><%= wo[0].technique %></td>
                                             <td align='right'>
                                                 <% if user_do_workout?(@user_workout, wo[0]) %>
-                                                    <%= button_to "Enviar", {action: 'create_do_workout', workout_id: wo[0].workout_id, id_user: @user_workout.id}, {class: "button", data: {disable_with: "Enviando"}}%>
+                                                    <%= link_to coach_workout_creations_path(workout_id: wo[0].workout_id, id_user: @user_workout.id), :method => :post do %>
+                                                        <button class="button", id="create">Enviar</button>
+                                                    <% end %>
+                                                    <!--<%= button_to "Enviar", {action: 'create_do_workout', workout_id: wo[0].workout_id, id_user: @user_workout.id}, {class: "button", id: "create", data: {disable_with: "Enviando"}}%> -->
                                                 <% else %>
-                                                    <%= button_to "Enviado", {},  {class: "button-disabled", disabled: true}%>
+                                                    <%= button_to "Enviado", {},  {class: "button-disabled",disabled: true}%>
                                                 <% end %>
                                             </td>
                                          </tr>
@@ -67,7 +71,9 @@
 
                 <div class="row" align = "center">
                     <div class="col-lg-12">
-                        <h4><%= button_to "Criar novo treino", {action: 'new'}, {class: "button", method: "get"}%></h4>
+                        <%= link_to coach_workouts_path do %>
+                            <button class="button", id="workout-creation">Criar novo treino</button>
+                        <%end%>
                     </div>
                 </div>
             

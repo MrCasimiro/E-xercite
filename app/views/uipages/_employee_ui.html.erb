@@ -2,6 +2,7 @@
 <link href="/css/morris.css" rel="stylesheet">
 <link href="/css/sb-admin.css" rel="stylesheet">
 <link href="/css/workout_creations.css" rel="stylesheet">
+<link href="/css/profile.css", rel="stylesheet">
 
 <div id="wrapper">
 
@@ -31,8 +32,9 @@
                                 <th scope="row" style="vertical-align:middle"><%= i %></th>
                                 <td align='center' style="vertical-align:middle"><%= user_workout.person.name %></td>
                                 <td align='center' style="vertical-align:middle"><%= user_workout.person.age %></td>
-                                <td align='right'><%= link_to coach_workout_path(coach_id: @coach.id, id_user: user_workout.id) do %><button class="button">Montar Treinos</button><% end %></td>
-                                <td align='left'><a href=""><button class="button">Ver dados do usuário</button></a></td>
+                                <td align='right'><%= link_to coach_workout_path(coach_id: @coach.id, id_user: user_workout.id) do %><button class="button", id="training">Montar Treinos</button><% end %></td>
+                                <td align='left'><%= link_to users_profile_person_coach_path(coach_id: @coach.id, id_user: user_workout.id) do %><button class="button", id="user_data">Ver dados do usuário</button><%end%>
+                                </td>
                               </tr>
                             <% end %>
                           </tbody>

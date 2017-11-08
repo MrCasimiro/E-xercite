@@ -43,7 +43,11 @@ Rails.application.routes.draw do
         get 'profile', 'setting'
       end
     end
-    resources :coaches
+    resources :coaches do
+      member do
+        get 'users_profile', to: 'coaches#users_profile'
+      end
+    end
   end
 
   resources :users, only: [:show, :edit, :update] do
