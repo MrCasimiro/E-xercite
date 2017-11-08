@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
-  resources :chatrooms
   root 'pages#home'
+
+  devise_for :people, controllers: { sessions: 'sessions' }
+  devise_scope :people do
+    get    '/sign_in' => 'sessions#new'
+    post   '/sign_in' => 'sessions#create'
+    delete '/sign_out' => 'sessions#destroy'
+    get   '/sign_up', to: 'people#new', as: 'signup'
+    post  '/sign_up', to: 'people#create'
+  end
+  resources :chatrooms
 
   get 'profiles/show'
 
@@ -12,11 +21,6 @@ Rails.application.routes.draw do
 
   get 'pages/home'
   get 'pages/main_ui'
-
-  
-  get    '/login',   to: 'sessions#new', as: 'login'
-  post   '/login',   to: 'sessions#create'
-  delete '/logout',  to: 'sessions#destroy'
 
   ##
   resources "contacts", only: [:new, :create]
@@ -35,11 +39,6 @@ Rails.application.routes.draw do
    #formulário de criação de treino
 
   resources :workout_menu, only: [:show]
-
-
-
-  get   '/signup', to: 'people#new', as: 'signup'
-  post  '/signup', to: 'people#create'
 
   resources :people, only: [:show, :new, :create, :edit, :update] do
 

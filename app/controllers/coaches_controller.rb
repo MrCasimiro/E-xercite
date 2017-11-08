@@ -1,4 +1,5 @@
 class CoachesController < ApplicationController
+	before_action :authenticate_person!
 	def show
 		@coach = Coach.find(params[:id])
 		@users = User.all

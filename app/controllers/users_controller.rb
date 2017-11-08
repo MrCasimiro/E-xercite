@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+  before_action :authenticate_person!
 	def show
 		@user = User.find(params[:id])
   		#debugger # opens a rails console in prompt to debug
