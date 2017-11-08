@@ -201,3 +201,9 @@ WorkoutCompose.create(set: 2, repetition: 10, technique: "Veloz e preciso",
 	exercise_id: exercise3.id, workout_id: workout2.id)
 WorkoutCompose.create(set: 3, repetition: 10, technique: "Sem apoio",
   exercise_id: exercise6.id, workout_id: workout2.id)
+WorkoutCompose.create(set: 3, repetition: 15, technique: "Sem peso",
+	exercise_id: exercise2.id, workout_id: workout3.id)
+WorkoutCompose.create(set: 5, repetition: 5, technique: "Em dupla",
+	exercise_id: exercise9.id, workout_id: workout3.id)
+WorkoutCompose.create(set: 3, repetition: 30, technique: "Sem apoio nos pés",
+  exercise_id: exercise11.id, workout_id: workout3.id)
