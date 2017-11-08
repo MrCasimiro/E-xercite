@@ -131,6 +131,7 @@ food29 = Food.create(name_food: "Feijão")
 food30 = Food.create(name_food: "Macarrão integral")
 food31 = Food.create(name_food: "Ovo cozido")
 
+#Populando tabela Diet
 diet1 = Diet.create(name: "Perda de peso 1", coach_id: coach.id)
 diet2 = Diet.create(name: "Ganho de massa 1", coach_id: coach2.id)
 diet3 = Diet.create(name: "Selíaca 1", coach_id: coach2.id)
@@ -138,9 +139,14 @@ diet4 = Diet.create(name: "Perda de peso 2", coach_id: coach3.id)
 diet5 = Diet.create(name: "Redução de colesterol", coach_id: coach3.id)
 diet6 = Diet.create(name: "Ganho de massa 2", coach_id: coach3.id)
 
-
+#Populando tabela DietCompose
 DietCompose.create(quantity:'100' , hour:'10:00' , day: '20171019' ,food_id: food1.id, diet_id: diet1.id)
 DietCompose.create(quantity:'150' , hour:'15:00' , day: '20171029' ,food_id: food2.id, diet_id: diet2.id)
+DietCompose.create(quantity:'75' , hour:'22:00' , day: '20171027' ,food_id: food31.id, diet_id: diet6.id)
+DietCompose.create(quantity:'89' , hour:'18:00' , day: '20171225' ,food_id: food17.id, diet_id: diet3.id)
+DietCompose.create(quantity:'230' , hour:'07:00' , day: '20171103' ,food_id: food14.id, diet_id: diet4.id)
+DietCompose.create(quantity:'400' , hour:'11:00' , day: '20171118' ,food_id: food9.id, diet_id: diet5.id)
+DietCompose.create(quantity:'55' , hour:'09:30' , day: '20171105' ,food_id: food23.id, diet_id: diet6.id)
 
 exercise2 = Exercise.create!(name_exercise: "Flexão")
 exercise3 = Exercise.create!(name_exercise: "Squat")
