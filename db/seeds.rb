@@ -84,7 +84,14 @@ restriction = Restriction.create!(name_restriction: "laziness") # ok
 
 UserRestriction.create(user_id: user.id, restriction_id: restriction.id)
 
+#Populando tabela Disease
 disease = Disease.create!(name_disease: "Osteoporosis") #ok
+diseade2 = Disease.create!(name_disease: "Pressão alta")
+diseade3 = Disease.create!(name_disease: "Pressão baixa")
+diseade4 = Disease.create!(name_disease: "Hipotireoidismo")
+diseade5 = Disease.create!(name_disease: "Labirintite")
+diseade6 = Disease.create!(name_disease: "Tendinite")
+
 
 UserDisease.create(user_id: user.id, disease_id: disease.id)
 
