@@ -92,8 +92,13 @@ diseade4 = Disease.create!(name_disease: "Hipotireoidismo")
 diseade5 = Disease.create!(name_disease: "Labirintite")
 diseade6 = Disease.create!(name_disease: "Tendinite")
 
-
+#Populando tabela UserDisease
 UserDisease.create(user_id: user.id, disease_id: disease.id)
+UserDisease.create(user_id: user5.id, disease_id: disease4.id)
+UserDisease.create(user_id: user10.id, disease_id: disease6.id)
+UserDisease.create(user_id: user7.id, disease_id: disease3.id)
+UserDisease.create(user_id: user16.id, disease_id: disease2.id)
+UserDisease.create(user_id: user2.id, disease_id: disease5.id)
 
 workout = Workout.create!(coach_id: coach.id)
 
