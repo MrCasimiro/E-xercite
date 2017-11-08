@@ -1,19 +1,13 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
-
 person1 = Person.create!(name: "admin", email: "admin@admin.com",
  	phone: "1111111", age: 21, gender: "other", password: "123456", password_confirmation: "123456")
 Admin.create(adm_password: "123456", person_id: person1.id)
 
 person2 = Person.create!(name: "user", email: "user@user.com",
  	phone: "1111111", age: 21, gender: "other", password: "123456", password_confirmation: "123456")
-user = User.create(person_id: person2.id, level: 0, points: 0)
+user = User.create(person_id: person2.id, level: 0, points: 0, avatar: open("public/images/profile/teste.png"))
+
+UserRequest.create(date: '20181030', option: 1, status: 0, user_id: user.id)
+UserRequest.create(date: '20181030', option: 2, status: 0, user_id: user.id)
 
 person3 = Person.create!(name: "coach", email: "coach@coach.com",
  	phone: "1111111", age: 21, gender: "other", password: "123456", password_confirmation: "123456")
@@ -206,6 +200,7 @@ diet6 = Diet.create(name: "Ganho de massa 2", coach_id: coach3.id)
 
 #Populando tabela DietCompose
 DietCompose.create(quantity:'100' , hour:'10:00' , day: '20171019' ,food_id: food1.id, diet_id: diet1.id)
+DietCompose.create(quantity:'100' , hour:'10:00' , day: '20171019' ,food_id: food3.id, diet_id: diet1.id)
 DietCompose.create(quantity:'150' , hour:'15:00' , day: '20171029' ,food_id: food2.id, diet_id: diet2.id)
 DietCompose.create(quantity:'75' , hour:'22:00' , day: '20171027' ,food_id: food31.id, diet_id: diet6.id)
 DietCompose.create(quantity:'89' , hour:'18:00' , day: '20171225' ,food_id: food17.id, diet_id: diet3.id)
@@ -225,3 +220,6 @@ exercise9 = Exercise.create!(name_exercise: "Afundo")
 exercise10 = Exercise.create!(name_exercise: "Agachamento")
 exercise11 = Exercise.create!(name_exercise: "Abdominal")
 exercise12 = Exercise.create!(name_exercise: "Prancha")
+
+UserEatDiet.create(user_id: user.id, diet_id: diet1.id, exp_date: '20181030', finished: 0)
+UserEatDiet.create(user_id: user.id, diet_id: diet2.id, exp_date: '20181010', finished: 1)
