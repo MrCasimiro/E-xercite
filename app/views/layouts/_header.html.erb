@@ -37,7 +37,7 @@
                     <a <%= link_to "Contato", contact_path %></a>
                 </li>
 
-                    <% if logged_in? %>
+                    <% if person_signed_in?  %>
                     <li>
                         <a <%= link_to "Usuário", current_user %></a>
                     </li>
@@ -56,7 +56,7 @@
                 </li>
                 <% else %>
                 <li>
-                    <a <%= link_to "Entrar", login_path %></a>
+                    <a <%= link_to "Entrar", new_person_session_path %></a>
                 </li>
                 <% end %>
 

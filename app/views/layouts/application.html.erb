@@ -10,7 +10,7 @@
   <body>
     <link href="/css/landing-page.css" rel="stylesheet">
     
-    <% if logged_in? %>
+    <% if person_signed_in? %>
       <% if !@user.blank? %>
         <%= render 'layouts/ui_sidebar' %>
       <% else %>

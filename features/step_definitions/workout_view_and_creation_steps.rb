@@ -15,7 +15,7 @@ Given(/^there is a workout that isn't already sent to user$/) do
 end
 
 Given(/^I am log in$/) do
-	visit ("/login")
+	visit ("/sign_in")
 	fill_in("email_field", :with => @person.email)
 	fill_in("pass_field", :with => @person.password)
 	click_button("submit_btn")

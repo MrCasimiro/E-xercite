@@ -47,7 +47,7 @@ Then (/^I should go to the page about contato$/) do
 end
 
 When(/^I click at the link for entrar$/) do
-	visit ('/login')
+	visit ('/sign_in')
 end
 
 Then (/^I should go to the page about entrar$/) do
@@ -55,7 +55,7 @@ Then (/^I should go to the page about entrar$/) do
 end
 
 When(/^I click at the link for signup$/) do
-	visit ('/signup')
+	visit ('/sign_up')
 end
 
 Then (/^I should go to the page about signup$/) do

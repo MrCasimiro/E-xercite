@@ -110,3 +110,5 @@ end
 
 #gem to create graphics
 gem'chartkick'
+
+gem 'devise'

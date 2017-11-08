@@ -13,8 +13,9 @@ class PeopleController < ApplicationController
   	#debugger
 
   	if @person.save
-      @user = add_user(@person)
-      log_in @person
+      @user = User.new(person_id: @person.id)
+      @user.save
+      sign_in @person
       flash[:success] = "Bem vindo ao aplicativo E-xercite!"
       redirect_to [@person, @user]
     else
@@ -39,11 +40,5 @@ class PeopleController < ApplicationController
   def person_params
   	params.require(:person).permit(:name, :email, :age, :phone,
   		:gender, :password, :password_confirmation)
-  end
-
-  def add_user(person)
-    @user = person.build_user(:level => 0, :points => 0)
-    @user.save  
-    @user
   end
 end

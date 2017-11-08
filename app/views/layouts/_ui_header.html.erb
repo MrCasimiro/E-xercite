@@ -16,9 +16,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <% if !@user.blank? %>
+            <% if !@user.nil? %>
                 <a class="navbar-brand" <%= link_to "E-xercite", person_user_path(person_id: @user.person_id) %></a>
-            <% elsif !@coach.blank? %>
+            <% elsif !@coach.nil? %>
                 <a class="navbar-brand" <%= link_to "E-xercite", person_coach_path(person_id: @coach.person_id, id: @coach.id) %></a>
             <% else %>
                 <a class="navbar-brand">E-xercite</a>
@@ -125,7 +125,7 @@
                     <% end %>
                     <li class="divider"></li>
                     <li>
-                        <a <%=link_to "Sair", logout_path, method: :delete, :class => "fa fa-fw fa-power-off"%></a>
+                        <a <%=link_to "Sair", destroy_person_session_path, method: :delete, :class => "fa fa-fw fa-power-off"%></a>
                     </li>
                 </ul>
             </li>

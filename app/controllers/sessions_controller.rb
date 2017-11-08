@@ -4,14 +4,14 @@ class SessionsController < ApplicationController
 
   def create
   	@person = Person.find_by(email: params[:session][:email].downcase)
-    if @person && @person.authenticate(params[:session][:password])
-    	log_in @person
+    if @person && @person.authenticatable_salt
+    	sign_in @person
       @user = User.find_by(person_id: @person.id)
       @coach = Coach.find_by(person_id: @person.id)
       unless @user.blank?
         redirect_to [@person, @user]
       else
-        redirect_to [@person, @coach]
+        redirect_to person_coach_path(person_id: @person.id, id: @coach.id)
       end
 
     else
@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    log_out
+    sign_out @person
     redirect_to root_path
   end
 end

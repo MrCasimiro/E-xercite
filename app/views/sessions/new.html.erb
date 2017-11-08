@@ -10,7 +10,7 @@
     <% provide(:title, 'Log in') %>
     <h1><br><br>Log in<br></h1>
 
-        <%= form_for(:session, url: login_path) do |f|%>
+        <%= form_for(:session, url: person_session_path) do |f|%>
         <%= f.label :email, "E-mail" %>
     <br>
         <%= f.email_field :email, class: 'form-control', id: 'email_field' %>

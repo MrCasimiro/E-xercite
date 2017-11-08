@@ -11,10 +11,4 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe SessionsHelper, type: :helper do
-	describe "#current_user" do
-		it "current_user nil" do
-			assign(:current_user, nil)
-      		expect(helper.logged_in?).to eql(false)
-  		end
-	end	
 end

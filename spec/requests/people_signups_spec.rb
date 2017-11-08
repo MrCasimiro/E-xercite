@@ -23,7 +23,7 @@ RSpec.describe "PeopleSignups", type: :request do
         #assert_select 'div.<CSS class for field with error>'
 
         # Test if after posting the url are equal (verifies in new form)
-        assert_select "form[action='/signup']", true
+        assert_select "form[action='/sign_up']", true
     end
 
     it "valid signup information" do

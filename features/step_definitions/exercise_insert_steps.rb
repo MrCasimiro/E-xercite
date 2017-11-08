@@ -5,7 +5,7 @@ end
 
 Given(/^I'm signed in the application$/) do
 
-	visit ("/login")
+	visit ("/sign_in")
 	fill_in("email_field", :with => @person.email)
 	fill_in("pass_field", :with => @person.password)
 	click_button("submit_btn")
