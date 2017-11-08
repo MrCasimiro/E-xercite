@@ -100,7 +100,16 @@ UserDisease.create(user_id: user7.id, disease_id: disease3.id)
 UserDisease.create(user_id: user16.id, disease_id: disease2.id)
 UserDisease.create(user_id: user2.id, disease_id: disease5.id)
 
+#Populando tabela Workout
 workout = Workout.create!(coach_id: coach.id)
+workout2 = Workout.create!(coach_id: coach.id)
+workout3 = Workout.create!(coach_id: coach.id)
+workout4 = Workout.create!(coach_id: coach2.id)
+workout5 = Workout.create!(coach_id: coach2.id)
+workout6 = Workout.create!(coach_id: coach2.id)
+workout7 = Workout.create!(coach_id: coach3.id)
+workout8 = Workout.create!(coach_id: coach3.id)
+workout9 = Workout.create!(coach_id: coach3.id)
 
 exercise = Exercise.create!(name_exercise: "Back") # ok
 
