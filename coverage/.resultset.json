@@ -5,6 +5,14 @@
         1,
         null
       ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/chatrooms_helper.rb": [
+        1,
+        null
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/choose_diet_helper.rb": [
+        1,
+        null
+      ],
       "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/coaches_helper.rb": [
         1,
         1,
@@ -13,6 +21,10 @@
         null
       ],
       "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/contacts_helper.rb": [
+        1,
+        null
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/diet_assign_helper.rb": [
         1,
         null
       ],
@@ -45,7 +57,7 @@
         null,
         1,
         null,
-        19,
+        21,
         null,
         null,
         1,
@@ -57,7 +69,7 @@
         null,
         null,
         1,
-        19,
+        21,
         null,
         null,
         1,
@@ -107,6 +119,117 @@
         null,
         null
       ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/chatrooms_controller.rb": [
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/application_controller.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/choose_diet_controller.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        1,
+        null,
+        0,
+        null,
+        null,
+        null,
+        null
+      ],
       "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/coaches_controller.rb": [
         1,
         1,
@@ -118,12 +241,6 @@
         0,
         0,
         null,
-        null
-      ],
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/application_controller.rb": [
-        1,
-        1,
-        1,
         null
       ],
       "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/contacts_controller.rb": [
@@ -140,6 +257,16 @@
         null,
         1,
         1,
+        null,
+        null,
+        null
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/diet_assign_controller.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
         null,
         null,
         null
@@ -527,6 +654,19 @@
         1,
         null
       ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/chatroom.rb": [
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/chatroom_user.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
       "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/coach.rb": [
         1,
         1,
@@ -596,6 +736,12 @@
         1,
         null
       ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/message.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
       "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/person.rb": [
         1,
         null,
@@ -603,7 +749,7 @@
         1,
         1,
         null,
-        68,
+        77,
         1,
         null,
         1,
@@ -663,6 +809,12 @@
         null,
         null
       ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/user_request.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
       "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/user_restriction.rb": [
         1,
         1,
@@ -686,6 +838,10 @@
         null,
         1,
         1,
+        1,
+        null,
+        1,
+        1,
         null
       ],
       "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/uploaders/avatar_uploader.rb": [
@@ -702,7 +858,7 @@
         null,
         null,
         1,
-        87,
+        129,
         null,
         null,
         1,
@@ -731,11 +887,11 @@
         null,
         null,
         1,
-        42,
+        84,
         null,
         null,
         1,
-        42,
+        84,
         null,
         null,
         null,
@@ -793,6 +949,6 @@
         0
       ]
     },
-    "timestamp": 1510124583
+    "timestamp": 1510128580
   }
 }

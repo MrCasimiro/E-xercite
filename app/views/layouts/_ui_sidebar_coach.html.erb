@@ -20,6 +20,9 @@
                     <li>
                         <%= link_to "Cadastrar exercício", coach_exercises_path(coach_id: @coach.id) %>
                     </li>
+                    <li>
+                        <%= link_to "Atrubuir dieta para usuário", coach_diet_assign_path(coach_id: @coach.id) %>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

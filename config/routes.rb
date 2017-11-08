@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :chatrooms
   root 'pages#home'
 
   get 'profiles/show'
@@ -12,6 +13,10 @@ Rails.application.routes.draw do
   get 'pages/home'
   get 'pages/main_ui'
 
+  
+  get    '/login',   to: 'sessions#new', as: 'login'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
 
   ##
   resources "contacts", only: [:new, :create]
@@ -72,9 +77,16 @@ Rails.application.routes.draw do
     get 'workouts', to: 'workouts#new'
     resources :workouts, only: [:show, :create_do_workout, :create]
     post 'workout_creations', to: 'workouts#create_do_workout'
+
+    get '/diet_assign', to: 'diet_assign#show'
+    resources :diet_assign
+
+    get '/choose_diet', to: 'choose_diet#show'
+    post '/choose_diet', to: 'choose_diet#create'
+    post '/choose_diet/:id', to: 'choose_diet#create'
+    resources :choose_diet
   end
 
-  get    '/login',   to: 'sessions#new', as: 'login'
-  post   '/login',   to: 'sessions#create'
-  delete '/logout',  to: 'sessions#destroy'
+  get '/chat', to: 'chatrooms#index', as: 'chat'
+
 end

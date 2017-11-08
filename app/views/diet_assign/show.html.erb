@@ -1,0 +1,89 @@
+    <link href="/css/morris.css" rel="stylesheet">
+    <link href="/css/sb-admin.css" rel="stylesheet">
+    <title>SB Admin - Bootstrap Admin Template</title>
+
+    <style>
+    .button {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+    </style>
+
+    <div id="wrapper">
+
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            Atribuir dietas <small>E-xercite</small>
+                        </h1>                           
+                        
+                    </div>
+                </div>
+        
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Usuários solicitando</h3>
+                            </div>
+                            <div class="panel-body">
+                                    <% if @usersRequestingDiets == nil then %>
+                                        <div>Nenhum usuário solicitando></div>
+                                    <% else %>
+                                        <div class="list-group">
+                                            <table class="table table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th class='text-center'>Nome do usuário</th>
+                                                        <th class='text-center'>Data de solicitação<th>
+                                                         <th class='text-center'>Dados do usuário</th>
+                                                        <th class='text-center'> </th>
+                                                    </tr>
+                                                </thead>
+                                            <tbody>
+                                        <% 
+                                         @usersRequestingDiets.each do |userRequest|
+                                        %>
+                                         <tr>
+                                            <td align='center' style="vertical-align:middle", id = "requester_name"><%= Person.find(User.find(userRequest.user_id).person_id).name %>
+                                            </td>
+                                            <td align='center' style="vertical-align:middle"><%= userRequest.date %>
+                                            </td>
+                                            <td></td>
+                                            <td align='center' style="vertical-align:middle"><%= userRequest.date %>
+                                            </td>
+                                            <td align='center' style="vertical-align:middle"> <%= link_to "Atribuir dieta", coach_choose_diet_path(requester_id: userRequest.user_id, coach_id: @coach.id), :id => "atribuir_dieta", :class => "btn btn-success" %>
+                                            </td>
+
+
+                                         </tr>
+                                        <% end %>
+                                      </tbody>
+                                    </table>
+                                </div>
+                                    <%end%>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>

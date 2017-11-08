@@ -18,3 +18,5 @@
 //= require raphael
 //= require morris
 //= require nested_form_fields
+//= require Chart.bundle
+//= require chartkick
