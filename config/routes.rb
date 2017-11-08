@@ -6,10 +6,11 @@ Rails.application.routes.draw do
       post :close
     end
 
-    get '/chat', to: 'chat#index', as: 'chat'
-
     resources :messages, only: [:create]
   end
+
+
+    get '/chat', to: 'chat#index', as: 'chat'
 
 
   devise_for :people, controllers: { sessions: 'sessions' }
@@ -20,7 +21,6 @@ Rails.application.routes.draw do
     get   '/sign_up', to: 'people#new', as: 'signup'
     post  '/sign_up', to: 'people#create'
   end
-  resources :chatrooms
 
   get 'profiles/show'
 
