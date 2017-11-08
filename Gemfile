@@ -99,3 +99,14 @@ group :test, :development do
   # database_cleaner is not required, but highly recommended
   gem 'database_cleaner'
 end
+
+# gem to upload profile photos
+gem 'carrierwave', '~> 1.0'
+gem 'mini_magick', :git => 'git://github.com/minimagick/minimagick.git'
+#factory of tests
+group :development, :test do
+  gem 'factory_girl_rails'
+end
+
+#gem to create graphics
+gem'chartkick'

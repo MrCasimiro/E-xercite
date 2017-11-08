@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :chatrooms
+  root 'pages#home'
+
+  get 'profiles/show'
+
+  get 'profile/show'
 
   get 'uipages/user_ui'
   get 'uipages/employee_ui'
@@ -18,30 +24,66 @@ Rails.application.routes.draw do
 
   get '/squat', to: 'pages#squat', as: 'squat' 
   get '/burpee', to: 'pages#burpee', as: 'burpee' 
+  
 
-  get '/treino', to: 'pages#ftreino', as: 'treino'
-  get '/fdiet', to: 'foods#new', as: 'diet'
-  resources :foods
-  get '/fdiets', to: 'diets#new', as: 'diets'
-  post '/fdiets', to: 'diets#create'
-  resources :diets
+  get '/gami', to: 'pages#gamification', as: 'gami'
 
 
-  get   '/fexercise', to: 'exercises#new', as: 'fexercise'
-  post  '/fexercise', to: 'exercises#create'
+  get   '/fexercises', to: 'exercises#show'
   resources :exercises
 
-  get '/user_ui', to: 'uipages#user_ui', as: 'user_ui'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'pages#home'
+   #formulário de criação de treino
+  get '/workouts', to: 'workouts#show'
+  post '/workouts', to: 'workouts#create'
+  resources :workouts
+
+  resources :workout_menu, only: [:show]
+
+
 
   get   '/signup', to: 'people#new', as: 'signup'
   post  '/signup', to: 'people#create'
-  resources :people
-  resources :users
+
+  resources :people do
+
+    resources :users do 
+      member do 
+        get 'profile', 'setting'
+      end
+    end
+    resources :coaches
+    resources :profiles
+  end
 
   get    '/login',   to: 'sessions#new', as: 'login'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
+
+  resources :trainings, only: [:show]
+
+  get 'coaches/show'
+  get 'trainings/show'
+
+  resources :diet_menu, only: [:show]
+  get 'diet_menu/show'
+
+  get '/foods', to: 'foods#show'
+  resources :foods
+
+  
+  get '/diets', to: 'diets#show'
+  post '/diets', to: 'diets#create'
+  resources :diets
+
+  get '/diet_assign', to: 'diet_assign#show'
+  
+  resources :diet_assign
+
+  get '/choose_diet', to: 'choose_diet#show'
+  post '/choose_diet', to: 'choose_diet#create'
+  post '/choose_diet/:id', to: 'choose_diet#create'
+  resources :choose_diet
+
+  get '/chat', to: 'chatrooms#index', as: 'chat'
 
 end

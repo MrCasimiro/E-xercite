@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171007194218) do
+ActiveRecord::Schema.define(version: 20171106205402) do
 
   create_table "admins", force: :cascade do |t|
     t.string "adm_password"
@@ -18,6 +18,21 @@ ActiveRecord::Schema.define(version: 20171007194218) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["person_id"], name: "index_admins_on_person_id", unique: true
+  end
+
+  create_table "chatroom_users", force: :cascade do |t|
+    t.integer "chatroom_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chatroom_id"], name: "index_chatroom_users_on_chatroom_id"
+    t.index ["user_id"], name: "index_chatroom_users_on_user_id"
+  end
+
+  create_table "chatrooms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "coaches", force: :cascade do |t|
@@ -64,6 +79,16 @@ ActiveRecord::Schema.define(version: 20171007194218) do
     t.string "name_food"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.integer "chatroom_id"
+    t.integer "user_id"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "people", force: :cascade do |t|
@@ -113,13 +138,25 @@ ActiveRecord::Schema.define(version: 20171007194218) do
   end
 
   create_table "user_eat_diets", force: :cascade do |t|
+    t.date "exp_date"
+    t.integer "finished"
     t.integer "user_id"
     t.integer "diet_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["diet_id"], name: "index_user_eat_diets_on_diet_id"
-    t.index ["user_id", "diet_id"], name: "index_user_eat_diets_on_user_id_and_diet_id", unique: true
+    t.index ["user_id", "diet_id", "exp_date"], name: "index_user_eat_diets_on_user_id_and_diet_id_and_exp_date", unique: true
     t.index ["user_id"], name: "index_user_eat_diets_on_user_id"
+  end
+
+  create_table "user_requests", force: :cascade do |t|
+    t.date "date"
+    t.integer "option"
+    t.integer "status"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_user_requests_on_user_id"
   end
 
   create_table "user_restrictions", force: :cascade do |t|
@@ -138,6 +175,8 @@ ActiveRecord::Schema.define(version: 20171007194218) do
     t.integer "points"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "avatar", default: "profile/default.png"
+    t.string "character", default: "characters/avatar1.png"
     t.index ["person_id"], name: "index_users_on_person_id", unique: true
   end
 
@@ -158,6 +197,7 @@ ActiveRecord::Schema.define(version: 20171007194218) do
     t.integer "coach_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "name"
     t.index ["coach_id"], name: "index_workouts_on_coach_id"
   end
 
