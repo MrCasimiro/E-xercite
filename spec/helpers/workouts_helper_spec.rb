@@ -12,5 +12,21 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe WorkoutsHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  	before :each do
+  		@user = FactoryGirl.create(:user)
+  		@coach = FactoryGirl.create(:coach)
+  		@workout = FactoryGirl.create(:workout, coach_id: @coach.id)
+  	end
+
+	describe "find user workouts" do
+		it "verify if the user is related to workout" do
+			expect(user_do_workout?(@user, @workout)).to eql(true)
+			FactoryGirl.create(:user_do_workout, workout_id: @workout.id, user_id: @user.id)
+			expect(user_do_workout?(@user, @workout)).to eql(false)
+		end
+
+		it "find coach's workouts" do
+			expect(find_workouts(@coach)).to eql (Workout.where(coach_id: @coach.id)).to_a
+		end
+	end
 end

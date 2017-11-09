@@ -1,0 +1,80 @@
+    <link href="/css/morris.css" rel="stylesheet">
+    <link href="/css/sb-admin.css" rel="stylesheet">
+    <link href="/css/workout_creations.css" rel="stylesheet">
+    <link href="/css/profile.css", rel="stylesheet">
+    <title>SB Admin - Bootstrap Admin Template</title>
+
+    <div id="wrapper">
+
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            Histórico de treinos <small>E-xercite</small>
+                        </h1>                           
+                        
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Treinos criados</h3>
+                                   
+                            </div>
+                            <div class="panel-body">
+                                
+                                <div class="list-group">
+                                    <table class="table table-striped">
+                                      <thead>
+                                        <tr>
+                                          <th class='text-center'>Usuário ID</th>
+                                          <th class='text-center'>Treino</th>
+                                          <th class='text-center'>Exercício</th>
+                                          <th class='text-center'>Sequências</th>
+                                          <th class='text-center'>Repetições</th>
+                                          <th class='text-center'>Técnica</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        <% @workouts_history.each do |wo| %>
+                                            <% for i in 0..(wo.workout_composes.length-1) %>
+                                                <tr>
+                                                    <td align="center" style="vertical-align:middle"><%= wo.user_do_workouts[i].user_id %></td>
+                                                    <td align='center' style="vertical-align:middle"><%= wo.name%></td>
+                                                    <td align='center' style="vertical-align:middle"><%= Exercise.find(wo.workout_composes[i].exercise_id).name_exercise %></td>
+                                                    <td align='center' style="vertical-align:middle"><%= wo.workout_composes[i].set%></td>
+                                                    <td align='center' style="vertical-align:middle"><%= wo.workout_composes[i].repetition %></td>
+                                                    <td align='center' style="vertical-align:middle"><%= wo.workout_composes[i].technique %></td>
+                                                    <td align='right'>
+                                                        <% if user_do_workout?(User.find(wo.user_do_workouts[i].user_id), wo) %>
+                                                            <%= button_tag "Enviar", class: "button" %>
+                                                        <% else %>
+                                                            <%= button_tag "Enviado", class: "button-disabled"%>
+                                                        <% end %>
+                                                    </td>
+                                                </tr>
+                                            <%end%>
+                                        <% end %>
+                                      </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- /.row -->
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
