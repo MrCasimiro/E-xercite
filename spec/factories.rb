@@ -54,4 +54,24 @@ FactoryGirl.define do
 		user
 		workout
 	end
+
+	factory :disease do
+		name_disease "Osteoporose"
+	end
+
+	factory :user_disease do
+		user
+		disease
+	end
+
+	factory :restriction do
+		name_restriction "Preguiça"
+	end
+
+	factory :user_restriction do
+		user
+		restriction
+	end  
+
+
 end
