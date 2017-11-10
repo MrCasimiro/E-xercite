@@ -8,10 +8,8 @@ class FoodsController < ApplicationController
 	end
 
 	def create
-		@coach = Coach.find(params[:coach_id])
-		@food = Food.new
-		@food = Food.new(food_params)
-		if @food.save
+		@new_food = Food.new(food_params)
+		if @new_food.save
 			flash[:success] = "Comida adicionada com sucesso"
 		end
 	end
