@@ -1,6 +1,5 @@
 class User < ApplicationRecord
 	attr_accessor :avatar
-	VALID_AVATAR_REGEX = /\.(png|jpg|gif)\z/i
 	belongs_to :person
 
 	has_many :user_restrictions
@@ -17,5 +16,6 @@ class User < ApplicationRecord
     has_many :messages
 
 	mount_uploader :avatar, AvatarUploader
-	validates :avatar, format: {with: VALID_AVATAR_REGEX}
+ 	validates :avatar, 
+ 		format: { with: %r{.(gif|jpg|png)\Z}i, message: 'must be a URL for GIF, JPG or PNG image.' }
 end

@@ -4,6 +4,6 @@ module UsersHelper
 	end
 
 	def find_restrictions(user)
-		restrictions = Restriction.find(UserRestriction.find_by(user_id: user.id).restriction_id).name_restriction
+		Restriction.find(UserRestriction.find_by(user_id: user.id).restriction_id).name_restriction
 	end
 end
