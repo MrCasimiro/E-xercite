@@ -11,4 +11,22 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe UsersHelper, type: :helper do
+
+	before :each do 
+		@user = FactoryGirl.create(:user)
+	end
+
+	describe "return user data" do
+		it "return the first disease's name" do
+			disease = FactoryGirl.create(:disease)
+			FactoryGirl.create(:user_disease, user_id: @user.id, disease_id: disease.id)
+			expect(find_diseases(@user)).to eql(disease.name_disease)
+		end
+
+		it "return the first restriction's name" do
+			restriction = FactoryGirl.create(:restriction)
+			FactoryGirl.create(:user_restriction, user_id: @user.id, restriction_id: restriction.id)
+			expect(find_restrictions(@user)).to eql(restriction.name_restriction)
+		end
+	end
 end

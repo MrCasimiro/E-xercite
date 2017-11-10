@@ -3,6 +3,13 @@ class WorkoutsController < ApplicationController
 		@coach = Coach.find(params[:id])
 		@user_workout = User.find(params[:id_user])
 		@user_do_workout_id = @user_workout.id
+	end
+
+	def workouts_history
+		@coach = Coach.find(params[:coach_id])
+		@workouts_history = Workout.where(coach_id: @coach.id).includes(:workout_composes,
+		 :user_do_workouts)
+
 	end	
 	
 	def create_do_workout
