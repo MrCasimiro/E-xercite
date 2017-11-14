@@ -148,14 +148,12 @@ ActiveRecord::Schema.define(version: 20171108122342) do
   end
 
   create_table "user_eat_diets", force: :cascade do |t|
-    t.date "exp_date"
-    t.integer "finished"
     t.integer "user_id"
     t.integer "diet_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["diet_id"], name: "index_user_eat_diets_on_diet_id"
-    t.index ["user_id", "diet_id", "exp_date"], name: "index_user_eat_diets_on_user_id_and_diet_id_and_exp_date", unique: true
+    t.index ["user_id", "diet_id"], name: "index_user_eat_diets_on_user_id_and_diet_id", unique: true
     t.index ["user_id"], name: "index_user_eat_diets_on_user_id"
   end
 
@@ -181,11 +179,11 @@ ActiveRecord::Schema.define(version: 20171108122342) do
 
   create_table "users", force: :cascade do |t|
     t.integer "person_id"
-    t.integer "level", default: 0
-    t.integer "points", default: 0
+    t.integer "level"
+    t.integer "points"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "avatar", default: "profile/default.png"
+    t.string "avatar", default: "default.png"
     t.string "character", default: "characters/avatar1.png"
     t.index ["person_id"], name: "index_users_on_person_id", unique: true
   end
