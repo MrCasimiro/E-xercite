@@ -78,12 +78,12 @@ ActiveRecord::Schema.define(version: 20171108122342) do
 
   create_table "messages", force: :cascade do |t|
     t.text "body"
-    t.integer "user_id"
+    t.integer "person_id"
     t.integer "conversation_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["conversation_id"], name: "index_messages_on_conversation_id"
-    t.index ["user_id"], name: "index_messages_on_user_id"
+    t.index ["person_id"], name: "index_messages_on_person_id"
   end
 
   create_table "people", force: :cascade do |t|
