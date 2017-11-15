@@ -48,8 +48,6 @@ Rails.application.routes.draw do
                 post :close
             end
         resources :messages, only: [:create]
-        
-        get '/chat', to: 'chat#index', as: 'chat'
         end
         get '/chat', to: 'chat#index', as: 'chat'
         get 'profile', 'setting'
