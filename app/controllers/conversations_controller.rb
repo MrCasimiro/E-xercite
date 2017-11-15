@@ -2,6 +2,7 @@ class ConversationsController < ApplicationController
   include SessionHelper
 
   def create
+    debugger
     if current_user.nil?
     @conversation = Conversation.get(current_coach.id, params[:coach_id])
     else
