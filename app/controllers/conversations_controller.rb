@@ -1,7 +1,12 @@
 class ConversationsController < ApplicationController
-  def create
-    @conversation = Conversation.get(current_person.id, params[:person_id])
+  include SessionHelper
 
+  def create
+    if current_user.nil?
+    @conversation = Conversation.get(current_coach.id, params[:coach_id])
+    else
+    @conversation = Conversation.get(current_user.id, params[:user_id])
+    end
     add_to_conversations unless conversated?
 
     respond_to do |format|
