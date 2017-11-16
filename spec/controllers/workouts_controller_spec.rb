@@ -45,5 +45,10 @@ RSpec.describe WorkoutsController, type: :controller do
 				}
 			end.to change {UserDoWorkout.count}
 		end
+
+		it "return http success when view workouts history" do
+			get :workouts_history, params: {coach_id: @coach.id}
+			expect(response).to have_http_status(:success)
+		end
 	end
 end

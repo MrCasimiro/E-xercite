@@ -1,11 +1,8 @@
 class ConversationsController < ApplicationController
   include SessionsHelper
   def create
-    if current_user.nil?
-      @conversation = Conversation.get(current_coach.id, params[:coach_id])
-    else
-      @conversation = Conversation.get(current_person.id, params[:person_id])
-    end
+    
+    @conversation = Conversation.get(current_person.id, params[:person_id])
     add_to_conversations unless conversated?
 
     respond_to do |format|
@@ -15,9 +12,7 @@ class ConversationsController < ApplicationController
 
   def close
     @conversation = Conversation.find(params[:id])
-
     session[:conversations].delete(@conversation.id)
-
     respond_to do |format|
       format.js
     end

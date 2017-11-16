@@ -1,12 +1,11 @@
 class ChatController < ApplicationController
   def index
   	if current_user.nil?
-      @conversation = Conversation.get(current_coach.id, params[:coach_id])
       @coach = current_coach
     else
-      @conversation = Conversation.get(current_person.id, params[:person_id])
       @user = current_user
     end
+    @conversation = Conversation.get(current_person.id, params[:person_id])
     session[:conversations] ||= []
 
     @people = Person.all.where.not(id: current_person)

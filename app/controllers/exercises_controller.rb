@@ -9,7 +9,6 @@ class ExercisesController < ApplicationController
 
 	def create
 		@coach = Coach.find(params[:coach_id])
-		@exercise = Exercise.new
 		@exercise = Exercise.new(exercise_params)
 		if @exercise.save
 			flash[:success] = "Exercício adicionado com sucesso"

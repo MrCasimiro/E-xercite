@@ -1,7 +1,7 @@
 class PeopleController < ApplicationController
   def show
-   @person = Person.find(params[:id])
-  	# debugger # opens a rails console in prompt to debug
+    @person = Person.find(params[:id])
+    # debugger # opens a rails console in prompt to debug
   end
 
   def new

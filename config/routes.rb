@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  root 'pages#home'
-
+  root :to => 'pages#home'
+  root :to => 'people/coaches#show', :constraints => lambda { |request| request.env['warden'].person.type == 'Coach' }
+  root :to => 'people/users#show', :constraints => lambda { |request| request.env['warden'].person.type == 'User' }
+  
   devise_for :people, controllers: { sessions: 'sessions' }
   devise_scope :people do
     get    '/sign_in' => 'sessions#new'
@@ -37,9 +39,9 @@ Rails.application.routes.draw do
 
    #formulário de criação de treino
 
-  resources :workout_menu, only: [:show]
+   resources :workout_menu, only: [:show]
 
-  resources :people, only: [:show, :new, :create, :edit, :update] do
+   resources :people, only: [:show, :new, :create, :edit, :update] do
 
     resources :users do 
       member do 
@@ -47,7 +49,7 @@ Rails.application.routes.draw do
             member do
                 post :close
             end
-        resources :messages, only: [:create]
+          resources :messages, only: [:create]
           post 'messages', to: 'messages#create', as: 'user_messages'
         end
         get '/chat', to: 'chat#index', as: 'chat'
@@ -75,29 +77,27 @@ Rails.application.routes.draw do
   end
 
   resources :coaches do
-    #resources :workout_creations, only: [:show, :create_do_workout, :new]
-    #post  'workout_creations',      to: 'workout_creations#create_do_workout'
-
-    get 'diets', to: 'diets#show'
-    post 'diets', to: 'diets#create'
+    get   'diets',              to: 'diets#show'
+    post  'diets',              to: 'diets#create'
     resources :diets, only: [:show, :create]
 
-    get 'foods', to: 'foods#show'
+    get   'foods',              to: 'foods#show'
     resources :foods, only: [:show, :create]
 
-    get   'exercises', to: 'exercises#show'
+    get   'exercises',          to: 'exercises#show'
     resources :exercises, only: [:show, :create]
 
-    get 'workouts', to: 'workouts#new'
-    resources :workouts, only: [:show, :create_do_workout, :create]
-    post 'workout_creations', to: 'workouts#create_do_workout'
+    get   'workouts',           to: 'workouts#new'
+    resources :workouts, only: [:show, :create_do_workout, :create, :workouts_history]
+    get   'workouts_history',   to: 'workouts#workouts_history'
+    post  'workout_creations',  to: 'workouts#create_do_workout'
 
-    get '/diet_assign', to: 'diet_assign#show'
+    get   '/diet_assign',       to: 'diet_assign#show'
     resources :diet_assign
 
-    get '/choose_diet', to: 'choose_diet#show'
-    post '/choose_diet', to: 'choose_diet#create'
-    post '/choose_diet/:id', to: 'choose_diet#create'
+    get   '/choose_diet',       to: 'choose_diet#show'
+    post  '/choose_diet',       to: 'choose_diet#create'
+    post  '/choose_diet/:id',   to: 'choose_diet#create'
     resources :choose_diet
   end
 
