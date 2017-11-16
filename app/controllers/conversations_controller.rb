@@ -1,12 +1,10 @@
 class ConversationsController < ApplicationController
-  include SessionHelper
-debugger
+  include SessionsHelper
   def create
-    debugger
     if current_user.nil?
-    @conversation = Conversation.get(current_coach.id, params[:coach_id])
+      @conversation = Conversation.get(current_coach.id, params[:coach_id])
     else
-    @conversation = Conversation.get(current_person.id, params[:person_id])
+      @conversation = Conversation.get(current_person.id, params[:person_id])
     end
     add_to_conversations unless conversated?
 
