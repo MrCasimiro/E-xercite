@@ -43,8 +43,8 @@
                             </div>
                             <div class="panel-body">
                                 <% 
-                                    workout = UserDoWorkout.find(@user.id)
-                                    coach = Coach.find(Workout.find(workout.workout_id).coach_id)
+                                    workout_set = UserDoWorkout.where(@user.id).find_each do |workout|
+                                        coach = Coach.find(Workout.find(workout.workout_id).coach_id)
                                 %>
                                 <h4>Treinador: <%= Person.find(coach.person_id).name%></h4>
                                 <div class="list-group">
@@ -70,7 +70,16 @@
                                             <td align='center' style="vertical-align:middle"><%= wo.set%></td>
                                             <td align='center' style="vertical-align:middle"><%= wo.repetition %></td>
                                             <td align='center' style="vertical-align:middle"><%= wo.technique %></td>
+                                            <td align='right'>
+
+                                                <% form_for end_workout_trainings_path(@user, wo), :method => :put do |f| %>
+                                                  <%= f.hidden_field :status, :value => true %>
+                                                  <%= f.submit "Approve" %>
+                                                <% end %>
+                                                
+                                            </td>
                                          </tr>
+                                        <% end %>
                                         <% end %>
                                       </tbody>
                                     </table>
