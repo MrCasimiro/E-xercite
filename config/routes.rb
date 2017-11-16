@@ -57,8 +57,10 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:show, :edit, :update] do
-    resources :trainings, only: [:show]
-    resources :diet_menu, only: [:show]
+    resources :trainings,     only: [:show]
+    resources :diet_menu,     only: [:show]
+    resources :diseases,      only: [:update]
+    resources :restrictions,  only: [:update] 
   end
 
   resources :coaches do
