@@ -1,5 +1,10 @@
 module SessionsHelper
-	def current_user
+
+    def current_person
+        @current_person || = Person.find_by(person_id: current_person.id)
+    end	
+
+    def current_user
 		@current_user ||= User.find_by(person_id: current_person.id)
 	end
 
