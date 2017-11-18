@@ -11,7 +11,6 @@ Rails.application.routes.draw do
     get   '/sign_up', to: 'people#new', as: 'signup'
     post  '/sign_up', to: 'people#create'
   end
-  resources :chatrooms
 
   get 'profiles/show'
 
@@ -46,11 +45,27 @@ Rails.application.routes.draw do
 
     resources :users do 
       member do 
+        resources :conversations, only: [:create] do
+            member do
+                post :close
+            end
+          resources :messages, only: [:create]
+          post 'messages', to: 'messages#create', as: 'user_messages'
+        end
+        get '/chat', to: 'chat#index', as: 'chat'
         get 'profile', 'setting'
       end
     end
+
     resources :coaches do
       member do
+        resources :conversations, only: [:create] do
+            member do
+                post :close
+            end
+        resources :messages, only: [:create]
+        end
+        get '/chat', to: 'chat#index', as: 'chat'
         get 'users_profile', to: 'coaches#users_profile'
       end
     end
@@ -86,6 +101,5 @@ Rails.application.routes.draw do
     resources :choose_diet
   end
 
-  get '/chat', to: 'chatrooms#index', as: 'chat'
 
 end
