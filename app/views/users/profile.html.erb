@@ -11,12 +11,11 @@
 					<div class="profile-header-img">
 						<%= image_tag(@user.avatar_url, class: "img-circle") %>
 						<h2><%= Person.find(@user.person_id).name %></h2>
-						<p><strong>Doenças: </strong> <%= find_diseases(@user) %> </p>
-						<p><strong>Restrições: </strong> <%= find_restrictions(@user) %> </p>
+						<p><strong>Doenças: </strong> <%= User.first.diseases.all.collect { |d| d.name_disease }.join ', ' %> </p>
+						<p><strong>Restrições: </strong> <%= User.first.restrictions.all.collect { |r| r.name_restriction }.join ', ' %> </p>
 					</div>
 
 					<div class="profile-header-avatar">
-						<%= image_tag("characters/avatar1.png", size: 100) %> 
 					</div>
 				</div>
 				<div class="col-xs-12 divider text-center">

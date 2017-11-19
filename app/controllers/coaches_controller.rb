@@ -6,7 +6,7 @@ class CoachesController < ApplicationController
 	end
 
 	def users_profile
-		@coach = Coach.find(params[:coach_id])
+		@coach = Coach.find(params[:id])
 		@user_profile = User.find(params[:id_user])
 	end
 end
