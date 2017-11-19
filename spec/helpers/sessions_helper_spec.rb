@@ -11,9 +11,9 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe SessionsHelper, type: :helper do
-	before :each do
-		@current_person = FactoryGirl.create(:person)
-	end
+	#before :each do
+	#	@current_person = FactoryGirl.create(:person)
+	#end
 
 	describe "set current coach" do
 		it "current_coach already assigned" do
