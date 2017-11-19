@@ -5,9 +5,6 @@ class UserEatDietsController < ApplicationController
 
 	def create
 		@user_eat_diet = User_eat_diet.new(user_eat_diet_params)
-		if @user_eat_diet.save
-			flash[:success] = "Comida adiconada com sucesso"
-		end
 	end
 
 	def user_eat_diet_params

@@ -14,7 +14,7 @@
                         <a href="#"><i class="fa fa-fw fa-dashboard"></i> Acompanhamento</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-fw fa-bar-chart-o"></i> Meus dados</a>
+                        <%= link_to "Meus dados", controller: "user_measures", action: "info", user_id: @user.id %>
                     </li>
                     <li>
                         <%= link_to user_training_path(user_id: @user.id) do %>

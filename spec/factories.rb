@@ -1,4 +1,34 @@
 FactoryGirl.define do
+  factory :user_measure do
+    weight 1.5
+    height 1.5
+    neck 1.5
+    chest 1.5
+    leftbiceps 1.5
+    rightbiceps 1.5
+    chest ""
+    waist 1.5
+    hips 1.5
+    leftthigh 1.5
+    rightthigh 1.5
+    leftcalve 1.5
+    rightcalve 1.5
+  end
+  factory :user_datum do
+    weight 1.5
+    height 1.5
+    neck 1.5
+    chest 1.5
+    leftbiceps 1.5
+    rightbiceps 1.5
+    chest ""
+    waist 1.5
+    hips 1.5
+    leftthigh 1.5
+    rightthigh 1.5
+    leftcalve 1.5
+    rightcalve 1.5
+  end
   factory :message do
     chatroom nil
     user nil

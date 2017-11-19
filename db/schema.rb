@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171108122342) do
+ActiveRecord::Schema.define(version: 20171118200900) do
 
   create_table "admins", force: :cascade do |t|
     t.string "adm_password"
@@ -152,6 +152,25 @@ ActiveRecord::Schema.define(version: 20171108122342) do
     t.index ["diet_id"], name: "index_user_eat_diets_on_diet_id"
     t.index ["user_id", "diet_id", "exp_date"], name: "index_user_eat_diets_on_user_id_and_diet_id_and_exp_date", unique: true
     t.index ["user_id"], name: "index_user_eat_diets_on_user_id"
+  end
+
+  create_table "user_measures", force: :cascade do |t|
+    t.float "weight"
+    t.float "height"
+    t.float "neck"
+    t.float "chest"
+    t.float "leftbiceps"
+    t.float "rightbiceps"
+    t.float "waist"
+    t.float "hips"
+    t.float "leftthigh"
+    t.float "rightthigh"
+    t.float "leftcalve"
+    t.float "rightcalve"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_user_measures_on_user_id"
   end
 
   create_table "user_requests", force: :cascade do |t|

@@ -75,6 +75,12 @@ Rails.application.routes.draw do
     resources :trainings, only: [:show]
     resources :diet_menu, only: [:show]
   end
+  
+  resources :users do
+    get   'user_measures/:id',              to: 'user_measures#info'
+    get   'info',                       to: 'user_measures#info'
+    post  'user_measures',              to: 'user_measures#create'
+  end
 
   resources :coaches do
     get   'diets',              to: 'diets#show'
