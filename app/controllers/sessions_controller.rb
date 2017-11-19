@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
 
   def create
   	@person = Person.find_by(email: params[:session][:email].downcase)
-    if @person && @person.authenticatable_salt
+    if @person && @person.valid_password?(params[:session][:password])
     	sign_in @person
       @user = User.find_by(person_id: @person.id)
       @coach = Coach.find_by(person_id: @person.id)

@@ -1,8 +1,4 @@
 class PeopleController < ApplicationController
-  def show
-    @person = Person.find(params[:id])
-    # debugger # opens a rails console in prompt to debug
-  end
 
   def new
   	@person = Person.new
@@ -12,9 +8,8 @@ class PeopleController < ApplicationController
   	@person = Person.new(person_params)
   	#debugger
 
-  	if @person.save
-      @user = User.new(person_id: @person.id)
-      @user.save
+  	if @person.save 
+      @user = User.create(person_id: @person.id, avatar: open("public/images/profile/default.png"))
       sign_in @person
       flash[:success] = "Bem vindo ao aplicativo E-xercite!"
       redirect_to [@person, @user]

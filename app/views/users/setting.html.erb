@@ -39,25 +39,41 @@
               <%= f.submit "Atualizar mudanças", class: "btn btn-primary" %>
             <br><br>
         <% end %>
-        <h3> Dados de doenças </h3>
+
+        <h3> Dados das doenças </h3>
         <% @diseases = @user.diseases %>
         <% @diseases.each do |disease| %> 
           <%= simple_form_for [@user, disease], :html => {:class => 'form-basic' }, :method => :put do |f| %>
               <%= f.input :name_disease, label: "Atualizar nome da doença" %>
-              <%= f.button :submit, "Atualizar doença", :id => "submit_bt", class: "btn btn-primary" %>
+              <%= f.button :submit, "Atualizar doença", :id => "update_disease", class: "btn btn-primary" %>
+              <%= link_to "Remover", user_disease_path(id: disease.id, user_id: @user.id), method: :delete, class: "btn btn-danger" %>
               <br><br>
           <% end %>
         <% end %>
 
-        <h3>Dados de restrições</h3>
+        <%= simple_form_for [@user, Disease.new], :html => {:class => 'form-basic'} do |f| %>
+          <%= f.input :name_disease, label: "Adicionar nova doença" %>
+          <%= f.button :submit, "Adicionar doença", :id => "create_disease", class: "btn btn-primary" %>
+          <br><br>
+        <% end %>
+
+        <h3>Dados das restrições</h3>
         <% @restrictions = @user.restrictions %>
         <% @restrictions.each do |restriction| %> 
           <%= simple_form_for [@user, restriction], :html => {:class => 'form-basic' }, :method => :put do |f| %>
               <%= f.input :name_restriction, label: "Atualizar nome da restrição" %>
-              <%= f.button :submit, "Atualizar restrição", :id => "submit_bt", class: "btn btn-primary" %>
+              <%= f.button :submit, "Atualizar restrição", :id => "update_restriction", class: "btn btn-primary" %>
+              <%= link_to "Remover", user_restriction_path(id: restriction.id, user_id: @user.id), method: :delete, class: "btn btn-danger" %>
               <br><br>
           <% end %>
         <% end %>
+
+        <%= simple_form_for [@user, Restriction.new], :html => {:class => 'form-basic'} do |f| %>
+          <%= f.input :name_restriction, label: "Adicionar nova restrição" %>
+          <%= f.button :submit, "Adicionar restrição", :id => "create_restriction", class: "btn btn-primary" %>
+          <br><br>
+        <% end %>
+
       </div>                 
     </div>
   </div>
