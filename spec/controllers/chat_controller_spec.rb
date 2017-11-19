@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe ChatsController, type: :controller do
+RSpec.describe ChatController, type: :controller do
 
 	before :each do
 		@person = FactoryGirl.create(:person)
