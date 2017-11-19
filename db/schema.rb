@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171108122342) do
+ActiveRecord::Schema.define(version: 20171119165244) do
 
   create_table "admins", force: :cascade do |t|
     t.string "adm_password"
@@ -20,26 +20,21 @@ ActiveRecord::Schema.define(version: 20171108122342) do
     t.index ["person_id"], name: "index_admins_on_person_id", unique: true
   end
 
-  create_table "chatroom_users", force: :cascade do |t|
-    t.integer "chatroom_id"
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["chatroom_id"], name: "index_chatroom_users_on_chatroom_id"
-    t.index ["user_id"], name: "index_chatroom_users_on_user_id"
-  end
-
-  create_table "chatrooms", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "coaches", force: :cascade do |t|
     t.integer "person_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["person_id"], name: "index_coaches_on_person_id", unique: true
+  end
+
+  create_table "conversations", force: :cascade do |t|
+    t.integer "recipient_id"
+    t.integer "sender_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["recipient_id", "sender_id"], name: "index_conversations_on_recipient_id_and_sender_id", unique: true
+    t.index ["recipient_id"], name: "index_conversations_on_recipient_id"
+    t.index ["sender_id"], name: "index_conversations_on_sender_id"
   end
 
   create_table "diet_composes", force: :cascade do |t|
@@ -82,13 +77,13 @@ ActiveRecord::Schema.define(version: 20171108122342) do
   end
 
   create_table "messages", force: :cascade do |t|
-    t.integer "chatroom_id"
-    t.integer "user_id"
     t.text "body"
+    t.integer "person_id"
+    t.integer "conversation_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
-    t.index ["user_id"], name: "index_messages_on_user_id"
+    t.index ["conversation_id"], name: "index_messages_on_conversation_id"
+    t.index ["person_id"], name: "index_messages_on_person_id"
   end
 
   create_table "people", force: :cascade do |t|
