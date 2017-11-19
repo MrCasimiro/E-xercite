@@ -1,4 +1,4 @@
-class ChatController < ApplicationController
+class ChatsController < ApplicationController
   def index
   	if current_user.nil?
       @coach = current_coach
