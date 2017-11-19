@@ -4,6 +4,13 @@ FactoryGirl.define do
     user nil
     body "MyText"
   end
+  factory :chatroom_user do
+    chatroom nil
+    user nil
+  end
+  factory :chatroom do
+    name "MyString"
+  end
 	factory :person do
 		name "Casimiro"
 		gender "Male"
