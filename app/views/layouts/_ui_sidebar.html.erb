@@ -14,7 +14,9 @@
                         <a href="#"><i class="fa fa-fw fa-dashboard"></i> Acompanhamento</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-fw fa-bar-chart-o"></i> Meus dados</a>
+                        <%=link_to setting_person_user_path(person_id: @user.person_id) do %>
+                            <i class="fa fa-fw fa-bar-chart-o"></i> Meus dados
+                        <% end %>
                     </li>
                     <li>
                         <%= link_to user_training_path(user_id: @user.id) do %>
@@ -28,9 +30,6 @@
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-fw fa-trophy"></i> Conquistas</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-fw fa-user-o"></i> Meu perfil</a>
                     </li>
                 </ul>
             </div>

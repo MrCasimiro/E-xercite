@@ -71,7 +71,29 @@ FactoryGirl.define do
 	factory :user_restriction do
 		user
 		restriction
+	end
+
+	factory :food do
+		name_food "factory food name"
 	end  
 
+	factory :diet do
+		coach
+		name "factory diet name"
+	end
 
+	factory :diet_compose do
+		food
+		diet
+		quantity 2
+		hour '10:00'
+		day '20171019'
+	end
+
+	factory :user_eat_diet do
+		user
+		diet
+		exp_date '20171201'
+		finished 0
+	end
 end

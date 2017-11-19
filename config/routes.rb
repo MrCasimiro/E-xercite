@@ -3,13 +3,13 @@ Rails.application.routes.draw do
   root :to => 'people/coaches#show', :constraints => lambda { |request| request.env['warden'].person.type == 'Coach' }
   root :to => 'people/users#show', :constraints => lambda { |request| request.env['warden'].person.type == 'User' }
   
-  devise_for :people, controllers: { sessions: 'sessions' }
+  devise_for :people, controllers: { sessions: 'sessions', registrations: 'people'}
   devise_scope :people do
-    get    '/sign_in' => 'sessions#new'
-    post   '/sign_in' => 'sessions#create'
-    delete '/sign_out' => 'sessions#destroy'
-    get   '/sign_up', to: 'people#new', as: 'signup'
-    post  '/sign_up', to: 'people#create'
+    get     '/sign_in' => 'sessions#new'
+    post    '/sign_in' => 'sessions#create'
+    delete  '/sign_out' => 'sessions#destroy'
+    get     '/sign_up', to: 'people#new', as: 'signup'
+    post    '/sign_up', to: 'people#create'
   end
 
   get 'profiles/show'
@@ -41,7 +41,7 @@ Rails.application.routes.draw do
 
    resources :workout_menu, only: [:show]
 
-   resources :people, only: [:show, :new, :create, :edit, :update] do
+   resources :people, only: [:new, :create, :edit, :update] do
 
     resources :users do 
       member do 
@@ -72,8 +72,10 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:show, :edit, :update] do
-    resources :trainings, only: [:show]
-    resources :diet_menu, only: [:show]
+    resources :trainings,     only: [:show]
+    resources :diet_menu,     only: [:show]
+    resources :diseases,      only: [:update, :create, :destroy]
+    resources :restrictions,  only: [:update, :create, :destroy] 
   end
 
   resources :coaches do

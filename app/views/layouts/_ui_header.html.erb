@@ -118,11 +118,6 @@
                     <li>
                         <a class="fa fa-fw fa-envelope"<i<%= link_to "Mensagens", '#' %></i></a>
                     </li>
-                    <% if !@user.nil? %>
-                        <li>
-                            <a class="fa fa-fw fa-gear" <%=link_to "Configurações", setting_person_user_path(person_id: @user.person_id)%></a>
-                        </li>
-                    <% end %>
                     <li class="divider"></li>
                     <li>
                         <a <%=link_to "Sair", destroy_person_session_path, method: :delete, :class => "fa fa-fw fa-power-off"%></a>
