@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root :to => 'people/coaches#show', :constraints => lambda { |request| request.env['warden'].person.type == 'Coach' }
   root :to => 'people/users#show', :constraints => lambda { |request| request.env['warden'].person.type == 'User' }
   
-  devise_for :people, controllers: { sessions: 'sessions'}
+  devise_for :people, controllers: { sessions: 'sessions', registrations: 'people'}
   devise_scope :people do
     get     '/sign_in' => 'sessions#new'
     post    '/sign_in' => 'sessions#create'
