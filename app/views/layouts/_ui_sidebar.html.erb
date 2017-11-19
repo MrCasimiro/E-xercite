@@ -18,6 +18,10 @@
                     </li>
                     <li>
                         <%= link_to user_training_path(user_id: @user.id) do %>
+                            <i class="fa fa-fw fa-table"></i> Dados de cadastro
+                        <% end %>   
+                    <li>
+                        <%= link_to user_training_path(user_id: @user.id) do %>
                             <i class="fa fa-fw fa-table"></i> Treinos
                         <% end %>   
                     </li>
