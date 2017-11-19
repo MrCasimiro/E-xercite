@@ -186,7 +186,7 @@ ActiveRecord::Schema.define(version: 20171108122342) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "avatar", default: "profile/default.png"
-    t.string "character", default: "profile/default.png"
+    t.string "character", default: "characters/avatar1.png"
     t.index ["person_id"], name: "index_users_on_person_id", unique: true
   end
 

@@ -9,7 +9,8 @@ class PeopleController < ApplicationController
   	#debugger
 
   	if @person.save 
-      @user = User.create(person_id: @person.id, avatar: open("public/images/profile/default.png"))
+      @user = User.create(person_id: @person.id,
+       avatar: open("public/images/profile/default.png"))
       sign_in @person
       flash[:success] = "Bem vindo ao aplicativo E-xercite!"
       redirect_to [@person, @user]

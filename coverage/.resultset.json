@@ -86,10 +86,6 @@
         1,
         null
       ],
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/user_eat_diets_helper.rb": [
-        1,
-        null
-      ],
       "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/users_helper.rb": [
         1,
         1,
@@ -448,6 +444,7 @@
         null,
         2,
         1,
+        null,
         1,
         1,
         1,
@@ -555,25 +552,6 @@
         1,
         null,
         null,
-        null,
-        null,
-        null
-      ],
-      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/user_eat_diets_controller.rb": [
-        1,
-        1,
-        0,
-        null,
-        null,
-        1,
-        0,
-        0,
-        0,
-        null,
-        null,
-        null,
-        1,
-        0,
         null,
         null,
         null
@@ -957,6 +935,6 @@
         0
       ]
     },
-    "timestamp": 1511067375
+    "timestamp": 1511116609
   }
 }
