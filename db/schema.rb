@@ -140,6 +140,8 @@ ActiveRecord::Schema.define(version: 20171108122342) do
   create_table "user_do_workouts", force: :cascade do |t|
     t.integer "user_id"
     t.integer "workout_id"
+    t.boolean "ended", default: false
+    t.integer "score"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id", "workout_id"], name: "index_user_do_workouts_on_user_id_and_workout_id", unique: true
@@ -148,6 +150,8 @@ ActiveRecord::Schema.define(version: 20171108122342) do
   end
 
   create_table "user_eat_diets", force: :cascade do |t|
+    t.date "exp_date"
+    t.integer "finished"
     t.integer "user_id"
     t.integer "diet_id"
     t.datetime "created_at", null: false
