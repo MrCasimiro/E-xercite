@@ -14,10 +14,12 @@
                         <a href="#"><i class="fa fa-fw fa-dashboard"></i> Acompanhamento</a>
                     </li>
                     <li>
-                        <%=link_to setting_person_user_path(person_id: @user.person_id) do %>
-                            <i class="fa fa-fw fa-bar-chart-o"></i> Meus dados
-                        <% end %>
+                        <%= link_to "Meus dados", controller: "user_measures", action: "show", user_id: @user.id %>
                     </li>
+                    <li>
+                        <%=link_to setting_person_user_path(person_id: @user.person_id) do %>
+                             <i class="fa fa-fw fa-bar-chart-o"></i> Dados de cadastros
+                        <% end %> 
                     <li>
                         <%= link_to user_training_path(user_id: @user.id) do %>
                             <i class="fa fa-fw fa-table"></i> Treinos

@@ -154,6 +154,25 @@ ActiveRecord::Schema.define(version: 20171119165244) do
     t.index ["user_id"], name: "index_user_eat_diets_on_user_id"
   end
 
+  create_table "user_measures", force: :cascade do |t|
+    t.float "weight"
+    t.float "height"
+    t.float "neck"
+    t.float "chest"
+    t.float "leftbiceps"
+    t.float "rightbiceps"
+    t.float "waist"
+    t.float "hips"
+    t.float "leftthigh"
+    t.float "rightthigh"
+    t.float "leftcalve"
+    t.float "rightcalve"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_user_measures_on_user_id"
+  end
+
   create_table "user_requests", force: :cascade do |t|
     t.date "date"
     t.integer "option"
