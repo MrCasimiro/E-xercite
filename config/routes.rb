@@ -79,8 +79,9 @@ Rails.application.routes.draw do
   end
   
   resources :users do
-    get   'user_measures/:id',              to: 'user_measures#info'
     get   'info',                       to: 'user_measures#info'
+    get   'user_measures/show/:id',                       to: 'user_measures#show'
+    get   'user_measures/new/:id',                       to: 'user_measures#new'
     post  'user_measures',              to: 'user_measures#create'
   end
 

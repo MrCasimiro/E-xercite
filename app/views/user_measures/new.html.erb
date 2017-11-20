@@ -1,0 +1,44 @@
+    <link href="/css/morris.css" rel="stylesheet">
+    <link href="/css/sb-admin.css" rel="stylesheet">
+    <link href="/css/training.css" rel="stylesheet">
+    <link href="/css/workout_creations.css" rel="stylesheet">
+    <link href="/css/profile.css", rel="stylesheet">
+
+    <div id="wrapper">
+
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-sm-2"></div>
+                    <div class="col-lg-8">
+                        <h3>Insira suas medidas</h3>
+                        <%= simple_form_for [@user,@user_measure], :html => {:class => 'form-basic' }  do |f| %>
+                            <%= f.input :weight, :label => "Peso" %>
+                            <%= f.input :height, :label => "Altura" %>
+                            <%= f.input :neck, :label => "Pescoço" %>
+                            <%= f.input :leftbiceps, :label => "Bíceps esquerdo" %>
+                            <%= f.input :rightbiceps, :label => "Bíceps direito" %>
+                            <%= f.input :chest, :label => "Peitoral" %>
+                            <%= f.input :waist, :label => "Cintura" %>
+                            <%= f.input :hips, :label => "Quadril" %>
+                            <%= f.input :leftthigh, :label => "Coxa esquerda" %>
+                            <%= f.input :rightthigh, :label => "Coxa direita" %>
+                            <%= f.input :leftcalve, :label => "Panturrilha esquerda" %>
+                            <%= f.input :rightcalve, :label => "Panturrilha direita" %>
+                            <%= f.input :user_id, :as => :hidden, input_html: {value: @user.id} %>
+                            <br><br>
+                            <%= f.button :submit, "Enviar",:id => "submit_bt"  %>
+                        <% end %>
+                        <br><br>
+                    </div>
+                </div>
+
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>

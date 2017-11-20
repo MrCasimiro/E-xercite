@@ -1,8 +1,8 @@
 require 'date'
 
 class UserMeasuresController < ApplicationController
-	def show
-		@user = User.find(params[:id])
+	def new
+		@user = User.find(params[:user_id])
 		@user_measure= UserMeasure.new
 	end
 
@@ -16,7 +16,7 @@ class UserMeasuresController < ApplicationController
 		params.require(:user_measure).permit(:weight, :height, :neck, :leftbiceps, :rightbiceps, :chest, :waist, :hips, :leftthigh, :rightthigh, :leftcalve, :rightcalve,:user_id)
 	end
 
-	def info
+	def show
 		@user = User.find(params[:id])
 		@newest_info = UserMeasure.where(
 			'user_id = :id',

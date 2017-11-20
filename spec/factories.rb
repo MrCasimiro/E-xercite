@@ -3,10 +3,9 @@ FactoryGirl.define do
     weight 1.5
     height 1.5
     neck 1.5
-    chest 1.5
     leftbiceps 1.5
     rightbiceps 1.5
-    chest ""
+    chest 1.5
     waist 1.5
     hips 1.5
     leftthigh 1.5
