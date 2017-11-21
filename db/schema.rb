@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171119165244) do
+ActiveRecord::Schema.define(version: 20171121153904) do
 
   create_table "admins", force: :cascade do |t|
     t.string "adm_password"
@@ -135,10 +135,10 @@ ActiveRecord::Schema.define(version: 20171119165244) do
   create_table "user_do_workouts", force: :cascade do |t|
     t.integer "user_id"
     t.integer "workout_id"
-    t.boolean "ended"
-    t.integer "score"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "ended"
+    t.integer "score"
     t.index ["user_id", "workout_id"], name: "index_user_do_workouts_on_user_id_and_workout_id", unique: true
     t.index ["user_id"], name: "index_user_do_workouts_on_user_id"
     t.index ["workout_id"], name: "index_user_do_workouts_on_workout_id"
