@@ -53,6 +53,8 @@ FactoryGirl.define do
 	factory :user_do_workout do
 		user
 		workout
+		ended false
+		score 0
 	end
 
 	factory :disease do

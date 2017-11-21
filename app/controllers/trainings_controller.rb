@@ -5,12 +5,14 @@ class TrainingsController < ApplicationController
 	end
 
 	def end_workout
-		@finish_workout = UserDoWorkout.find(params[:user_id_wo], params[:workout_id_wo])
-		@finish_workout.update_attributes(ended: true)
+		u_id = params[:user_id_wo]
+		w_id = params[:workout_id_wo]
 
+		@finish_workout = UserDoWorkout.where(:user_id => u_id).where(:workout_id => w_id).first
+		@finish_workout.update_attributes(:ended => true)
+	
 		if @finish_workout.save
 			flash[:success] = "Treino terminado com sucesso!"
-			render 'show'
 		end
 	end
 end
