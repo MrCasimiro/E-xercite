@@ -135,8 +135,6 @@ ActiveRecord::Schema.define(version: 20171119165244) do
   create_table "user_do_workouts", force: :cascade do |t|
     t.integer "user_id"
     t.integer "workout_id"
-    t.boolean "ended", default: false
-    t.integer "score"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id", "workout_id"], name: "index_user_do_workouts_on_user_id_and_workout_id", unique: true
@@ -152,7 +150,7 @@ ActiveRecord::Schema.define(version: 20171119165244) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["diet_id"], name: "index_user_eat_diets_on_diet_id"
-    t.index ["user_id", "diet_id"], name: "index_user_eat_diets_on_user_id_and_diet_id", unique: true
+    t.index ["user_id", "diet_id", "exp_date"], name: "index_user_eat_diets_on_user_id_and_diet_id_and_exp_date", unique: true
     t.index ["user_id"], name: "index_user_eat_diets_on_user_id"
   end
 
@@ -197,11 +195,11 @@ ActiveRecord::Schema.define(version: 20171119165244) do
 
   create_table "users", force: :cascade do |t|
     t.integer "person_id"
-    t.integer "level"
-    t.integer "points"
+    t.integer "level", default: 0
+    t.integer "points", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "avatar", default: "default.png"
+    t.string "avatar", default: "profile/default.png"
     t.string "character", default: "characters/avatar1.png"
     t.index ["person_id"], name: "index_users_on_person_id", unique: true
   end
