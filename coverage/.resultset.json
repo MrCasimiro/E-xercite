@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/juny/E-xercite/app/models/person.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/models/person.rb": [
         1,
         null,
         null,
@@ -10,72 +10,72 @@
         null,
         null
       ],
-      "/home/juny/E-xercite/app/models/application_record.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/models/application_record.rb": [
         1,
         1,
         null
       ],
-      "/home/juny/E-xercite/app/helpers/application_helper.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/home/juny/E-xercite/app/helpers/chat_helper.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/helpers/chat_helper.rb": [
         1,
         null
       ],
-      "/home/juny/E-xercite/app/helpers/choose_diet_helper.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/helpers/choose_diet_helper.rb": [
         1,
         null
       ],
-      "/home/juny/E-xercite/app/helpers/coaches_helper.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/helpers/coaches_helper.rb": [
         1,
         null
       ],
-      "/home/juny/E-xercite/app/helpers/contacts_helper.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/helpers/contacts_helper.rb": [
         1,
         null
       ],
-      "/home/juny/E-xercite/app/helpers/conversation_helper.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/helpers/conversation_helper.rb": [
         1,
         null
       ],
-      "/home/juny/E-xercite/app/helpers/diet_assign_helper.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/helpers/diet_assign_helper.rb": [
         1,
         null
       ],
-      "/home/juny/E-xercite/app/helpers/diet_menu_helper.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/helpers/diet_menu_helper.rb": [
         1,
         null
       ],
-      "/home/juny/E-xercite/app/helpers/diets_helper.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/helpers/diets_helper.rb": [
         1,
         null
       ],
-      "/home/juny/E-xercite/app/helpers/diseases_helper.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/helpers/diseases_helper.rb": [
         1,
         null
       ],
-      "/home/juny/E-xercite/app/helpers/foods_helper.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/helpers/foods_helper.rb": [
         1,
         null
       ],
-      "/home/juny/E-xercite/app/helpers/messages_helper.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/helpers/messages_helper.rb": [
         1,
         null
       ],
-      "/home/juny/E-xercite/app/helpers/pages_helper.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/helpers/pages_helper.rb": [
         1,
         null
       ],
-      "/home/juny/E-xercite/app/helpers/people_helper.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/helpers/people_helper.rb": [
         1,
         null
       ],
-      "/home/juny/E-xercite/app/helpers/restrictions_helper.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/helpers/restrictions_helper.rb": [
         1,
         null
       ],
-      "/home/juny/E-xercite/app/helpers/sessions_helper.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/helpers/sessions_helper.rb": [
         1,
         null,
         1,
@@ -87,15 +87,19 @@
         null,
         null
       ],
-      "/home/juny/E-xercite/app/helpers/trainings_helper.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/helpers/trainings_helper.rb": [
         1,
         null
       ],
-      "/home/juny/E-xercite/app/helpers/uipages_helper.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/helpers/uipages_helper.rb": [
         1,
         null
       ],
-      "/home/juny/E-xercite/app/helpers/users_helper.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/helpers/user_measures_helper.rb": [
+        1,
+        null
+      ],
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/helpers/users_helper.rb": [
         1,
         1,
         1,
@@ -106,11 +110,11 @@
         null,
         null
       ],
-      "/home/juny/E-xercite/app/helpers/workout_composes_helper.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/helpers/workout_composes_helper.rb": [
         1,
         null
       ],
-      "/home/juny/E-xercite/app/helpers/workouts_helper.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/helpers/workouts_helper.rb": [
         1,
         1,
         2,
@@ -124,86 +128,86 @@
         null,
         null
       ],
-      "/home/juny/E-xercite/app/channels/conversation_channel.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/channels/conversation_channel.rb": [
         null,
         1,
         null
       ],
-      "/home/juny/E-xercite/app/channels/application_cable/channel.rb": [
-        1,
-        1,
-        null,
-        null
-      ],
-      "/home/juny/E-xercite/app/controllers/chat_controller.rb": [
-        1,
-        1,
-        0,
-        0,
-        null,
-        0,
-        null,
-        0,
-        0,
-        null,
-        0,
-        0,
-        null,
-        null,
-        null
-      ],
-      "/home/juny/E-xercite/app/controllers/application_controller.rb": [
-        1,
-        1,
-        1,
-        null
-      ],
-      "/home/juny/E-xercite/app/controllers/choose_diet_controller.rb": [
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        0,
-        0,
-        0,
-        null,
-        null,
-        null,
-        1,
-        null,
-        null,
-        null,
-        0,
-        null,
-        null,
-        1,
-        null,
-        0,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/home/juny/E-xercite/app/controllers/coaches_controller.rb": [
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/channels/application_cable/channel.rb": [
         1,
         1,
         null,
         null
       ],
-      "/home/juny/E-xercite/app/controllers/contacts_controller.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/controllers/chat_controller.rb": [
+        1,
+        1,
+        0,
+        0,
+        null,
+        0,
+        null,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/controllers/application_controller.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/controllers/choose_diet_controller.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        1,
+        null,
+        0,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/controllers/coaches_controller.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/controllers/contacts_controller.rb": [
         1,
         1,
         2,
@@ -221,7 +225,7 @@
         null,
         null
       ],
-      "/home/juny/E-xercite/app/controllers/conversations_controller.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/controllers/conversations_controller.rb": [
         1,
         1,
         1,
@@ -254,7 +258,7 @@
         null,
         null
       ],
-      "/home/juny/E-xercite/app/controllers/diet_assign_controller.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/controllers/diet_assign_controller.rb": [
         1,
         1,
         1,
@@ -264,7 +268,7 @@
         null,
         null
       ],
-      "/home/juny/E-xercite/app/controllers/diet_menu_controller.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/controllers/diet_menu_controller.rb": [
         1,
         1,
         1,
@@ -290,7 +294,7 @@
         null,
         null
       ],
-      "/home/juny/E-xercite/app/controllers/diets_controller.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/controllers/diets_controller.rb": [
         1,
         null,
         1,
@@ -317,7 +321,7 @@
         null,
         null
       ],
-      "/home/juny/E-xercite/app/controllers/diseases_controller.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/controllers/diseases_controller.rb": [
         1,
         1,
         1,
@@ -350,7 +354,7 @@
         null,
         null
       ],
-      "/home/juny/E-xercite/app/controllers/exercises_controller.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/controllers/exercises_controller.rb": [
         1,
         null,
         null,
@@ -374,7 +378,7 @@
         null,
         null
       ],
-      "/home/juny/E-xercite/app/controllers/foods_controller.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/controllers/foods_controller.rb": [
         1,
         null,
         null,
@@ -398,7 +402,7 @@
         null,
         null
       ],
-      "/home/juny/E-xercite/app/controllers/messages_controller.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/controllers/messages_controller.rb": [
         1,
         1,
         0,
@@ -416,7 +420,7 @@
         null,
         null
       ],
-      "/home/juny/E-xercite/app/controllers/pages_controller.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/controllers/pages_controller.rb": [
         1,
         1,
         1,
@@ -445,7 +449,7 @@
         null,
         null
       ],
-      "/home/juny/E-xercite/app/controllers/people_controller.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/controllers/people_controller.rb": [
         1,
         null,
         1,
@@ -487,7 +491,7 @@
         null,
         null
       ],
-      "/home/juny/E-xercite/app/controllers/restrictions_controller.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/controllers/restrictions_controller.rb": [
         1,
         1,
         1,
@@ -520,7 +524,7 @@
         null,
         null
       ],
-      "/home/juny/E-xercite/app/controllers/sessions_controller.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/controllers/sessions_controller.rb": [
         1,
         1,
         null,
@@ -549,7 +553,7 @@
         null,
         null
       ],
-      "/home/juny/E-xercite/app/controllers/trainings_controller.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/controllers/trainings_controller.rb": [
         1,
         1,
         1,
@@ -557,7 +561,7 @@
         null,
         null
       ],
-      "/home/juny/E-xercite/app/controllers/uipages_controller.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/controllers/uipages_controller.rb": [
         1,
         1,
         null,
@@ -570,7 +574,36 @@
         null,
         null
       ],
-      "/home/juny/E-xercite/app/controllers/users_controller.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/controllers/user_measures_controller.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/controllers/users_controller.rb": [
         1,
         1,
         1,
@@ -607,7 +640,7 @@
         null,
         null
       ],
-      "/home/juny/E-xercite/app/controllers/workout_menu_controller.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/controllers/workout_menu_controller.rb": [
         1,
         1,
         1,
@@ -624,7 +657,7 @@
         null,
         null
       ],
-      "/home/juny/E-xercite/app/controllers/workouts_controller.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/controllers/workouts_controller.rb": [
         1,
         1,
         1,
@@ -676,11 +709,11 @@
         null,
         null
       ],
-      "/home/juny/E-xercite/app/jobs/application_job.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/jobs/application_job.rb": [
         1,
         null
       ],
-      "/home/juny/E-xercite/app/jobs/message_broadcast_job.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/jobs/message_broadcast_job.rb": [
         1,
         1,
         null,
@@ -726,23 +759,23 @@
         null,
         null
       ],
-      "/home/juny/E-xercite/app/mailers/application_mailer.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/mailers/application_mailer.rb": [
         1,
         1,
         1,
         null
       ],
-      "/home/juny/E-xercite/app/models/admin.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/models/admin.rb": [
         1,
         1,
         null
       ],
-      "/home/juny/E-xercite/app/models/coach.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/models/coach.rb": [
         1,
         1,
         null
       ],
-      "/home/juny/E-xercite/app/models/contact.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/models/contact.rb": [
         1,
         1,
         1,
@@ -760,7 +793,7 @@
         null,
         null
       ],
-      "/home/juny/E-xercite/app/models/conversation.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/models/conversation.rb": [
         1,
         1,
         1,
@@ -786,7 +819,7 @@
         null,
         null
       ],
-      "/home/juny/E-xercite/app/models/diet_compose.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/models/diet_compose.rb": [
         1,
         1,
         1,
@@ -795,7 +828,7 @@
         1,
         null
       ],
-      "/home/juny/E-xercite/app/models/diet.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/models/diet.rb": [
         1,
         1,
         1,
@@ -810,13 +843,13 @@
         null,
         null
       ],
-      "/home/juny/E-xercite/app/models/disease.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/models/disease.rb": [
         1,
         1,
         1,
         null
       ],
-      "/home/juny/E-xercite/app/models/exercise.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/models/exercise.rb": [
         1,
         1,
         1,
@@ -824,7 +857,7 @@
         1,
         null
       ],
-      "/home/juny/E-xercite/app/models/food.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/models/food.rb": [
         1,
         1,
         1,
@@ -832,7 +865,7 @@
         1,
         null
       ],
-      "/home/juny/E-xercite/app/models/message.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/models/message.rb": [
         1,
         1,
         1,
@@ -840,30 +873,30 @@
         1,
         null
       ],
-      "/home/juny/E-xercite/app/models/restriction.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/models/restriction.rb": [
         1,
         1,
         1,
         null
       ],
-      "/home/juny/E-xercite/app/models/speciality.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/models/speciality.rb": [
         1,
         1,
         null
       ],
-      "/home/juny/E-xercite/app/models/user_disease.rb": [
-        1,
-        1,
-        1,
-        null
-      ],
-      "/home/juny/E-xercite/app/models/user_do_workout.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/models/user_disease.rb": [
         1,
         1,
         1,
         null
       ],
-      "/home/juny/E-xercite/app/models/user_eat_diet.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/models/user_do_workout.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/models/user_eat_diet.rb": [
         1,
         1,
         1,
@@ -880,19 +913,25 @@
         null,
         null
       ],
-      "/home/juny/E-xercite/app/models/user_request.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/models/user_measure.rb": [
         1,
         1,
         1,
         null
       ],
-      "/home/juny/E-xercite/app/models/user_restriction.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/models/user_request.rb": [
         1,
         1,
         1,
         null
       ],
-      "/home/juny/E-xercite/app/models/user.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/models/user_restriction.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/models/user.rb": [
         1,
         1,
         1,
@@ -911,7 +950,7 @@
         null,
         null
       ],
-      "/home/juny/E-xercite/app/uploaders/avatar_uploader.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/uploaders/avatar_uploader.rb": [
         1,
         null,
         null,
@@ -925,7 +964,7 @@
         null,
         null,
         1,
-        198,
+        231,
         null,
         null,
         1,
@@ -954,11 +993,11 @@
         null,
         null,
         1,
-        90,
+        114,
         null,
         null,
         1,
-        90,
+        114,
         null,
         null,
         null,
@@ -969,7 +1008,7 @@
         null,
         null
       ],
-      "/home/juny/E-xercite/app/models/workout_compose.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/models/workout_compose.rb": [
         1,
         1,
         1,
@@ -979,7 +1018,7 @@
         1,
         null
       ],
-      "/home/juny/E-xercite/app/models/workout.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/models/workout.rb": [
         1,
         1,
         1,
@@ -993,13 +1032,13 @@
         1,
         null
       ],
-      "/home/juny/E-xercite/app/channels/application_cable/connection.rb": [
+      "/home/amanda/Documentos/ESI/EP/E-xercite/app/channels/application_cable/connection.rb": [
         0,
         0,
         0,
         0
       ]
     },
-    "timestamp": 1511130546
+    "timestamp": 1511280504
   }
 }
