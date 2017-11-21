@@ -16,7 +16,7 @@ class WorkoutsController < ApplicationController
 		@coach = Coach.find(params[:coach_id])
 		@user_workout = User.find(params[:id_user])
 		@user_do_workout_id = @user_workout.id
-		@do_workout = UserDoWorkout.new(user_id: @user_do_workout_id, workout_id: params[:workout_id])
+		@do_workout = UserDoWorkout.new(user_id: @user_do_workout_id, workout_id: params[:workout_id], ended: false, score: 0)
 		#debugger
 
 		if @do_workout.save
@@ -25,6 +25,10 @@ class WorkoutsController < ApplicationController
 		else
 			render 'show'
 		end
+	end
+
+	def workout_score
+		
 	end
 
 	def new

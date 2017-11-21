@@ -1,18 +1,6 @@
 Given(/^that I'm a registered user to workout$/) do
-	@person = Person.create!(
-		name: "user",
-		email: "user@user.com",
-		phone: "1111111",
-		age: 21,
-		gender: "other",
-		password: "123456",
-		password_confirmation: "123456")
-
-	@current_user = User.create(
-		person_id: @person.id,
-		level: 0,
-		points: 0,
-		avatar: open("public/images/profile/teste.png"))
+	@person = FactoryGirl.create(:person)
+	@current_user = User.create(person_id: @person.id)
 end
 
 Given(/^I'm signed in the system$/) do
@@ -24,33 +12,42 @@ Given(/^I'm signed in the system$/) do
 end
 
 Given(/^I have one valid workout$/) do
-	person2 = Person.create(
-	name: "coach",
-	email: "coach@coach.com",
-	phone: "1111111",
-	age: 21,
-	gender: "other",
-	password: "123456",
-	password_confirmation: "123456")
+	@person2 = FactoryGirl.create(:person)
+	@current_coach = Coach.create(person_id: @person2.id)
 
-	coach = Coach.create!(
-	person_id: person2.id)
-
-	@workout = Workout.create(
-		name: "Treino A",
-		coach_id: coach.id)
+	@workout = FactoryGirl.create(:workout, coach_id: @current_coach.id)
 
 	user_do = UserDoWorkout.create(
 		user_id: @current_user.id,
-		workout_id: @workout.id)
+		workout_id: @workout.id,
+		ended: false,
+		score: 0
+		)
 end
 
 
 When(/^I acess my workout page$/) do
-  visit ("/workout_menu/"+@current_user.id.to_s)
+  visit ("/users/"+@current_user.id.to_s+"/trainings/"+@current_user.id.to_s)
 end
 
-Then(/^I should be able to see only my workouts$/) do
+Then(/^I should be able to see only my workouts to be done$/) do
 	page.has_field?('workout_name', :with => @workout.name)
 end
 
+When(/^I finish my workout$/) do
+	@done_workout_count = UserDoWorkout.where(:user_id => @current_user.id).where(:workout_id => @workout.id).
+		where(:ended => true).count
+	click_button("terminar")
+	@u = UserDoWorkout.where(:user_id => @current_user.id).where(:workout_id => @workout.id).first
+	@u.ended = true
+	@u.save
+end
+
+Then(/^the number of my finished workouts should be increased by (\d+)$/) do |arg|
+	UserDoWorkout.where(:user_id => @current_user.id).where(:workout_id => @workout.id).where(:ended => true).count.
+		should == @done_workout_count + 1
+end
+
+Then (/^I should be able to see my done workout in the done section$/) do
+	page.has_field?('ended_workout_name', :with => @workout.name)
+end

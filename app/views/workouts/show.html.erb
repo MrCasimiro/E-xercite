@@ -56,7 +56,12 @@
                                                     <% end %>
                                                     <!--<%= button_to "Enviar", {action: 'create_do_workout', workout_id: wo[0].workout_id, id_user: @user_workout.id}, {class: "button", id: "create", data: {disable_with: "Enviando"}}%> -->
                                                 <% else %>
-                                                    <%= button_to "Enviado", {},  {class: "button-disabled",disabled: true}%>
+                                                   <!-- <% if UserDoWorkout.find(user_id: @user_workout.id, workout_id: wo[0].workout_id).ended %>
+                                                        <% button_to "Pontuar" #e deixar um seletor de pontos em escala quando clicar em pontuar %>
+                                                    <% else %> -->
+                                                        <%= button_to "Enviado", {},  {class: "button-disabled",disabled: true}%>
+                                                    <!--<% end %> -->
+
                                                 <% end %>
                                             </td>
                                          </tr>

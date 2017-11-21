@@ -43,12 +43,17 @@
                             </div>
                             <div class="panel-body">
                                 <% 
-                                    workout = UserDoWorkout.find(@user.id)
-                                    coach = Coach.find(Workout.find(workout.workout_id).coach_id)
+                                    workout_set = UserDoWorkout.where(:user_id => @user.id, :ended => false).each do |workout|
+                                        workout = UserDoWorkout.find(@user.id)
+                                        coach = Coach.find(Workout.find(workout.workout_id).coach_id)
+                                        
                                 %>
-                                <h4>Treinador: <%= Person.find(coach.person_id).name%></h4>
+
                                 <div class="list-group">
+                                    
                                     <table class="table table-striped">
+                                    <h5>Treinador: <%= Person.find(coach.person_id).name%></h5>
+                                    <h5 id = "workout_name">Treino: <%= Workout.find(workout.workout_id).name%></h5>
                                       <thead>
                                         <tr>
                                           <th class='text-center'>Exercício</th>
@@ -59,18 +64,25 @@
                                       </thead>
                                       <tbody>
                                         <% 
-                                         @composition = WorkoutCompose.all
-                                         @composition.each do |wo|
-                                            if wo.workout_id != workout.workout_id
-                                                next
-                                            end 
+                                         @composition = WorkoutCompose.where(:workout_id => workout.workout_id)
+
+                                         @composition.each do |wkt|                                        
                                         %>
                                          <tr>
-                                            <td align='center' style="vertical-align:middle"><%= Exercise.find(wo.exercise_id).name_exercise %></td>
-                                            <td align='center' style="vertical-align:middle"><%= wo.set%></td>
-                                            <td align='center' style="vertical-align:middle"><%= wo.repetition %></td>
-                                            <td align='center' style="vertical-align:middle"><%= wo.technique %></td>
+                                            <td align='center' style="vertical-align:middle"><%= Exercise.find(wkt.exercise_id).name_exercise %></td>
+                                            <td align='center' style="vertical-align:middle"><%= wkt.set%></td>
+                                            <td align='center' style="vertical-align:middle"><%= wkt.repetition %></td>
+                                            <td align='center' style="vertical-align:middle"><%= wkt.technique %></td>
+                                            <% end %>
+                                            <td align='right'>
+
+                                                <%=  link_to user_end_workout_path(user_id_wo: @user.id, workout_id_wo: workout.workout_id), :method => :post do%>
+
+                                                  <button class="button", id="terminar">Terminar!</button>
+                                                <% end %>
+                                            </td>
                                          </tr>
+                                        
                                         <% end %>
                                       </tbody>
                                     </table>
@@ -88,7 +100,42 @@
                             </div>
                             <!-- Finished trainings here-->
                             <div class="panel-body">
-                                <div id="morris-area-chart"></div>
+                                <% 
+                                    workout_set = UserDoWorkout.where(:user_id => @user.id, :ended => true).each do |workout|
+                                    workout = UserDoWorkout.find(@user.id)
+                                        coach = Coach.find(Workout.find(workout.workout_id).coach_id)
+                                %>
+                                <h4>Treinador: <%= Person.find(coach.person_id).name%></h4>
+                                <h5 id = "ended_workout_name">Treino: <%= Workout.find(workout.workout_id).name%></h5>
+                                <div class="list-group">
+                                    <table class="table table-striped">
+                                      <thead>
+                                        <tr>
+                                          <th class='text-center'>Exercício</th>
+                                          <th class='text-center'>Sequências</th>
+                                          <th class='text-center'>Repetições</th>
+                                          <th class='text-center'>Técnica</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        <% 
+                                         @composition = WorkoutCompose.where(:workout_id => workout.workout_id)
+
+                                         @composition.each do |wkt|                                        
+                                        %>
+                                         <tr>
+                                            <td align='center' style="vertical-align:middle"><%= Exercise.find(wkt.exercise_id).name_exercise %></td>
+                                            <td align='center' style="vertical-align:middle"><%= wkt.set%></td>
+                                            <td align='center' style="vertical-align:middle"><%= wkt.repetition %></td>
+                                            <td align='center' style="vertical-align:middle"><%= wkt.technique %></td>
+                                            <% end %>
+                                            
+                                         </tr>
+                                        
+                                        <% end %>
+                                      </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
