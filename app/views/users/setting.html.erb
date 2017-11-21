@@ -3,15 +3,18 @@
   <div class="row">
     <div class="col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
       <div class="well profile">
+        <h3>Foto do usuário</h3>
         <%= image_tag(@user.avatar_url, class: "img-circle", size: 100, align: "middle") %>
         <%= form_for @user, url: person_user_path  do |u| %>
+        <br>
           <%= u.file_field :avatar if @user.avatar?%>
           <%= u.hidden_field :avatar_cache %>
           <%-# f.select(:character, Model.all.map{|p| [p.name, p.id, :title => p.image_url(:thumb)]}) -%>
           <br>
-            <%= u.submit "Save changes", class: "btn btn-primary" %>
-          </br>
+            <%= u.submit "Atualizar mudanças", class: "btn btn-primary" %>
+          <br><br>
         <% end %>
+        <h3>Dados de cadastro </h3>
         <% @person = @user.person %>
         <%= form_for(@person) do |f| %>
             <%= render 'shared/error_messages' %>
@@ -33,9 +36,44 @@
             <%= f.label :password_confirmation, "Confirmation" %>
             <%= f.password_field :password_confirmation, class: 'form-control' %>
             <br>
-              <%= f.submit "Save changes", class: "btn btn-primary" %>
-            </br>
+              <%= f.submit "Atualizar mudanças", class: "btn btn-primary" %>
+            <br><br>
         <% end %>
+
+        <h3> Dados das doenças </h3>
+        <% @diseases = @user.diseases %>
+        <% @diseases.each do |disease| %> 
+          <%= simple_form_for [@user, disease], :html => {:class => 'form-basic' }, :method => :put do |f| %>
+              <%= f.input :name_disease, label: "Atualizar nome da doença" %>
+              <%= f.button :submit, "Atualizar doença", :id => "update_disease", class: "btn btn-primary" %>
+              <%= link_to "Remover", user_disease_path(id: disease.id, user_id: @user.id), method: :delete, class: "btn btn-danger" %>
+              <br><br>
+          <% end %>
+        <% end %>
+
+        <%= simple_form_for [@user, Disease.new], :html => {:class => 'form-basic'} do |f| %>
+          <%= f.input :name_disease, label: "Adicionar nova doença" %>
+          <%= f.button :submit, "Adicionar doença", :id => "create_disease", class: "btn btn-primary" %>
+          <br><br>
+        <% end %>
+
+        <h3>Dados das restrições</h3>
+        <% @restrictions = @user.restrictions %>
+        <% @restrictions.each do |restriction| %> 
+          <%= simple_form_for [@user, restriction], :html => {:class => 'form-basic' }, :method => :put do |f| %>
+              <%= f.input :name_restriction, label: "Atualizar nome da restrição" %>
+              <%= f.button :submit, "Atualizar restrição", :id => "update_restriction", class: "btn btn-primary" %>
+              <%= link_to "Remover", user_restriction_path(id: restriction.id, user_id: @user.id), method: :delete, class: "btn btn-danger" %>
+              <br><br>
+          <% end %>
+        <% end %>
+
+        <%= simple_form_for [@user, Restriction.new], :html => {:class => 'form-basic'} do |f| %>
+          <%= f.input :name_restriction, label: "Adicionar nova restrição" %>
+          <%= f.button :submit, "Adicionar restrição", :id => "create_restriction", class: "btn btn-primary" %>
+          <br><br>
+        <% end %>
+
       </div>                 
     </div>
   </div>

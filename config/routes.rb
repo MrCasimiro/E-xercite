@@ -3,15 +3,14 @@ Rails.application.routes.draw do
   root :to => 'people/coaches#show', :constraints => lambda { |request| request.env['warden'].person.type == 'Coach' }
   root :to => 'people/users#show', :constraints => lambda { |request| request.env['warden'].person.type == 'User' }
   
-  devise_for :people, controllers: { sessions: 'sessions' }
+  devise_for :people, controllers: { sessions: 'sessions', registrations: 'people'}
   devise_scope :people do
-    get    '/sign_in' => 'sessions#new'
-    post   '/sign_in' => 'sessions#create'
-    delete '/sign_out' => 'sessions#destroy'
-    get   '/sign_up', to: 'people#new', as: 'signup'
-    post  '/sign_up', to: 'people#create'
+    get     '/sign_in' => 'sessions#new'
+    post    '/sign_in' => 'sessions#create'
+    delete  '/sign_out' => 'sessions#destroy'
+    get     '/sign_up', to: 'people#new', as: 'signup'
+    post    '/sign_up', to: 'people#create'
   end
-  resources :chatrooms
 
   get 'profiles/show'
 
@@ -42,15 +41,31 @@ Rails.application.routes.draw do
 
    resources :workout_menu, only: [:show]
 
-   resources :people, only: [:show, :new, :create, :edit, :update] do
+   resources :people, only: [:new, :create, :edit, :update] do
 
     resources :users do 
       member do 
+        resources :conversations, only: [:create] do
+            member do
+                post :close
+            end
+          resources :messages, only: [:create]
+          post 'messages', to: 'messages#create', as: 'user_messages'
+        end
+        get '/chat', to: 'chat#index', as: 'chat'
         get 'profile', 'setting'
       end
     end
+
     resources :coaches do
       member do
+        resources :conversations, only: [:create] do
+            member do
+                post :close
+            end
+        resources :messages, only: [:create]
+        end
+        get '/chat', to: 'chat#index', as: 'chat'
         get 'users_profile', to: 'coaches#users_profile'
       end
     end
@@ -60,6 +75,17 @@ Rails.application.routes.draw do
     resources :trainings, only: [:show, :end_workout]
     post 'end_workout', to: "trainings#end_workout"
     resources :diet_menu, only: [:show]
+    resources :trainings,     only: [:show]
+    resources :diet_menu,     only: [:show]
+    resources :diseases,      only: [:update, :create, :destroy]
+    resources :restrictions,  only: [:update, :create, :destroy] 
+  end
+  
+  resources :users do
+    get   'info',                       to: 'user_measures#info'
+    get   'user_measures/show/:id',                       to: 'user_measures#show'
+    get   'user_measures/new/:id',                       to: 'user_measures#new'
+    post  'user_measures',              to: 'user_measures#create'
   end
 
   resources :coaches do
@@ -87,6 +113,5 @@ Rails.application.routes.draw do
     resources :choose_diet
   end
 
-  get '/chat', to: 'chatrooms#index', as: 'chat'
 
 end

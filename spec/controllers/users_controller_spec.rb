@@ -11,7 +11,6 @@ RSpec.describe UsersController, type: :controller do
 
 	describe "GET #action" do
 		it "returns http success show" do
-			User.should_receive(:find).with('1').and_return(@user)
 			sign_in @person
 			get :show, params: {person_id: @person.id, id: @user.id}
 			expect(response).to have_http_status(:success)
@@ -19,14 +18,12 @@ RSpec.describe UsersController, type: :controller do
 
 
 		it "returns http success profile" do
-			User.should_receive(:find).with('1').and_return(@user)
 			sign_in @person
 			get :profile, params: {person_id: @person.id, id: @user.id}
 			expect(response).to have_http_status(:success)
 		end
 
 		it "returns http success settings" do
-			User.should_receive(:find).with('1').and_return(@user)
 			sign_in @person
 			get :setting, params: {person_id: @person.id, id: @user.id}
 			expect(response).to have_http_status(:success)
