@@ -1,4 +1,5 @@
 class ConversationsController < ApplicationController
+  before_action :authenticate_person!
   include SessionsHelper
   def create
     

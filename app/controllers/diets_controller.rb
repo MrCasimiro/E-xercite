@@ -1,5 +1,5 @@
 class DietsController < ApplicationController
-	
+	before_action :authenticate_person!
 	def show
 		@coach = Coach.find(params[:coach_id])
 		@diet = Diet.new
@@ -11,7 +11,7 @@ class DietsController < ApplicationController
 		@diet = Diet.new(diet_params)
 		@coach = Coach.find(params[:coach_id])
 		if @diet.save
-			flash[:success] = "success"
+			flash.now[:success] = "success"
 		end
 	end
 

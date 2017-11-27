@@ -1,7 +1,7 @@
 class TrainingsController < ApplicationController
+	before_action :authenticate_person!
 	def show
 		@user = User.find(params[:id])
-		
 	end
 
 	def end_workout
@@ -12,7 +12,8 @@ class TrainingsController < ApplicationController
 		@finish_workout.update_attributes(:ended => true)
 	
 		if @finish_workout.save
-			flash[:success] = "Treino terminado com sucesso!"
+			flash.now[:success] = "Treino terminado com sucesso!"
 		end
+		render :show
 	end
 end

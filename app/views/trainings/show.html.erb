@@ -43,8 +43,8 @@
                             </div>
                             <div class="panel-body">
                                 <% 
-                                    workout_set = UserDoWorkout.where(:user_id => @user.id, :ended => false).each do |workout|
-                                        workout = UserDoWorkout.find(@user.id)
+                                    workout_set = UserDoWorkout.where(:user_id => current_user.id, :ended => false).each do |workout|
+                                        workout = UserDoWorkout.find(current_user.id)
                                         coach = Coach.find(Workout.find(workout.workout_id).coach_id)
                                         
                                 %>
@@ -76,7 +76,7 @@
                                             <% end %>
                                             <td align='right'>
 
-                                                <%=  link_to user_end_workout_path(user_id_wo: @user.id, workout_id_wo: workout.workout_id), :method => :post do%>
+                                                <%=  link_to user_end_workout_path(user_id_wo: current_user.id, workout_id_wo: workout.workout_id), :method => :post do%>
 
                                                   <button class="button", id="terminar">Terminar!</button>
                                                 <% end %>
@@ -101,8 +101,8 @@
                             <!-- Finished trainings here-->
                             <div class="panel-body">
                                 <% 
-                                    workout_set = UserDoWorkout.where(:user_id => @user.id, :ended => true).each do |workout|
-                                    workout = UserDoWorkout.find(@user.id)
+                                    workout_set = UserDoWorkout.where(:user_id => current_user.id, :ended => true).each do |workout|
+                                    workout = UserDoWorkout.find(current_user.id)
                                         coach = Coach.find(Workout.find(workout.workout_id).coach_id)
                                 %>
                                 <h4>Treinador: <%= Person.find(coach.person_id).name%></h4>
