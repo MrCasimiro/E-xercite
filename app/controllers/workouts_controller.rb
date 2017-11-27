@@ -1,6 +1,5 @@
 class WorkoutsController < ApplicationController
-	def show
-		@coach = Coach.find(params[:id])
+	def workouts_page
 		@user_workout = User.find(params[:id_user])
 		@user_do_workout_id = @user_workout.id
 	end
@@ -13,18 +12,20 @@ class WorkoutsController < ApplicationController
 	end	
 	
 	def create_do_workout
-		@coach = Coach.find(params[:coach_id])
 		@user_workout = User.find(params[:id_user])
 		@user_do_workout_id = @user_workout.id
-		@do_workout = UserDoWorkout.new(user_id: @user_do_workout_id, workout_id: params[:workout_id], ended: false, score: 0)
+		@do_workout = UserDoWorkout.new(user_id: @user_do_workout_id,
+		 workout_id: params[:workout_id], ended: false, score: 0)
 		#debugger
 
 		if @do_workout.save
-			flash[:success] = "Treino enviado com sucesso!"
+			flash.now[:success] = "Treino enviado com sucesso!"
 			#redirect_to coach_workout_creation_path
 		else
-			render 'show'
+			flash.now[:danger] = "Não foi possível adicionar o treino"
 		end
+
+		render 'workouts_page'
 	end
 
 	def workout_score
