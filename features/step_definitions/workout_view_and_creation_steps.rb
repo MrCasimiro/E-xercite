@@ -32,7 +32,7 @@ end
 
 
 Then(/^I should be on user's workout page$/) do
-	visit(coach_workout_path(coach_id: @current_coach.id, id: @current_coach.id, id_user: @user.id))
+	visit(coach_workouts_page_path(coach_id: @current_coach.id, id_user: @user.id))
 end
 
 When(/^I send the workout to user$/) do

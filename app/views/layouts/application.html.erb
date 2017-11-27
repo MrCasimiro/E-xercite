@@ -11,13 +11,18 @@
     <link href="/css/landing-page.css" rel="stylesheet">
     
     <% if person_signed_in? %>
-      <% if !@user.blank? %>
+      <% if !current_user.nil? %>
         <%= render 'layouts/ui_sidebar' %>
       <% else %>
         <%= render 'layouts/ui_sidebar_coach' %>
       <% end %>
-      <%= yield %>
       <%= render 'layouts/ui_header' %>
+      <div id="wrapper">
+        <% flash.each do |key, value| %>
+          <div class="alert alert-<%= key %>"><%= value %></div>
+        <% end %>
+      </div>
+      <%= yield %>
     <% else %>
       <%= render 'layouts/header' %>
       <%= yield %>

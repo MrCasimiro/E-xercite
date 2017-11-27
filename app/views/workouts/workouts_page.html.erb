@@ -41,7 +41,7 @@
                                         </tr>
                                       </thead>
                                       <tbody>
-                                        <% find_workouts(@coach) %>
+                                        <% find_workouts(current_coach) %>
                                         <% @workout_composes.each do |wo|  %>
                                          <tr>
                                             <td align='center' style="vertical-align:middle"><%= Workout.find(wo[0].workout_id).name%></td>
@@ -54,14 +54,18 @@
                                                     <%= link_to coach_workout_creations_path(workout_id: wo[0].workout_id, id_user: @user_workout.id), :method => :post do %>
                                                         <button class="button", id="create">Enviar</button>
                                                     <% end %>
-                                                    <!--<%= button_to "Enviar", {action: 'create_do_workout', workout_id: wo[0].workout_id, id_user: @user_workout.id}, {class: "button", id: "create", data: {disable_with: "Enviando"}}%> -->
-                                                <% else %>
-                                                   <!-- <% if UserDoWorkout.find(user_id: @user_workout.id, workout_id: wo[0].workout_id).ended %>
-                                                        <% button_to "Pontuar" #e deixar um seletor de pontos em escala quando clicar em pontuar %>
-                                                    <% else %> -->
-                                                        <%= button_to "Enviado", {},  {class: "button-disabled",disabled: true}%>
-                                                    <!--<% end %> -->
 
+                                                    <% if false %>
+                                                        <%= button_to "Enviar", {action: 'create_do_workout', workout_id: wo[0].workout_id, id_user: @user_workout.id}, {class: "button", id: "create", data: {disable_with: "Enviando"}}%>
+                                                    <% end %>
+                                                <% else %>
+                                                    <% if false %>
+                                                        <% if UserDoWorkout.find(user_id: @user_workout.id, workout_id: wo[0].workout_id).ended %>
+                                                        <% button_to "Pontuar" #e deixar um seletor de pontos em escala quando clicar em pontuar %>
+                                                        <% else %>
+                                                        <% end %>
+                                                    <% end %>
+                                                    <%= button_to "Enviado", {},  {class: "button-disabled",disabled: true}%>
                                                 <% end %>
                                             </td>
                                          </tr>
