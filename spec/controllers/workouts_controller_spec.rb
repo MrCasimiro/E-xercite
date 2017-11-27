@@ -25,7 +25,7 @@ RSpec.describe WorkoutsController, type: :controller do
 		it "return http success when create a workout" do
 			sign_in @person
 			expect do
-				put :create, params: {
+				post :create, params: {
 					workout: {
 						coach_id: 1,
 						name: "aaaa",
@@ -38,6 +38,25 @@ RSpec.describe WorkoutsController, type: :controller do
 					}, coach_id: 1
 				}
 			end.to change {Workout.count}
+		end
+
+		it "return http success when create a workout" do
+			sign_in @person
+			expect do
+				post :create, params: {
+					workout: {
+						coach_id: 1,
+						name: nil,
+						workout_compose_attributes: {
+							set: nil,
+							repetition: nil,
+							technique: nil,
+							exercise_id: nil
+						}
+					}, coach_id: 1
+				}
+			end.to_not change {Workout.count}
+			expect(response).to render_template('workouts/new')
 		end
 
 		it "return http success when send a workout to a user" do
