@@ -10,7 +10,7 @@ RSpec.describe WorkoutsController, type: :controller do
 
 	describe "GET #action" do
 		it "returns http success when show" do 
-			get :show, params: {coach_id: @coach.id, id_user: @user.id, id: 1}
+			get :workouts_page, params: {coach_id: @coach.id, id_user: @user.id, id: 1}
 			expect(response).to have_http_status(:success)
 		end
 

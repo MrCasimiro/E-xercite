@@ -5,8 +5,7 @@ class WorkoutsController < ApplicationController
 	end
 
 	def workouts_history
-		@coach = Coach.find(params[:coach_id])
-		@workouts_history = Workout.where(coach_id: @coach.id).includes(:workout_composes,
+		@workouts_history = Workout.where(coach_id: current_coach.id).includes(:workout_composes,
 		 :user_do_workouts)
 
 	end	
