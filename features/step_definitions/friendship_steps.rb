@@ -13,30 +13,53 @@ end
 
 When(/^I press to add a friend$/) do
 	@friendships = Friendship.where(user_id: @current_user.id).count
-	click_button("add-friend-#{@not_friend.id}")
-	debugger
+	click_link("Solicitar")
 end
 
 Then(/^my not accepted friendship's number should increase by (\d+)$/) do |increase|
 	Friendship.where(user_id: @current_user.id).count.should == @friendships + increase.to_i
 end
 
-=begin it doesn't work for some reason
+#######################################################3
+
 And(/^I have a friendship's request$/) do
-	@person_request_friend = FactoryGirl.create(:person)
-	@request_friend = FactoryGirl.create(:user, person_id: @person_request_friend.id)
 	@request_friendship = FactoryGirl.create(:friendship, 
-		friend_id: @current_user.id, user_id: @request_friend.id, id: 1)
+		friend_id: @current_user.id, id: 1)
 end
-=end
+
+Then(/^I should be able to see a friend's request$/) do
+	@requested = User.find(Friendship.find(1).user_id)
+	page.should have_content(@requested.person.name)
+end
+
+When(/^I press to accept my friend's request$/) do
+	@friendships = Friendship.where(friend_id: @current_user.id, accepted: true).count
+	click_link('Aceitar')
+end
+
+Then(/^my accepted friendship's number should increase by (\d+)$/) do |increase|
+	Friendship.where(friend_id: @current_user.id, accepted: true).count.should == @friendships + increase.to_i
+end
+
+######################################################
 
 And(/^I have a accepted friendship$/) do
 	@person_friend = FactoryGirl.create(:person)
 	@friend = FactoryGirl.create(:user, person_id: @person_friend.id)
 	@friendship = FactoryGirl.create(:friendship, 
-		user_id: @current_user.id, friend_id: @friend.id)
+		user_id: @current_user.id, friend_id: @friend.id, accepted: true)
+	@friendships = Friendship.where(user_id: @current_user.id).count
 end
 
 Then(/^I should be able to see a friendship I have$/) do
 	page.should have_content(@friend.person.name)
 end
+
+When(/^I press to remove this friendship$/) do
+	click_link("Remove")
+end 
+
+Then(/^the my friendship's number should decrease by (\d+)$/) do |decrease|
+	Friendship.where(user_id: @current_user.id).count.should == @friendships - decrease.to_i 
+end
+
