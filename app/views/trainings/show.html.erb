@@ -42,9 +42,8 @@
 
                             </div>
                             <div class="panel-body">
-                                <% 
+                                <% debugger
                                     workout_set = UserDoWorkout.where(:user_id => @user.id, :ended => false).each do |workout|
-                                        workout = UserDoWorkout.find(@user.id)
                                         coach = Coach.find(Workout.find(workout.workout_id).coach_id)
                                         
                                 %>
@@ -102,8 +101,13 @@
                             <div class="panel-body">
                                 <% 
                                     workout_set = UserDoWorkout.where(:user_id => @user.id, :ended => true).each do |workout|
-                                    workout = UserDoWorkout.find(@user.id)
                                         coach = Coach.find(Workout.find(workout.workout_id).coach_id)
+
+                                        if workout.score == 0
+                                            point = false
+                                        else
+                                            point = true
+                                        end
                                 %>
                                 <h4>Treinador: <%= Person.find(coach.person_id).name%></h4>
                                 <h5 id = "ended_workout_name">Treino: <%= Workout.find(workout.workout_id).name%></h5>
@@ -115,6 +119,7 @@
                                           <th class='text-center'>Sequências</th>
                                           <th class='text-center'>Repetições</th>
                                           <th class='text-center'>Técnica</th>
+                                          <th class='text-center'>Nota</th>
                                         </tr>
                                       </thead>
                                       <tbody>
@@ -128,8 +133,13 @@
                                             <td align='center' style="vertical-align:middle"><%= wkt.set%></td>
                                             <td align='center' style="vertical-align:middle"><%= wkt.repetition %></td>
                                             <td align='center' style="vertical-align:middle"><%= wkt.technique %></td>
+                                            <% if point == true %>
+                                            <td align='center' style="vertical-align:middle"><%= workout.score %></td>
+                                            <% else %>
+                                            <td align='center' style="vertical-align:middle">a avaliar</td>
                                             <% end %>
-                                            
+
+                                            <% end %>
                                          </tr>
                                         
                                         <% end %>

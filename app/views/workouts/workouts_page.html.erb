@@ -38,6 +38,7 @@
                                           <th class='text-center'>Sequências</th>
                                           <th class='text-center'>Repetições</th>
                                           <th class='text-center'>Técnica</th>
+                                          <th class='text-center'>Nota</th>
                                         </tr>
                                       </thead>
                                       <tbody>
@@ -59,13 +60,15 @@
                                                         <%= button_to "Enviar", {action: 'create_do_workout', workout_id: wo[0].workout_id, id_user: @user_workout.id}, {class: "button", id: "create", data: {disable_with: "Enviando"}}%>
                                                     <% end %>
                                                 <% else %>
-                                                    <% if false %>
-                                                        <% if UserDoWorkout.find(user_id: @user_workout.id, workout_id: wo[0].workout_id).ended %>
-                                                        <% button_to "Pontuar" #e deixar um seletor de pontos em escala quando clicar em pontuar %>
-                                                        <% else %>
+                                                    <% workout_finished = UserDoWorkout.find_by(user_id: @user_workout.id, workout_id:  wo[0].workout_id)
+                                                    if  (workout_finished.ended && workout_finished.score == 0)%>
+                                                        <%= form_tag coach_workout_end_path(workout_id: wo[0].workout_id, id_user: @user_workout.id,:method => :post) do %>
+                                                         <%= select_tag('score', options_for_select((1..10).step(1).to_a, :selected => @selected_score)) %>
+                                                         <%= submit_tag "Salvar", :name => 'save' %>
                                                         <% end %>
-                                                    <% end %>
-                                                    <%= button_to "Enviado", {},  {class: "button-disabled",disabled: true}%>
+                                                    <% else %>
+                                                        <%= button_to "Enviado", {},  {class: "button-disabled",disabled: true}%>
+                                                    <% end%>
                                                 <% end %>
                                             </td>
                                          </tr>
