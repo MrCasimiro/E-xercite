@@ -46,3 +46,22 @@ Then(/^the number of user's do workout should be increased by (\d+)$/) do |incre
 	UserDoWorkout.where(user_id: @user.id).count.should == @value + 1
 end
 
+When(/^the user finishes the workout$/) do
+	@user_do = UserDoWorkout.find_by(user_id: @user.id)
+	@user_do.update_attributes(:ended => true)
+	@user_do.save
+	@current_score = @user_do.score
+end
+
+Then(/^I should be able to score the user$/) do
+	@selected_score = 5
+end
+
+When(/^I submit the score$/) do
+	@user_do.update_attributes(:score => @selected_score)
+	@user_do.save
+end
+
+Then(/^the user's score should be different$/) do
+	UserDoWorkout.find_by(user_id: @user.id).score.should_not == @current_score
+end

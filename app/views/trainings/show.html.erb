@@ -42,7 +42,7 @@
 
                             </div>
                             <div class="panel-body">
-                                <% debugger
+                                <% 
                                     workout_set = UserDoWorkout.where(:user_id => @user.id, :ended => false).each do |workout|
                                         coach = Coach.find(Workout.find(workout.workout_id).coach_id)
                                         
