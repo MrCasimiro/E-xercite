@@ -28,7 +28,18 @@ class WorkoutsController < ApplicationController
 	end
 
 	def workout_score
-		
+
+		@userDo = UserDoWorkout.find_by(user_id: params[:id_user], workout_id: params[:workout_id])
+		@user_wkt = User.find(params[:id_user])
+		if params[:save]
+			current_score = @userDo.score
+			new_score = params[:score]
+			@userDo.update_attributes(:score => new_score)
+			@user_wkt.update_attributes(:points => current_score.to_i + new_score.to_i)
+			if (@userDo.save && @user_wkt.save)
+				flash[:success] = "Nota enviada com sucesso!"
+			end
+		end
 	end
 
 	def new

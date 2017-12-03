@@ -104,6 +104,7 @@ Rails.application.routes.draw do
     get   'workouts_page',      to: 'workouts#workouts_page'
     get   'workouts_history',   to: 'workouts#workouts_history'
     post  'workout_creations',  to: 'workouts#create_do_workout'
+    post  'workout_end',        to: 'workouts#workout_score'
 
     get   '/diet_assign',       to: 'diet_assign#show'
     resources :diet_assign

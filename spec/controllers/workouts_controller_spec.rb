@@ -59,6 +59,8 @@ RSpec.describe WorkoutsController, type: :controller do
 			expect(response).to render_template('workouts/new')
 		end
 
+
+
 		it "return http success when send a workout to a user" do
 			sign_in @person
 			expect do
@@ -75,5 +77,26 @@ RSpec.describe WorkoutsController, type: :controller do
 			get :workouts_history, params: {coach_id: @coach.id}
 			expect(response).to have_http_status(:success)
 		end
+
+		it "return http success when coach scores user" do
+			@user_do = UserDoWorkout.create(
+				user_id: @user.id,
+				workout_id: @workout.id,
+				ended: true,
+				score: 0
+				)
+
+			expect do
+				put :workout_score, params: {
+					coach_id: @coach.id,
+					id_user: @user.id,
+					workout_id: @workout.id,
+					save: true,
+					score: 5
+				}				
+			end.to change {UserDoWorkout.find_by(user_id: @user.id, workout_id: @workout.id).score}
+				 .and change{User.find_by(id: @user.id).points}
+		end
+
 	end
 end

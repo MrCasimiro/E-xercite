@@ -14,4 +14,8 @@ Feature: Workout view and creation
 		Then I should be on user's workout page
 		When I send the workout to user
 		Then the number of user's do workout should be increased by 1
+		When the user finishes the workout
+		Then I should be able to score the user
+		When I submit the score
+		Then the user's score should be different
 
