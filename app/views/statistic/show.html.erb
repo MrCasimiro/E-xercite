@@ -38,27 +38,42 @@
                     <div class="col-lg-12">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h3 class="panel-title">Estatisticas de Treino</h3>
+                                <h3 class="panel-title">Estatisticas da Carga no Supino</h3>
 
                             </div>
                             <div class="panel-body">
                                 <% 
-                                    user = User.find(@user.id)
-                                    
+                                    user = User.find(@user.id)                                    
                                 %>
+                                <% if @active_workout == nil then %>
+                                        <div>Monte seu treino!</div>
+                                    <% else %>
+
                                 <div class="list-group">
                                     <table class="table table-striped">
                                 
-                                      <tbody>                                   
+                                      <tbody>
+
+                                                                           
                                          <tr>
 
                                             <div id="graphic_1">
-                                                <%= line_chart ["Fevereiro",5] %>
+                                                <%= line_chart [
+                                                    ['Janeiro' ,5],
+                                                    ['Fevereiro' ,8],
+                                                    ['Março', 9],
+                                                    ['Abril', 11],
+                                                    ['Maio', 14]
+                                                ]
+                                                     %>
+                
                                             </div>                                   </tr>
+                                           
                                         
                                       </tbody>
                                     </table>
                                 </div>
+                                <% end %>
                             </div>
                         </div>
                     </div>
