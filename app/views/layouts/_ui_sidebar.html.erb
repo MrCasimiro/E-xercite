@@ -33,6 +33,11 @@
                     <li>
                         <a href="#"><i class="fa fa-fw fa-trophy"></i> Conquistas</a>
                     </li>
+                     <li>
+                        <%= link_to user_statistic_path(user_id: current_user.id) do %>
+                            <i class="fa fa-fw fa-table"></i> Estatisticas
+                        <% end %>   
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

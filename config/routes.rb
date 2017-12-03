@@ -79,6 +79,7 @@ Rails.application.routes.draw do
     resources :diet_menu,     only: [:show]
     resources :diseases,      only: [:update, :create, :destroy]
     resources :restrictions,  only: [:update, :create, :destroy] 
+    resources :statistic,     only: [:show]
   end
   
   resources :users do
