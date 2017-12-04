@@ -84,6 +84,9 @@ Rails.application.routes.draw do
     get   'user_measures/new/:id',      to: 'user_measures#new'
     post  'user_measures',              to: 'user_measures#create'
     resources :friendships, only: [:create, :update, :destroy, :new]
+    resources :rankings   , only: [:global_ranking, :local_ranking]
+    get 'rankings/global_ranking',       to: 'rankings#global_ranking'
+    get 'rankings/local_ranking' ,       to: 'rankings#local_ranking'
   end
   
 

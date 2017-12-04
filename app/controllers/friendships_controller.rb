@@ -14,8 +14,7 @@ class FriendshipsController < ApplicationController
 	end
 
 	def update
-		@friendship = Friendship.find_by(friend_id: params[:friend_id],
-		 user_id: current_user.id)
+		@friendship = Friendship.find_by(id: params[:id])
 		@friendship.update_attribute(:accepted, "accepted")
 		if @friendship.save
 			flash.now[:success] = "Amizade confirmada!"

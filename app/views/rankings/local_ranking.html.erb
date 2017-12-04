@@ -1,0 +1,80 @@
+    <link href="/css/morris.css" rel="stylesheet">
+    <link href="/css/sb-admin.css" rel="stylesheet">
+    <link href="/css/workout_creations.css" rel="stylesheet">
+    <link href="/css/profile.css", rel="stylesheet">
+    <title>SB Admin - Bootstrap Admin Template</title>
+
+    <div id="wrapper">
+
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="row">
+
+                    
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-inverse">
+                          <ul class="nav navbar-nav">
+                            <li>
+                              <%= link_to "Ranking global", user_rankings_global_ranking_path(user_id: current_user.id) %>
+                            </li>
+                            <li>
+                              <%= link_to "Ranking local", user_rankings_local_ranking_path(user_id: current_user.id) %>
+                            </li>
+                          </ul>
+                        </nav>
+                        <h1 class="page-header">
+                            Ranking Local <small>E-xercite</small>
+                        </h1>                            
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Ranking</h3>
+                                   
+                            </div>
+                            <div class="panel-body">
+                                
+                                <div class="list-group">
+                                    <table class="table table-striped">
+                                      <thead>
+                                        <tr>
+                                          <th class='text-center'>Posição</th>
+                                          <th class='text-center'>Foto</th>
+                                          <th class='text-center'>Nome</th>
+                                          <th class='text-center'>Nível</th>
+                                          <th class='text-center'>Pontos</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        <% position = 1 %>
+                                        <% @users.sort_by {|friend| friend.points}.reverse.each do |user|  %>
+                                         <tr>
+                                          <td align='center' style="vertical-align:middle"><%= "#{position}º"%></td>
+                                            <td align='center' style="vertical-align:middle"><%= image_tag(user.avatar_url, height: "32", class: "img-circle")%></td>
+                                            <td align='center' style="vertical-align:middle"><%= user.person.name %></td>
+                                            <td align='center' style="vertical-align:middle"><%= user.level %></td>
+                                            <td align='center' style="vertical-align:middle"><%= user.points %></td>
+                                         </tr>
+                                         <% position = position + 1 %>
+                                        <% end %>
+                                      </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+               
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>

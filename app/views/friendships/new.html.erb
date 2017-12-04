@@ -41,7 +41,7 @@
                                       <tbody>
                                         <% current_user.friends.each do |friend|  %>
                                          <tr>
-                                            <td align='center' style="vertical-align:middle"><%= image_tag(friend.avatar_url, class: "img-circle")%></td>
+                                            <td align='center' style="vertical-align:middle"><%= image_tag(friend.avatar_url, height: "52", class: "img-circle")%></td>
                                             <td align='center' style="vertical-align:middle"><%= friend.person.name %></td>
                                             <td align='center' style="vertical-align:middle"><%= friend.person.age %></td>
                                             <td align='right'>
@@ -74,19 +74,29 @@
                                       <tbody>
                                         <% current_user.pending.each do |request| %>
                                          <tr>
-                                            <td align='center' style="vertical-align:middle"><%= image_tag(request.avatar_url, class: "img-circle")%></td>
+                                            <td align='center' style="vertical-align:middle"><%= image_tag(request.avatar_url, height: "52", class: "img-circle")%></td>
                                             <td align='center' style="vertical-align:middle"><%= request.person.name %></td>
                                             <td align='center' style="vertical-align:middle"><%= request.person.age %></td>
                                             <td align='right'>
-                                                <% friendship_id = Friendship.find_by(friend_id: request.id, user_id: current_user.id) %>
-                                                <%= link_to user_friendship_path(friend_id: request.id, user_id: current_user.id, id: friendship_id), method: "put" do %>
-                                                    <button class='btn btn-success', 
-                                                    id = "<%="accept-friend-#{request.id}"%>">Aceitar</button>
-                                                <% end %>
-                                                <%= link_to user_friendship_path(friend_id: request.id, user_id: current_user.id, id: friendship_id), method: :delete do %>
+                                                <% friendship = (Friendship.find_by(friend_id: request.id, user_id: current_user.id) || Friendship.find_by(friend_id: current_user.id, user_id: request.id)) %>
+
+                                                <% if Friendship.find(friendship.id).friend_id == current_user.id %>
+                                                  <%= link_to user_friendship_path(friend_id: friendship.friend_id, user_id: friendship.user_id, id: friendship.id), method: "put" do %>
+                                                      <button class='btn btn-success', 
+                                                      id = "<%="accept-friend-#{request.id}"%>">Aceitar</button>
+                                                  <% end %>
+
+                                                  <%= link_to user_friendship_path(friend_id: friendship.friend_id, user_id: friendship.user_id, id: friendship.id), method: :delete do %>
                                                     <button class='btn btn-warning', 
                                                     id = "<%="refuse-friend-#{request.id}"%>">Recusar</button>
-                                                <% end %>   
+                                                  <% end %>
+
+                                                <% else %>
+                                                  <%= link_to user_friendship_path(id: friendship.id, user_id: friendship.user_id), method: "delete" do %>
+                                                    <button class='btn btn-danger',
+                                                     id = "<%="remove-friend-#{request.id}"%>">Remover</button>
+                                                  <% end %>  
+                                                <% end %> 
                                             </td>
                                          </tr>
                                         <% end %>
@@ -114,7 +124,7 @@
                                         <% User.where.not(id: current_user.id).each do |user| %>
                                          <% next unless Friendship.where('(friend_id = :id AND user_id = :user_id) OR (friend_id = :user_id AND user_id = :id)', id: user.id, user_id: current_user.id).empty?  %>
                                          <tr>
-                                            <td align='center' style="vertical-align:middle"><%= image_tag(user.avatar_url, class: "img-circle")%></td>
+                                            <td align='center' style="vertical-align:middle"><%= image_tag(user.avatar_url, height: "52", class: "img-circle")%></td>
                                             <td align='center' style="vertical-align:middle"><%= user.person.name %></td>
                                             <td align='center' style="vertical-align:middle"><%= user.person.age %></td>
                                             <td align='right'>

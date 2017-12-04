@@ -67,6 +67,12 @@ user14 = User.create(person_id: person16.id, level: 0, points: 0, avatar: open("
 user15 = User.create(person_id: person17.id, level: 0, points: 0, avatar: open("public/images/profile/default.png"))
 user16 = User.create(person_id: person18.id, level: 0, points: 0, avatar: open("public/images/profile/default.png"))
 
+#Populando tabela Friendship
+
+Friendship.create(user_id: 1, friend_id: 2, accepted: true)
+Friendship.create(user_id: 1, friend_id: 3, accepted: true)
+Friendship.create(user_id: 1, friend_id: 4, accepted: true)
+Friendship.create(user_id: 1, friend_id: 5, accepted: true)
 
 #Populando tabela Coach
 coach = Coach.create!(person_id: person3.id)
