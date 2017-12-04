@@ -79,14 +79,17 @@ Rails.application.routes.draw do
     resources :diet_menu,     only: [:show]
     resources :diseases,      only: [:update, :create, :destroy]
     resources :restrictions,  only: [:update, :create, :destroy] 
-  end
-  
-  resources :users do
     get   'info',                       to: 'user_measures#info'
-    get   'user_measures/show/:id',                       to: 'user_measures#show'
-    get   'user_measures/new/:id',                       to: 'user_measures#new'
+    get   'user_measures/show/:id',     to: 'user_measures#show', as: 'measures_show'
+    get   'user_measures/new/:id',      to: 'user_measures#new'
     post  'user_measures',              to: 'user_measures#create'
+    resources :friendships, only: [:create, :update, :destroy, :new]
+    resources :rankings   , only: [:global_ranking, :local_ranking]
+    get 'rankings/global_ranking',       to: 'rankings#global_ranking'
+    get 'rankings/local_ranking' ,       to: 'rankings#local_ranking'
   end
+
+
 
   resources :coaches do
     get   'diets',              to: 'diets#show'

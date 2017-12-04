@@ -1,5 +1,5 @@
 class FoodsController < ApplicationController
-
+	before_action :authenticate_person!
 
 	def show
 		@coach = Coach.find(params[:coach_id])

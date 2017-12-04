@@ -45,7 +45,6 @@
                                 <% 
                                     workout_set = UserDoWorkout.where(:user_id => @user.id, :ended => false).each do |workout|
                                         coach = Coach.find(Workout.find(workout.workout_id).coach_id)
-                                        
                                 %>
 
                                 <div class="list-group">
@@ -75,7 +74,7 @@
                                             <% end %>
                                             <td align='right'>
 
-                                                <%=  link_to user_end_workout_path(user_id_wo: @user.id, workout_id_wo: workout.workout_id), :method => :post do%>
+                                                <%=  link_to user_end_workout_path(user_id_wo: current_user.id, workout_id_wo: workout.workout_id), :method => :post do%>
 
                                                   <button class="button", id="terminar">Terminar!</button>
                                                 <% end %>

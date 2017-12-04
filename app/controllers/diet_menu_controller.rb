@@ -1,4 +1,5 @@
 class DietMenuController < ApplicationController
+	before_action :authenticate_person!
 	def show
 		@user = User.find(params[:id])
 		@active_diet_search = UserEatDiet.where(
