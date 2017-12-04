@@ -63,6 +63,33 @@
                                       </tbody>
                                     </table>
                                 </div>
+                                <h3> Medidas</h3>
+                                <div class="list-group">
+                                            <table class="table table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th class='text-center'> Nome </th>
+                                                        <th class='text-center'> Valor <th>
+                                                    </tr>
+                                                </thead>
+                                            <tbody>
+                                        <% 
+                                         @newest_info.attributes.except("id", "created_at", "updated_at", "user_id").each do |value|
+                                        %>
+                                         <tr>
+                                            <td align='center' style="vertical-align:middle">
+                                            <%= value[0] %>
+                                            </td>
+                                            <td align='center' style="vertical-align:middle" class = "user_data">
+                                            <%= value[1]%>
+                                            </td>
+                                         </tr>
+                                        <% end %>
+                                      </tbody>
+                                    </table>
+                                    Dados atualizados em : <%= @newest_date %>
+                                </div>
+                            </div>
                             </div>
                         </div>
                     </div>
