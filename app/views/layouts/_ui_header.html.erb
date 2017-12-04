@@ -18,8 +18,8 @@
             </button>
             <% if !current_user.nil? %>
                 <a class="navbar-brand" <%= link_to "E-xercite", person_user_path(person_id: current_user.person_id, id: current_user.id) %></a>
-            <% elsif !@coach.nil? %>
-                <a class="navbar-brand" <%= link_to "E-xercite", person_coach_path(person_id: @coach.person_id, id: @coach.id) %></a>
+            <% elsif !current_coach.nil? %>
+                <a class="navbar-brand" <%= link_to "E-xercite", person_coach_path(person_id: current_coach.person_id, id: current_coach.id) %></a>
             <% else %>
                 <a class="navbar-brand">E-xercite</a>
             <% end %>
@@ -108,7 +108,7 @@
             </li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>
-                    <%= Person.find((current_user.nil? ? @coach.person_id : current_user.person_id)).name %><b class="caret"></b></a>
+                    <%= Person.find((current_user.nil? ? current_coach.person_id : current_user.person_id)).name %><b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     <% if !current_user.nil? %>
                         <li>

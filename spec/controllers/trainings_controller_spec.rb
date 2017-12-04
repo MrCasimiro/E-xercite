@@ -32,7 +32,6 @@ RSpec.describe TrainingsController, type: :controller do
 				workout_id_wo: @workout.id
 			}
 		end.to change {UserDoWorkout.where(:ended => true).count}
-		expect(response).to render_template('trainings/show')
 	end
 
 end

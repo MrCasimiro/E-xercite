@@ -52,7 +52,7 @@
                                                     <td align='center' style="vertical-align:middle"><%= wo.workout_composes[i].repetition %></td>
                                                     <td align='center' style="vertical-align:middle"><%= wo.workout_composes[i].technique %></td>
                                                     <td align='right'>
-                                                        <% if user_do_workout?(User.find(wo.user_do_workouts[i].user_id), wo) %>
+                                                        <% if user_do_workout?(User.find(wo.user_do_workouts[i].user_id), wo.workout_composes[i]) %>
                                                             <%= button_tag "Enviar", class: "button" %>
                                                         <% else %>
                                                             <%= button_tag "Enviado", class: "button-disabled"%>

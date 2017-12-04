@@ -14,6 +14,5 @@ class TrainingsController < ApplicationController
 		if @finish_workout.save
 			flash.now[:success] = "Treino terminado com sucesso!"
 		end
-		render :show
 	end
 end

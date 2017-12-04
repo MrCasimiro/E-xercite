@@ -88,7 +88,8 @@ Rails.application.routes.draw do
     get 'rankings/global_ranking',       to: 'rankings#global_ranking'
     get 'rankings/local_ranking' ,       to: 'rankings#local_ranking'
   end
-  
+
+
 
   resources :coaches do
     get   'diets',              to: 'diets#show'
@@ -102,9 +103,11 @@ Rails.application.routes.draw do
     resources :exercises, only: [:show, :create]
 
     get   'workouts',           to: 'workouts#new'
-    resources :workouts, only: [:show, :create_do_workout, :create, :workouts_history]
+    resources :workouts, only: [:workouts_page, :create_do_workout, :create, :workouts_history]
+    get   'workouts_page',      to: 'workouts#workouts_page'
     get   'workouts_history',   to: 'workouts#workouts_history'
     post  'workout_creations',  to: 'workouts#create_do_workout'
+    post  'workout_end',        to: 'workouts#workout_score'
 
     get   '/diet_assign',       to: 'diet_assign#show'
     resources :diet_assign
