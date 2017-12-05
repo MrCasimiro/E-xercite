@@ -66,10 +66,11 @@
                                             <td></td>
                                             <td align='center' style="vertical-align:middle"><%= userRequest.date %>
                                             </td>
+                                            <td align='center' style="vertical-align:middle">
+                                            <%= link_to "Ver dados do usuário", users_profile_person_coach_path(id: current_coach.id, id_user: userRequest.user_id, person_id: userRequest.user_id), :id => "ver_dados", :class => "btn btn-success" %>
+                                            </td>
                                             <td align='center' style="vertical-align:middle"> <%= link_to "Atribuir dieta", coach_choose_diet_path(requester_id: userRequest.user_id, coach_id: @coach.id), :id => "atribuir_dieta", :class => "btn btn-success" %>
                                             </td>
-
-
                                          </tr>
                                         <% end %>
                                       </tbody>
