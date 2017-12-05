@@ -74,7 +74,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update] do
     resources :trainings, only: [:show, :end_workout]
     post 'end_workout', to: "trainings#end_workout"
-    resources :diet_menu, only: [:show]
+    resources :diet_menu, only: [:show, :finish]
     resources :trainings,     only: [:show]
     resources :diet_menu,     only: [:show]
     resources :diseases,      only: [:update, :create, :destroy]

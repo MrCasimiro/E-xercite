@@ -6,6 +6,7 @@ RSpec.describe CoachesController, type: :controller do
 		@person = FactoryGirl.create(:person)
 		@user = FactoryGirl.create(:user)
 		@coach = FactoryGirl.create(:coach, person_id: @person.id)
+		@measure = FactoryGirl.create(:user_measure, user_id: @user.id)
 	end
 
 	describe "GET #show" do
