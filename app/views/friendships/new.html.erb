@@ -1,0 +1,156 @@
+    <link href="/css/morris.css" rel="stylesheet">
+    <link href="/css/sb-admin.css" rel="stylesheet">
+    <link href="/css/workout_creations.css" rel="stylesheet">
+    <link href="/css/profile.css", rel="stylesheet">
+    <title>SB Admin - Bootstrap Admin Template</title>
+
+    <div id="wrapper">
+
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            Lista de Amizades <small>E-xercite</small>
+                        </h1>                           
+                        
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Amizades</h3>
+                                   
+                            </div>
+                            <div class="panel-body">
+                                
+                                <div class="list-group">
+                                    <table class="table table-striped">
+                                      <thead>
+                                        <tr>
+                                          <th class='text-center'>Foto</th>
+                                          <th class='text-center'>Nome</th>
+                                          <th class='text-center'>Idade</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        <% current_user.friends.each do |friend|  %>
+                                         <tr>
+                                            <td align='center' style="vertical-align:middle"><%= image_tag(friend.avatar_url, height: "52", class: "img-circle")%></td>
+                                            <td align='center' style="vertical-align:middle"><%= friend.person.name %></td>
+                                            <td align='center' style="vertical-align:middle"><%= friend.person.age %></td>
+                                            <td align='right'>
+                                                <%= link_to user_friendship_path(id: Friendship.where('(friend_id = :id AND user_id = :user_id) OR (friend_id = :user_id AND user_id = :id)', id: friend.id, user_id: current_user.id)[0].id), method: "delete" do %>
+                                                    <button class='btn btn-danger',
+                                                     id = "<%="remove-friend-#{friend.id}"%>">Remover</button>
+                                                <% end %>
+                                            </td>
+                                         </tr>
+                                        <% end %>
+                                      </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Solicitações de amizades</h3>
+                                   
+                            </div>
+                            <div class="panel-body">
+                                
+                                <div class="list-group">
+                                    <table class="table table-striped">
+                                      <thead>
+                                        <tr>
+                                          <th class='text-center'>Foto</th>
+                                          <th class='text-center'>Nome</th>
+                                          <th class='text-center'>Idade</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        <% current_user.pending.each do |request| %>
+                                         <tr>
+                                            <td align='center' style="vertical-align:middle"><%= image_tag(request.avatar_url, height: "52", class: "img-circle")%></td>
+                                            <td align='center' style="vertical-align:middle"><%= request.person.name %></td>
+                                            <td align='center' style="vertical-align:middle"><%= request.person.age %></td>
+                                            <td align='right'>
+                                                <% friendship = (Friendship.find_by(friend_id: request.id, user_id: current_user.id) || Friendship.find_by(friend_id: current_user.id, user_id: request.id)) %>
+
+                                                <% if Friendship.find(friendship.id).friend_id == current_user.id %>
+                                                  <%= link_to user_friendship_path(friend_id: friendship.friend_id, user_id: friendship.user_id, id: friendship.id), method: "put" do %>
+                                                      <button class='btn btn-success', 
+                                                      id = "<%="accept-friend-#{request.id}"%>">Aceitar</button>
+                                                  <% end %>
+
+                                                  <%= link_to user_friendship_path(friend_id: friendship.friend_id, user_id: friendship.user_id, id: friendship.id), method: :delete do %>
+                                                    <button class='btn btn-warning', 
+                                                    id = "<%="refuse-friend-#{request.id}"%>">Recusar</button>
+                                                  <% end %>
+
+                                                <% else %>
+                                                  <%= link_to user_friendship_path(id: friendship.id, user_id: friendship.user_id), method: "delete" do %>
+                                                    <button class='btn btn-danger',
+                                                     id = "<%="remove-friend-#{request.id}"%>">Remover</button>
+                                                  <% end %>  
+                                                <% end %> 
+                                            </td>
+                                         </tr>
+                                        <% end %>
+                                      </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Pessoas não adicionados</h3>
+                                   
+                            </div>
+                            <div class="panel-body">
+                                
+                                <div class="list-group">
+                                    <table class="table table-striped">
+                                      <thead>
+                                        <tr>
+                                          <th class='text-center'>Foto</th>
+                                          <th class='text-center'>Nome</th>
+                                          <th class='text-center'>Idade</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        <% User.where.not(id: current_user.id).each do |user| %>
+                                         <% next unless Friendship.where('(friend_id = :id AND user_id = :user_id) OR (friend_id = :user_id AND user_id = :id)', id: user.id, user_id: current_user.id).empty?  %>
+                                         <tr>
+                                            <td align='center' style="vertical-align:middle"><%= image_tag(user.avatar_url, height: "52", class: "img-circle")%></td>
+                                            <td align='center' style="vertical-align:middle"><%= user.person.name %></td>
+                                            <td align='center' style="vertical-align:middle"><%= user.person.age %></td>
+                                            <td align='right'>
+                                                <%= link_to user_friendships_path(friend_id: user.id), method: "post" do %>
+                                                    <button class='btn btn-success'
+                                                    id = "<%="add-friend-#{user.id}"%>">Solicitar</button>
+                                                <% end %>   
+                                            </td>
+                                         </tr>
+                                        <% end %>
+                                      </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                
+                <!-- /.row -->
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>

@@ -1,5 +1,5 @@
 class ExercisesController < ApplicationController
-
+	before_action :authenticate_person!
 
 	def show
 		@coach = Coach.find(params[:coach_id])
@@ -11,7 +11,7 @@ class ExercisesController < ApplicationController
 		@coach = Coach.find(params[:coach_id])
 		@exercise = Exercise.new(exercise_params)
 		if @exercise.save
-			flash[:success] = "Exercício adicionado com sucesso"
+			flash.now[:success] = "Exercício adicionado com sucesso"
 		end
 	end
 

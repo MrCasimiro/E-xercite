@@ -1,5 +1,5 @@
 class ChooseDietController < ApplicationController
-
+	before_action :authenticate_person!
 	def show
 		@coach = Coach.find(params[:coach_id])
 		@requester_id = params[:requester_id]

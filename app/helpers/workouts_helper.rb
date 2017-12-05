@@ -1,6 +1,6 @@
 module WorkoutsHelper
 	def user_do_workout?(user, workout)
-		UserDoWorkout.find_by(user_id: user.id, workout_id: workout.id).nil?
+		UserDoWorkout.find_by(user_id: user.id, workout_id: workout.workout_id).nil?
 	end
 
 	def find_workouts(coach)

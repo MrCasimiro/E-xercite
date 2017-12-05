@@ -1,7 +1,11 @@
 {
   "RSpec": {
     "coverage": {
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/models/person.rb": [
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/person.rb": [
+>>>>>>> origin
         1,
         null,
         null,
@@ -10,11 +14,16 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/models/application_record.rb": [
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/application_record.rb": [
+>>>>>>> origin
         1,
         1,
         null
       ],
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/helpers/application_helper.rb": [
         1,
         null
@@ -76,17 +85,89 @@
         null
       ],
       "/home/juny/E-xercite/app/helpers/sessions_helper.rb": [
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/application_helper.rb": [
         1,
+        null
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/chat_helper.rb": [
+        1,
+        null
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/choose_diet_helper.rb": [
+        1,
+        null
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/coaches_helper.rb": [
+        1,
+        null
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/contacts_helper.rb": [
+        1,
+        null
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/conversation_helper.rb": [
+        1,
+        null
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/diet_assign_helper.rb": [
+        1,
+        null
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/diet_menu_helper.rb": [
+        1,
+        null
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/diets_helper.rb": [
+        1,
+        null
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/diseases_helper.rb": [
+        1,
+        null
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/foods_helper.rb": [
+        1,
+        null
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/friendships_helper.rb": [
+        1,
+        null
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/messages_helper.rb": [
+        1,
+        null
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/pages_helper.rb": [
+        1,
+        null
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/people_helper.rb": [
+        1,
+        null
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/rankings_helper.rb": [
+        1,
+        null
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/restrictions_helper.rb": [
+        1,
+        null
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/sessions_helper.rb": [
+>>>>>>> origin
+        1,
+        null,
+        1,
+        27,
+        null,
         null,
         1,
         3,
         null,
-        null,
-        1,
-        2,
-        null,
         null
       ],
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/helpers/trainings_helper.rb": [
         1,
         null
@@ -100,6 +181,21 @@
         null
       ],
       "/home/juny/E-xercite/app/helpers/users_helper.rb": [
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/trainings_helper.rb": [
+        1,
+        null
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/uipages_helper.rb": [
+        1,
+        null
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/user_measures_helper.rb": [
+        1,
+        null
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/users_helper.rb": [
+>>>>>>> origin
         1,
         1,
         1,
@@ -110,11 +206,19 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/helpers/workout_composes_helper.rb": [
         1,
         null
       ],
       "/home/juny/E-xercite/app/helpers/workouts_helper.rb": [
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/workout_composes_helper.rb": [
+        1,
+        null
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/helpers/workouts_helper.rb": [
+>>>>>>> origin
         1,
         1,
         2,
@@ -128,7 +232,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/channels/conversation_channel.rb": [
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/channels/conversation_channel.rb": [
+>>>>>>> origin
         null,
         1,
         1,
@@ -149,13 +257,22 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/channels/application_cable/channel.rb": [
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/channels/application_cable/channel.rb": [
+>>>>>>> origin
         1,
         1,
         null,
         null
       ],
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/controllers/chat_controller.rb": [
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/chat_controller.rb": [
+        1,
+>>>>>>> origin
         1,
         1,
         0,
@@ -172,7 +289,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/controllers/application_controller.rb": [
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/application_controller.rb": [
+>>>>>>> origin
         1,
         1,
         1,
@@ -180,9 +301,13 @@
         1,
         null
       ],
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/controllers/choose_diet_controller.rb": [
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/choose_diet_controller.rb": [
         1,
-        null,
+>>>>>>> origin
+        1,
         1,
         1,
         1,
@@ -211,7 +336,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/controllers/coaches_controller.rb": [
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/coaches_controller.rb": [
+>>>>>>> origin
         1,
         1,
         1,
@@ -225,7 +354,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/controllers/contacts_controller.rb": [
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/contacts_controller.rb": [
+>>>>>>> origin
         1,
         1,
         2,
@@ -243,7 +376,12 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/controllers/conversations_controller.rb": [
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/conversations_controller.rb": [
+        1,
+>>>>>>> origin
         1,
         1,
         1,
@@ -276,7 +414,12 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/controllers/diet_assign_controller.rb": [
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/diet_assign_controller.rb": [
+        1,
+>>>>>>> origin
         1,
         1,
         1,
@@ -286,7 +429,12 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/controllers/diet_menu_controller.rb": [
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/diet_menu_controller.rb": [
+        1,
+>>>>>>> origin
         1,
         1,
         1,
@@ -312,9 +460,13 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/controllers/diets_controller.rb": [
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/diets_controller.rb": [
         1,
-        null,
+>>>>>>> origin
+        1,
         1,
         1,
         1,
@@ -339,7 +491,12 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/controllers/diseases_controller.rb": [
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/diseases_controller.rb": [
+        1,
+>>>>>>> origin
         1,
         1,
         1,
@@ -372,9 +529,13 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/controllers/exercises_controller.rb": [
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/exercises_controller.rb": [
         1,
-        null,
+>>>>>>> origin
+        1,
         null,
         1,
         1,
@@ -396,19 +557,23 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/controllers/foods_controller.rb": [
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/foods_controller.rb": [
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
         1,
         null,
         null,
         1,
         1,
         1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
+>>>>>>> origin
         1,
         null,
         null,
@@ -420,7 +585,44 @@
         null,
         null
       ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/friendships_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/controllers/messages_controller.rb": [
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/messages_controller.rb": [
+        1,
+>>>>>>> origin
         1,
         1,
         0,
@@ -438,7 +640,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/controllers/pages_controller.rb": [
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/pages_controller.rb": [
+>>>>>>> origin
         1,
         1,
         1,
@@ -467,7 +673,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/controllers/people_controller.rb": [
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/people_controller.rb": [
+>>>>>>> origin
         1,
         null,
         1,
@@ -509,7 +719,24 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/controllers/restrictions_controller.rb": [
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/rankings_controller.rb": [
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/restrictions_controller.rb": [
+        1,
+>>>>>>> origin
         1,
         1,
         1,
@@ -542,7 +769,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/controllers/sessions_controller.rb": [
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/sessions_controller.rb": [
+>>>>>>> origin
         1,
         1,
         null,
@@ -571,13 +802,21 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/controllers/trainings_controller.rb": [
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/trainings_controller.rb": [
+        1,
+>>>>>>> origin
         1,
         1,
         1,
         null,
         null,
+<<<<<<< HEAD
         null,
+=======
+>>>>>>> origin
         1,
         1,
         1,
@@ -591,7 +830,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/controllers/uipages_controller.rb": [
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/uipages_controller.rb": [
+>>>>>>> origin
         1,
         1,
         null,
@@ -604,10 +847,18 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/controllers/user_measures_controller.rb": [
         1,
         null,
         1,
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/user_measures_controller.rb": [
+        1,
+        null,
+        1,
+        1,
+>>>>>>> origin
         1,
         1,
         1,
@@ -633,7 +884,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/controllers/users_controller.rb": [
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/users_controller.rb": [
+>>>>>>> origin
         1,
         1,
         1,
@@ -670,7 +925,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/controllers/workout_menu_controller.rb": [
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/workout_menu_controller.rb": [
+>>>>>>> origin
         1,
         1,
         1,
@@ -687,7 +946,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/controllers/workouts_controller.rb": [
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/controllers/workouts_controller.rb": [
+>>>>>>> origin
         1,
         1,
         1,
@@ -697,7 +960,6 @@
         null,
         1,
         1,
-        1,
         null,
         null,
         null,
@@ -706,7 +968,7 @@
         1,
         1,
         1,
-        1,
+        null,
         null,
         null,
         1,
@@ -716,13 +978,6 @@
         0,
         null,
         null,
-        null,
-        1,
-        null,
-        null,
-        null,
-        1,
-        1,
         1,
         null,
         null,
@@ -731,23 +986,50 @@
         1,
         1,
         1,
+        1,
+        1,
+        1,
+        1,
+        1,
         null,
-        0,
         null,
         null,
         null,
         1,
         1,
         1,
+        null,
+        null,
+        1,
+        2,
+        2,
+        2,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        2,
         null,
         null,
         null
       ],
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/jobs/application_job.rb": [
         1,
         null
       ],
       "/home/juny/E-xercite/app/jobs/message_broadcast_job.rb": [
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/jobs/application_job.rb": [
+        1,
+        null
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/jobs/message_broadcast_job.rb": [
+>>>>>>> origin
         1,
         1,
         null,
@@ -793,23 +1075,39 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/mailers/application_mailer.rb": [
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/mailers/application_mailer.rb": [
+>>>>>>> origin
         1,
         1,
         1,
         null
       ],
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/models/admin.rb": [
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/admin.rb": [
+>>>>>>> origin
         1,
         1,
         null
       ],
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/models/coach.rb": [
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/coach.rb": [
+>>>>>>> origin
         1,
         1,
         null
       ],
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/models/contact.rb": [
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/contact.rb": [
+>>>>>>> origin
         1,
         1,
         1,
@@ -827,7 +1125,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/models/conversation.rb": [
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/conversation.rb": [
+>>>>>>> origin
         1,
         1,
         1,
@@ -853,7 +1155,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/models/diet_compose.rb": [
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/diet_compose.rb": [
+>>>>>>> origin
         1,
         1,
         1,
@@ -862,7 +1168,11 @@
         1,
         null
       ],
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/models/diet.rb": [
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/diet.rb": [
+>>>>>>> origin
         1,
         1,
         1,
@@ -877,13 +1187,21 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/models/disease.rb": [
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/disease.rb": [
+>>>>>>> origin
         1,
         1,
         1,
         null
       ],
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/models/exercise.rb": [
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/exercise.rb": [
+>>>>>>> origin
         1,
         1,
         1,
@@ -891,7 +1209,11 @@
         1,
         null
       ],
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/models/food.rb": [
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/food.rb": [
+>>>>>>> origin
         1,
         1,
         1,
@@ -899,7 +1221,17 @@
         1,
         null
       ],
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/models/message.rb": [
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/friendship.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/message.rb": [
+>>>>>>> origin
         1,
         1,
         1,
@@ -907,32 +1239,53 @@
         1,
         null
       ],
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/models/restriction.rb": [
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/restriction.rb": [
+>>>>>>> origin
         1,
         1,
         1,
         null
       ],
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/models/speciality.rb": [
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/speciality.rb": [
+>>>>>>> origin
         1,
         1,
         null
       ],
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/models/user_disease.rb": [
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/user_disease.rb": [
+>>>>>>> origin
         1,
         1,
         1,
         null
       ],
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/models/user_do_workout.rb": [
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/user_do_workout.rb": [
+>>>>>>> origin
         1,
         1,
         1,
         null,
         1,
+        1,
         null
       ],
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/models/user_eat_diet.rb": [
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/user_eat_diet.rb": [
+>>>>>>> origin
         1,
         1,
         1,
@@ -949,26 +1302,48 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/models/user_measure.rb": [
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/user_measure.rb": [
+>>>>>>> origin
         1,
         1,
         1,
         null
       ],
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/models/user_request.rb": [
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/user_request.rb": [
+>>>>>>> origin
         1,
         1,
         1,
         null
       ],
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/models/user_restriction.rb": [
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/user_restriction.rb": [
+>>>>>>> origin
         1,
         1,
         1,
         null
       ],
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/models/user.rb": [
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/user.rb": [
         1,
+        1,
+>>>>>>> origin
+        1,
+        null,
+        1,
+        1,
+        null,
         1,
         1,
         null,
@@ -978,15 +1353,38 @@
         1,
         1,
         null,
-        1,
-        1,
+        null,
         null,
         1,
         1,
+        null,
+        3,
+        null,
+        3,
+        null,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        0,
         null,
         null
       ],
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/uploaders/avatar_uploader.rb": [
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/uploaders/avatar_uploader.rb": [
+>>>>>>> origin
         1,
         null,
         null,
@@ -1000,7 +1398,11 @@
         null,
         null,
         1,
+<<<<<<< HEAD
         234,
+=======
+        285,
+>>>>>>> origin
         null,
         null,
         1,
@@ -1044,7 +1446,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/models/workout_compose.rb": [
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/workout_compose.rb": [
+>>>>>>> origin
         1,
         1,
         1,
@@ -1054,7 +1460,11 @@
         1,
         null
       ],
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/models/workout.rb": [
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/models/workout.rb": [
+>>>>>>> origin
         1,
         1,
         1,
@@ -1068,6 +1478,7 @@
         1,
         null
       ],
+<<<<<<< HEAD
       "/home/juny/E-xercite/app/channels/application_cable/connection.rb": [
         0,
         0,
@@ -1085,12 +1496,19 @@
         0,
         0,
         0,
+=======
+      "/home/guircasimiro/SI-Folder/ESI/E-xercite/app/channels/application_cable/connection.rb": [
+>>>>>>> origin
         0,
         0,
         0,
         0
       ]
     },
+<<<<<<< HEAD
     "timestamp": 1511491505
+=======
+    "timestamp": 1512404249
+>>>>>>> origin
   }
 }

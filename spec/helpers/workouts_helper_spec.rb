@@ -16,13 +16,14 @@ RSpec.describe WorkoutsHelper, type: :helper do
   		@user = FactoryGirl.create(:user)
   		@coach = FactoryGirl.create(:coach)
   		@workout = FactoryGirl.create(:workout, coach_id: @coach.id)
+  		@workout_compose = FactoryGirl.create(:workout_compose, workout_id: @workout.id)
   	end
 
 	describe "find user workouts" do
 		it "verify if the user is related to workout" do
-			expect(user_do_workout?(@user, @workout)).to eql(true)
+			expect(user_do_workout?(@user, @workout_compose)).to eql(true)
 			FactoryGirl.create(:user_do_workout, workout_id: @workout.id, user_id: @user.id)
-			expect(user_do_workout?(@user, @workout)).to eql(false)
+			expect(user_do_workout?(@user, @workout_compose)).to eql(false)
 		end
 
 		it "find coach's workouts" do

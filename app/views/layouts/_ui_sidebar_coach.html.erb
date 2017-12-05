@@ -12,19 +12,19 @@
                 <ul class="nav navbar-nav side-nav">
                     <li>
                     <li>
-                        <%= link_to "Cadastrar dieta", coach_diets_path(coach_id: @coach.id) %>
+                        <%= link_to "Cadastrar dieta", coach_diets_path(coach_id: current_coach.id) %>
                     </li>
                     <li>
-                        <%= link_to "Cadastrar alimento", coach_foods_path(coach_id: @coach.id) %>
+                        <%= link_to "Cadastrar alimento", coach_foods_path(coach_id: current_coach.id) %>
                     </li>
                     <li>
-                        <%= link_to "Cadastrar exercício", coach_exercises_path(coach_id: @coach.id) %>
+                        <%= link_to "Cadastrar exercício", coach_exercises_path(coach_id: current_coach.id) %>
                     </li>
                     <li>
-                        <%= link_to "Atrubuir dieta para usuário", coach_diet_assign_path(coach_id: @coach.id) %>
+                        <%= link_to "Atrubuir dieta para usuário", coach_diet_assign_path(coach_id: current_coach.id) %>
                     </li>
                     <li>
-                        <%= link_to "Histórico de treinos", coach_workouts_history_path(coach_id: @coach.id) %>
+                        <%= link_to "Histórico de treinos", coach_workouts_history_path(coach_id: current_coach.id) %>
                     </li>
                 </ul>
             </div>

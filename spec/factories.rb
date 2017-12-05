@@ -1,45 +1,50 @@
 FactoryGirl.define do
-  factory :user_measure do
-    weight 1.5
-    height 1.5
-    neck 1.5
-    leftbiceps 1.5
-    rightbiceps 1.5
-    chest 1.5
-    waist 1.5
-    hips 1.5
-    leftthigh 1.5
-    rightthigh 1.5
-    leftcalve 1.5
-    rightcalve 1.5
-  end
-  factory :user_datum do
-    weight 1.5
-    height 1.5
-    neck 1.5
-    chest 1.5
-    leftbiceps 1.5
-    rightbiceps 1.5
-    chest ""
-    waist 1.5
-    hips 1.5
-    leftthigh 1.5
-    rightthigh 1.5
-    leftcalve 1.5
-    rightcalve 1.5
-  end
-  factory :message do
-    chatroom nil
-    user nil
-    body "MyText"
-  end
-  factory :chatroom_user do
-    chatroom nil
-    user nil
-  end
-  factory :chatroom do
-    name "MyString"
-  end
+	factory :friendship do
+		user_id 1
+		friend_id 1
+		accepted false
+	end
+	factory :user_measure do
+		weight 1.5
+		height 1.5
+		neck 1.5
+		leftbiceps 1.5
+		rightbiceps 1.5
+		chest 1.5
+		waist 1.5
+		hips 1.5
+		leftthigh 1.5
+		rightthigh 1.5
+		leftcalve 1.5
+		rightcalve 1.5
+	end
+	factory :user_datum do
+		weight 1.5
+		height 1.5
+		neck 1.5
+		chest 1.5
+		leftbiceps 1.5
+		rightbiceps 1.5
+		chest ""
+		waist 1.5
+		hips 1.5
+		leftthigh 1.5
+		rightthigh 1.5
+		leftcalve 1.5
+		rightcalve 1.5
+	end
+	factory :message do
+		chatroom nil
+		user nil
+		body "MyText"
+	end
+	factory :chatroom_user do
+		chatroom nil
+		user nil
+	end
+	factory :chatroom do
+		name "MyString"
+	end
 	factory :person do
 		name "Casimiro"
 		gender "Male"

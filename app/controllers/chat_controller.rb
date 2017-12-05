@@ -1,4 +1,5 @@
 class ChatController < ApplicationController
+  before_action :authenticate_person!
   def index
   	if current_user.nil?
       @coach = current_coach
