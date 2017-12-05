@@ -1,12 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe WorkoutsController, type: :controller do
+
 	before :each do 
 		@person = FactoryGirl.create(:person)
 		@user = FactoryGirl.create(:user)
 		@coach = FactoryGirl.create(:coach, person_id: @person.id)
 		@workout = FactoryGirl.create(:workout)
-		@workout_compose = FactoryGirl.create(:workout_compose)
+		@workout_compose = FactoryGirl.create(:workout_compose, workout_id: @workout.id)
 	end
 
 	describe "GET #action" do
@@ -79,12 +80,13 @@ RSpec.describe WorkoutsController, type: :controller do
 		end
 
 		it "return http success when coach scores user" do
+			sign_in @person
 			@user_do = UserDoWorkout.create(
 				user_id: @user.id,
 				workout_id: @workout.id,
 				ended: true,
 				score: 0
-				)
+			)
 
 			expect do
 				put :workout_score, params: {

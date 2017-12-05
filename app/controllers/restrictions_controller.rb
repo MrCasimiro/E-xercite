@@ -1,4 +1,5 @@
 class RestrictionsController < ApplicationController
+	before_action :authenticate_person!
 	def update
 		@restriction = Restriction.find(params[:id])
 		@user = User.find(params[:user_id])

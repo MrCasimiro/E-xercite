@@ -17,7 +17,7 @@
                 <span class="icon-bar"></span>
             </button>
             <% if !current_user.nil? %>
-                <a class="navbar-brand" <%= link_to "E-xercite", person_user_path(person_id: current_user.person_id) %></a>
+                <a class="navbar-brand" <%= link_to "E-xercite", person_user_path(person_id: current_user.person_id, id: current_user.id) %></a>
             <% elsif !current_coach.nil? %>
                 <a class="navbar-brand" <%= link_to "E-xercite", person_coach_path(person_id: current_coach.person_id, id: current_coach.id) %></a>
             <% else %>
@@ -112,7 +112,7 @@
                 <ul class="dropdown-menu">
                     <% if !current_user.nil? %>
                         <li>
-                            <a class="fa fa-fw fa-user"<i<%= link_to "Perfil", profile_person_user_path(person_id: current_user.person_id) %></i></a>
+                            <a class="fa fa-fw fa-user"<i<%= link_to "Perfil", profile_person_user_path(person_id: current_user.person_id, id: current_user.id) %></i></a>
                         </li>
                     <% end %>
                     <li>

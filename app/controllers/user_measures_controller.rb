@@ -1,6 +1,7 @@
 require 'date'
 
 class UserMeasuresController < ApplicationController
+	before_action :authenticate_person!
 	def new
 		@user = User.find(params[:user_id])
 		@user_measure= UserMeasure.new

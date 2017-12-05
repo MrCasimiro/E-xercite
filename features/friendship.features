@@ -1,0 +1,33 @@
+Feature: Friendship
+	In order to add, accept or delete a friend
+	As a user's system
+	I want to add a friend, accept a friend's request or delete a friendship
+
+	Scenario: Add a friend
+		Given I have a user that is not my friend
+		Given that I'm a registered user
+		And I'm signed in
+		When I acess my friendships page
+		Then I should be able to see friends I don't have
+		When I press to add a friend
+		Then my not accepted friendship's number should increase by 1
+
+	Scenario: Accept a friendship's request
+		Given that I'm a registered user
+		And I have a friendship's request
+		And I'm signed in
+		And I have valid data registered
+		When I acess my friendships page
+		Then I should be able to see a friend's request
+		When I press to accept my friend's request
+		Then my accepted friendship's number should increase by 1 
+
+	Scenario: Delete a friendship
+		Given that I'm a registered user
+		And I have a accepted friendship
+		And I'm signed in
+		And I have valid data registered
+		When I acess my friendships page
+		Then I should be able to see a friendship I have
+		When I press to remove this friendship
+		Then the my friendship's number should decrease by 1

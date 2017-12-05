@@ -1,4 +1,5 @@
 class DiseasesController < ApplicationController
+	before_action :authenticate_person!
 	def update
 		@disease = Disease.find(params[:id])
 		@user = User.find(params[:user_id])
@@ -12,7 +13,7 @@ class DiseasesController < ApplicationController
 		@new_disease = Disease.new(disease_params)
 		if @new_disease.save
 			UserDisease.create!(user_id: @user.id, disease_id: @new_disease.id)
-			flash[:success] = "Comida adicionada com sucesso"
+			flash[:success] = "Doença adicionada com sucesso"
 			redirect_to profile_person_user_path(person_id: current_person.id, id: @user.id)
 		end
 	end

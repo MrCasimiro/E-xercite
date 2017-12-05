@@ -1,4 +1,5 @@
 class WorkoutsController < ApplicationController
+	before_action :authenticate_person!
 	def workouts_page
 		@user_workout = User.find(params[:id_user])
 		@user_do_workout_id = @user_workout.id
@@ -28,7 +29,6 @@ class WorkoutsController < ApplicationController
 	end
 
 	def workout_score
-
 		@userDo = UserDoWorkout.find_by(user_id: params[:id_user], workout_id: params[:workout_id])
 		@user_wkt = User.find(params[:id_user])
 		if params[:save]
