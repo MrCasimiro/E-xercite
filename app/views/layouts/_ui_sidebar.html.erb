@@ -30,6 +30,14 @@
                             <i class="fa fa-fw fa-table"></i> Dieta
                         <% end %>   
                     </li>
+
+                     <li>
+                        <%= link_to user_statistic_path(user_id: current_user.id, id: current_user.id) do %>
+                            <i class="fa fa-fw fa-bar-chart-o"></i> Estatisticas
+                        <% end %>   
+
+                    </li>
+
                     <li>
                         <a href="#"><i class="fa fa-fw fa-trophy"></i> Conquistas</a>
                     </li>
@@ -41,6 +49,8 @@
                     <li>
                         <%= link_to "Ranking", user_rankings_global_ranking_path(user_id: current_user.id) %>
                     </li>
+                    
+                   
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
